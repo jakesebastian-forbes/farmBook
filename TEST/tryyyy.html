@@ -1,0 +1,131 @@
+<div class="modal fade modal-lg" id="signUp_Vendor">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="btn-close btn-close-white" 
+                data-bs-dismiss="modal" aria-label="Close"></button>
+
+                <div class="myform bg-dark">
+                    <h1 class="text-center">Sign up as Vendor</h1>
+                    <form action ="#">
+                     
+                      <div class="mb-1 mt-1 d-flex justify-content-between">
+                        
+                        
+                          <div class="mb-1 mt-1 mx-2">
+                            <label for="" class="FirstName " style="font-size: small;">First Name <i>(Pangalan)</i></label>
+                            <input type="" class="form-control" style="margin-right: 5px;" size="15">
+                          </div>
+                          <div class="mb-1 mt-1 mx-2">
+                            <label for="" class="Middle_Name " style="font-size: small;">Middle Name<i>(Gitnang Pangalan)</i></label>
+                            <input type="" class="form-control" style="margin-right: 5px;" size="15">
+                          </div>
+                          <div class="mb-1 mt-1 mx-2">
+                            <label for="" class="Last_name" style="font-size: small;">Last Name <i>(Apelyido)</i></label>
+                            <input type="" class="form-control" style="margin-right: 5px;" size="15">
+                          </div>
+                      </div>
+                      
+                      <div class="mb-1 mt-1 d-flex justify-content-between">
+                        <div class="mb-1 mt-1 mx-2">
+                          <label for="" class="Last_name" style="font-size: small;">Email</label>
+                          <input type="" class="form-control" style="margin-right: 5px;" size="30">
+                        </div>
+                        <div class="mb-1 mt-1 mx-2">
+                          <label for="" class="Last_name" style="font-size: small;">Password</label>
+                          <input type="password" class="form-control" style="margin-right: 5px;" size="30">
+                        </div>
+                        <div class="mb-1 mt-1 mx-2">
+                          <label for="email" class="Last_name" style="font-size: small;">Confirm Password</label>
+                          <input type="password" class="form-control" style="margin-right: 5px;" size="30">
+                        </div>
+                      </div>
+                      
+                      
+                      <button type="submit " class="btn-light" style="float: right; border-radius: 10px;" data-bs-toggle="modal" data-bs-target="#next_signUp_Vendor">Next</button>
+                      <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
+                      
+                      
+                        
+                    </form>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    <div class="modal fade modal-lg" id="next_signUp_Vendor">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-body">
+                  <button type="button" class="btn-close btn-close-white" 
+                  data-bs-dismiss="modal" aria-label="Close"></button>
+
+                  <div class="myform bg-dark">
+                      <h1 class="text-center">Sign us Farmer</h1>
+                      <form action ="#">                           
+                      <div class="mb-1 mt-1 d-flex justify-content-between">
+                        <div class="mb-1 mt-1 mx-2">
+                          
+                          <label for="FirsName" class="FirstName " style="font-size: small;">Street<i>(Kanto)</i></label>
+                          <input type="FirstName" class="form-control" style="margin-right: 5px;" size="30">
+                        </div>
+                        <div class="mb-1 mt-1 mx-2">
+                          <label for="" class="Middle_Name " style="font-size: small;">Barangay</label>
+                          <input type="" class="form-control" style="margin-right: 5px;" size="30">
+                        </div>
+                        <div class="mb-1 mt-1 mx-2">
+                          <label for="" class="Last_name" style="font-size: small;">Town/City <i>(Bayan)</i></label>
+                          <input type="" class="form-control" style="margin-right: 5px;" size="30">
+                        </div> 
+                      </div>
+                    
+                      <div class="mb-1 mt-1 d-flex justify-content-between">
+                        <div class="mb-1 mt-1 mx-2">
+                          <label for="" class="Last_name" style="font-size: small;">Province<i>(Probinsya)</i></label>
+                          <input type="" class="form-control" style="margin-right: 5px;" size="30">
+                        </div>
+                        <div class="mb-1 mt-1 mx-2">
+                          <label for="" class="Last_name" style="font-size: small;">Contact Number</label>
+                          <input type="" class="form-control" style="margin-right: 5px;" size="30">
+                        </div>
+                      </div>
+                      </form>
+                      <button type="submit " class="btn-light" style="float: left; border-radius: 10px;" data-bs-toggle="modal" data-bs-target="#next_signUp_Vendor">Back</button>
+                      <button type="submit " class="btn-light" style="float: right; border-radius: 10px;" data-bs-toggle="modal" data-bs-target="#2nd_next_signUp_Vendor">Next</button>
+                      <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
+                      
+                      
+                  </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+    <div class="modal fade" id="2nd_next_signUp_Vendor">
+      <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+              <div class="modal-body">
+                  <button type="button" class="btn-close btn-close-white" 
+                  data-bs-dismiss="modal" aria-label="Close"></button>
+
+                  <div class="myform bg-dark">
+                      <h1 class="text-center">Sign up as Farmer</h1>
+                      <form action ="#">
+                        <label class="form-label" for="customFile">Insert Profile picture</label>
+                        <div class="card" >
+                          <img src="" class="rounded" alt="...">
+                          
+                        </div>
+                        
+                        <input type="file" class="form-control mt-3" id="customFile" />
+                      </form>
+                      <button type="submit" class="btn btn-light mt-3">Sign up</button>
+                      <button type="submit " class="btn-light mt-2" style="float: left; border-radius: 10px;" data-bs-toggle="modal" data-bs-target="#next_signUp_Vendor">Back</button>
+                      <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
+                  </div>
+              </div>
+            </div>
+          </div>
+          
+      </div>
