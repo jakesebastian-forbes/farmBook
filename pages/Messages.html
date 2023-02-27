@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+        
+    <link rel="stylesheet" href="../bootstrap-5.2.2/css/bootstrap.min.css"/>
+    <!-- <script src="https://kit.fontawesome.com/1c020da525.js" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://kit.fontawesome.com/94c4ebc83e.js" crossorigin="anonymous"></script> -->
+    <script src="https://kit.fontawesome.com/82727f4033.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://kit.fontawesome.com/82727f4033.css" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Archivo Black' rel='stylesheet'> 
+
+
+</head>
+
+<style>
+     body{
+        background-color: #E4E4E4;
+        overflow-x:hidden ;
+    }
+    .nav-head{ 
+      background-color:#57744B ;
+      height: 55px;
+    }
+    .nav-links ul{
+      display: flex;
+      list-style-type: none;
+     
+    
+    }
+    .nav-links li{  
+      justify-content: end;
+      font-family: 'Archivo Black';
+      color: #FFDE59;
+      margin: 0% 5px;
+      cursor: pointer;
+      padding-top: 15px;
+      
+      
+    }
+    .nav-links li a{
+      text-decoration: none;
+      color:#FFDE59 ;
+      font-size: 30px;
+    }
+    .search_message{
+        margin-top: 10px;
+        margin-left: 20px;
+        border: 1px solid black;
+        height: 40px;
+        width: 90%;
+        resize: none;
+        border-radius: 10px;
+        padding-top: 5px;
+        padding-left: 10px;
+        /* text-align:end; */
+      align-items: center;
+      
+        
+    }
+    .search_message::placeholder{
+        font-family: 'FontAwesome';
+    }
+    .user_1{
+        /* background-color:#E6DDC4; */
+        background-color:white;
+        border-radius: 25px;
+        height: 100px;
+
+        -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, .75);
+        -moz-box-shadow: 0 0 4px rgba(0, 0, 0, .75);
+        box-shadow: 0 0 4px rgba(0, 0, 0, .75);
+        color: #FFFAFA;
+                
+    }
+    .user_1:hover{
+        background-color: #9D9D9D;
+        
+    }
+    .user_1:focus{
+        background-color: #9D9D9D;
+    }
+    .user_1 h3{
+        font-size: 28px;
+        margin-top: 13px;
+        font-weight: 300X;
+        color: black;
+    }
+
+    .user_1 p{
+        font-size: 20px;
+        margin-top: 13px;
+        font-weight: 300X;
+        color: black;
+        margin-bottom: 2px;
+    }
+    .profile_pic{
+        margin-left: 15px;
+        margin-top: 15px;
+        height:60px; 
+        width: 60px;
+         border-radius: 50%;  
+    }
+    .convos_{
+        background-color: rgba(255, 255, 255);
+     
+    }
+</style>
+
+<body>
+    <div class="nav-head d-flex justify-content-between align-items-center " >
+        <h1 style="color: #FFDE59;font-family: 'Archivo Black'; font-size: 23">FarmBook</h1>
+        <div class="nav-links me-2">
+          <ul>
+            <li><a href="#"><i class="fa-solid fa-house"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-message"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-bell"></i></a></li> 
+            <li><a href="#"><i class="fa-solid fa-book"></i></a></li> 
+            <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li> 
+            <li><div class="avatar" ><img src="/profile.jpg" alt="user" style="height:35px; width: 35px; border-radius: 50%;"></div></li>
+            
+          </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-5">
+            <div class="card "style="margin-left:30px;margin-top:20px">
+                <div class="card-header messages mt-2 justify-content-center">
+                    <div class="message_head d-flex justify-content-between ">
+                        <h3>Messages</h3>
+                        <a href=""><i class="fa-solid fa-envelope" style="font-size: 30px; color: black; margin-right: 20px;"></i></a>
+                    </div>
+                    <div class="message_head2">
+                        <textarea class="search_message" name="" id="" cols="1" rows="2"  placeholder="" ></textarea>
+                    </div>
+                </div>
+                
+                <div class="card-body ">
+                  <div class="user_1 mt-2">
+                   <div class="row">
+                    <div class="col-2">
+                        <img src="/profile.jpg"  alt="user"  class="profile_pic">
+                    </div>
+                    <div class="col-6">
+                        <h3>Son Goku</h3>
+                        <p>Dito na me</p>
+                    </div>
+                   </div>
+                  </div>
+
+                  <div class="user_1 mt-2">
+                    <div class="row">
+                     <div class="col-2">
+                         <img src="/profile.jpg"  alt="user"  class="profile_pic">
+                     </div>
+                     <div class="col-6">
+                         <h3>Son Goku</h3>
+                         <p>Dito na me</p>
+                     </div>
+                    </div>
+                   </div>
+
+                   <div class="user_1 mt-2">
+                    <div class="row">
+                     <div class="col-2">
+                         <img src="/profile.jpg"  alt="user"  class="profile_pic">
+                     </div>
+                     <div class="col-6">
+                         <h3>Son Goku</h3>
+                         <p>Dito na me</p>
+                     </div>
+                    </div>
+                   </div>
+
+                   <div class="user_1 mt-2">
+                    <div class="row">
+                     <div class="col-2">
+                         <img src="/profile.jpg"  alt="user"  class="profile_pic">
+                     </div>
+                     <div class="col-6">
+                         <h3>Son Goku</h3>
+                         <p>Dito na me</p>
+                     </div>
+                    </div>
+                   </div>
+
+                   <div class="user_1 mt-2">
+                    <div class="row">
+                     <div class="col-2">
+                         <img src="/profile.jpg"  alt="user"  class="profile_pic">
+                     </div>
+                     <div class="col-6">
+                         <h3>Son Goku</h3>
+                         <p>Dito na me</p>
+                     </div>
+                    </div>
+                   </div>
+                </div>
+              </div>
+        </div>
+
+        <div class="col-7">
+            <div class="card" style="width: 60rem;margin-top: 20px;">
+               
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
