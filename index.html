@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     
-    <link rel="stylesheet" href="../bootstrap-5.2.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap.min.css"/>
     <script src="https://kit.fontawesome.com/1c020da525.js" crossorigin="anonymous"></script>
     <link href='https://fonts.googleapis.com/css?family=Archivo Black' rel='stylesheet'> 
 
@@ -20,6 +20,7 @@
     box-sizing: border-box;
     padding: 1%;
     overflow: hidden;
+    height: 70px;
   }
   .nav-links ul{
     display: flex;
@@ -103,8 +104,9 @@
 
   .btn.btn-explore {
     color: #000;
-    background-color: #34AD54;
-    border-color: #34AD54;
+    background-color: #57744B ;
+    border-color: #57744B ;
+    color: #FFDE59;
     }
     .btn.btn-explore:hover {
     color: #000;
@@ -152,7 +154,9 @@ h1{
 .myform{
     padding: 2em;
     max-width: 100%;
-    color: white;
+    color: black;
+    background-color:white;
+    border-radius:25px;
     box-shadow: 0 4px 6px 0px rgba(22, 22, 26, 0.18);
     @media(max-width: 576px) {
         max-width: 90%;
@@ -161,18 +165,20 @@ h1{
 }
 
 .form-control{
-    background-color: inherit;
+    background-color:#DDDDDD;
     color: #fff;
     padding-left: 0px;
     border: 0px;
     border-bottom: 1px solid #fff;
+    border-radius: 25px;
 }
 
 .myform .btn{
     width: 100%;
     font-weight: 800;
-    background-color: #fff;
-    border-radius: 0;
+    color:#FFDE59 ;
+    background-color: #57744B;
+    border-radius: 25px;
     padding: 0.5em 0;
 }
 
@@ -183,15 +189,37 @@ h1{
 p{
     text-align: center;
     padding-top: 2em;
-    color: grey;
+    color: black;
 }
 
 p a {
-    color: #e1e1e1;
+    color: black ;
     text-decoration: none;
 }
 p a:hover{
-    color: #fff;
+    color: blue;
+}
+
+.btn_next{
+    float: right; 
+    border-radius: 10px;
+    border-color: transparent;
+    background-color: transparent;
+    font-size: 25px;
+}
+.btn_next:hover{
+  color: grey;
+}
+
+.btn_back{
+    float: left; 
+    border-radius: 10px;
+    border-color: transparent;
+    background-color: transparent;
+    font-size: 25px;
+}
+.btn_back:hover{
+  color: grey;
 }
   
 </style>
@@ -221,7 +249,7 @@ p a:hover{
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="bg2.jpeg" class="d-block w-100" alt="...">
+      <img src="/img/bg/carHome_bg2.jpeg" class="d-block w-100"  alt="...">
       <div class="carousel-caption">
         <h5>Social Media Platform <br>for</br> Filipino Farmers</h5>
         <a href="explore.html" class="btn btn-explore py-md-3 px-md-5 me-3 animated slideInLeft">Explore</a>
@@ -231,7 +259,7 @@ p a:hover{
       </div>
     </div>
     <div class="carousel-item">
-      <img src="bg3.jpeg" class="d-block w-100" alt="...">
+      <img src="/img/bg/carHome_bg3.jpeg" class="d-block w-100" alt="...">
       <div class="carousel-caption">
         <h5><br>Farming as a Passion</br></h5>          
          <a href="" class="btn btn-explore py-md-3 px-md-5 me-3 animated slideInLeft">Explore</a>
@@ -239,7 +267,7 @@ p a:hover{
       </div>
     </div>
     <div class="carousel-item">
-      <img src="bg1.jpeg" class="d-block w-100" alt="...">
+      <img src="/img/bg/carHome_bg1.jpeg" class="d-block w-100" alt="...">
       <div class="carousel-caption">
         <h5><br>Plants Make Life Better</br></h5>
                        
@@ -262,10 +290,10 @@ p a:hover{
       <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
               <div class="modal-body">
-                  <button type="button" class="btn-close btn-close-white" 
+                  <button type="button" class="btn-close btn-close-black" 
                   data-bs-dismiss="modal" aria-label="Close"></button>
 
-                  <div class="myform bg-dark">
+                  <div class="myform">
                       <h1 class="text-center">Login Form</h1>
                       <form action ="#">
                           <div class="mb-3 mt-3">
@@ -286,22 +314,30 @@ p a:hover{
             </div>
           </div>
       </div>
-
-      <div class="modal fade" id="signUpform">
+   
+      <div class="modal fade" id="signUpform" class="signUpform">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-body">
-                    <button type="button" class="btn-close btn-close-white" 
+                <div class="modal-body " >
+                    <button type="button" class="btn-close btn-close-black" 
                     data-bs-dismiss="modal" aria-label="Close"></button>
   
-                    <div class="myform bg-dark">
+                    <div class="myform text-center">
                         <h1 class="text-center">Sign up as</h1>
                         <form action ="#">
                           
-                          <div class="d-flex justify-content-between">
-                            <button type="submit" class="btn btn-light mt-3 mx-2 rounded-2" data-bs-toggle="modal" data-bs-target="#signUp_Enthusiast" >Enthusiast</button>
-                            <button type="submit" class="btn btn-light mt-3 mx-2 rounded-2"  data-bs-toggle="modal" data-bs-target="#signUp_Farmer" >Farmer</button>
-                            <button type="submit" class="btn btn-light mt-3 mx-2 rounded-2" data-bs-toggle="modal" data-bs-target="#signUp_Vendor">Vendor</button>
+                          <div class="d-block justify-content-between signUp_as">
+                            <!-- <div class="btn_enthusiast"> -->
+                              <button type="submit" class="btn singnUpAs_btn btn-light mt-3 mx-1 rounded-5 "  data-bs-toggle="modal" data-bs-target="#signUp_Farmer" >Farmer</button>
+                              <button type="submit" class="btn singnUpAs_btn btn-light mt-3 mx-1  rounded-5" data-bs-toggle="modal" data-bs-target="#signUp_Vendor">Vendor</button>
+                              <button type="submit" class="btn singnUpAs_btn btn-light mt-3 mx-1 rounded-5  "  data-bs-toggle="modal" data-bs-target="#signUp_Enthusiast"  >Enthusiast</button>
+                            <!-- </div> -->
+                            <!-- <div class="btn_farmer"> -->
+                             
+                            <!-- </div> -->
+                        <!-- <div class="btn_vendor"> -->
+                         
+                        <!-- </div> -->
                           </div>
                           
                           <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a></p>
@@ -315,14 +351,15 @@ p a:hover{
             </div>
       </div>
 
+
       <div class="modal fade modal-lg" id="signUp_Enthusiast">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
-                    <button type="button" class="btn-close btn-close-white" 
+                    <button type="button" class="btn-close btn-close-black" 
                     data-bs-dismiss="modal" aria-label="Close"></button>
   
-                    <div class="myform bg-dark">
+                    <div class="myform">
                         <h1 class="text-center">Sign up as Enthusiast</h1>
                         <form action ="#">
                          
@@ -359,7 +396,7 @@ p a:hover{
                           </div>
                           
                           
-                          <button type="submit " class="btn-light" style="float: right; border-radius: 10px;" data-bs-toggle="modal" data-bs-target="#next_signUp_Enthusiast">Next</button>
+                          <button type="submit " class="btn-light btn_next" data-bs-toggle="modal" data-bs-target="#next_signUp_Enthusiast"><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
                           <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
                           
                           
@@ -375,10 +412,10 @@ p a:hover{
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-body">
-                    <button type="button" class="btn-close btn-close-white" 
+                    <button type="button" class="btn-close btn-close-black" 
                     data-bs-dismiss="modal" aria-label="Close"></button>
   
-                    <div class="myform bg-dark">
+                    <div class="myform">
                         <h1 class="text-center">Sign us Enthusiast</h1>
                         <form action ="#">                           
                         <div class="mb-1 mt-1 d-flex justify-content-between">
@@ -409,8 +446,8 @@ p a:hover{
                           </div>
                         </div>
                         </form>
-                        <button type="submit " class="btn-light" style="float: left; border-radius: 10px;" data-bs-toggle="modal" data-bs-target="#signUp_Enthusiast">Back</button>
-                        <button type="submit " class="btn-light" style="float: right; border-radius: 10px;" data-bs-toggle="modal" data-bs-target="#2nd_next_signUp_Enthusiast">Next</button>
+                        <button type="submit " class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#signUp_Enthusiast"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>
+                        <button type="submit " class="btn-light btn_next"  data-bs-toggle="modal" data-bs-target="#2nd_next_signUp_Enthusiast"><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
                         <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
                         
                         
@@ -419,27 +456,32 @@ p a:hover{
               </div>
             </div>
         </div>
-
+        <style>
+          .insert_pic{
+            height:120px;
+             width:120px;
+             border-radius: 50px;
+          }
+        </style>
         <div class="modal fade" id="2nd_next_signUp_Enthusiast">
           <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                   <div class="modal-body">
-                      <button type="button" class="btn-close btn-close-white" 
+                      <button type="button" class="btn-close btn-close-black" 
                       data-bs-dismiss="modal" aria-label="Close"></button>
     
-                      <div class="myform bg-dark">
-                          <h1 class="text-center">Sign up as Enthusiast</h1>
-                          <form action ="#">
-                            <label class="form-label" for="customFile">Insert Profile picture</label>
-                            <div class="card" >
-                              <img src="..." class="card-img-top" alt="...">
-                              
-                            </div>
+                      <div class="myform text-center">
+                          <h3 class="text-center">Sign up as Enthusiast</h3>
+                          <form action ="#" class="insert_profile_pic">
                             
+                              <img src="/img/profile pics/profile2.png" class="card-img-top insert_pic" alt="..." >
+ 
                             <input type="file" class="form-control mt-2" id="customFile" />
                           </form>
                           <button type="submit" class="btn btn-light mt-3">Sign up</button>
-                          <button type="submit " class="btn-light mt-3" style="float: left; border-radius: 10px;" data-bs-toggle="modal" data-bs-target="#next_signUp_Enthusiast">Back</button>
+                          <button type="submit " class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#next_signUp_Enthusiast"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>
+
+                        
                           <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
                       </div>
                   </div>
@@ -452,10 +494,10 @@ p a:hover{
           <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                   <div class="modal-body">
-                      <button type="button" class="btn-close btn-close-white" 
+                      <button type="button" class="btn-close btn-close-black" 
                       data-bs-dismiss="modal" aria-label="Close"></button>
     
-                      <div class="myform bg-dark">
+                      <div class="myform">
                           <h1 class="text-center">Sign up as Farmer</h1>
                           <form action ="#">
                            
@@ -491,8 +533,8 @@ p a:hover{
                               </div>
                             </div>
                             
+                            <button type="submit " class="btn-light btn_next"  data-bs-toggle="modal" data-bs-target="#next_signUp_Farmer"><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
                             
-                            <button type="submit " class="btn-light" style="float: right; border-radius: 10px;" data-bs-toggle="modal" data-bs-target="#next_signUp_Farmer">Next</button>
                             <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
                             
                             
@@ -508,10 +550,10 @@ p a:hover{
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <button type="button" class="btn-close btn-close-white" 
+                        <button type="button" class="btn-close btn-close-black" 
                         data-bs-dismiss="modal" aria-label="Close"></button>
       
-                        <div class="myform bg-dark">
+                        <div class="myform">
                             <h1 class="text-center">Sign us Farmer</h1>
                             <form action ="#">                           
                             <div class="mb-1 mt-1 d-flex justify-content-between">
@@ -542,8 +584,10 @@ p a:hover{
                               </div>
                             </div>
                             </form>
-                            <button type="submit " class="btn-light" style="float: left; border-radius: 10px;" data-bs-toggle="modal" data-bs-target="#signUp_Farmer">Back</button>
-                            <button type="submit " class="btn-light" style="float: right; border-radius: 10px;" data-bs-toggle="modal" data-bs-target="#2nd_next_signUp_Farmer">Next</button>
+                            <button type="submit " class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#signUp_Farmer"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>
+                            
+                            <button type="submit " class="btn-light btn_next"  data-bs-toggle="modal" data-bs-target="#2nd_next_signUp_Farmer"><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
+                            
                             <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
                             
                             
@@ -557,22 +601,24 @@ p a:hover{
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <button type="button" class="btn-close btn-close-white" 
+                        <button type="button" class="btn-close btn-close-black" 
                         data-bs-dismiss="modal" aria-label="Close"></button>
       
-                        <div class="myform bg-dark">
-                            <h1 class="text-center">Sign up as Farmer</h1>
+                        <div class="myform text-center">
+                            <h3 class="">Sign up as Farmer</h3>
                             <form action ="#">
-                              <label class="form-label" for="customFile">Insert Profile picture</label>
-                              <div class="card" >
-                                <img src="..." class="card-img-top" alt="...">
+                            
+                          
+                                <img src="/img/profile pics/profile2.png" class="card-img-top insert_pic" alt="...">
                                 
-                              </div>
+                             
                               
                               <input type="file" class="form-control mt-2" id="customFile" />
                             </form>
                             <button type="submit" class="btn btn-light mt-3">Sign up</button>
-                            <button type="submit " class="btn-light mt-3" style="float: left; border-radius: 10px;" data-bs-toggle="modal" data-bs-target="#next_signUp_Farmer">Back</button>
+                            
+                            <button type="submit " class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#next_signUp_Farmer"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>
+                           
                             <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
                         </div>
                     </div>
@@ -585,10 +631,10 @@ p a:hover{
               <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content">
                       <div class="modal-body">
-                          <button type="button" class="btn-close btn-close-white" 
+                          <button type="button" class="btn-close btn-close-black" 
                           data-bs-dismiss="modal" aria-label="Close"></button>
         
-                          <div class="myform bg-dark">
+                          <div class="myform">
                               <h1 class="text-center">Sign up as Vendor</h1>
                               <form action ="#">
                                
@@ -624,8 +670,9 @@ p a:hover{
                                   </div>
                                 </div>
                                 
-                                
-                                <button type="submit " class="btn-light" style="float: right; border-radius: 10px;" data-bs-toggle="modal" data-bs-target="#next_signUp_Vendor">Next</button>
+                              
+                                <button type="submit " class="btn-light btn_next"  data-bs-toggle="modal" data-bs-target="#next_signUp_Vendor"><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
+                           
                                 <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
                                 
                                 
@@ -641,10 +688,10 @@ p a:hover{
               <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content">
                       <div class="modal-body">
-                          <button type="button" class="btn-close btn-close-white" 
+                          <button type="button" class="btn-close btn-close-black" 
                           data-bs-dismiss="modal" aria-label="Close"></button>
         
-                          <div class="myform bg-dark">
+                          <div class="myform">
                               <h1 class="text-center">Sign us Vendor</h1>
                               <form action ="#">                           
                               <div class="mb-1 mt-1 d-flex justify-content-between">
@@ -675,8 +722,10 @@ p a:hover{
                                 </div>
                               </div>
                               </form>
-                              <button type="submit " class="btn-light" style="float: left; border-radius: 10px;" data-bs-toggle="modal" data-bs-target="#signUp_Vendor">Back</button>
-                              <button type="submit " class="btn-light" style="float: right; border-radius: 10px;" data-bs-toggle="modal" data-bs-target="#2nd_next_signUp_Vendor">Next</button>
+                             
+                              
+                              <button type="submit " class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#signUp_Vendor"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>
+                              <button type="submit " class="btn-light btn_next"  data-bs-toggle="modal" data-bs-target="#2nd_next_signUp_Vendor"><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
                               <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
                               
                               
@@ -690,22 +739,21 @@ p a:hover{
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-body">
-                            <button type="button" class="btn-close btn-close-white" 
+                            <button type="button" class="btn-close btn-close-black" 
                             data-bs-dismiss="modal" aria-label="Close"></button>
           
-                            <div class="myform bg-dark">
+                            <div class="myform text-center">
                                 <h1 class="text-center">Sign up as Vendor</h1>
                                 <form action ="#">
-                                  <label class="form-label" for="customFile">Insert Profile picture</label>
-                                  <div class="card" >
-                                    <img src="..." class="card-img-top" alt="...">
+                                 
+                                  <img src="/img/profile pics/profile2.png" class="card-img-top insert_pic" alt="..." >
                                     
-                                  </div>
                                   
                                   <input type="file" class="form-control mt-2" id="customFile" />
                                 </form>
                                 <button type="submit" class="btn btn-light mt-3">Sign up</button>
-                                <button type="submit " class="btn-light mt-3" style="float: left; border-radius: 10px;" data-bs-toggle="modal" data-bs-target="#next_signUp_Vendor">Back</button>
+                            
+                                <button type="submit " class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#next_signUp_Vendor"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>
                                 <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
                             </div>
                         </div>
@@ -717,10 +765,10 @@ p a:hover{
           <div class="modal-dialog modal-dialog-centered">
               <div class="modal-content">
                   <div class="modal-body">
-                      <button type="button" class="btn-close btn-close-white" 
+                      <button type="button" class="btn-close btn-close-black" 
                       data-bs-dismiss="modal" aria-label="Close"></button>
     
-                      <div class="myform bg-dark">
+                      <div class="myform">
                           <h1 class="text-center">Forgot Password</h1>
                           <form action ="#">
                             <div class="md-form mb-5">
@@ -746,10 +794,10 @@ p a:hover{
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-body">
-                        <button type="button" class="btn-close btn-close-white" 
+                        <button type="button" class="btn-close btn-close-black" 
                         data-bs-dismiss="modal" aria-label="Close"></button>
       
-                        <div class="myform bg-dark">
+                        <div class="myform">
                             <h1 class="text-center">Reset Your Password</h1>
                             <p>Strong passwords include numbers, letters, and punctuation marks. </p>
                             <form action ="#">
