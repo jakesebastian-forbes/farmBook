@@ -4,56 +4,158 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feed</title>
+    <title>feed try 5</title>
 
+    
     <link rel="stylesheet" href="../bootstrap-5.2.2/css/bootstrap.min.css"/>
+    <script src="https://kit.fontawesome.com/82727f4033.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/1c020da525.js" crossorigin="anonymous"></script>
-    <link href='https://fonts.googleapis.com/css?family=Archivo Black' rel='stylesheet'> 
-
+    <link rel="stylesheet" href="https://kit.fontawesome.com/82727f4033.css" crossorigin="anonymous">
+    
+    <link href='https://fonts.googleapis.com/css?family=Archivo Black' rel='stylesheet'>  
 </head>
-
-<style>
-    body{
+    <style>
+      body{
         background-color: #E4E4E4;
         overflow-x:hidden ;
+        overflow-y: hidden;
     }
-    .nav-head{ 
+   .nav-head{ 
       background-color:#57744B ;
-      height: 55px;
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+      padding: 2%;
+      overflow: hidden;
+      height: 70px;
+      width: 100%;
+     top: 0;
     }
     .nav-links ul{
       display: flex;
       list-style-type: none;
-     
-    
+      font-size: medium;
     }
-    .nav-links li{  
+    .nav-links li{
       justify-content: end;
       font-family: 'Archivo Black';
       color: #FFDE59;
-      margin: 0% 5px;
+      margin: 0% 14px;
       cursor: pointer;
-      padding-top: 15px;
-      
-      
+      padding-top: 2%;
     }
     .nav-links li a{
       text-decoration: none;
       color:#FFDE59 ;
-      font-size: 30px;
     }
-    .category_list ul{
-        list-style-type: none;
-        padding: 0%;
-        display: block;
+    .nav-links li a:hover {
+      color: white;
     }
-    .category_list li{
-        cursor: pointer;
-        padding-top: 15px;
-        text-align: center;
-        font-weight: bold;
-        
+
+    /* columns */
+
+    .col {
+        grid-column: 1 1;
+        overflow: auto;
+        max-height: 100vh;
     }
+    .col_one {
+        grid-column: 1 1;
+        overflow: auto;
+        max-height: 100vh;
+    }
+
+    .col_one::-webkit-scrollbar {
+            width: 0 !important 
+    }
+
+    .col_two {
+        grid-column: 1 1;
+        overflow: auto;
+        max-height: 110vh;
+    }
+
+    .col_two::-webkit-scrollbar {
+            width: 0 !important 
+    }
+
+    .main_col {
+        grid-column: 1 1;
+        overflow: auto;
+        max-height: 100vh;
+        overflow-y: scroll  ;
+        width: 100%;
+        z-index: 0;
+        height: 100%;
+    }
+
+    .main_col::-webkit-scrollbar {
+            width: 1 !important 
+            
+    }
+    
+
+    .col_three {
+        grid-column: 1 1;
+        overflow: auto;
+        max-height: 100vh;
+        overflow-y: scroll  ;
+    }
+
+    .col_three::-webkit-scrollbar {
+            width: 0 !important 
+            
+    }
+ 
+
+/* column one */
+    .user_cover{
+      height: 130px;
+    }
+    .weather{
+        width: 20rem; 
+        background-image: url(/img/Weather/weather.jpg);
+        color: white;
+    }
+    .forecast_btn {
+
+      height: 40px;
+      width: 200px;
+      font-size: 20px;
+      text-align: center;
+      cursor: pointer;
+      outline: none;
+      color: black;
+      background-color:  rgba(255, 255, 255, 0.5);
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 5px #999;
+    }
+
+    .forecast_btn:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .forecast_btn:active {
+      background-color: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    } 
+
+    .days_forecast{
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 10px; height: 130px;
+        margin-right: 3px;
+        margin-left: 3px;align-items: center;
+        color: black;
+    }
+
+    /* .days{
+        color: black;
+    } */
+   
+/* column two */
+    /* post */
     .post_area{
         margin-left: 20px;
         border: 1px solid black;
@@ -82,84 +184,28 @@
         width: 80px;
         background-color:#57744B;
     }
-
-    .feed_post{
-        width: 45rem;
-         margin-top: 20px; 
-         /* margin-left: 20px;
-         margin-right: 100px;  */
-         display: block;
+    .attach_img input{
+      display: none;
     }
 
-    .feed_post h3{
-        margin-top: 5px;
-        margin-left: 10px;
+    .attach_img{
+      font-size: 20px;
+      margin-right: 10px;
+      color: black;
+    
     }
-    .post_caption p{
-        margin-left: 50px;
-        font-size: 20px;
-    }
-  
-    .content_1{
-        padding: 1%;
-        height: 200px;
-        width: 300px;
-        border-radius: 20px;
-    }
-    .content_2{
-        padding: 1%;
-        height: 200px;
-        width: 300px;
-        border-radius: 20px;
-    }
-    .content_3{
-        padding: 1%;
-        height: 200px;
-        width: 300px;
-        border-radius: 20px;
-    }
-    .content_4{
-        padding: 1%;    
-        height: 200px;
-        width: 300px;
-        border-radius: 20px;
+    .attach_vid input{
+      display: none;
     }
 
-    .reactions ul{
-      display: flex;
-      list-style-type: none;
-      /* float: right; */
-    justify-content: end;
-    margin-right: 50px;
-    }
-    .reactions li{  
-      
-      margin: 0% 5px;
-      cursor: pointer;
-      padding-top: 15px;
+    .attach_vid{
+      font-size: 20px;
+      margin-right: 10px;
+      color: black;
     }
 
-    .comment_btn{
-        font-size: 25px;
-        border: transparent; 
-        background-color: transparent;
-    }
-    .comment_btn:hover{
-        color: blue;
-    }
-
-    .react_btn{
-        font-size: 25px;
-        border: transparent; 
-        background-color: transparent;
-       
-    }
-    .react_btn:hover{
-        color: red;
-    }
-    .comment{
-        justify-content: center;
-    }
+    
+    /* Comment Box */
     .comment_area{
         margin-left: 20px;
         border: 1px solid black;
@@ -167,247 +213,411 @@
         width: 70%;
         resize: none;
         border-radius: 10px;
-        padding-top: 5px;
+        /* padding-top: 10px; */
         padding-left: 10px;
         /* text-align:end; */
-      align-items: center;
         
     }
-    .post_comment_btn2{
+    .comment_area::placeholder{
+        
+        font-size: larger;
+        font-weight: 8px;
+    }
+
+    .comment_btn{
         float: right; 
         border-radius: 15px; 
-        margin-top: 2px;
+        /* margin-top: 2px; */
         margin-left: 20px;
         height: 40px;
-        width: 60px;
+        width: 70px;
         background-color:#57744B;
     }
-    .weather_feed{
-        background-image: url(/img/weather/weather.jpg);
-      
-        height: 410px;
+    /* feed profile */
+    .feed_profile_picture{
+    text-align: center;
     }
-    .location_date{
-        color: white;
-        margin-bottom: 1%;
-    }
-    .curr_weather{
-        margin-top: 5px;
-       margin-left: 30px;
-        color: white;
-    }
-    .temperature{
-        color: white;
-        margin-top: 40px;
-    }
-    /* .forecast_btn{
-       
-        border-radius: 15px; 
-        height: 40px;
-        width: 200px;
-        background-color:#FFDE59;
-        color: black;
-        font-weight: bold;
-    }
-    .forecast_btn:hover{
 
-    } */
-    .forecast_btn {
-  /* padding: 15px 25px; */
-  height: 40px;
-  width: 200px;
-  font-size: 20px;
-  text-align: center;
-  cursor: pointer;
-  outline: none;
-  color: black;
-  background-color:  rgba(255, 255, 255, 0.5);
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 5px #999;
-}
+    .feed_profile_picture img {
+        border-radius: 50px;
+        height: 100px;
+        width: 100px;
+        }
 
-.forecast_btn:hover {
-    background-color: rgba(255, 255, 255, 0.5);
-}
+    .feed_user_info{
+        text-align: center;
+    }
+    </style>
 
-.forecast_btn:active {
-  background-color: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-</style>
-
+    
+   
 <body>
-    <div class="nav-head d-flex justify-content-between align-items-center " >
-        <h1 style="color: #FFDE59;font-family: 'Archivo Black'; font-size: 23">FarmBook</h1>
+    <div class="nav-head d-flex justify-content-between align-items-center position-fixed" >
+        <h1 style="color: #FFDE59;font-family: 'Archivo Black';">FarmBook</h1>
+      
         <div class="nav-links me-2">
           <ul>
-            <li><a href="#"><i class="fa-solid fa-house"></i></a></li>
-            <li><a href="#"><i class="fa-solid fa-message"></i></a></li>
-            <li><a href="#"><i class="fa-solid fa-bell"></i></a></li> 
-            <li><a href="#"><i class="fa-solid fa-book"></i></a></li> 
-            <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li> 
-            <li><div class="avatar" ><img src="/profile.jpg" alt="user" style="height:35px; width: 35px; border-radius: 50%;"></div></li>
-            
+            <li><a class="active" href="homepage.html"><i class="fa fa-fw fa-home fa-2x"></i>Home</a></li>
+            <li><a class ="active" href="aboutpage.html"><i class="fa fa-fw fa-circle-info fa-2x"></i>About Us</a></li>
+            <li><a class ="active" href="e-learning.html"><i class="fa fa-fw fa-book fa-2x"></i>E-Learning</a></li>
+            <li><a class ="active" href="contact.html"><i class="fa fa-fw fa-phone fa-2x"></i>Contact</i></a></li>
           </ul>
         </div>
     </div>
-
-    <div class="row">
-       
-            <div class="col-3">
-                <div class="card " style="width: 25rem; margin-top: 20px;margin-left: 20px;">
-           
-                    <img src="/bgfeed.jpg" class="card-img-top" alt="...">
-                    <div class="avatar"><img src="/profile.jpg"  alt="user" style="height:80px; width: 80px; border-radius: 50%; position:absolute; right: 160px; top: 150px;"></div>
-                
-                <div class="card-body">
-                  
-                  <h5 class="card-title mt-5 text-center" >Coco Martin</h5>
-                  
-                </div>
-                </div>
     
-                <div class="card " style="width: 25rem; margin: 20px;margin-left: 20px;">
-            
-                        <div class="card-header" style="background-color: #57744B;">
-                            <h3 style="color: black; text-align: center; margin-top: 5px;">Categories</h3>
-                        </div>
-                    <div class="card-body category_list">
-                    
-                    <ul>
-                        <li>Grains/Cereal</li>
-                        <li>Legumes/Pulses</li>
-                        <li>Root</li>
-                        <li>Leafy</li>
-                        <li>Crops for industrial processing</li>
-                    </ul>
-                    
-                    </div>
-                </div>
-    
-            </div> 
-            <div class="col-6" >
-                <div class="card mx-2" style="width: 52rem; margin-top: 20px;">
-                    <div class="card-body">
-                        <div class="post d-flex">
-                            <div class="avatar"><img src="/profile.jpg"  alt="user" style="height:50px; width: 50px; border-radius: 50%; "></div>
-                            <textarea class="post_area" name="" id="" cols="30" rows="10" placeholder="Say something" ></textarea>
-                    
-                            <div class="postBtn">
-                                        <button type="button " class="post_btn">Post</button>
-                            </div>      
-                        </div>
-                    </div>
-                    
-                    </div>
-
-                    <div class="card feed_post mx-2"style="width: 52rem;"; >
-                    <div class="card-body">
-                        <div class="post_user d-flex">
-                            <div class="avatar"><img src="/profile.jpg"  alt="user" style="height:50px; width: 50px; border-radius: 50%; "></div>
-                            <h3>Coco Martin</h3>     
-                        </div>
-                        <div class="post_caption">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-
-                        <div class="post_content">
-                            <div class="row d-flex justify-content-center" >
-                                
-                                    <img class="content_1" src="/img/Vegetables/carrots.jpg" alt="">
-                               
-                                    <img class="content_2" src="/img/Vegetables/brocolli.jpg" alt="">
-                              
-                            </div>
-                            <div class="row d-flex justify-content-center mt-1" >
-                                
-                                <img class="content_3" src="/img/Vegetables/brocolli.jpg" alt="">
-                           
-                                <img class="content_4" src="/img/Vegetables/tomato.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="reactions">
-                            <ul>
-                                <li><button type="button" class="comment_btn" ><i class="fa-regular fa-comment"></i></button></li>
-                                <li><button type="button" class="react_btn"><i class="fa-regular fa-heart"></i></button></li>
-                            </ul>
-                        </div>
-                        <hr>
-                        <div class="comment d-flex">
-                            <div class="avatar"><img src="/profile.jpg"  alt="user" style="height:45px; width: 45px; border-radius: 50%; "></div>
-                            <textarea class="comment_area" name="" id="" cols="30" rows="10" placeholder="comment" ></textarea>
-                    
-                            <div class="post_comment_btn">
-                                        <button type="button " class="post_comment_btn2">Reply</button>
-                            </div>      
-                        </div>
-
-                    </div>
-                    
-                    </div>
-
-                </div>
-                <div class="col-3" >
-                    <div class="card weather_feed mx-2" style="width: 23rem; margin-top: 20px; margin-left: 20px;margin-right: 10px;">
-               
-                    <div class="card-body">
-                        
-                        <div class="location_date">
-                            <h4>Nasugbu,Batangas</h4>
-                            <h5>February 21, 2023</h5>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="curr_weather">
-                                    <img src="/img/Weather/Partly_cloudy.png" alt="" style="height: 80px;width: 80px;">
-                                    <h5>Partly cloudy</h5>
-                                </div>
-
-                            </div>
-                            <div class="col-6">
-                                <div class="temperature">
-                                    <h1>25.0°C</h1>
-                                </div>  
-                             </div>
-                      
-                        </div>
-                        <div class="row 3day_forecast" style="background-color: rgba(255, 255, 255, 0.5);border-radius: 25px; height: 130px;margin-right: 3px;margin-left: 3px;align-items: center;">
-                            
-                                <div class="col-4 day1 mt-3">
-                                    <img src="/img/Weather/Partly_cloudy.png" alt="" style="height: 50px;width: 50px;">
-                                    <h5 style="font-size: 13px;">Partly cloudy</h5>
-                                    <h5 style="font-size: 20px; font-weight: bold;">Sat</h5>
-                                </div>
-                                <div class="col-4 day2 mt-3">
-                                    <img src="/img/Weather/Partly_cloudy.png" alt="" style="height: 50px;width: 50px;">
-                                    <h5 style="font-size: 13px;">Partly cloudy</h5>
-                                    <h5 style="font-size: 20px; font-weight: bold;">Sun</h5>
-                                </div>
-                                <div class="col-4 day3 mt-3">
-                                    <img src="/img/Weather/Partly_cloudy.png" alt="" style="height: 50px;width: 50px;">
-                                    <h5 style="font-size: 13px;">Partly cloudy</h5>
-                                    <h5 style="font-size: 20px; font-weight: bold;">Mon</h5>
-                                </div>
-                        </div>
-
-                        <div class="row see_forecast mt-3" style="justify-content: center;">
-                            <button type="button" class="forecast_btn">See full forecast</button>
-                        </div>
-
-                    
-                   
-                    </div>
-                </div>
-       
-
-          
-       
     </div>
-   
-      
+    
+        <div class="container-fluid position-fixed" style="height: 100%;">
+            <section class="main_col d-flex" style="margin-top: 70px;">
+                <div class="col-3 sticky-top">
+                    <!-- <div class="card mx-auto" style="width: 20rem;">
+                        <img src="/img/bg/bg2.jpg" class="user_cover card-img-top" alt="..." >
+                        <div class="avatar"><img src="/img/profile pics/profile2.png"  alt="user" style="height:80px; width: 80px; border-radius: 50%; position:absolute; right: 180px; top: 90px;"></div>
+                  
+                        <div class="card-body">
+                          <h5 class="card-title mt-5 text-center" >Cocos Martin</h5>
+                          <p class="user_farm_loc text-center"><i class="fa-light fa-location-dot"></i>Farm, Bukid</p>
+                          
+                        </div>
+                      </div> -->
+                      <style>
+                        
+                        
+                      
+                      </style>
+                    <div class="card mx-auto mt-3" style="width: 20rem;">
+                        <div class="feed_profile_picture mt-3">
+                            <img src="/img/profile pics/profile2.png" alt="">
+                        </div>
+                        <div class="feed_user_info">
+                            <h4>Izuku Midoriya</h4>
+                        
+                            <h4><i class="fa-sharp fa-solid fa-location-dot"></i> Nasugbu, Batangas</h4>
+                        </div>
+                      
+                        
+                    </div>
+                    
+                      <div class="card weather mx-auto mt-3" >
+                        <div class="card-body">
+                                    
+                          <div class="location_date">
+                              <h4>Nasugbu,Batangas</h4>
+                              <h5>February 21, 2023</h5>
+                          </div>
+                          
+                          <div class="row">
+                              <div class="col-6">
+                                  <div class="curr_weather">
+                                      <img src="/img/Weather/Partly_cloudy.png" alt="" style="height: 80px;width: 80px;">
+                                      <h5>Partly cloudy</h5>
+                                  </div>
+            
+                              </div>
+                              <div class="col-6">
+                                  <div class="temperature">
+                                      <h1>25.0°C</h1>
+                                  </div>  
+                               </div>
+                        
+                          </div>
+                          <div class="row days_forecast" >
+                              
+                                  <div class="col-4 day1 mt-3">
+                                      <img src="/img/Weather/Partly_cloudy.png" alt="" style="height: 50px;width: 50px;">
+                                      <h5 style="font-size: 13px;">Partly cloudy</h5>
+                                      <h5 style="font-size: 20px; font-weight: bold;">Sat</h5>
+                                  </div>
+                                  <div class="col-4 day2 mt-3">
+                                      <img src="/img/Weather/Partly_cloudy.png" alt="" style="height: 50px;width: 50px;">
+                                      <h5 style="font-size: 13px;">Partly cloudy</h5>
+                                      <h5 style="font-size: 20px; font-weight: bold;">Sun</h5>
+                                  </div>
+                                  <div class="col-4 day3 mt-3">
+                                      <img src="/img/Weather/Partly_cloudy.png" alt="" style="height: 50px;width: 50px;">
+                                      <h5 style="font-size: 13px;">Partly cloudy</h5>
+                                      <h5 style="font-size: 20px; font-weight: bold;">Mon</h5>
+                                  </div>
+                          </div>
+            
+                          <div class="row see_forecast mt-3" style="justify-content: center;">
+                              <button type="button" class="forecast_btn">See full forecast</button>
+                          </div>
+            
+                      
+                     
+                      </div>
+                      </div>
+                </div>
 
+                <div class="col-6 mt-3" >
+                     <!-- post -->
+                <div class="card mx-auto" style="width: 38rem;">
+                    <div class="card-body">
+                      <div class="post d-flex">
+                          <div class="avatar"><img src="/img/profile pics/profile2.png"  alt="user" style="height:50px; width: 50px; border-radius: 50%; "></div>
+                          <textarea class="post_area" name="" id="" cols="30" rows="10" placeholder="Say something" ></textarea>
+                  
+                          <div class="postBtn">
+                                      <button type="button " class="post_btn">Post</button>
+                          </div>  
+                           
+                      </div>
+                     
+                      <div class="attachments d-flex mt-2 ">
+                        
+                        <div class="attach_img ">
+                          <div class="image-upload d-flex">
+                            <label for="file-input" style="margin-right: 5px;">
+                              <i class="fa-regular fa-image"></i></label>
+                           
+                            <input class="insert_img" id="file-input" type="file" />
+                          </div>
+                        </div>
+        
+                        <div class="attach_img ">
+                          <div class="image-upload d-flex">
+                            <label for="file-input" style="margin-right: 5px;">
+                              <i class="fa-solid fa-video"></i>
+                            </label>
+                            <input class="insert_img" id="file-input" type="file" />
+                          </div>
+                        </div>
+        
+                      </div> 
+                  </div>
+                </div>
+
+            <!-- Post text only -->
+                <div class="card mx-auto mt-3" style="width: 38rem;">
+                
+                    <div class="post d-flex mt-3" style="margin-left: 10px;">
+                    
+                            <div class="col-1" style="margin-right: 10px;">
+                            <div class="avatar"><img src="/img/profile pics/profile.jpg"  alt="user" style="height:50px; width: 50px; border-radius: 50%; margin-right:20px ; "></div>
+                            </div>
+                            <div class="col-11">
+                            <h4 class="user_name mt-2">Coco Martin</h3>
+                            </div>
+
+                    </div>
+                        <div class="card-body">
+                        <div class="post_content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div> 
+
+                        <div class="reactions d-flex">
+                            <div class="col-6">
+                            <button class="btn" style="width: 250px;"><i class="fa-regular fa-heart"></i></button>
+                            </div>
+                            <div class="col-6">
+                            <button class="btn" style="width: 250px;"><i class="fa-regular fa-comment"></i></button>
+                            </div>
+                        </div>
+
+                        
+                        <div class="comment_box d-flex mt-3">
+                            <div class="avatar"><img src="/img/profile pics/profile2.png"  alt="user" style="height:40px; width: 40px; border-radius: 50%; "></div>
+                            <textarea class="comment_area" name="" id="" cols="30" rows="10" placeholder="Write a comment" ></textarea>
+                    
+                            <div class="commentBtn">
+                                        <button type="button " class="comment_btn">Post</button>
+                            </div>  
+                            
+                        </div>
+                        
+                            
+                        </div>
+                </div>
+            <!-- post with img -->
+                <div class="card mx-auto mt-3" style="width: 38rem;">
+          
+                    <div class="post d-flex mt-3" style="margin-left: 10px;">
+                      
+                        <div class="col-1" style="margin-right: 10px;">
+                          <div class="avatar"><img src="/img/profile pics/profile.jpg"  alt="user" style="height:50px; width: 50px; border-radius: 50%; margin-right:20px ; "></div>
+                        </div>
+                        <div class="col-11">
+                          <h4 class="user_name mt-2">Coco Martin</h3>
+                        </div>
+      
+                    </div>
+                    <div class="card-body">
+                      <div class="post_content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        
+                        <div class="post_attachments">
+                            <div class="row d-flex justify-content-center">
+                              
+                              <img class="post_img" id="myImg1" src="/img/Vegetables/cabbage.jpg"  style="width:250px;height: 150px;">
+                            
+                              <img class="post_img" id="myImg2" src="/img/Vegetables/eggplant.jpg"  style="width:250px;height: 150px;">
+                            
+                            </div>
+                            <div class="row mt-2 d-flex justify-content-center">
+                              
+                              <img class="post_img" id="myImg3" src="/img/Vegetables/brocolli.jpg"  style="width:250px;height: 150px;">
+                            
+                          
+                              <img class="post_img" id="myImg4" src="/img/Vegetables/tomato.jpg"  style="width:250px;height: 150px;">
+                            
+                            </div>
+      
+                            <div id="myModal" class="modal">
+                              <span class="close">&times;</span>
+                              <img class="modal-content" id="img01">
+                              <div id="caption"></div>
+                            </div>
+      
+      
+                        </div>
+      
+                      </div> 
+      
+                      <div class="reactions d-flex mt-3">
+                        <div class="col-6" >
+                          <button class="btn" style="width: 250px;"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <div class="col-6">
+                          <button class="btn" style="width: 250px;"><i class="fa-regular fa-comment"></i></button>
+                        </div>
+                      </div>
+      
+                      
+                      <div class="comment_box d-flex mt-3">
+                        <div class="avatar"><img src="/img/profile pics/profile2.png"  alt="user" style="height:40px; width: 40px; border-radius: 50%; "></div>
+                        <textarea class="comment_area" name="" id="" cols="30" rows="10" placeholder="Write a comment" ></textarea>
+                
+                        <div class="commentBtn">
+                                    <button type="button " class="comment_btn">Post</button>
+                        </div>  
+                         
+                    </div>
+                      
+                        
+                      </div>
+                  </div>
+
+                   <!-- post with img -->
+                <div class="card mx-auto mt-3" style="width: 38rem;">
+          
+                    <div class="post d-flex mt-3" style="margin-left: 10px;">
+                      
+                        <div class="col-1" style="margin-right: 10px;">
+                          <div class="avatar"><img src="/img/profile pics/profile.jpg"  alt="user" style="height:50px; width: 50px; border-radius: 50%; margin-right:20px ; "></div>
+                        </div>
+                        <div class="col-11">
+                          <h4 class="user_name mt-2">Coco Martin</h3>
+                        </div>
+      
+                    </div>
+                    <div class="card-body">
+                      <div class="post_content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        
+                        <div class="post_attachments">
+                            <div class="row d-flex justify-content-center">
+                              
+                              <img class="post_img" id="myImg1" src="/img/Vegetables/cabbage.jpg"  style="width:250px;height: 150px;">
+                            
+                              <img class="post_img" id="myImg2" src="/img/Vegetables/eggplant.jpg"  style="width:250px;height: 150px;">
+                            
+                            </div>
+                            <div class="row mt-2 d-flex justify-content-center">
+                              
+                              <img class="post_img" id="myImg3" src="/img/Vegetables/brocolli.jpg"  style="width:250px;height: 150px;">
+                            
+                          
+                              <img class="post_img" id="myImg4" src="/img/Vegetables/tomato.jpg"  style="width:250px;height: 150px;">
+                            
+                            </div>
+      
+                            <div id="myModal" class="modal">
+                              <span class="close">&times;</span>
+                              <img class="modal-content" id="img01">
+                              <div id="caption"></div>
+                            </div>
+      
+      
+                        </div>
+      
+                      </div> 
+      
+                      <div class="reactions d-flex mt-3">
+                        <div class="col-6" >
+                          <button class="btn" style="width: 250px;"><i class="fa-regular fa-heart"></i></button>
+                        </div>
+                        <div class="col-6">
+                          <button class="btn" style="width: 250px;"><i class="fa-regular fa-comment"></i></button>
+                        </div>
+                      </div>
+      
+                      
+                      <div class="comment_box d-flex mt-3">
+                        <div class="avatar"><img src="/img/profile pics/profile2.png"  alt="user" style="height:40px; width: 40px; border-radius: 50%; "></div>
+                        <textarea class="comment_area" name="" id="" cols="30" rows="10" placeholder="Write a comment" ></textarea>
+                
+                        <div class="commentBtn">
+                                    <button type="button " class="comment_btn">Post</button>
+                        </div>  
+                         
+                    </div>
+                      
+                        
+                      </div>
+                  </div>
+                </div>
+                
+                <style>
+                   .search_category_box{
+                     justify-content: center;
+                   }
+                  
+                </style>
+
+                <div class="col-3 col_two  sticky-top">
+                    <div class="card mx-auto mt-3" style="width: 22rem;">
+                        <div class="card-body">
+                            <div class="search_category_box d-flex mt-3">
+                                <!-- <textarea class="search_category_area" name="" id="" cols="30" rows="10" placeholder="Write a comment" ></textarea> -->
+                                <!-- <input type="text" class="search_category_area"  placeholder="Search">
+                                <button type="button " class="search_category_btn">Post</button> -->
+
+                                <form action="#" class="search_category d-flex " >
+                                    <input type="text" class="search_category_area"  placeholder="Search.." name="search">
+                                    <button type="submit" class="search_category_btn"><i class="fa fa-search"></i></button>
+                                  </form>
+                              
+                                
+                            </div> 
+                            <div class="category_list mt-2">
+                                <h3>CATEGORIES</h3>
+                                <form action="/action_page.php">
+                                   
+                                    <input type="radio" id="html" name="fav_language" value="Grains/Cereals">
+                                    <label for="Grains/Cereals">Grains/Cereals</label><br>
+                                    <input type="radio" id="css" name="fav_language" value="Legumes/pulses">
+                                    <label for="Legumes/pulses">Legumes/pulses</label><br>
+                                    <input type="radio" id="javascript" name="fav_language" value="Leafy">
+                                    <label for="Leafy">Leafy</label>
+                                  
+                                  
+                                    <br>  
+                                  
+                                
+                                  </form>
+                            </div>
+                      </div>
+                    </div>
+    
+            
+              
+           
+            </section>
+        </div>
+            
+           
+    </div>
+  
 </body>
 </html>
