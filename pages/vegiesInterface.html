@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Vegetables</title>
+      
+      <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="../bootstrap-5.2.2/css/bootstrap.min.css"/>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+      <link href='https://fonts.googleapis.com/css?family=Archivo Black' rel='stylesheet'>
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+      <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+      <script src="https://kit.fontawesome.com/1c020da525.js" crossorigin="anonymous"></script> -->
+
+      <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap.min.css"/>
+      <script src="https://kit.fontawesome.com/1c020da525.js" crossorigin="anonymous"></script>
+      <link href='https://fonts.googleapis.com/css?family=Archivo Black' rel='stylesheet'> 
+<!-- 
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script src ="js/vendor/bootstrap.min.js"></script> -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+  
+  </head>
+
+  <body>
+    
+    <style>
+
+        .nav-head{ 
+          background-color:#57744B ;
+          display: flex;
+          justify-content: space-between;
+          box-sizing: border-box;
+          padding: 1%;
+          overflow: hidden;
+        }
+        .nav-links ul{
+          display: flex;
+          list-style-type: none;
+          font-size: medium;
+        }
+        .nav-links li{
+          justify-content: end;
+          font-family: 'Archivo Black';
+          color: #FFDE59;
+          margin: 0% 14px;
+          cursor: pointer;
+          padding-top: 2%;
+        }
+        .nav-links li a{
+          text-decoration: none;
+          color:#FFDE59 ;
+        }
+        .nav-links li a:hover {
+          color: white;
+        }
+        .header{
+        background-image: linear-gradient(rgba(1,2,2,0.4),rgba(0,1,1,0.4)), url('/img/vegetables/vegies-bg.jpeg');
+        background-size: cover;
+        background-position: center;
+        font-family: sans-serif;
+        background-repeat: no-repeat;
+        position: relative;
+        min-height: 70vh;
+        background-attachment: fixed;
+        width: 100%; 
+        margin-bottom: 5%;
+        }
+        .text-box{
+        width: 90%;
+        color: #000000;
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        }
+        .text-box h2 {
+        font-size: 60px;
+        padding-bottom: 40px;
+        color: #fff;
+        }
+</style>
+
+
+
+<section class="header">
+    <div class="nav-head d-flex justify-content-between align-items-center " >
+        <h1 style="color: #FFDE59;font-family: 'Archivo Black';">FarmBook</h1>
+
+        <div class="nav-links me-2">
+          <ul>
+            <li><a class="active" href="mainpage.html"><i class="fa fa-fw fa-home fa-2x"></i>Home</a></li>
+            <li><a class ="active" href="aboutUs.html"><i class="fa fa-fw fa-circle-info fa-2x"></i>About Us</a></li>
+            <li><a class ="active" href="e-learning.html"><i class="fa fa-fw fa-book fa-2x"></i>E-Learning</a></li>
+            <li><a class ="active" href="#"><i class="fa fa-fw fa-phone fa-2x"></i>Contact</i></a></li>
+         </ul>
+    </div>
+  </div>
+
+  <div class="text-box">
+    <h2> <b><br>Vegetables</b></h2>
+  
+  </div>
+  
+</section>
+
+<div class="container">
+  <h1 class="fruit-header">VEGETABLES</h1>
+  <div class="vegetables-gallery">
+    <div class="pic cabbage">
+          <figure class="effect-ming tm-pic-item">
+              <img src ="/img/vegetables/cabbage.jpg" alt="Image" class="img-fluid"> 
+              <figcaption class="d-flex align-items-center justify-content-center">
+                <h2>Cabbage</h2>
+                  <a href="photo-detail.html">View more</a>
+            </figcaption>                
+          </figure>
+     </div>
+        <div class="pic carrot">
+          <figure class="effect-ming tm-pic-item">
+              <img src="/img/vegetables/carrot.jpg" alt="Image" class="img-fluid">
+              <figcaption class="d-flex align-items-center justify-content-center">
+                  <h2>Carrot</h2>
+                  <a href="photo-detail.html">View more</a>
+              </figcaption>                    
+          </figure>
+    </div>
+        <div class="pic cabbage">
+          <figure class="effect-ming tm-pic-item">
+              <img src="/img/vegetables/eggplant.jpg" alt="Image" class="img-fluid">
+              <figcaption class="d-flex align-items-center justify-content-center">
+                  <h2>Eggplant</h2>
+                  <a href="photo-detail.html">View more</a>
+                </figcaption>                    
+            </figure>
+            </div>
+        <div class="pic raddish">
+            <figure class="effect-ming tm-pic-item">
+                <img src="/img/vegetables/raddish.jpg" alt="Image" class="img-fluid">
+                <figcaption class="d-flex align-items-center justify-content-center">
+                    <h2>raddish</h2>
+                    <a href="photo-detail.html">View more</a>
+                </figcaption>                    
+            </figure>
+            </div>
+            <div class="pic brocolli">
+            <figure class="effect-ming tm-pic-item">
+                <img src="/img/vegetables/brocolli-bg.jpeg" alt="Image" class="img-fluid">
+                <figcaption class="d-flex align-items-center justify-content-center">
+                    <h2>Brocolli</h2>
+                    <a href="photo-detail.html">View more</a>
+                </figcaption>                    
+            </figure>
+        </div>
+        <div class="pic tomato">
+            <figure class="effect-ming tm-pic-item">
+                <img src="/img/vegetables/tomato-bg.jpg" alt="Image" class="img-fluid">
+                <figcaption class="d-flex align-items-center justify-content-center">
+                    <h2>Cabbage</h2>
+                    <a href="photo-detail.html">View more</a>
+                </figcaption>                    
+            </figure>
+        </div>
+        <div class="pic onion">
+        <figure class="effect-ming tm-pic-item">
+            <img src="/img/vegetables/onion-bg.jpg" alt="Image" class="img-fluid">
+            <figcaption class="d-flex align-items-center justify-content-center">
+                <h2>Onion</h2>
+                <a href="photo-detail.html">View more</a>
+            </figcaption>                    
+        </figure>
+    </div>
+    <div class="pic ginger">
+        <figure class="effect-ming tm-pic-item">
+            <img src="/img/vegetables/ginger-bg.jpeg" alt="Image" class="img-fluid">
+            <figcaption class="d-flex align-items-center justify-content-center">
+                <h2>Ginger</h2>
+                <a href="photo-detail.html">View more</a>
+            </figcaption>                    
+        </figure>
+    </div>
+    <div class="pic caulliflower">
+    <figure class="effect-ming tm-pic-item">
+        <img src="/img/vegetables/caulliflower-bg.jpeg" alt="Image" class="img-fluid">
+        <figcaption class="d-flex align-items-center justify-content-center">
+            <h2 style="font-size: 20px;">Caulliflower</h2>
+            <a href="photo-detail.html">View more</a>
+        </figcaption>                    
+    </figure>
+    </div>
+    <div class="pic pumpkin">
+    <figure class="effect-ming tm-pic-item">
+        <img src="/img/vegetables/pumpkin-bg.jpeg" alt="Image" class="img-fluid">
+        <figcaption class="d-flex align-items-center justify-content-center">
+            <h2>Pumpkin</h2>
+            <a href="photo-detail.html">View more</a>
+        </figcaption>                    
+    </figure>
+    </div>
+    <div class="pic bellpepper">
+    <figure class="effect-ming tm-pic-item">
+        <img src="/img/vegetables/bellpepper-bg.jpeg" alt="Image" class="img-fluid">
+        <figcaption class="d-flex align-items-center justify-content-center">
+            <h2 style="font-size: 20px;">Bellpepper</h2>
+            <a href="photo-detail.html">View more</a>
+        </figcaption>                    
+    </figure>
+    </div>
+    <div class="pic cucumber">
+    <figure class="effect-ming tm-pic-item">
+        <img src="/img/vegetables/cucumber-bg.jpeg" alt="Image" class="img-fluid">
+        <figcaption class="d-flex align-items-center justify-content-center">
+            <h2>Cucumber</h2>
+            <a href="photo-detail.html">View more</a>
+        </figcaption>                    
+    </figure>
+    </div>
+        </div>
+    
+        
+        <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        input{
+            display: none;
+        }
+        .container{
+            width: 90%;
+            text-align: center;
+        }
+        .fruit-header{
+            font-weight: normal;
+            font-size: 35px;
+            position: relative;
+            margin: 40px 0;
+            margin-bottom: 5%;
+            margin-left: 9%;
+        }
+        .fruit-header::before{
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background-color: crimson;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: animate 4s linear infinite;
+        }
+        .vegetables-gallery{
+            width: 100%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px;
+            margin-left: 6%;
+        }
+        .pic{
+            position: relative;
+            height: 230px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .pic img{
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .tm-pic-item {
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            cursor: pointer;
+            height: 240px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 5px lightgray;
+        }
+        .tm-pic-item img {
+            min-height: 100%;
+            max-width: 100%;
+            opacity: 0.8;
+            border-radius: 10px;
+            transition: .5s;
+        }
+        .tm-pic-item figcaption {
+            padding: 5em;
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 1.25em;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        .tm-pic-item figcaption::before,
+        .tm-pic-item figcaption::after {
+            pointer-events: none;
+        }
+
+        .tm-pic-item figcaption,
+        .tm-pic-item figcaption > a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .tm-pic-item figcaption > a {
+            z-index: 1000;
+            text-indent: 200%;
+            white-space: nowrap;
+            font-size: 0;
+            opacity: 0;
+        }
+
+        .tm-pic-item h2 {
+            word-spacing: -0.15em;
+            font-weight: 300;
+        }
+
+        .tm-pic-item h2,
+        .tm-pic-item p {
+            margin: 0;
+        }
+
+        .tm-pic-item p {
+            letter-spacing: 1px;
+            font-size: 68.5%;
+        }
+
+        .tm-gallery div.d-block { animation: show .5s ease; }
+
+        @keyframes show {
+            0% {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        figure.effect-ming {
+            background: #030c17;
+        }
+
+        figure.effect-ming img {
+            opacity: 0.9;
+            -webkit-transition: opacity 0.35s;
+            transition: opacity 0.35s;
+        }
+
+        figure.effect-ming figcaption::before {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            bottom: 30px;
+            left: 30px;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 30px rgba(255,255,255,0.2);
+            content: '';
+            opacity: 0;
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            -webkit-transform: scale3d(1.4,1.4,1);
+            transform: scale3d(1.4,1.4,1);
+        }
+
+        figure.effect-ming h2 {
+            font-size: 1.3em;
+            opacity: 0;
+            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+            transition: opacity 0.35s, transform 0.35s;
+            -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+        }
+
+        figure.effect-ming:hover figcaption::before,
+        figure.effect-ming:hover h2 {
+            opacity: 1;
+            -webkit-transform: scale3d(1,1,1);
+            transform: scale3d(1,1,1);
+        }
+
+        figure.effect-ming:hover figcaption { background-color: rgba(58,52,42,0); }
+        figure.effect-ming:hover img { opacity: 0.4; }
+        i {
+            font-style: italic;
+        }
+
+
+        </style>
+
+<script>
+  var loader = document.getElementById("preloader");
+
+  window.addEventListener("load", function()
+  {
+    loader.style.display ="none";
+  })
+
+</script>
+
+
+</body>
+</html>
