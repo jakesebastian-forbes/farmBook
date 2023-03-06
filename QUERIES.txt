@@ -1,21 +1,21 @@
 MESSAGES
-SELECT context AS messages, CONCAT(accounts.firstName, ' ', accounts.lastName) AS Sender, CONCAT(accounts.firstName, ' ', accounts.lastName) AS Reciever, messages.dateTime AS 'Date and Time' FROM messages INNER JOIN accounts ON messages.receiver_id AND messages.sender_id = accounts.id;
+SELECT CONCAT(a.firstName, ' ', a.lastName) AS Sender, context AS messages,
+CONCAT(b.firstName, ' ', b.lastName) AS Reciever, messages.dateTime AS 'Date and Time'
+FROM messages
+INNER JOIN accounts a ON messages.sender_id = a.id
+INNER JOIN accounts b ON messages.receiver_id = b.id
 
 (DATE BECAME FRIENDS
 LIST OF FRIEND REQUESTS)
-SELECT CONCAT(accounts.firstName,' ', accounts.lastName) AS 'FRIENDS', dateTime
-FROM socials
-INNER JOIN accounts ON socials.user2_id = accounts.id
-WHERE socials.user1_id = 1
+
 
 LIST OF BLOCKED FRIENDS
-SELECT CONCAT(accounts.firstName,' ', accounts.lastName) AS 'BLOCKED', dateTime FROM blocked_friends INNER JOIN accounts ON blocked_friends.blockedUser_id = accounts.id WHERE blocked_friends.user_id = 1;
+
 
 INTERACTIONS IN A CERTAIN POST
 
 
 POST
-SELECT CONCAT(accounts.firstName,' ', accounts.lastName) AS Creator, caption, dateTime as 'Date and Time', hashtag, categories.ctgryName FROM postings INNER JOIN accounts ON postings.acc_id = accounts.id INNER JOIN categories ON postings.category_id = categories.id WHERE postings.id = 1;
 
 
 REQUIREMENTS FOR FARMERS
