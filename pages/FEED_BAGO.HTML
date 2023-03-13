@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../bootstrap-5.2.2/css/bootstrap.min.css"/>
+    <script src="https://kit.fontawesome.com/82727f4033.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/1c020da525.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://kit.fontawesome.com/82727f4033.css" crossorigin="anonymous">
+    
+    <link href='https://fonts.googleapis.com/css?family=Archivo Black' rel='stylesheet'> 
+
+</head>
+    <style>
+         body{
+        background-color: #E4E4E4;
+        overflow: hidden;
+        overflow-x:hidden;
+        /* overflow-y: scroll; */
+       /* margin-top: 10px; */
+       /* position: sticky; */
+    }
+   .nav-head{ 
+      background-color:#57744B ;
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+      padding: 2%;
+      overflow: hidden;
+      height: 70px;
+      width: 100%;
+     top: 0;
+    }
+    .nav-links ul{
+      display: flex;
+      list-style-type: none;
+      font-size: medium;
+    }
+    .nav-links li{
+      justify-content: end;
+      font-family: 'Archivo Black';
+      color: #FFDE59;
+      margin: 0% 14px;
+      cursor: pointer;
+      padding-top: 2%;
+    }
+    .nav-links li a{
+      text-decoration: none;
+      color:#FFDE59 ;
+    }
+    .nav-links li a:hover {
+      color: white;
+    }
+    </style>
+
+<!-- SCROLL  -->
+<style>
+    .left_col {
+        grid-column: 1 1;
+    overflow: auto;
+    max-height: 100vh;
+    overflow-y: scroll  ;
+    position: sticky;
+     top: 0;
+    }
+
+    .left_col::-webkit-scrollbar {
+            width: 0 !important 
+            
+    }
+
+  .right_col {
+    grid-column: 1 1;
+    overflow: auto;
+    max-height: 100vh;
+    overflow-y: scroll  ;
+    position: sticky;
+     top: 0;
+    }
+
+    .right_col::-webkit-scrollbar {
+            width: 0 !important 
+            
+    }
+
+    .main_container {
+        /* background-color: #FFDE59; */
+    grid-column: 1 1;
+    overflow: auto;
+    max-height: 100vh;
+    overflow-y: scroll  ;
+    /* position: sticky;
+     top: 0; */
+    }
+
+    .main_container::-webkit-scrollbar {
+            width: 1 !important 
+            
+    }
+</style>
+
+<style>
+    /* left */
+  
+    .left_profile_card{
+        margin-top: 20px;
+        align-items: center;
+        text-align: center;
+        
+    }
+    .left_profile_card a{
+        text-decoration: none;
+        color: black;
+    }
+    .left_profile_card img{
+      
+        margin-top: 20px;
+        border-radius: 50px;
+        height: 100px;
+        width: 100px;
+    }
+
+    /* sidebar */
+    .left_sidebar{
+        margin-top: 18px;
+        background: white;
+        border-radius: 10px;
+        width: 16rem;
+        padding: 10px;
+        
+        
+       
+    }
+    .left_sidebar a{
+        text-decoration: none;
+        color: black;
+        display: block;
+    }
+    .left_sidebar i{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 1.4rem;
+        margin-left: 4rem;
+        position: relative;
+    }
+
+    .view_profile_btn{
+        margin-top: 20px;
+        border-radius: 10px;
+        background-color: #57744B;
+        width: 16rem;
+    }
+
+    .view_profile_btn:hover {
+        background-color: rgba(87,116,75, 0.5);
+    }
+
+    .view_profile_btn:active {
+      background-color: rgba(87,116,75, 0.5);
+      /* box-shadow: 0 5px #666; */
+      transform: translateY(4px);
+    } 
+   
+</style>
+
+<!-- Middle -->
+<style>
+    .middle_col{
+        margin-top: 20px;
+    }
+    .avatar img{
+        height: 50px;
+        width: 50px;
+        border-radius: 50px;
+        margin-right: 20px;
+    }
+   .post_area{
+    border-radius: 10px;
+    margin-right: 10px;
+   }
+   .post_btn{
+        height: 50px;
+        width: 80px;
+        background-color:#57744B;
+        border-radius: 10px;
+   }
+   .post_btn:hover {
+        background-color: rgba(87,116,75, 0.5);
+    }
+
+    .post_btn:active {
+        background-color: rgba(87,116,75, 0.5);
+        /* box-shadow: 0 5px #666; */
+        transform: translateY(4px);
+    } 
+
+      /*FEED  */
+    .feed{
+        border-radius: 10px;
+        background-color: white;
+        padding: 3%;
+    }
+    .post_user_info img{
+        height: 40px;
+        width:40px;
+        border-radius: 50px;
+        margin-right: 10px;
+    }
+    .post_content{
+        /* background-color: brown; */
+        padding-left:5%;
+    }
+
+    .post_content_img{
+        display: flex;
+        justify-content: space-between;
+        gap: 1px;
+        
+    }
+    .post_content_img img{
+        height: 200px;
+        width: 253px;
+        
+        
+    }
+    .heart_click_btn{
+        /* margin-top: 20px; */
+        border-radius: 10px;
+        border: none;
+        background-color: transparent;
+        color: black;
+        /* width: 16rem; */
+    }
+
+    .heart_click_btn:hover {
+        color: red;
+    }
+
+    .heart_click_btn:active {
+        transform: translateY(4px);
+    } 
+    
+    .comment_click_btn{
+        /* margin-top: 20px; */
+        border-radius: 10px;
+        border: none;
+        background-color: transparent;
+        color: black;
+        /* width: 16rem; */
+    }
+    .comment_click_btn:hover {
+        color: blue;
+    }
+
+    .comment_click_btn:active {
+        transform: translateY(4px);
+    } 
+
+    .comment_area{
+        border-radius: 10px;
+        margin-right: 10px;
+    }
+    .comment_btn{
+        height: 30px;
+        width: 80px;
+        background-color:#57744B;
+        border-radius: 10px;
+    }
+    .comment_btn:hover {
+        background-color: rgba(87,116,75, 0.5);
+    }
+
+    .comment_btn:active {
+        background-color: rgba(87,116,75, 0.5);
+        
+        transform: translateY(4px);
+    } 
+    
+</style>
+
+<!-- image modal style -->
+<style>
+    #myImg {
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    #myImg:hover {opacity: 0.7;}
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    }
+
+    /* Modal Content (image) */
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+    }
+
+    /* Caption of Modal Image */
+    #caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: #ccc;
+        padding: 10px 0;
+        height: 150px;
+    }
+
+    /* Add Animation */
+    .modal-content, #caption {  
+        -webkit-animation-name: zoom;
+        -webkit-animation-duration: 0.6s;
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    @-webkit-keyframes zoom {
+        from {-webkit-transform:scale(0)} 
+        to {-webkit-transform:scale(1)}
+    }
+
+    @keyframes zoom {
+        from {transform:scale(0)} 
+        to {transform:scale(1)}
+    }
+
+    /* The Close Button */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px){
+        .modal-content {
+            width: 100%;
+        }
+    }
+</style>
+
+<!-- RIGHT -->
+<style>
+    .days_forecast img{
+        height: 40px;
+        width: 40px;
+    }
+    .forecast_btn {
+        height: 40px;
+        width: 200px;
+        font-size: 20px;
+        text-align: center;
+        cursor: pointer;
+        outline: none;
+        color: black;
+        background-color:   #57744B;;
+        border: none;
+        border-radius: 15px;
+        /* box-shadow: 0 5px #999; */
+    }
+
+    .forecast_btn:hover {
+        background-color: rgba(87,116,75, 0.5);
+    }
+
+    .forecast_btn:active {
+        background-color: rgba(87,116,75, 0.5);
+        /* box-shadow: 0 5px #666; */
+        transform: translateY(4px);
+        } 
+  </style>
+
+<body>
+    <div class="nav-head d-flex justify-content-between align-items-center " >
+        <h1 style="color: #FFDE59;font-family: 'Archivo Black';">FarmBook</h1>
+      
+        <div class="nav-links me-2">
+          <ul>
+            <li><a class="active" href="homepage.html"><i class="fa fa-fw fa-home fa-2x"></i>Home</a></li>
+            <li><a class ="active" href="aboutpage.html"><i class="fa fa-fw fa-circle-info fa-2x"></i>About Us</a></li>
+            <li><a class ="active" href="e-learning.html"><i class="fa fa-fw fa-book fa-2x"></i>E-Learning</a></li>
+            <li><a class ="active" href="contact.html"><i class="fa fa-fw fa-phone fa-2x"></i>Contact</i></a></li>
+          </ul>
+        </div>
+    </div>
+
+
+    </div>
+
+    <div class="container-fluid main_container ">
+    <div class="container" style="position: relative;top:0; ">
+        <div class="row">
+            <div class="col-3 left_col mx-auto">
+                <div class="card left_profile_card" style="width: 16rem;">
+                    <a href="#">
+                        <div class="card-body left_profile_info">
+                            <img src="/img/profile pics/profile2.png" class="card-img-top" alt="...">
+                                <h5 class="left_profile_name">Izuku Midoriya</h5>
+                                <p>Farmer</p>
+                                <p style="top: 0;"><i class="fa-sharp fa-solid fa-location-dot"></i> Nasugbu, Batangas</p> 
+                        </div>
+                    </a>
+                  </div>
+
+                  <!-- Sidebar -->
+                  <div class="sidebar left_sidebar">
+                    <a href="#" class="menu-item active">
+                        <span><i class="fa-solid fa-house"></i> Home</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-bell"></i> Notifications</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <span><i class="fa-solid fa-envelope"></i> Messages</span>
+                    </a>
+
+                    
+                  </div>
+                  <button type="button" class="view_profile_btn"> View Profile</button>
+            </div>
+            <div class="col-6 middle_col"style="padding-bottom:100px" >
+                <div class="card create-post-card">
+                    <div class="card-body create-post-body d-flex">
+                        <div class="avatar"><img src="/img/profile pics/profile2.png" alt=""></div>
+                        <form class="create-post d-flex">
+                            <input type="text" class="post_area" placeholder="What's on your mind ?" style="width: 100%;"  maxlength="45" size="45">
+                            <input type="submit"class="post_btn" value="Post" class="btn">
+                        </form>
+                    </div>
+                </div>
+
+                <div class="feed mt-3">
+                    <div class="post_user_info d-flex">
+                        <img src="/img/profile pics/profile.jpg" alt="">
+                        <h4>Mac Miller</h4>
+                    </div>
+                    <div class="post_content mt-2">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas, ipsa magnam, facere facilis laborum natus, adipisci necessitatibus illum officiis quod culpa hic quos a accusantium sed quisquam placeat aliquam molestias.</p>
+                    </div>
+                    <div class="action-button mt-2">
+                        <div class="interaction-button">
+                            <span><button type="button" class="heart_click_btn"><i class="fa-solid fa-heart"></i> </button></span>
+                            <span><button type="button" class="comment_click_btn"><i class="fa fa-comment"></i> </button></span>
+                           
+                        </div>
+                        <div class="comment_section d-flex mt-1">
+                            <input type="text" class="comment_area" placeholder="Write a comment" style="width: 100%;"  maxlength="45" size="45">
+                            <input type="submit"class="comment_btn" value="Post" class="btn">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="feed mt-3">
+                    <div class="post_user_info d-flex">
+                        <img src="/img/profile pics/profile.jpg" alt="">
+                        <h4>Mac Miller</h4>
+                    </div>
+                    <div class="post_content mt-2">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas, ipsa magnam, facere facilis laborum natus, adipisci necessitatibus illum officiis quod culpa hic quos a accusantium sed quisquam placeat aliquam molestias.</p>
+                    </div>
+                    <div class="post_content_img">
+                        <img id="myImg1" src="/img/Vegetables/brocolli.jpg" alt="">
+                        <img id="myImg2" src="/img/Vegetables/eggplant.jpg" alt="">
+                    </div>
+                    <div class="post_content_img mt-2">
+                        <img id="myImg3" src="/img/Vegetables/carrot.jpg" alt="">
+                        <img id="myImg4" src="/img/Vegetables/tomato.jpg" alt="">
+                    </div>
+
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal">
+                            <span class="close">&times;</span>
+                            <img class="modal-content" id="img01">
+                            <div id="caption"></div>
+                        </div>
+
+                    <div class="action-button mt-2">
+                        <div class="interaction-button">
+                            <span><button type="button" class="heart_click_btn"><i class="fa-solid fa-heart"></i> </button></span>
+                            <span><button type="button" class="comment_click_btn"><i class="fa fa-comment"></i> </button></span>
+                           
+                        </div>
+                        <div class="comment_section d-flex mt-1">
+                            <input type="text" class="comment_area" placeholder="Write a comment" style="width: 100%;"  maxlength="45" size="45">
+                            <input type="submit"class="comment_btn" value="Post" class="btn">
+                        </div>
+                    </div>
+                </div>
+                <div class="feed mt-3">
+                    <div class="post_user_info d-flex">
+                        <img src="/img/profile pics/profile.jpg" alt="">
+                        <h4>Mac Miller</h4>
+                    </div>
+                    <div class="post_content mt-2">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas, ipsa magnam, facere facilis laborum natus, adipisci necessitatibus illum officiis quod culpa hic quos a accusantium sed quisquam placeat aliquam molestias.</p>
+                    </div>
+                    <div class="post_content_img">
+                        <img id="myImg1" src="/img/Vegetables/brocolli.jpg" alt="">
+                        <img id="myImg2" src="/img/Vegetables/eggplant.jpg" alt="">
+                    </div>
+                    <div class="post_content_img mt-2">
+                        <img id="myImg3" src="/img/Vegetables/carrot.jpg" alt="">
+                        <img id="myImg4" src="/img/Vegetables/tomato.jpg" alt="">
+                    </div>
+
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal">
+                            <span class="close">&times;</span>
+                            <img class="modal-content" id="img01">
+                            <div id="caption"></div>
+                        </div>
+
+                    <div class="action-button mt-2">
+                        <div class="interaction-button">
+                            <span><button type="button" class="heart_click_btn"><i class="fa-solid fa-heart"></i> </button></span>
+                            <span><button type="button" class="comment_click_btn"><i class="fa fa-comment"></i> </button></span>
+                           
+                        </div>
+                        <div class="comment_section d-flex mt-1">
+                            <input type="text" class="comment_area" placeholder="Write a comment" style="width: 100%;"  maxlength="45" size="45">
+                            <input type="submit"class="comment_btn" value="Post" class="btn">
+                        </div>
+                    </div>
+                </div>
+                <div class="feed mt-3">
+                    <div class="post_user_info d-flex">
+                        <img src="/img/profile pics/profile.jpg" alt="">
+                        <h4>Mac Miller</h4>
+                    </div>
+                    <div class="post_content mt-2">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas, ipsa magnam, facere facilis laborum natus, adipisci necessitatibus illum officiis quod culpa hic quos a accusantium sed quisquam placeat aliquam molestias.</p>
+                    </div>
+                    <div class="post_content_img">
+                        <img id="myImg1" src="/img/Vegetables/brocolli.jpg" alt="">
+                        <img id="myImg2" src="/img/Vegetables/eggplant.jpg" alt="">
+                    </div>
+                    <div class="post_content_img mt-2">
+                        <img id="myImg3" src="/img/Vegetables/carrot.jpg" alt="">
+                        <img id="myImg4" src="/img/Vegetables/tomato.jpg" alt="">
+                    </div>
+
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal">
+                            <span class="close">&times;</span>
+                            <img class="modal-content" id="img01">
+                            <div id="caption"></div>
+                        </div>
+
+                    <div class="action-button mt-2">
+                        <div class="interaction-button">
+                            <span><button type="button" class="heart_click_btn"><i class="fa-solid fa-heart"></i> </button></span>
+                            <span><button type="button" class="comment_click_btn"><i class="fa fa-comment"></i> </button></span>
+                           
+                        </div>
+                        <div class="comment_section d-flex mt-1">
+                            <input type="text" class="comment_area" placeholder="Write a comment" style="width: 100%;"  maxlength="45" size="45">
+                            <input type="submit"class="comment_btn" value="Post" class="btn">
+                        </div>
+                    </div>
+                </div>
+                <div class="feed mt-3">
+                    <div class="post_user_info d-flex">
+                        <img src="/img/profile pics/profile.jpg" alt="">
+                        <h4>Mac Miller</h4>
+                    </div>
+                    <div class="post_content mt-2">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas, ipsa magnam, facere facilis laborum natus, adipisci necessitatibus illum officiis quod culpa hic quos a accusantium sed quisquam placeat aliquam molestias.</p>
+                    </div>
+                    <div class="post_content_img">
+                        <img id="myImg1" src="/img/Vegetables/brocolli.jpg" alt="">
+                        <img id="myImg2" src="/img/Vegetables/eggplant.jpg" alt="">
+                    </div>
+                    <div class="post_content_img mt-2">
+                        <img id="myImg3" src="/img/Vegetables/carrot.jpg" alt="">
+                        <img id="myImg4" src="/img/Vegetables/tomato.jpg" alt="">
+                    </div>
+
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal">
+                            <span class="close">&times;</span>
+                            <img class="modal-content" id="img01">
+                            <div id="caption"></div>
+                        </div>
+
+                    <div class="action-button mt-2">
+                        <div class="interaction-button">
+                            <span><button type="button" class="heart_click_btn"><i class="fa-solid fa-heart"></i> </button></span>
+                            <span><button type="button" class="comment_click_btn"><i class="fa fa-comment"></i> </button></span>
+                           
+                        </div>
+                        <div class="comment_section d-flex mt-1">
+                            <input type="text" class="comment_area" placeholder="Write a comment" style="width: 100%;"  maxlength="45" size="45">
+                            <input type="submit"class="comment_btn" value="Post" class="btn">
+                        </div>
+                    </div>
+                </div>
+                <div class="feed mt-3">
+                    <div class="post_user_info d-flex">
+                        <img src="/img/profile pics/profile.jpg" alt="">
+                        <h4>Mac Miller</h4>
+                    </div>
+                    <div class="post_content mt-2">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas, ipsa magnam, facere facilis laborum natus, adipisci necessitatibus illum officiis quod culpa hic quos a accusantium sed quisquam placeat aliquam molestias.</p>
+                    </div>
+                    <div class="post_content_img">
+                        <img id="myImg1" src="/img/Vegetables/brocolli.jpg" alt="">
+                        <img id="myImg2" src="/img/Vegetables/eggplant.jpg" alt="">
+                    </div>
+                    <div class="post_content_img mt-2">
+                        <img id="myImg3" src="/img/Vegetables/carrot.jpg" alt="">
+                        <img id="myImg4" src="/img/Vegetables/tomato.jpg" alt="">
+                    </div>
+
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal">
+                            <span class="close">&times;</span>
+                            <img class="modal-content" id="img01">
+                            <div id="caption"></div>
+                        </div>
+
+                    <div class="action-button mt-2">
+                        <div class="interaction-button">
+                            <span><button type="button" class="heart_click_btn"><i class="fa-solid fa-heart"></i> </button></span>
+                            <span><button type="button" class="comment_click_btn"><i class="fa fa-comment"></i> </button></span>
+                           
+                        </div>
+                        <div class="comment_section d-flex mt-1">
+                            <input type="text" class="comment_area" placeholder="Write a comment" style="width: 100%;"  maxlength="45" size="45">
+                            <input type="submit"class="comment_btn" value="Post" class="btn">
+                        </div>
+                    </div>
+                </div>
+                <div class="feed mt-3">
+                    <div class="post_user_info d-flex">
+                        <img src="/img/profile pics/profile.jpg" alt="">
+                        <h4>Mac Miller</h4>
+                    </div>
+                    <div class="post_content mt-2">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas, ipsa magnam, facere facilis laborum natus, adipisci necessitatibus illum officiis quod culpa hic quos a accusantium sed quisquam placeat aliquam molestias.</p>
+                    </div>
+                    <div class="post_content_img">
+                        <img id="myImg1" src="/img/Vegetables/brocolli.jpg" alt="">
+                        <img id="myImg2" src="/img/Vegetables/eggplant.jpg" alt="">
+                    </div>
+                    <div class="post_content_img mt-2">
+                        <img id="myImg3" src="/img/Vegetables/carrot.jpg" alt="">
+                        <img id="myImg4" src="/img/Vegetables/tomato.jpg" alt="">
+                    </div>
+
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal">
+                            <span class="close">&times;</span>
+                            <img class="modal-content" id="img01">
+                            <div id="caption"></div>
+                        </div>
+
+                    <div class="action-button mt-2">
+                        <div class="interaction-button">
+                            <span><button type="button" class="heart_click_btn"><i class="fa-solid fa-heart"></i> </button></span>
+                            <span><button type="button" class="comment_click_btn"><i class="fa fa-comment"></i> </button></span>
+                           
+                        </div>
+                        <div class="comment_section d-flex mt-1">
+                            <input type="text" class="comment_area" placeholder="Write a comment" style="width: 100%;"  maxlength="45" size="45">
+                            <input type="submit"class="comment_btn" value="Post" class="btn">
+                        </div>
+                    </div>
+                </div>
+                <div class="feed mt-3">
+                    <div class="post_user_info d-flex">
+                        <img src="/img/profile pics/profile.jpg" alt="">
+                        <h4>Mac Miller</h4>
+                    </div>
+                    <div class="post_content mt-2">
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas, ipsa magnam, facere facilis laborum natus, adipisci necessitatibus illum officiis quod culpa hic quos a accusantium sed quisquam placeat aliquam molestias.</p>
+                    </div>
+                    <div class="post_content_img">
+                        <img id="myImg1" src="/img/Vegetables/brocolli.jpg" alt="">
+                        <img id="myImg2" src="/img/Vegetables/eggplant.jpg" alt="">
+                    </div>
+                    <div class="post_content_img mt-2">
+                        <img id="myImg3" src="/img/Vegetables/carrot.jpg" alt="">
+                        <img id="myImg4" src="/img/Vegetables/tomato.jpg" alt="">
+                    </div>
+
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal">
+                            <span class="close">&times;</span>
+                            <img class="modal-content" id="img01">
+                            <div id="caption"></div>
+                        </div>
+
+                    <div class="action-button mt-2">
+                        <div class="interaction-button">
+                            <span><button type="button" class="heart_click_btn"><i class="fa-solid fa-heart"></i> </button></span>
+                            <span><button type="button" class="comment_click_btn"><i class="fa fa-comment"></i> </button></span>
+                           
+                        </div>
+                        <div class="comment_section d-flex mt-1">
+                            <input type="text" class="comment_area" placeholder="Write a comment" style="width: 100%;"  maxlength="45" size="45">
+                            <input type="submit"class="comment_btn" value="Post" class="btn">
+                        </div>
+                    </div>
+                </div>
+
+
+                
+               
+
+
+                
+                
+
+
+               </div>
+            
+               <div class="col-3 right_col">
+                <div class="card" style="color: #4B515D; border-radius: 10px; width: 16rem; margin-top: 20px;">
+                    <div class="card-body p-4">
+          
+                      <div class="d-flex">
+                        <h6 class="flex-grow-1">Nasugbu, Batangas</h6>
+                        
+                      </div>
+          
+                      <div class="d-flex flex-column text-center mt-2 mb-4">
+                        <h6 class="display-4 mb-0 font-weight-bold" style="color: #1C2331;"> 23°C </h6>
+                        <span class="small" style="color: #868B94">Sunny</span>
+                      </div>
+                    
+                      <div class="days_forecast d-flex align-items-center pd-2">
+                            <div class="day1 d-block">
+                                <img class="1st_day_img" src="/img/Weather/Sunny.png" alt="">
+                                <small>Sunny</small>
+                            </div>
+                            <div class="day2 d-block">
+                                <img class="2nd_day_img" src="/img/Weather/Sunny.png" alt="">
+                                <small>Sunny</small>
+                            </div>
+                            <div class="day3 d-block">
+                                <img class="3rd_day_img" src="/img/Weather/Sunny.png" alt="">
+                                <small>Sunny</small>
+                            </div>
+                       
+                     
+                      </div>
+                      <button type="button" class="forecast_btn mt-3">See full forecast</button>
+          
+                    </div>
+                  </div>
+
+                  <div class="card category_card mt-3" style="width: 16rem;padding-top: 10px ;">
+                    <h2 style="text-align: center;">CATEGORIES</h2>
+                    <div class="card-body " style="margin-left: 20px;">
+                        <form action="#">
+                           
+                          
+                       
+                            <input type="radio" id="age1" name="category" value="Vegetables">
+                            <label for="Vegetables">Vegetables</label><br>
+
+                            <input type="radio" id="age2" name="category" value="Fruits">
+                            <label for="Fruits">Fruits</label><br> 
+
+                            <input type="radio" id="age3" name="category" value="Rice">
+                            <label for="Rice">Rice</label><br><br>
+                            
+                          </form>
+                          
+                    </div>
+                  </div>
+
+                  
+               </div>
+        </div>
+    
+
+    </div>
+</div>
+    </div>
+</body>
+
+<!-- image modal script -->
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("myImg1");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+    }
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+    modal.style.display = "none";
+    }
+</script>
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("myImg2");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+    }
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+    modal.style.display = "none";
+    }
+</script>
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("myImg3");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+    }
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+    modal.style.display = "none";
+    }
+</script>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    
+    // Get the image and insert it inside the modal - use its "alt" text as a caption
+    var img = document.getElementById("myImg4");
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+    img.onclick = function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+    captionText.innerHTML = this.alt;
+    }
+    
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+    modal.style.display = "none";
+    }
+</script>
+</html>

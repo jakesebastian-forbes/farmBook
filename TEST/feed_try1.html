@@ -247,7 +247,55 @@
     .feed_user_info{
         text-align: center;
     }
+
+    /* COLUMNS */
+    .column_1{
+        grid-column: 1 1;overflow: auto;max-height: 100vh;
+        float: right;
+    }
+
+    .column_1::-webkit-scrollbar{
+                width: 0 !important 
+    }
+    .column_3{
+        grid-column: 1 1;overflow: auto;max-height: 100vh;
+        float: right;
+    }
+
+    .column_3::-webkit-scrollbar{
+                width: 0 !important 
+    }
     </style>
+    <script>
+      var startProductBarPos=-1;
+  window.onscroll=function(){
+    var bar = document.getElementById('column_3');
+    if(startProductBarPos<0)startProductBarPos=findPosY(bar);
+  
+    if(pageYOffset>startProductBarPos){
+      bar.style.position='sticky';
+      bar.style.top=0;
+      // bar.style.float='right';
+    }else{
+      bar.style.position='relative';
+    }
+  
+  };
+  
+  function findPosY(obj) {
+    var curtop = 0;
+    if (typeof (obj.offsetParent) != 'undefined' && obj.offsetParent) {
+      while (obj.offsetParent) {
+        curtop += obj.offsetTop;
+        obj = obj.offsetParent;
+      }
+      curtop += obj.offsetTop;
+    }
+    else if (obj.y)
+      curtop += obj.y;
+    return curtop;
+  }
+  </script>
 
     
    
@@ -269,7 +317,7 @@
     
         <div class="container-fluid position-fixed" style="height: 100%;">
             <section class="main_col d-flex" style="margin-top: 70px;">
-                <div class="col-3 sticky-top">
+                <div class="col-3 column_1" id="column_1">
                     <!-- <div class="card mx-auto" style="width: 20rem;">
                         <img src="/img/bg/bg2.jpg" class="user_cover card-img-top" alt="..." >
                         <div class="avatar"><img src="/img/profile pics/profile2.png"  alt="user" style="height:80px; width: 80px; border-radius: 50%; position:absolute; right: 180px; top: 90px;"></div>
@@ -280,11 +328,7 @@
                           
                         </div>
                       </div> -->
-                      <style>
-                        
-                        
                       
-                      </style>
                     <div class="card mx-auto mt-3" style="width: 20rem;">
                         <div class="feed_profile_picture mt-3">
                             <img src="/img/profile pics/profile2.png" alt="">
@@ -350,7 +394,7 @@
                       </div>
                 </div>
 
-                <div class="col-6 mt-3" >
+                <div class="col-6 column_2 mt-3" id="column_2" >
                      <!-- post -->
                 <div class="card mx-auto" style="width: 38rem;">
                     <div class="card-body">
@@ -442,75 +486,93 @@
                         </div>
       
                     </div>
-                    <div class="card-body">
-                      <div class="post_content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        
-                        <div class="post_attachments">
-                            <div class="row d-flex justify-content-center">
-                              
-                              <img class="post_img" id="myImg1" src="/img/Vegetables/cabbage.jpg"  style="width:250px;height: 150px;">
-                            
-                              <img class="post_img" id="myImg2" src="/img/Vegetables/eggplant.jpg"  style="width:250px;height: 150px;">
-                            
-                            </div>
-                            <div class="row mt-2 d-flex justify-content-center">
-                              
-                              <img class="post_img" id="myImg3" src="/img/Vegetables/brocolli.jpg"  style="width:250px;height: 150px;">
-                            
-                          
-                              <img class="post_img" id="myImg4" src="/img/Vegetables/tomato.jpg"  style="width:250px;height: 150px;">
-                            
-                            </div>
-      
-                            <div id="myModal" class="modal">
-                              <span class="close">&times;</span>
-                              <img class="modal-content" id="img01">
-                              <div id="caption"></div>
-                            </div>
-      
-      
-                        </div>
-      
-                      </div> 
-      
-                      <div class="reactions d-flex mt-3">
-                        <div class="col-6" >
-                          <button class="btn" style="width: 250px;"><i class="fa-regular fa-heart"></i></button>
-                        </div>
-                        <div class="col-6">
-                          <button class="btn" style="width: 250px;"><i class="fa-regular fa-comment"></i></button>
-                        </div>
-                      </div>
-      
-                      
-                      <div class="comment_box d-flex mt-3">
-                        <div class="avatar"><img src="/img/profile pics/profile2.png"  alt="user" style="height:40px; width: 40px; border-radius: 50%; "></div>
-                        <textarea class="comment_area" name="" id="" cols="30" rows="10" placeholder="Write a comment" ></textarea>
-                
-                        <div class="commentBtn">
-                                    <button type="button " class="comment_btn">Post</button>
-                        </div>  
-                         
-                    </div>
-                      
-                        
-                      </div>
-                  </div>
+                    <style>
+                        #myImg {
+                            border-radius: 5px;
+                            cursor: pointer;
+                            transition: 0.3s;
+                            }
 
-                   <!-- post with img -->
-                <div class="card mx-auto mt-3" style="width: 38rem;">
-          
-                    <div class="post d-flex mt-3" style="margin-left: 10px;">
-                      
-                        <div class="col-1" style="margin-right: 10px;">
-                          <div class="avatar"><img src="/img/profile pics/profile.jpg"  alt="user" style="height:50px; width: 50px; border-radius: 50%; margin-right:20px ; "></div>
-                        </div>
-                        <div class="col-11">
-                          <h4 class="user_name mt-2">Coco Martin</h3>
-                        </div>
-      
-                    </div>
+                            #myImg:hover {opacity: 0.7;}
+
+                            /* The Modal (background) */
+                            .modal {
+                            display: none; /* Hidden by default */
+                            position: fixed; /* Stay in place */
+                            z-index: 1; /* Sit on top */
+                            padding-top: 100px; /* Location of the box */
+                            left: 0;
+                            top: 0;
+                            width: 100%; /* Full width */
+                            height: 100%; /* Full height */
+                            overflow: auto; /* Enable scroll if needed */
+                            background-color: rgb(0,0,0); /* Fallback color */
+                            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+                            }
+
+                            /* Modal Content (image) */
+                            .modal-content {
+                            margin: auto;
+                            display: block;
+                            width: 80%;
+                            max-width: 700px;
+                            }
+
+                            /* Caption of Modal Image */
+                            #caption {
+                            margin: auto;
+                            display: block;
+                            width: 80%;
+                            max-width: 700px;
+                            text-align: center;
+                            color: #ccc;
+                            padding: 10px 0;
+                            height: 150px;
+                            }
+
+                            /* Add Animation */
+                            .modal-content, #caption {  
+                            -webkit-animation-name: zoom;
+                            -webkit-animation-duration: 0.6s;
+                            animation-name: zoom;
+                            animation-duration: 0.6s;
+                            }
+
+                            @-webkit-keyframes zoom {
+                            from {-webkit-transform:scale(0)} 
+                            to {-webkit-transform:scale(1)}
+                            }
+
+                            @keyframes zoom {
+                            from {transform:scale(0)} 
+                            to {transform:scale(1)}
+                            }
+
+                            /* The Close Button */
+                            .close {
+                            position: absolute;
+                            top: 15px;
+                            right: 35px;
+                            color: #f1f1f1;
+                            font-size: 40px;
+                            font-weight: bold;
+                            transition: 0.3s;
+                            }
+
+                            .close:hover,
+                            .close:focus {
+                            color: #bbb;
+                            text-decoration: none;
+                            cursor: pointer;
+                            }
+
+                            /* 100% Image Width on Smaller Screens */
+                            @media only screen and (max-width: 700px){
+                            .modal-content {
+                                width: 100%;
+                            }
+                            }
+                    </style>
                     <div class="card-body">
                       <div class="post_content">
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -537,7 +599,28 @@
                               <img class="modal-content" id="img01">
                               <div id="caption"></div>
                             </div>
-      
+                            <script>
+                                // Get the modal
+                                var modal = document.getElementById("myModal");
+                                
+                                // Get the image and insert it inside the modal - use its "alt" text as a caption
+                                var img = document.getElementById("myImg1");
+                                var modalImg = document.getElementById("img01");
+                                var captionText = document.getElementById("caption");
+                                img.onclick = function(){
+                                  modal.style.display = "block";
+                                  modalImg.src = this.src;
+                                  captionText.innerHTML = this.alt;
+                                }
+                                
+                                // Get the <span> element that closes the modal
+                                var span = document.getElementsByClassName("close")[0];
+                                
+                                // When the user clicks on <span> (x), close the modal
+                                span.onclick = function() { 
+                                  modal.style.display = "none";
+                                }
+                            </script>
       
                         </div>
       
@@ -565,20 +648,21 @@
                       
                         
                       </div>
-                  </div>
+                </div>
+
                 </div>
                 
-                <style>
-                   .search_category_box{
-                     justify-content: center;
-                   }
-                  
-                </style>
-
-                <div class="col-3 col_two  sticky-top">
-                    <div class="card mx-auto mt-3" style="width: 22rem;">
+               
+                <!-- <style>
+                  div.category_card{
+                    position: -webkit-sticky;
+                    position: sticky;
+                  }
+                </style> -->
+                <div class="col-3 column_3 " id="column_3">
+                    <div class="card category_card mx-auto mt-3" style="width: 22rem;">
                         <div class="card-body">
-                            <div class="search_category_box d-flex mt-3">
+                            <div class="search_category_box d-flex mt-3 justify-content-center">
                                 <!-- <textarea class="search_category_area" name="" id="" cols="30" rows="10" placeholder="Write a comment" ></textarea> -->
                                 <!-- <input type="text" class="search_category_area"  placeholder="Search">
                                 <button type="button " class="search_category_btn">Post</button> -->
@@ -594,12 +678,12 @@
                                 <h3>CATEGORIES</h3>
                                 <form action="/action_page.php">
                                    
-                                    <input type="radio" id="html" name="fav_language" value="Grains/Cereals">
-                                    <label for="Grains/Cereals">Grains/Cereals</label><br>
-                                    <input type="radio" id="css" name="fav_language" value="Legumes/pulses">
-                                    <label for="Legumes/pulses">Legumes/pulses</label><br>
-                                    <input type="radio" id="javascript" name="fav_language" value="Leafy">
-                                    <label for="Leafy">Leafy</label>
+                                    <input type="radio" id="Rice" name="fav_language" value="Rice">
+                                    <label for="Rice">Rice</label><br>
+                                    <input type="radio" id="Fruits" name="fav_language" value="Fruits">
+                                    <label for="Fruits">Fruits</label><br>
+                                    <input type="radio" id="Vegetables" name="fav_language" value="Vegetables">
+                                    <label for="Vegetables">Vegetables</label>
                                   
                                   
                                     <br>  
@@ -609,7 +693,7 @@
                             </div>
                       </div>
                     </div>
-    
+                </div>
             
               
            

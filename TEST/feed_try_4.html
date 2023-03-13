@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../bootstrap-5.2.2/css/bootstrap.min.css"/>
+    <script src="https://kit.fontawesome.com/82727f4033.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/1c020da525.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://kit.fontawesome.com/82727f4033.css" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Archivo Black' rel='stylesheet'>  
+
+
+</head>
+
+<style>
+    body{
+        background-color: #E4E4E4;
+        /* overflow: hidden; */
+        /* overflow: auto; */
+    }
+   .nav-head{ 
+      background-color:#57744B ;
+      display: flex;
+      justify-content: space-between;
+      box-sizing: border-box;
+      padding: 2%;
+      overflow: hidden;
+      height: 70px;
+      width: 100%;
+     top: 0;
+    }
+    .nav-links ul{
+      display: flex;
+      list-style-type: none;
+      font-size: medium;
+    }
+    .nav-links li{
+      justify-content: end;
+      font-family: 'Archivo Black';
+      color: #FFDE59;
+      margin: 0% 14px;
+      cursor: pointer;
+      padding-top: 2%;
+    }
+    .nav-links li a{
+      text-decoration: none;
+      color:#FFDE59 ;
+    }
+    .nav-links li a:hover {
+      color: white;
+    }
+</style>
+
+<style>
+    /* main container */
+    .main_container{
+        /* overflow: scroll; */
+        margin-top: 5px ;background-color:aqua;
+    }
+</style>
+
+<style>
+    /* left */
+    .left{
+    position: relative;
+    margin-top:20px;
+    }
+
+    .left-profile-card{
+        width: 100%;
+        border-radius: 15px;
+    }
+    .handle{
+        margin-top: 3%;
+        color: black;
+    }
+
+    .left-profile-card.profile{
+        display: flex;
+        text-decoration: none;
+        z-index: -1;
+       
+    }
+
+    .profile-pic img{
+        margin-top:10px;
+        width:60px;
+        height: 60px;
+        border-radius: 50px;
+    }
+
+    .sidebar_create_post_btn{
+        margin-top: 1rem;
+        width: 100%;
+        text-align: center;
+        padding: 1rem 0;
+        background-color: #57744B;
+        box-shadow: 0 5px #999;
+
+        cursor: pointer;
+        outline: none;
+        color: black;
+    
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 5px #999;
+        
+    }
+
+    .sidebar_create_post_btn:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .sidebar_create_post_btn:active {
+      background-color: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 5px #666;
+      transform: translateY(4px);
+    } 
+
+    .main_column {
+            display: grid;
+            /* height: 100%; */
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 100px;
+            column-gap: 3px;
+           
+            
+        }
+</style>
+
+<body>
+    <div class="nav-head d-flex justify-content-between align-items-center sticky-top"  >
+        <h1 style="color: #FFDE59;font-family: 'Archivo Black';">FarmBook</h1>
+      
+        <div class="nav-links me-2">
+          <ul>
+            <li><a class="active" href="homepage.html"><i class="fa fa-fw fa-home fa-2x"></i>Home</a></li>
+            <li><a class ="active" href="aboutpage.html"><i class="fa fa-fw fa-circle-info fa-2x"></i>About Us</a></li>
+            <li><a class ="active" href="e-learning.html"><i class="fa fa-fw fa-book fa-2x"></i>E-Learning</a></li>
+            <li><a class ="active" href="contact.html"><i class="fa fa-fw fa-phone fa-2x"></i>Contact</i></a></li>
+          </ul>
+        </div>
+    </div>
+    <style>
+        .left_col {
+        grid-column: 1 1;
+        overflow: auto;
+        max-height: 100vh;
+        overflow-y: scroll  ;
+        }
+
+        .left_col::-webkit-scrollbar {
+                width: 0 !important 
+                
+        }
+        .middle_col {
+        grid-column: 1 1;
+        overflow: auto;
+        max-height: 100vh;
+        overflow-y: scroll  ;
+        }
+
+        .middle_col::-webkit-scrollbar {
+                width: 0 !important      
+        }
+    </style>
+    <div class="container-fluid main_container position-fixed " >
+        <div class="main_column d-flex" >
+            <div class="col-3 left_col" >
+                <div class="left ">
+                    <div class="card left-profile-card" >
+                        <div class="card-body">
+                            <a class="profile ">
+                                <div class="profile-pic  mx-auto">
+                                    <img src="/img/profile pics/profile2.png">
+                                </div>
+                                <div class="handle  mx-auto">
+                                    <h4>Izuku Midoriya</h4>
+                                    <p><i class="fa-sharp fa-solid fa-location-dot"></i> Nasugbu,Batangas</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar ">
+                        <a class="menu-item active ">
+                        <span><i class="fa-solid fa-house"></i></span> <h3>Home</h3>
+                        </a>
+                
+                        <a class="menu-item" id="notifications">
+                        
+                        <span><i class="fa-solid fa-bell"></i></span> <h3>Notifications</h3>
+                            <!-- <div class="notifications-popup">
+                                <div>
+                                    <div class="profile-pic">
+                                        <img src="./images/profile-10.jpg" >
+                                    </div>
+                                    <div class="notification-body">
+                                        <b>Abigail Willey</b> accepted your friend request
+                                        <small class="text-muted">2 DAYS AGO</small>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="profile-pic">
+                                        <img src="./images/profile-11.jpg" >
+                                    </div>
+                                    <div class="notification-body">
+                                        <b>Varun Nair</b> commented on your post
+                                        <small class="text-muted">1 HOUR AGO</small>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="profile-pic">
+                                        <img src="./images/profile-12.jpg" >
+                                    </div>
+                                    <div class="notification-body">
+                                        <b>Marry Opmong</b> and 210 other liked your post
+                                        <small class="text-muted">4 MINUTES AGO</small>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="profile-pic">
+                                        <img src="./images/profile-13.jpg" >
+                                    </div>
+                                    <div class="notification-body">
+                                        <b>Wilson Fisk</b> started following you
+                                        <small class="text-muted"> 11 HOURS AGO</small>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </a>
+                        <a class="menu-item" id="messages-notifications">
+                            <i class="fa-solid fa-envelope"></i></span><h3>Messages</h3>
+                        </a>
+                    
+                        <button type="button" class="sidebar_create_post_btn" for="create-post">Create Post</button>
+
+                    </div>
+                    <!-- <label class="btn sidebar_create_post_btn" for="create-post">Create Post</label> -->
+                </div>
+            </div>
+           
+            <div class="col-6 middle_col" >
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            
+            </div>
+
+            <div class="col-3 right_col">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta ratione earum porro beatae ad quo nemo quidem obcaecati, numquam explicabo sed dolor eligendi necessitatibus perferendis. Alias illum dolore placeat quis!</p>
+            
+            </div>
+    </div>
+</div>
+</body>
+</html>
