@@ -15,7 +15,7 @@
       <script src="https://kit.fontawesome.com/1c020da525.js" crossorigin="anonymous"></script>
       <link rel="stylesheet" href="https://cdjns.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
 
-   
+     
      <!-- modal -->
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -342,29 +342,178 @@
  
     <!--YT VIDEO END-->
 
+    <style>
+      #benefits {
+        background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.5)), url(/img/bg/bg6.jpeg);
+        background-size: cover;
+        background-position: center;
+        color: #efefef !important;
+        background-attachment: fixed;
+        padding-top: 40px;
+        padding-bottom: 50px;
+        
+      }
+      #benefits h1{
+        text-align: center;
+        color: #efefef !important;
+        padding-bottom: 10px;
+      }
+      #benefits h1::after{
+        content: '';
+        background: #efefef;
+        display: block;
+        height: 3px;
+        width: 170px;
+        margin: 20px auto 5px;
+      }
+      .benefits{
+        margin-top: 40px;
+      }
+      #benefits p{
+        font-size: 14px;
+        margin-top: 20px;
+        color: white;
+      }
+      .benefits .col-md-3:hover{
+        background: seagreen;
+        cursor: pointer;
+        transition: 0.7s;
+      }
+      </style>
+
+
+<section id="benefits" style="margin-top: 5%;">
+  <div class="container">
+    
+    <div class="row benefits">
+          <div class="col-md-3 text-center">
+          <h3 style="margin-left: 180%;">Treatment</h3>
+          <p style="margin-left: 100%%;"><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        </div>
+
+      </div>
+    </div>
+</section>
+
 
       <!--Vision Mission Start-->
+  
+<div class="wrapper">
+  <div class="box-area">
+    <div class="single-team">
     
-        <section class="vision container" id ="vision">
-          <div class="box">
-            <i class="bx bx-user"></i>
-              <h3>Mission</h3>
-              <p>chuchuchuchcuhcuhcuhcuhcucuhcuuchchchucuc</p>
-          </div>
-
-          <div class="box">
-            <i class="bx bx-user">
-            </i>
-            <h3>Vision</h3>
-            <p>chuchuchuchcuhcuhcuhcuhcucuhcuuchchchucuc</p>
-          </div>
-
-        </section>
-
-        <style>
-
-        </style>
+      <img src="/img/fruits/fruit-apple.jpg" alt="">
+      <div class="content">
+        <h3>Mission <span>chuchu</span></h3>                
+      </div>
     
+  </div>
+  <div class="single-team">
+    
+      <img src="/img/fruits/fruit-cherry.jpg" alt="">
+      <div class="content">
+        <h3>Vision <span>chuchu</span></h3>               
+      
+    </div>
+  </div>
+  
+  </div>
+</div>
+
+
+<style>
+.wrapper {
+display: grid;
+place-items: center;
+height: 70vh;
+width: 100%;
+margin: auto;
+  background-color: whitesmoke;
+}
+.box-area {
+display: flex;
+}
+.single-team {
+width: 33%;
+height: auto;
+margin: 0 15px;
+position: relative;
+
+}
+.single-team img {
+width: 80%;
+height: 120%;
+  margin-left: 60%;
+}
+.content {
+position: absolute;
+top: 0;
+left: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 120%;
+width: 80%;
+color: #fff;
+transform: scale(0, 1);
+transition: transform .2s ease-in-out;
+  margin-left: 60%;
+}
+.content::before {
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100%;
+width: 100%;
+color: #fff;
+background: linear-gradient(45deg, #0476cd, #1bbff4);
+}
+.single-team:hover .content {
+transform: scale(1, 1);
+}
+.content>* {
+z-index: 999;
+}
+.content h3 span {
+display: block;
+font-family: 'Cookie', cursive;
+}
+.content h3 {
+text-align: center;
+font-family: impact;
+font-size: 30px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+.wrapper {
+  width: 100%;
+}
+.box-area {
+  flex-direction: column;
+}
+.single-team {
+  width: 100%;
+  margin: 0;
+}
+}
+@media (max-width: 767px) {
+.wrapper {
+  width: 100%;
+}
+.box-area {
+  flex-direction: column;
+}
+.single-team {
+  width: 100%;
+  margin: 0;
+}
+}
+
+</style>
       
          <!--Vision Mission End-->
 
