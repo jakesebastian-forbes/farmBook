@@ -13,6 +13,13 @@
       <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
       <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
       <script src="https://kit.fontawesome.com/1c020da525.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://cdjns.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+
+     
+     <!-- modal -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- modal  -->
      
 
   </head>
@@ -107,8 +114,30 @@
                              lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet. Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos.
                               Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
                         
-                        <a class="btn btn-success py-3 px-5 mt-2" href="">Read More</a>
-                    </div>
+                        <!-- <a class="btn btn-success py-3 px-5 mt-2"  data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        >Read More</a> -->
+
+                        <a href="" class="btn btn-success py-3 px-5 mt-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Read More
+                        </a>
+                          
+                          <!-- Modal -->
+                          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h1 class="modal-title fs-5" id="exampleModalLabel">About Us</h1>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, labore reiciendis. Assumenda eos quod animi! Soluta nesciunt inventore dolores excepturi provident, culpa beatae tempora, explicabo corporis quibusdam corrupti. Autem, quaerat. Assumenda quo aliquam vel, nostrum explicabo ipsum dolor, ipsa perferendis porro
+                                    doloribus obcaecati placeat natus iste odio est non earum? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, labore reiciendis. Assumenda eos quod animi! Soluta nesciunt inventore dolores excepturi provident, culpa beatae tempora, explicabo corporis quibusdam corrupti. Autem, quaerat. Assumenda quo aliquam vel, nostrum explicabo ipsum dolor, ipsa perferendis 
+                                    porro doloribus obcaecati placeat natus iste odio est non earum?
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+             </div>
                     <div class="col-lg-6">
                         <div class="row g-3">
                             <div class="col-6 text-end">
@@ -132,299 +161,475 @@
                 </div>
             </div>
         </div>
+
+        <style>
+            .container-fluid{
+             margin-top: 4%;
+             background-color: whitesmoke;
+              }
+             .section-title {
+            position: relative;
+             display: inline-block;
+             }
+         .section-title::before {
+              position: absolute;
+              content: "";
+              width: 45px;
+             height: 2px;
+              top: 50%;
+              left: -55px;
+             margin-top: -1px;
+             background: green;
+          }
+          .section-title::after {
+              position: absolute;
+              content: "";
+             width: 45px;
+             height: 2px;
+              top: 50%;
+             right: -55px;
+             margin-top: -1px;
+             background: green;
+             }
+                       
+             .section-title.text-start::before,
+             .section-title.text-end::after {
+                 display: none;
+             }
+             .btn.btn-success{
+                height: 30%;
+                width: 35%;
+                background: #afc275;
+                border:0px;
+                color:#fff;
+                box-shadow: 0 0 1px #ccc;
+                transform-origin: 50% 50%;
+                transition-duration: 0.5s;
+                transition-timing-function: ease-out;
+                box-shadow: 50px 0px 0 0 	#8A9A5B inset , -50px 0px 0 #8A9A5B inset;
+             }
+             .btn.btn-success:hover {
+                color: #000;
+                box-shadow:0px 0px 0 0px #8A9A5B inset;
+                transform: scale(1);
+                }
+             
+         </style>
+           
+         <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.7.8/dist/index.bundle.min.js">
+         </script>
+         
         <!-- About End -->
 
 
-          <!--YT VIDEO START-->
-          <div class="container-fluid">
-            <div class="text-center">
-              <h6 class="section-title text-center text-secondary text-uppercase" style="margin-top: 5%;
-              font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Farming Videos</h6>
-                <h1 class="mb-5" style="font-size: 50px; font-family:Georgia, 'Times New Roman', Times, serif;">
-                  Farming <span class="text-header uppercase">Videos</span></h1>
-            </div>
-  
-  
-              <div class="container">
-                  <div class="row" style="margin-top: 5%; margin-left: 1%;">
-                      <a href="https://www.youtube.com/watch?v=8etNofdG5ss" data-toggle="lightbox"  data-gallery="youtubevideos" 
-                      class="col-sm-4">
-                      <img src="/img/bg/yt-1.jpg" class="img-fluid" style="height: 80%; width: 95%;">
-                  </a>
-                      <a href="https://www.youtube.com/watch?v=vDv4xHDFRC0" data-toggle="lightbox" data-caption="carrot" 
-                      class="col-xl-4">
-                          <img src="/img/bg/yt-2.jpg" class="img-fluid" style="height: 80%; width: 95%;">
-                      </a>
-                      <a href="https://www.youtube.com/watch?v=aVHy6CIkUxc" data-toggle="lightbox" data-caption="carrot" 
-                      class="col-xl-4">
-                          <img src="/img/bg/yt-3.jpg" class="img-fluid" style="height:80%; width: 95%;">
-                  </div>
-              </div>
-          </div>
-      </div>  
-                <!--YT VIDEO END-->
-                
-                <style>
-   .container-fluid{
-    margin-top: 4%;
-    background-color: whitesmoke;
-     }
-    .section-title {
-   position: relative;
-    display: inline-block;
-    }
-.section-title::before {
-     position: absolute;
-     content: "";
-     width: 45px;
-    height: 2px;
-     top: 50%;
-     left: -55px;
-    margin-top: -1px;
-    background: green;
- }
- .section-title::after {
-     position: absolute;
-     content: "";
-    width: 45px;
-    height: 2px;
-     top: 50%;
-    right: -55px;
-    margin-top: -1px;
-    background: green;
-    }
+        <style>
+            #benefits {
+              background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.5)), url(/img/bg/bg6.jpeg);
+              background-size: cover;
+              background-position: center;
+              color: #efefef !important;
+              background-attachment: fixed;
+              padding-top: 40px;
+              padding-bottom: 50px;
               
-    .section-title.text-start::before,
-    .section-title.text-end::after {
-        display: none;
-    }
-</style>
-  
-<script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.7.8/dist/index.bundle.min.js">
-</script>
+            }
+            #benefits h1{
+              text-align: center;
+              color: #efefef !important;
+              padding-bottom: 10px;
+            }
+            #benefits h1::after{
+              content: '';
+              background: #efefef;
+              display: block;
+              height: 3px;
+              width: 170px;
+              margin: 20px auto 5px;
+            }
+            .benefits{
+              margin-top: 40px;
+            }
+            .icon{
+              font-size: 40px;
+              margin: 20px auto;
+              padding: 10px;
+              height: 80px;
+              width: 80px;
+              border:  1px solid #fff;
+              border-radius: 50%;
+            }
+            #benefits p{
+              font-size: 14px;
+              margin-top: 20px;
+              color: white;
+            }
+            .benefits .col-md-3:hover{
+              background: seagreen;
+              cursor: pointer;
+              transition: 0.7s;
+            }
+            </style>
+    
 
-
-<!--Mision Vision Start -->
+    <section id="benefits" style="margin-top: 5%;">
+        <div class="container">
+          
+          <div class="row benefits">
+            <div class="col-md-3 text-center">
+              <div class="icon">
+                <i class="fa fa-mortar-board"></i>
+              </div>
+                <h3>Harvest</h3>
+                <p><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+              </div>
+              <div class="col-md-3 text-center">
+              <div class="icon">
+                <i class="fa fa-heart"></i>
+              </div>
+                <h3>Cultivation</h3>
+                <p><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+              </div>
+                <div class="col-md-3 text-center">
+              <div class="icon">
+                <i class="  fa fa-leaf"></i>
+              </div>
+                <h3> Protection</h3>
+                <p><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              </div>
+                <div class="col-md-3 text-center">
+              <div class="icon">
+                <i class="fa fa-plus-square"></i>
+              </div>
+                <h3>Treatment</h3>
+                <p><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+              </div>
   
-<div class="wrapper">
-    <div class="box-area">
-      <div class="single-team">
-      
-        <img src="/img/fruits/fruit-apple.jpg" alt="">
-        <div class="content">
-          <h3>Mission <span>chuchu</span></h3>                
-        </div>
-      
+            </div>
+          </div>
+      </section>
+  
+
+   <!--YT VIDEO START-->
+   <div class="container-fluid" style="background-color: white;">
+    <div class="text-center">
+      <h6 class="section-title text-center text-secondary text-uppercase" style="
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Farming Videos</h6>
+        <h1 class="mb-5" style="font-size: 50px; font-family:Georgia, 'Times New Roman', Times, serif;">
+          Farming <span class="text-header uppercase">Videos</span></h1>
     </div>
-    <div class="single-team">
-      
-        <img src="/img/fruits/fruit-cherry.jpg" alt="">
-        <div class="content">
-          <h3>Vision <span>chuchu</span></h3>               
+
+
+      <div class="container">
+          <div class="row" style="margin-top: 5%; margin-left: 1%;">
+              <a href="https://www.youtube.com/watch?v=8etNofdG5ss" data-toggle="lightbox"  data-gallery="youtubevideos" 
+              class="col-sm-4">
+              <img src="/img/bg/yt-1.jpg" class="img-fluid" style="height: 80%; width: 95%;">
+          </a>
+              <a href="https://www.youtube.com/watch?v=vDv4xHDFRC0" data-toggle="lightbox"  
+              class="col-xl-4">
+                  <img src="/img/bg/yt-2.jpg" class="img-fluid" style="height: 80%; width: 95%;">
+              </a>
+              <a href="https://www.youtube.com/watch?v=aVHy6CIkUxc" data-toggle="lightbox" 
+              class="col-xl-4">
+                  <img src="/img/bg/yt-3.jpg" class="img-fluid" style="height:80%; width: 95%;">
+          </div>
+      </div>
+  </div>
+ 
+    <!--YT VIDEO END-->
+
+    <style>
+      #benefits {
+        background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.5)), url(/img/bg/bg6.jpeg);
+        background-size: cover;
+        background-position: center;
+        color: #efefef !important;
+        background-attachment: fixed;
+        padding-top: 40px;
+        padding-bottom: 50px;
         
+      }
+      #benefits h1{
+        text-align: center;
+        color: #efefef !important;
+        padding-bottom: 10px;
+      }
+      #benefits h1::after{
+        content: '';
+        background: #efefef;
+        display: block;
+        height: 3px;
+        width: 170px;
+        margin: 20px auto 5px;
+      }
+      .benefits{
+        margin-top: 40px;
+      }
+      #benefits p{
+        font-size: 14px;
+        margin-top: 20px;
+        color: white;
+      }
+      .benefits .col-md-3:hover{
+        background: seagreen;
+        cursor: pointer;
+        transition: 0.7s;
+      }
+      </style>
+
+
+<section id="benefits" style="margin-top: 5%;">
+  <div class="container">
+    
+    <div class="row benefits">
+          <div class="col-md-3 text-center">
+          <h3 style="margin-left: 180%;">Treatment</h3>
+          <p style="margin-left: 100%%;"><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        </div>
+
       </div>
     </div>
+</section>
+
+
+      <!--Vision Mission Start-->
+  
+<div class="wrapper">
+  <div class="box-area">
     <div class="single-team">
+    
+      <img src="/img/fruits/fruit-apple.jpg" alt="">
+      <div class="content">
+        <h3>Mission <span>chuchu</span></h3>                
+      </div>
+    
+  </div>
+  <div class="single-team">
+    
+      <img src="/img/fruits/fruit-cherry.jpg" alt="">
+      <div class="content">
+        <h3>Vision <span>chuchu</span></h3>               
       
-        <img src="/img/fruits/fruit-grapes.jpeg " alt="">
-        <div class="content">
-          <h3>chuchu <span>chuchu</span></h3>                
-        </div>
-      
-    </div>
     </div>
   </div>
+  
+  </div>
+</div>
 
 
 <style>
-  .wrapper {
-	display: grid;
-	place-items: center;
-	height: 70vh;
-	width: 100%;
-	margin: auto;
+.wrapper {
+display: grid;
+place-items: center;
+height: 70vh;
+width: 100%;
+margin: auto;
+  background-color: whitesmoke;
 }
 .box-area {
-	display: flex;
+display: flex;
 }
 .single-team {
-	width: 33%;
-	height: auto;
-	margin: 0 15px;
-	position: relative;
-	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+width: 33%;
+height: auto;
+margin: 0 15px;
+position: relative;
+
 }
 .single-team img {
-	width: 100%;
-	height: 120%;
+width: 80%;
+height: 120%;
+  margin-left: 60%;
 }
 .content {
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 120%;
-	width: 100%;
-	color: #fff;
-	transform: scale(0, 1);
-	transition: transform .2s ease-in-out;
+position: absolute;
+top: 0;
+left: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 120%;
+width: 80%;
+color: #fff;
+transform: scale(0, 1);
+transition: transform .2s ease-in-out;
+  margin-left: 60%;
 }
 .content::before {
-	content: "";
-	position: absolute;
-	top: 0;
-	left: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
-	width: 100%;
-	color: #fff;
-	background: linear-gradient(45deg, #0476cd, #1bbff4);
+content: "";
+position: absolute;
+top: 0;
+left: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100%;
+width: 100%;
+color: #fff;
+background: linear-gradient(45deg, #0476cd, #1bbff4);
 }
 .single-team:hover .content {
-	transform: scale(1, 1);
+transform: scale(1, 1);
 }
 .content>* {
-	z-index: 999;
+z-index: 999;
 }
 .content h3 span {
-	display: block;
-	font-family: 'Cookie', cursive;
+display: block;
+font-family: 'Cookie', cursive;
 }
 .content h3 {
-	text-align: center;
-	font-family: impact;
-	font-size: 30px;
+text-align: center;
+font-family: impact;
+font-size: 30px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
-	.wrapper {
-		width: 100%;
-	}
-	.box-area {
-		flex-direction: column;
-	}
-	.single-team {
-		width: 100%;
-		margin: 0;
-	}
+.wrapper {
+  width: 100%;
+}
+.box-area {
+  flex-direction: column;
+}
+.single-team {
+  width: 100%;
+  margin: 0;
+}
 }
 @media (max-width: 767px) {
-	.wrapper {
-		width: 100%;
-	}
-	.box-area {
-		flex-direction: column;
-	}
-	.single-team {
-		width: 100%;
-		margin: 0;
-	}
+.wrapper {
+  width: 100%;
 }
- 
+.box-area {
+  flex-direction: column;
+}
+.single-team {
+  width: 100%;
+  margin: 0;
+}
+}
+
 </style>
+      
+         <!--Vision Mission End-->
 
-<footer class="bg-light text-dark pt-5 pb-4">
-    <div class="container text-center text-md-left">
-        <div class="row text-center text-md-left">
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold text-info" style="text-decoration: none;">About Us</h5>
-                    <hr class="mb-1">
-                    <p>lorem ipsum dolor sit amet, consetetur adipisicing elit, sed do eiusmod tempor 
-                        incididunt labore at dolore magna aliqua.
-                    </p>
-                </div>
-                
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold text-info">Let Us Help</h5>
-                    <hr class="mb-4">
-                    <p>
-                        <a href="#" class="text-dark" style="text-decoration: none;">Your account</a>
-                    </p>
-                    <p>
-                        <a href="#" class="text-dark" style="text-decoration: none;">your orders</a>
-                    </p>
-                    <p>
-                        <a href="#" class="text-dark" style="text-decoration: none;">your account</a>
-                    </p>
-                    <p>
-                        <a href="#" class="text-dark" style="text-decoration: none;">chuchuchu</a>
-                    </p>
-                </div>
 
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold text-info">Let Us Help</h5>
-                    <hr class="mb-4">
-                    <p>
-                        <a href="#" class="text-dark" style="text-decoration: none;">Your account</a>
-                    </p>
-                    <p>
-                        <a href="#" class="text-dark" style="text-decoration: none;">your orders</a>
-                    </p>
-                    <p>
-                        <a href="#" class="text-dark" style="text-decoration: none;">your account</a>
-                    </p>
-                    <p>
-                        <a href="#" class="text-dark" style="text-decoration: none;">chuchuchu</a>
-                    </p>
-                </div>
+        <!--Footer Start-->
 
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold text-info">Let Us Help</h5>
-                    <hr class="mb-4">
-                    <p>
-                       <li class="fas fa-home mr-3"></li>New York NY 2333, US
-                    </p>
-                    <p>
-                        <li class="fas fa-envelope mr-3"></li>New York NY 2333, US
-                     </p>
-                     <p>
-                        <li class="fas fa-phone mr-3"></li>+84839383
-                     </p>
-                     <p>
-                        <li class="fas fa-print mr-3"></li>+84839383
-                     </p>
-                </div>
-
-                <hr class="mb-4">
-                <div class="row d-flex justify-content-center">
-                    <div>
-                        <p>
-                            Copyright 2020 All Rights Reserved By :
-                            <a href="#" style="text-decoration: none;">
-                                <strong class="text-info">The Providers</strong>
-                            </a>
+        <footer class="bg-light text-dark pt-5 pb-4" style="margin-top: 2%;">
+            <div class="container text-center text-md-left">
+                <div class="row text-center text-md-left">
+                        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                            <h5 class="text-uppercase mb-4 font-weight-bold text-info" style="text-decoration: none">FarmBook</h5>
+                            <hr class="mb-4" style="height: 2px; color: black">
+                            <p class="text-dark">
+                                lorem ipsum dolor sit amet, consetetur adipisicing elit, sed do eiusmod tempor 
+                            </p>
+                        </div>
+                        
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                            <h5 class="text-uppercase mb-4 font-weight-bold text-info">About</h5>
+                            <hr class="mb-4" style="height: 2px; color: black;">
+                            <p>
+                                <a href="#" class="text-dark" style="text-decoration: none;">Our Story</a>
+                            </p>
+                            <p>
+                                <a href="#" class="text-dark" style="text-decoration: none;">Contacts</a>
+                            </p>
+                            <p>
+                                <a href="#" class="text-dark" style="text-decoration: none;">Farmers Join!</a>
+                            </p>
+                            <p>
+                                <a href="#" class="text-dark" style="text-decoration: none;">How to Sell Farm Products Online?</a>
+                            </p>
+                        </div>
+        
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                            <h5 class="text-uppercase mb-4 font-weight-bold text-info">Resources</h5>
+                            <hr class="mb-4" style="height: 2px; color: black;">
+                            <p>
+                                <a href="#" class="text-dark" style="text-decoration: none;">Farming Tutorials</a>
+                            </p>
+                            <p>
+                                <a href="#" class="text-dark" style="text-decoration: none;">Food Types</a>
+                            </p>
+                            <p>
+                                <a href="#" class="text-dark" style="text-decoration: none;">Farmbook Feed</a>
+                            </p>
+                            <p>
+                                <a href="#" class="text-dark" style="text-decoration: none;">E-Learning</a>
+                            </p>
+                            <p>
+                              <a href="#" class="text-dark" style="text-decoration: none;">Farming Techniques</a>
+                          </p>
+                          <p>
+                            <a href="#" class="text-dark" style="text-decoration: none;">Tips in Farming</a>
                         </p>
-                    </div>
+                        </div>
+        
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                            <h5 class="text-uppercase mb-4 font-weight-bold text-info">Contacts</h5>
+                            <hr class="mb-4" style="height: 2px; color: black">
+                            <p>
+                               <li class="fas fa-home mr-3"></li> Nasugbu Nas 4231, PH
+                            </p>
+                            <p>
+                                <li class="fas fa-envelope mr-3"></li> farmbook@gmail.com
+                             </p>
+                             <p>
+                                <li class="fas fa-phone mr-3"></li> +9353081922
+                             </p>
+                             <p>
+                                <li class="fas fa-print mr-3"></li> +9353081922
+                             </p>
+                        </div>
+        
+                        <hr class="mb-4">
+                        <div class="row d-flex justify-content-center">
+                            <div>
+                                <p>
+                                    Copyright 2020 All Rights Reserved By :
+                                    <a href="#" style="text-decoration: none;">
+                                        <strong class="text-info">The Providers</strong>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="text-center">
+                                <ul class="list-unstyled list-inline">
+                                    <li class="list-inline-item">
+                                        <a href="#" class="text-dark"><i class="fab fa-facebook"></i></a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="text-dark"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="text-dark"><i class="fab fa-google-plus"></i></a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="text-dark"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a href="#" class="text-dark"><i class="fab fa-youtube"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                 </div>
-                <div class="row d-flex justify-content-center">
-                    <div class="text-center">
-                        <ul class="list-unstyled list-inline">
-                            <li class="list-inline-item">
-                                <a href="#" class="text-dark"><i class="fab fa-facebook"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#" class="text-dark"><i class="fab fa-twitter"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#" class="text-dark"><i class="fab fa-google-plus"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#" class="text-dark"><i class="fab fa-linkedin-in"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#" class="text-dark"><i class="fab fa-youtube"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-        </div>
-    </div>
-</footer>
+            </div>
+        </footer>    
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/js/bootstrap.min.js">
-    </body>
+   <!--Footer End-->
+
+<!-- lightbox -->
+   <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+
+
+</body>
 </html>
