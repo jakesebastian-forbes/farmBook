@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Profile Page</title>
+
+    <link rel="stylesheet" href="../bootstrap-5.2.2/css/bootstrap.min.css"/>
+    <script src="https://kit.fontawesome.com/82727f4033.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/1c020da525.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://kit.fontawesome.com/82727f4033.css" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Archivo Black' rel='stylesheet'> 
+
+    <!-- Font Awesome -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    /> -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <style>
+    body{
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    background-color: #E4E4E4;
+    overflow-x: hidden;
+    }
+   .main-nav{
+    width: 100%;
+    padding: 0.7rem 0;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    background-color: #57744B;
+    color: #FFDE59;
+    padding-left: 5px;
+    
+
+}
+
+.main-nav .container-fluid{
+ 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+   
+}
+
+.main-nav .container{
+    margin-left: 1px;
+}
+.container h2{
+    margin-left: 20px;
+}
+.main-nav .container h2{
+font-family: 'Archivo Black';
+}
+.search-bar{
+    background-color: white;
+    border-radius: 2rem;
+    /* padding: 0.6rem 1rem;s */
+    margin-left: 0%;
+}
+.search-bar input[type="search"]{
+    background: transparent;
+    width: 32vw;
+    height: 5vh;
+    padding: 0.6rem 1rem;
+    border-radius: 2rem;
+    
+}
+
+.main-nav .search-bar input[type="search"]::placeholder{
+    color: gray;
+}
+.profile-pic img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+}
+  </style>
+
+<style>
+    /*
+ ⚡MAKE SURE TO SUBSCRIBE PROGRAMMER CLOUD⚡
+*/
+
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"); */
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header__wrapper header {
+    margin-top: 75px;
+  width: 100%;
+  background: url("/img/bg/bg1.jpg") no-repeat 50% 20% / cover;
+  min-height: calc(100px + 15vw);
+}
+
+.header__wrapper .cols__container .left__col {
+  padding: 25px 20px;
+  text-align: center;
+  max-width: 350px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.header__wrapper .cols__container .left__col .img__container {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translatex(-50%);
+}
+.header__wrapper .cols__container .left__col .img__container img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  box-shadow: 1px 3px 12px rgba(0, 0, 0, 0.18);
+}
+.header__wrapper .cols__container .left__col .img__container span {
+  position: absolute;
+  background: #2afa6a;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  bottom: 3px;
+  right: 11px;
+  border: 2px solid #fff;
+}
+ .user-info  {
+  margin-top: 60px;
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 20px;
+  padding-top: 15px;
+  padding: 20px;
+  display: block;
+}
+.header__wrapper .cols__container .left__col p {
+  font-size: 0.9rem;
+  color: #818181;
+  margin: 0;
+}
+.header__wrapper .cols__container .left__col .about {
+  justify-content: space-between    ;
+  position: relative;
+  margin: 20px 0;
+}
+.header__wrapper .cols__container .left__col .about li {
+  display: flex;
+  flex-direction: column;
+  color: #818181;
+  font-size: 0.9rem;
+}
+.header__wrapper .cols__container .left__col .about li span {
+  color: #1d1d1d;
+  font-weight: 600;
+}
+.header__wrapper .cols__container .left__col .about:after {
+  position: absolute;
+  content: "";
+  bottom: -16px;
+  display: block;
+  background: #cccccc;
+  height: 1px;
+  width: 100%;
+}
+.header__wrapper .cols__container .content p {
+  font-size: 1rem;
+  color: #1d1d1d;
+  line-height: 1.8em;
+}
+.header__wrapper .cols__container .content ul {
+  gap: 30px;
+  justify-content:block;
+  /* align-items: center; */
+  margin-top: 25px;
+}
+.header__wrapper .cols__container .content ul li {
+  /* display: flex; */
+}
+.header__wrapper .cols__container .content ul i {
+  font-size: 1.3rem;
+}
+.header__wrapper .cols__container .right__col nav {
+  display: flex;
+  align-items: center;
+  padding: 30px 0;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.header__wrapper .cols__container .right__col nav ul {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+.header__wrapper .cols__container .right__col nav ul li a {
+  text-transform: uppercase;
+  color: #818181;
+}
+.header__wrapper .cols__container .right__col nav ul li:nth-child(1) a {
+  color: #1d1d1d;
+  font-weight: 600;
+}
+.header__wrapper .cols__container .right__col nav button {
+  background: #0091ff;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.header__wrapper .cols__container .right__col nav button:hover {
+  opacity: 0.8;
+}
+.header__wrapper .cols__container .right__col .photos {
+
+  display: block;
+  /* grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); */
+  gap: 20px;
+  overflow-y: hidden;
+}
+.header__wrapper .cols__container .right__col .photos img {
+  max-width: 100%;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsiveness */
+
+@media (min-width: 868px) {
+  .header__wrapper .cols__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90%;
+    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+  }
+  .header__wrapper .cols__container .left__col {
+    padding: 25px 0px;
+  }
+  .header__wrapper .cols__container .right__col nav ul {
+    flex-direction: row;
+    gap: 30px;
+  }
+  .header__wrapper .cols__container .right__col .photos {
+    /* height: 365px; */
+    /* overflow: auto; */
+    padding: 0 0 30px;
+  }
+}
+
+@media (min-width: 1017px) {
+  .header__wrapper .cols__container .left__col {
+    margin: 0;
+    margin-right: auto;
+  }
+  .header__wrapper .cols__container .right__col nav {
+    flex-direction: row;
+  }
+  .header__wrapper .cols__container .right__col nav button {
+    margin-top: 0;
+  }
+}
+
+</style>
+
+  <body>
+
+    <nav class="main-nav">
+        <div class="container-fluid">
+            <h1 style="color: #FFDE59;font-family: 'Archivo Black';">FarmBook</h1>
+      
+            <div class="search-bar" style="margin-left:310px; margin-right: 520px;">
+                <i class="uil uil-search"></i>
+                <input
+                type="search"
+                placeholder="Search for creators, inspirations and projects"
+                />
+            </div>
+            <div class="create">
+               
+                <div class="profile-pic">
+                    <img src="/img/profile pics/profile.jpg" alt="pic 1" />
+                </div>
+            </div>
+            
+        </div>  
+    </nav>
+
+<style>
+    .feed{
+        background-color:white;
+        border-radius: 10px;
+        padding: 1rem;
+        margin: 1rem 0;
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    .user h3{
+        margin-left: 5px;
+        margin-top: 13px;
+        font-size:20px;
+    }
+    .photo img{
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 0.7rem 0;
+    }
+
+        .like-btn{
+        
+        border-radius: 10px;
+        border: none;
+        background-color: transparent;
+        color: black;
+        padding: 5px 5px;
+        font-size: 20px; /* Set a font size */
+        cursor: pointer; /* Mouse pointer on hover */
+        color: blue;
+        
+        
+        
+    } 
+
+    .like-btn:active {
+        color:rgb(0,0,255,0.5)
+    }
+
+    .comment-btn{
+        /* margin-top: 20px; */
+        border-radius: 10px;
+        border: none;
+        background-color: transparent;
+        color: black;
+        padding: 5px 5px;
+        font-size: 20px; /* Set a font size */
+        cursor: pointer; /* Mouse pointer on hover */
+        color: green;
+        
+        
+        
+    }
+
+    .comment-btn:active {
+        color:rgb(60, 179, 113,0.5)
+    }
+
+
+    .comment-section{
+        width: 100%;
+        height: 30px;
+        border-radius: 25px;
+        padding: 0.6rem 1rem;
+        background-color:#E4E4E4 ;
+    }
+</style>
+
+    <div class="header__wrapper">
+      <header></header>
+      <div class="cols__container">
+        <div class="left__col" >
+          <div class="img__container">
+            <img src="/img/profile pics/profile.jpg" alt="Anna Smith" />
+            <span></span>
+          </div>
+          <div class="user-info" style="background-color: white;display: block;">
+            <h2>Mac Miller</h2>
+
+            <div class="infos">
+                <ul class="about d-block" style="background-color: purple;float: left;">
+                    <li style="background-color: #2afa6a;"><span>4,073</span>Followers</li>
+                    <li style="background-color: aqua;"><span>322</span>Following</li>
+                    <!-- <li><span>200,543</span>Attraction</li> -->
+                  </ul>
+            </div>
+           
+  
+            <div class="content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aliquam
+                erat volutpat. Morbi imperdiet, mauris ac auctor dictum, nisl
+                ligula egestas nulla.
+              </p>
+  
+              <ul>
+                <li><i class="fab fa-twitter"></i></li>
+                <i class="fab fa-pinterest"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-dribbble"></i>
+              </ul>
+            </div>
+          </div>
+         
+        </div>
+        <div class="right__col">
+          <nav class="nav-about">
+            <ul>
+              <li><a href="">Post</a></li>
+              
+              <li><a href="">about</a></li>
+            </ul>
+            <button>Follow</button>
+          </nav>
+
+          
+          <style>
+
+          </style>
+          <div class="photos" style="overflow-y: hidden;">
+            <div class="feed">
+                <div class="head">
+                    
+                </div>
+                 <div class="user d-flex" >
+                     <div class="profile-pic" style="margin: 3px;">
+                         <img src="/img/profile pics/profile.jpg" alt="">
+                     </div>
+                     <div class="info">
+                         <h3>Mac Miller</h3>
+                      
+                       
+                     </div >
+                 
+                 </div>
+                 <style>
+                  
+                 </style>
+                 <div class="photo">
+                     <img id="myImg1"src="/img/Vegetables/carrots.jpg" alt="">
+                     
+                 </div>
+                 <style>
+                    
+                                       
+                    
+                 </style>
+                 <div class="action-button">
+                     <div class="interaction-button">
+                        <button type="button" class="like-btn"> <span><i class="fa-solid fa-thumbs-up"></i></span></button>
+                        <button type="button" class="comment-btn"> <span><i class="fa-solid fa-comment"></i></span></button>
+                         
+                     
+                     </div>
+                    
+                 </div>
+
+                 <div class="liked-by">
+                  
+                     <p>Liked by<b>188 others</b></p>
+                 </div>
+
+                 <div class="caption">
+                     <p><b class="mr-2">Izuku Midoriya </b>Lorem ipsum dolor storiesquiquam eius.
+                    <span class="hash-tag">#lifestyle</span></p>
+                 </div>
+                 <div class="comments">
+                    <input type="text" class="comment-section" placeholder="Write a comment..." id="message-search">
+                 </div>
+            </div>
+
+              <div class="feed">
+                <div class="head">
+                    
+                </div>
+                 <div class="user d-flex" >
+                     <div class="profile-pic" style="margin: 3px;">
+                         <img src="/img/profile pics/profile.jpg" alt="">
+                     </div>
+                     <div class="info">
+                         <h3>Mac Miller</h3>
+                      
+                       
+                     </div >
+                 
+                 </div>
+                 <style>
+                  
+                 </style>
+                 <div class="photo">
+                     <img id="myImg1"src="/img/Vegetables/carrots.jpg" alt="">
+                     
+                 </div>
+                 <style>
+                    
+                                       
+                    
+                 </style>
+                 <div class="action-button">
+                     <div class="interaction-button">
+                        <button type="button" class="like-btn"> <span><i class="fa-solid fa-thumbs-up"></i></span></button>
+                        <button type="button" class="comment-btn"> <span><i class="fa-solid fa-comment"></i></span></button>
+                         
+                     
+                     </div>
+                    
+                 </div>
+
+                 <div class="liked-by">
+                  
+                     <p>Liked by<b>188 others</b></p>
+                 </div>
+
+                 <div class="caption">
+                     <p><b class="mr-2">Izuku Midoriya </b>Lorem ipsum dolor storiesquiquam eius.
+                    <span class="hash-tag">#lifestyle</span></p>
+                 </div>
+                 <div class="comments">
+                    <input type="text" class="comment-section" placeholder="Write a comment..." id="message-search">
+                 </div>
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
