@@ -31,34 +31,61 @@
         body{
             overflow-x: hidden !important;
         }
-        .nav-head{ 
-          background-color:#57744B ;
-          display: flex;
-          justify-content: space-between;
-          box-sizing: border-box;
-          padding: 1%;
-          overflow: hidden  ;
-        }
-        .nav-links ul{
-          display: flex;
-          list-style-type: none;
-          font-size: medium;
-        }
-        .nav-links li{
-          justify-content: end;
-          font-family: 'Archivo Black';
-          color: #FFDE59;
-          margin: 0% 14px;
-          cursor: pointer;
-          padding-top: 2%;
-        }
-        .nav-links li a{
-          text-decoration: none;
-          color:#FFDE59 ;
-        }
-        .nav-links li a:hover {
-          color: white;
-        }
+        .navbar{
+      background-color: #57744B;
+      font-family: 'Archivo Black';
+      padding: 10px;
+    }
+    .navbar-nav a {
+      font-size: 15px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .navbar-light .navbar-brand {
+      color: white;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+      color: #FFDE59;
+    }
+    .navbar-light .navbar-nav .nav-link {
+      color: #FFDE59;
+      font-family: 'Archivo Black';
+    }
+    .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+      color: #FFDE59;
+    }
+    .w-100 {
+      height: 100vh;
+    }
+    .navbar-toggler {
+      padding: 1px 5px;
+      font-size: 18px;
+      line-height: 0.3;
+      color: #FFDE59;
+    }
+    .navbar-light .navbar-toggler {
+      border-color: transparent;
+      background:transparent;
+      border: none;
+      outline: none;
+      margin-right: 2%;
+    }
+    .navbar-light .navbar-toggler:focus{
+        outline: none;
+        box-shadow: none;
+      }
+    .navbar-nav {
+      text-align: center;    
+    }
+    .navbar-collapse {
+      background: transparent;
+    }
+    .navbar-collapse .nav-link {
+      color: #FFDE59 !important;
+    }
         .header{
         background-image: linear-gradient(rgba(1,2,2,0.7),rgba(0,1,1,0.4)), url(/img/vegetables/broccoli-1.jpeg);
         background-size: cover;
@@ -89,26 +116,27 @@
     </style>
    
    <section class="header">
-   <div class="nav-head d-flex justify-content-between align-items-center " >
-    <h1 style="color: #FFDE59;font-family: 'Archivo Black';">FarmBook</h1>
-
-    <div class="nav-links me-2">
-      <ul>
-        <li><a class="active" href="homepage.html"><i class="fa fa-fw fa-home fa-2x"></i>Home</a></li>
-        <li><a class ="active" href="aboutpage.html"><i class="fa fa-fw fa-circle-info fa-2x"></i>About Us</a></li>
-        <li><a class ="active" href="e-learning.html"><i class="fa fa-fw fa-book fa-2x"></i>E-Learning</a></li>
-        <li><a class ="active" href="contact.html"><i class="fa fa-fw fa-phone fa-2x"></i>Contact</i></a></li>
-     </ul>
-        </div>
-     
- </div>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" >
+      <h1 style="color: #FFDE59;font-family: 'Archivo Black';margin-left: 10px;">FarmBook</h1>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span><i class="fa-solid fa-bars" style="color: #FFDE59;"></i></span>
+      </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="color: #FFDE59;">
+                <li class="nav-item" ><a class="nav-link" href="homepage-test.html"><i class="fa fa-fw fa-home fa-2x"></i>Home</a></li>
+                <li class="nav-item" ><a class="nav-link"  href="aboutUs.html"><i class="fa fa-fw fa-circle-info fa-2x"></i>About Us</a></li>
+                <li class="nav-item" ><a class="nav-link" href="e-learning2.html"><i class="fa fa-fw fa-book fa-2x"></i>E-Learning</a></li>
+                <li class="nav-item" ><a class="nav-link"  href="contact.html"><i class="fa fa-fw fa-phone fa-2x"></i>Contact</i></a></li>
+              </ul>
+            </div>
+      </nav>
 
  
              
  <div class="site-section">
     <div class="container">
         <h1 style="text-align: center; color: #fff; font-family:Georgia, 'Times New Roman', Times, serif;
-      margin-bottom: 10%; font-size: 70px; margin-left: 2%;">All About Broccoli</h1>
+      margin-bottom: 10%; font-size: 70px; margin-left: 2%; margin-top: 10%;">All About Broccoli</h1>
       <div class="row justify-content-between align-items-center">
         <div class="col-lg-5 order-lg-1 ">
           <div class="broccoli-info">
@@ -120,24 +148,20 @@
           <h2 class="text-title mb-2" style="color: #fff; font-family: Georgia, 'Times New Roman', Times, serif;
           font-size: 42px; letter-spacing: 1px; margin-bottom: 15%; margin-top:8%;">How do broccolis grow?</h2>
           <p class="mb-3" style="text-align: justify; color: #fff;  letter-spacing: 2px; margin-top: 5%;
-          font-size: 17px;">Pineapple thrives best in sandy loam to clay loam soil which is well-drained,
-            rich in organic matter and has a pH of 4.5 to 5.5. It requires mild (240C to 300C) and
-            relatively uniform temperature throughout the year. It also requires evenly distributed
-            rainfall (100-150 cm/year) and a very short dry season. Pineapple grows best at an
-            elevations of 1,000 feet or 150 to 200 meters above sea level.
+          font-size: 17px;">Broccoli needs a sunny spot with partial shade to grow. A site that receives 5-7 hours of sunlight is a perfect spot to pick. Plant your broccoli seeds in soil that is fertile, moist, and drains well. To boost the growth of your plant, 
+          work on a thin layer of manure or 2-4 inches of manure before planting your seeds. Broccoli is a cool-season vegetable. Therefore, it should be planted in cooler months of the year for the best result. The growth of the broccoli plant will get affected by the high-temperature of the summer months. 
+          The perfect time to grow broccoli in India is around September-November.
           </p>
           <h2 class="text-title mb-2" style="color: #fff; font-family: Georgia, 'Times New Roman', Times, serif;
           font-size: 42px; letter-spacing: 1px; margin-bottom: 15%;">Nutrition Facts</h2>
           <p class="mb-3" style="text-align: justify; color: #fff;  letter-spacing: 2px; margin-top: 5%;
-          font-size: 17px;">One cup of fresh pineapple chunks contains approximately: <br> 82 calories,
-          0.2 grams (g) of fat, 0 g of cholesterol, 2 milligrams (mg) of sodium, 21.65 g of total carbohydrate (including 16 grams of sugar and 2.3 grams of fiber),
-          0.89 g of protein.</p>
+          font-size: 17px;">Calories: 35, Protein: 2.3 g, Carbs: 5.6 g, Fiber: 2.2 g, Fat: 0.3 g, Vitamin C: 91% of the Daily Value (DV),
+          Vitamin K: 77% of the DV, Folate: 15% of the DV</p>
           <h2 class="text-title mb-2" style="color: #fff; font-family: Georgia, 'Times New Roman', Times, serif;
           font-size: 42px; letter-spacing: 1px; margin-bottom: 15%;">Vitamins and Minerals</h2>
            <p class="mb-3" style="text-align: justify; color: #fff;  letter-spacing: 2px; margin-top: 5%;
-           font-size: 17px;">The same amount of fresh pineapple chunks provides:<br>131 percent of vitamin C,
-              2 percent of vitamin A, 2 percent of calcium, 3 percent of iron. Pineapple is also a source of important vitamins and minerals, including:
-              thiamin, riboflavin, vitamin B-6, folate, pantothenic acid, magnesium, manganese, potassium, beta-carotene and other antioxidants</p>
+           font-size: 17px;">Broccoli contains a variety of vitamins and minerals, including Vitamin C, Vitamin K1, Folate (vitamin B9),
+           Potassium, Manganese, and Iron. Broccoli also contains numerous other vitamins and minerals in smaller amounts.</p>
         </div>
       </div>
     </div>
@@ -157,10 +181,8 @@
                 <h2 class="text-title mb-2" style="color: #fff; font-family: Georgia, 'Times New Roman', Times, serif;
                 font-size: 45px; letter-spacing: 1px;;">Difficulty and Lifespan</h2>
                 <p class="mb-3" style="text-align: justify; color: #fff;  letter-spacing: 2px; margin-top: 5%;
-                font-size: 17px;">Pineapples aren't hard to grow but they do take a time commitment; depending on the method, it may be several years until the plant flowers and produces fruit. 
-                  If you want to grow your own pineapples, there are three ways to get started.
-                  Lifespan of a pineapple plant is 7 years. First fruit is borne only after the 2nd year. Every year thereafter each plant produces only 1 fruit.
-                </p>
+                font-size: 17px;"> The shelf life of broccoli can be 3-4 weeks at zero degrees Celsius, 
+                but low consistent temperature is hard to maintain across the supply chain. 
               </div>
             </div>
           </div>
@@ -379,5 +401,7 @@
   </div>
 </footer>    
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
   </html>
