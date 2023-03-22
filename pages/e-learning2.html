@@ -17,6 +17,9 @@
   <body>
 
     <style>
+      body{
+            overflow-x: hidden !important;
+        }
       .navbar{
       background-color: #57744B;
       font-family: 'Archivo Black';
@@ -99,7 +102,7 @@
         height: 100%;
         top: 0;
         left: 0;
-        background: rgba(0, 0, 0, 0.2);
+        background: rgba(0, 0, 0, 0.1);
         z-index: 1;
       }
       .c-item {
@@ -108,7 +111,7 @@
       .c-img {
         height: 100%;
         object-fit: cover;
-        filter: brightness(0.4);
+        filter: brightness(0.8);
       }
     </style>
 
@@ -119,10 +122,9 @@
               </button>
                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="color: #FFDE59;">
-                        <li class="nav-item" ><a class="nav-link" href="homepage-test.html"><i class="fa fa-fw fa-home fa-2x"></i>Home</a></li>
-                        <li class="nav-item" ><a class="nav-link"  href="aboutUs.html"><i class="fa fa-fw fa-circle-info fa-2x"></i>About Us</a></li>
-                        <li class="nav-item" ><a class="nav-link" href="e-learning2.html"><i class="fa fa-fw fa-book fa-2x"></i>E-Learning</a></li>
-                        <li class="nav-item" ><a class="nav-link"  href="contact.html"><i class="fa fa-fw fa-phone fa-2x"></i>Contact</i></a></li>
+                        <li class="nav-item" ><a class="nav-link" href="homepage-test.html"><i class="fa fa-fw fa-home fa"></i>Home</a></li>
+                        <li class="nav-item" ><a class="nav-link"  href="aboutUs.html"><i class="fa fa-fw fa-circle-info fa"></i>About Us</a></li>
+                        <li class="nav-item" ><a class="nav-link" href="e-learning2.html"><i class="fa fa-fw fa-book fa"></i>E-Learning</a></li>
                       </ul>
                     </div>
               </nav>
@@ -138,7 +140,7 @@
       <div class="carousel-item active">
         <img src="/img/bg/e-learn-bg1.jpg" class="d-block w-100 c-img" alt="..." >
         <div class="carousel-caption top-0 mt-4">
-          <h5 class="display-1 fw-bolder text-capitalize" style="margin-top: 9%; font-size: 48px;">E-Learning</h5>
+          <h5 class="display-1 fw-bolder text-capitalize" style="margin-top: 11%; font-size: 48px;">E-Learning</h5>
           <p class="fs-3 mt-5" style="color: #fff;">Planting pattern for plants</p>
         </div>
       </div>
@@ -340,6 +342,10 @@
         transform: scale(1);
       }
     }
+     .card-title{
+     margin-left: 30px;
+     font-size: 20px;
+    }
       </style>
 
        <!-- techniques section -->
@@ -348,13 +354,13 @@
               <div class="row">
                   <div class="col-lg-12 text-center">
                     <h6 class="section-title text-center text-secondary text-uppercase">Farming Techniques</h6>
-                    <h1 class="mb-5" style="font-size: 50px;">Techniques in <span class="text-header uppercase">Farming</span></h1>
+                    <h1 class="mb-5" style="font-size: 50px;">Techniques in <span class="text-header uppercase;">Farming</span></h1>
                   </div>
             <div class="col-lg-4 col-sm-6 mb-4">
               <div class="card border-0 shadow rounded-xs pt-5">
-                  <div class="card-body"> <i class="fa-solid fa-leaf fa-2x icon-lg icon-green icon-bg-green icon-bg-circle mb-3"></i>
-                      <h4 class="mt-4 mb-3">Plant a Variety of Crops</h4>
-                      <p style="text-align: justify; font-size: 17px">Rotating your plants promotes biodiversity. It also improves your soil quality and 
+                  <div class="card-body"> 
+                    <i class="fa-solid fa-leaf fa-2x icon-lg icon-green icon-bg-green icon-bg-circle mb-3"></i><span class="card-title"> Plant a Variety of Crops</span>
+                      <p style="text-align: justify; font-size: 17px; margin-top: 3%;">Rotating your plants promotes biodiversity. It also improves your soil quality and 
                         helps control pests. One method for adding diversity is intercropping. This involves growing a variety of 
                         vegetation in one area. Another trick is to rotate crops every three to four years.</p>
                   </div>
@@ -362,9 +368,9 @@
           </div>
           <div class="col-lg-4 col-sm-6 mb-4">
               <div class="card border-0 shadow rounded-xs pt-5">
-                  <div class="card-body"> <i class="fa-solid fa-seedling fa-2x icon-lg icon-yellow icon-bg-yellow icon-bg-circle mb-3"></i>
-                      <h4 class="mt-4 mb-3">Reduce Your Tillage</h4>
-                      <p style="text-align: justify; font-size: 17px">Tillage is traditional plowing which involves preparing the soil by digging and 
+                  <div class="card-body"> <i class="fa-solid fa-seedling fa-2x icon-lg icon-yellow icon-bg-yellow icon-bg-circle mb-3"></i><span class="card-title"> Reduce Your Tillage</span>
+                      
+                      <p style="text-align: justify; font-size: 17px; margin-top: 3%;">Tillage is traditional plowing which involves preparing the soil by digging and 
                         overturning. However, this can cause dirt loss. Instead, try to insert seeds directly into untouched mulch. 
                         The technique can also reduce erosion and improve soil health.</p>
                   </div>
@@ -372,9 +378,9 @@
           </div>
           <div class="col-lg-4 col-sm-6 mb-4">
               <div class="card border-0 shadow rounded-xs pt-5">
-                  <div class="card-body"> <i class="fa-solid fa-plant-wilt fa-2x icon-lg icon-brown icon-bg-brown icon-bg-circle mb-3"></i>
-                      <h4 class="mt-4 mb-3">Taking on Agroforestry Practices</h4>
-                      <p style="text-align: justify; font-size: 17px">This is one of the best farming techniques using natural resources. It involves 
+                  <div class="card-body"> <i class="fa-solid fa-plant-wilt fa-2x icon-lg icon-brown icon-bg-brown icon-bg-circle mb-3"></i><span class="card-title">Taking on Agroforestry Practices</span>
+                      <!-- <h4 class="mt-4 mb-3">Taking on Agroforestry Practices</h4> -->
+                      <p style="text-align: justify; font-size: 17px; margin-top: 3%;">This is one of the best farming techniques using natural resources. It involves 
                         mixing in trees within your farming operations. These trees provide shade and shelter for plants and animals.
                         In addition, they provide extra income by allowing you to sell food or lumber.</p>
                   </div>
@@ -382,9 +388,9 @@
           </div>
           <div class="col-lg-4 col-sm-6 mb-4">
               <div class="card border-0 shadow rounded-xs pt-5">
-                  <div class="card-body"> <i class="fa-brands fa-pagelines fa-2x icon-lg icon-brown icon-bg-brown icon-bg-circle mb-3"></i>
-                      <h4 class="mt-4 mb-3">Try Hydroponics and Aquaponics Methods</h4>
-                      <p style="text-align: justify; font-size: 17px">These techniques focus on growing plants without soil. Instead, nourish them 
+                  <div class="card-body"> <i class="fa-brands fa-pagelines fa-2x icon-lg icon-brown icon-bg-brown icon-bg-circle mb-3"></i><span class="card-title">Taking on Agroforestry Practices</span>
+                      <!-- <h4 class="mt-4 mb-3">Try Hydroponics and Aquaponics Methods</h4> -->
+                      <p style="text-align: justify; font-size: 17px; margin-top: 8%;">These techniques focus on growing plants without soil. Instead, nourish them 
                         with specialized nutrients and water. For hydroponic systems, the vegetation is grown in a mineral 
                         solution with gravel.</p>
                   </div>
@@ -392,18 +398,18 @@
           </div>
           <div class="col-lg-4 col-sm-6 mb-4">
               <div class="card border-0 shadow rounded-xs pt-5">
-                  <div class="card-body"> <i class="fa-solid fa-wheat-awn fa-2x icon-lg icon-yellow icon-bg-yellow icon-bg-circle mb-3"></i>
-                      <h4 class="mt-4 mb-3">Incorporate Biodynamic Farming</h4>
-                      <p style="text-align: justify; font-size: 17px;"><br>Biodynamic farming takes an ecological and ethical approach to farming. 
+                  <div class="card-body"> <i class="fa-solid fa-wheat-awn fa-2x icon-lg icon-yellow icon-bg-yellow icon-bg-circle mb-3"></i><span class="card-title">Incorporate Biodynamic Farming</span>
+                      <!-- <h4 class="mt-4 mb-3">Incorporate Biodynamic Farming</h4> -->
+                      <p style="text-align: justify; font-size: 17px;margin-top: 2%;"><br>Biodynamic farming takes an ecological and ethical approach to farming. 
                         It improve soil quality with on-site methods. These include things like composting, using animal manure, and cover cropping.</p>
                   </div>
               </div>
           </div>
           <div class="col-lg-4 col-sm-6 mb-4">
               <div class="card border-0 shadow rounded-xs pt-5">
-                  <div class="card-body"> <i class="fa-solid fa-leaf fa-2x icon-lg icon-green icon-bg-green icon-bg-circle mb-3"></i>
-                      <h4 class="mt-4 mb-3">Apply Permaculture Practices</h4>
-                      <p style="text-align: justify; font-size: 17px;";>This is a system that applies principles found in nature to land management. Permaculture intends to design efficient systems that use less waste. 
+                  <div class="card-body"> <i class="fa-solid fa-leaf fa-2x icon-lg icon-green icon-bg-green icon-bg-circle mb-3"></i><span class="card-title">Apply Permaculture Practices</span>
+                      <!-- <h4 class="mt-4 mb-3">Apply Permaculture Practices</h4> -->
+                      <p style="text-align: justify; font-size: 17px; margin-top: 2%;";>This is a system that applies principles found in nature to land management. Permaculture intends to design efficient systems that use less waste. 
                         There is a focus on adding different perennials, such as fruit trees, that all work together. </p>
                   </div>
               </div>
@@ -430,29 +436,6 @@
           .container-techniques {
             padding: 40px;
           }
-          .section-title {
-          margin-bottom: 20px;
-          }
-          .section-title::before {
-          position: absolute;
-          content: "";
-          width: 45px;
-          height: 2px;
-          top: 50%;
-          left: -55px;
-          margin-top: -1px;
-          background: green;
-          }
-          .section-title::after {
-          position: absolute;
-          content: "";
-          width: 45px;
-          height: 2px;
-          top: 50%;
-          right: -55px;
-          margin-top: -1px;
-          background: green;
-        }
 
         .section-title.text-start::before,
         .section-title.text-end::after {
@@ -474,16 +457,17 @@
           .icon-bg-circle::before {
               z-index: 1;
               position: relative;
+              left: 10px;
+              top: 6px;
           }
           
-        
           .icon-bg-circle::after {
               content: '';
               position: absolute;
-              width: 68px;
-              height: 68px;
-              top: -35px;
-              left: 15px;
+              width: 65px;
+              height: 65px;
+              top: -2px;
+              left: 5px;
               border-radius: 50%;
               background: inherit;
               opacity: .1
@@ -513,14 +497,43 @@
           .icon-brown {
               color: burlywood;
           }
-          
           .icon-bg-green::after {
-              background: #66cc33
+              background: #66cc33;
           }
-          
           .icon-green {
-              color: #66cc33
+              color: #66cc33;
+         
           }
+          .section-title {
+      position: relative;
+      display: inline-block;
+      }
+      .section-title::before {
+      position: absolute;
+      content: "";
+      width: 45px;
+      height: 2px;
+      top: 50%;
+      left: -55px;
+      margin-top: -1px;
+      background: green;
+      }
+      .section-title::after {
+      position: absolute;
+      content: "";
+      width: 45px;
+      height: 2px;
+      top: 50%;
+      right: -55px;
+      margin-top: -1px;
+      background: green;
+    }
+
+    .section-title.text-start::before,
+    .section-title.text-end::after {
+        display: none;
+    }
+      
               </style>
 
 
@@ -608,12 +621,12 @@
         <div class = "container">
             <div class = "farmbook-content">
                 <div class = "title">
-                    <h2 style="margin-bottom: 3%; font-size: 43px; font-family: 'Archivo Black';">Agriculture Tips For Farmers</h2>
+                    <h2 style="margin-bottom: 3%; font-size: 43px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Agriculture Tips For Farmers</h2>
                 </div>
                <div class = "container">
                 <div class="row justify-content-center align-items-center">
                 <div class="col-lg-12 order-lg-1">
-        <img src = "/img/bg/plant.jpg" style="width:65%">
+        <img src = "/img/bg/plant.jpg" style="width: 70%;">
         <div class="col-lg-12 order-lg-2 mb-4 mb-lg-0"> 
         <p class = "text" style="text-align: center; color: white; font-size: 22px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" >
           1. Invest in the best farming equipment<br>
@@ -637,7 +650,7 @@
    #farmbook {
         background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(/img/bg/e-learn-bg5.jpg) center/cover no-repeat fixed;
         color: white;
-        height: 75%;
+        height: 80%;
         width: 101%;
         margin-top: 3%;
         background-size: cover;
@@ -653,8 +666,7 @@
     }
     #farmbook {
           text-align: center;
-          min-height: 130vh;
-         
+          min-height: 135vh;
       }
     #farmbook h2{
         padding-top:  30px;
@@ -827,7 +839,7 @@
                             <img src="/img/bg/tips-pic2.jpg" class="img-fluid" alt="">
                         </div>
                           <h3 class="card-title">Tips on How to Keep Vegetables Fresh</h3>
-                          <p style="font-size: 17px;">Here are some tips on how to keep your vegetables fresh for longer.
+                          <p style="font-size: 17px; margin-top: 10%;">Here are some tips on how to keep your vegetables fresh for longer.
                             By following these simple tricks, you can enjoy the delicious taste and nutrients of vegetables 
                             without fear that it will spoil quickly.
                           </p>
@@ -843,7 +855,7 @@
                             <img src="/img/bg/tips-pic3.jpg" class="img-fluid" alt="">
                         </div>
                         <h3 class="card-title">Tips on How to Maintain the Freshness of the Crops</h3>
-                        <p style="font-size: 17px;">Here are some tips on how to keep your crops fresh for longer.
+                        <p style="font-size: 17px;  margin-top: 4%;">Here are some tips on how to keep your crops fresh for longer.
                           By following these simple tricks, you can enjoy the freshness of crops
                           without fear that it will result to poor quality.
                         </p>
