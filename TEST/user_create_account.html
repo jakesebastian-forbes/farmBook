@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIGNUP</title>
+  <link rel="stylesheet" href="/bootstrap-5.2.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/CSS/general.css">
+
+
+</head>
+
+<body>
+
+  <div class="my-4">
+    <div class="card mx-auto" style="width: 60%;">
+      <div class="card-header" style="background-color: white;">
+        <h3>CREATE ACCOUNT</h3>
+      </div>
+      <div class="card-body p-4">
+
+        <h4>ACCOUNT</h4>
+        <form action="" method="post">
+          <div class="mb-3 row">
+            <label for="input_firstname" class="col-sm-2 col-form-label">Firstname</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="input_firstname" required placeholder="Juan">
+            </div>
+            <label for="input_lastname" class="col-sm-2 col-form-label">Lastname</label>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" id="input_lastname" required placeholder="Dela Cruz">
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="input_bday_month" class="col-sm-2 col-form-label">Month</label>
+            <div class="col-sm-3">
+              <select class="form-select" id="input_bday_month" onchange="getMonth(this.id)">
+                <option value="1">January</option>
+                <option value="2">February</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">August</option>
+                <option value="9">September</option>
+                <option value="10">October</option>
+                <option value="11">November</option>
+                <option value="12">December</option>
+              </select>
+            </div>
+            <label for="input_bday_day" class="col-sm-1 col-form-label">Date</label>
+            <div class="col-sm-2">
+              <select class="form-select" id="input_bday_day">
+
+              </select>
+            </div>
+            <label for="input_bday_year" class="col-sm-1 col-form-label">Year</label>
+            <div class="col-sm-2">
+              <select class="form-select" id="input_bday_year">
+
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="input_email" class="col-sm-2 col-form-label">Email</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="input_email" required placeholder="myemail_123@gmail.com">
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="input_username" class="col-sm-2 col-form-label">Username</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="input_username" required placeholder="Kyedae">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <label for="input_password" class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="input_password" required placeholder="*********">
+            </div>
+          </div>
+
+          <h4>CONTACT INFORMATION</h4>
+          <div class="mb-3 row">
+            <label for="input_contact" class="col-sm-2 col-form-label">Contact No.</label>
+            <div class="col-sm-10">
+              <!-- /**
+              * ! look for ways to mask input as (+63) 9XX - XXXX - XXXX
+              **/ -->
+              <input type="text" class="form-control" id="input_contact" value="(+63) - ">
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="input_region" class="col-sm-2 col-form-label">Region</label>
+            <div class="col-sm-4">
+              <select class="form-select" id="input_region" oninput="select_region()">
+
+              </select>
+            </div>
+            <label for="input_province" class="col-sm-2 col-form-label" >Province</label>
+            <div class="col-sm-4">
+
+              <select class="form-select" id="input_province" oninput="select_province()">
+
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="input_city" class="col-sm-3 col-form-label">City/Municipality</label>
+            <div class="col-sm-3">
+
+              <select class="form-select" id="input_city" oninput="select_city()">
+
+              </select>
+            </div>
+            <label for="input_barangay" class="col-sm-2 col-form-label">Barangay</label>
+            <div class="col-sm-4">
+
+              <select class="form-select" id="input_barangay">
+
+              </select>
+            </div>
+          </div>
+
+          <div class="mb-3 row">
+            <label for="input_additional_address" class="col-sm-4 col-form-label">Street Name, Building, House
+              No.</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" id="input_additional_address">
+            </div>
+          </div>
+
+          <div class="form-check text-start " style=>
+            <input class="form-check-input" type="checkbox" value="" id="input_chkbx_terms">
+            <label class="form-check-label" for="input_chkbx_terms">
+              I agree to <a href="/index.html" target="_blank">terms and conditions</a>.
+            </label>
+          </div>
+
+          <div class="text-center mt-3">
+            <button type="submit" class="btn btn-success w-90" disabled>CREATE ACCOUNT</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="/bootstrap-5.2.2/js/bootstrap.min.js"></script>
+  <script src="/JS/jquery-3.6.3.js"></script>
+  <script>
+
+// document.addEventListener("DOMContentLoaded", () => {
+ /**
+  * *write dates and years
+  * !user must be atleast 16 years of age
+  */
+  var date_obj = new Date;
+  var currYear = date_obj.getFullYear();
+
+
+  function getMonth(selection){
+    $('#input_bday_day').children().remove();
+  if($('#input_bday_month')[0].value == 2){
+    for (var i = 1; i <= 29; i++) {
+    $("#input_bday_day").append('<option value="' + i + '" >' + i + '</option>');
+  }
+  }
+  else{
+    for (var i = 1; i <= 31; i++) {
+    $("#input_bday_day").append('<option value="' + i + '" >' + i + '</option>');
+  }
+  }
+  
+}
+ 
+  
+// });
+
+var ph_location = (function () {
+      // var region = null;
+      $.ajax({
+        'async': false,
+        'global': false,
+        'url': "/JS/JSON/philippine_provinces_cities_municipalities_and_barangays_2019v2.json",
+        'dataType': "json",
+        'success': function (data) {
+          ph_location = data;
+        }
+      });
+      return ph_location;
+    })();
+
+  
+    // var region_count = Object.keys(ph_location).length;
+    
+
+var selected_region,selected_province,selected_city,selected_barangay;
+
+//select region
+  //load province
+    //load city
+      //load barangay
+
+function select_region(){
+  selected_region = $('#input_region')[0].value;
+  load_province();
+}
+
+function load_province(){
+
+  // ph_location[1].province_list
+  $('#input_province').children().remove();
+for (var i = 1; i <= Object.keys(ph_location[selected_region].province_list).length; i++) { //load all regions
+  $("#input_province").append('<option value="' + i + '" >' + Object.keys(ph_location[selected_region]['province_list'])[i-1] + '</option>');
+}
+
+}
+
+function select_province(){
+ 
+  selected_province = $("#input_province option:selected" ).text();
+  load_city();
+
+}
+
+function load_city(){
+  $('#input_city').children().remove();
+for (var i = 1; i <= Object.keys(ph_location[selected_region].province_list[selected_province].municipality_list).length; i++) { //load all regions
+  $("#input_city").append('<option value="' + i + '" >' + Object.keys(ph_location[selected_region].province_list[selected_province].municipality_list)[i-1] + '</option>');
+}
+
+}
+
+function select_city(){
+
+  selected_city = $("#input_city option:selected" ).text();
+  load_barangay();
+}
+
+function load_barangay(){
+  $('#input_barangay').children().remove();
+for (var i = 1; i <= Object.keys(ph_location[selected_region].province_list[selected_province].municipality_list[selected_city].barangay_list).length; i++) { //load all regions
+  $("#input_barangay").append('<option value="' + i + '" >' + ph_location[selected_region].province_list[selected_province].municipality_list[selected_city].barangay_list[i-1] + '</option>');
+}
+}
+
+function select_barangay(){
+  selected_barangay = $("#input_barangay option:selected" ).text();
+
+}
+
+//$( "#input_region option:selected" ).text();
+
+  // ****  do on load 
+getMonth(); // get date from selected month
+
+for (var i = currYear - 16; i >= currYear - 100; i--) { //** / load year available for signup
+    $("#input_bday_year").append('<option value="' + i + '" >' + i + '</option>');
+  }
+
+
+for (var i = 1; i <= Object.keys(ph_location).length; i++) { //load all regions
+  $("#input_region").append('<option value="' + i + '" >' + ph_location[i].region_name + '</option>');
+}
+
+
+
+select_region();
+select_province();
+select_city();
+select_barangay();
+
+  </script>
+</body>
+
+</html>
