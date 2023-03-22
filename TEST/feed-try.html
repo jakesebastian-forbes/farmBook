@@ -11,7 +11,6 @@
     <script src="https://kit.fontawesome.com/82727f4033.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/1c020da525.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://kit.fontawesome.com/82727f4033.css" crossorigin="anonymous">
-    
     <link href='https://fonts.googleapis.com/css?family=Archivo Black' rel='stylesheet'> 
  
  
@@ -208,7 +207,7 @@ main .container .left .profle{
     width: 100%;
 }
 
-.left .sidebar{
+/* .left .sidebar{
     margin-top: 2rem;
     background-color: white;
     border-radius:25px;
@@ -229,16 +228,15 @@ main .container .left .profle{
 
 .left .sidebar .menu-item:hover{
     background-color: #E4E4E4;
-    /* border-radius: px; */
+
 }
 
 .left .sidebar i{
     font-size: 1.4rem;
 
-    /* color: black; */
     margin-left: 2rem;
     position: relative;
-}
+} */
 
 /* .left .sidebar i .notification-count{
     background: var(--color-danger);
@@ -250,7 +248,7 @@ main .container .left .profle{
     position: absolute;
     top: -0.2rem;
     right: -0.3rem;
-} */
+} 
 
 .left .sidebar h3{
     margin-left: 1.5rem;
@@ -295,7 +293,7 @@ main .container .left .profle{
     border-bottom-left-radius: 10px;
     overflow: hidden;
 }
-
+*/
 .left .btn{
     margin-top: 1rem;
     width: 100%;
@@ -400,8 +398,9 @@ main .container .left .profle{
     
 }
 
-.middle .create-post input[type="text"]{
-    justify-self: start;
+.middle .create-post-trigger{
+    /* justify-self: start; */
+    text-align: start;
     width: 100%;
     padding-left: 1rem;
     background: transparent;
@@ -409,6 +408,7 @@ main .container .left .profle{
     height: 5vh;
     margin-right: 1rem;
     border-radius: 25px;
+    border: 1px solid black;
 }
 .create-post-btn{
     background-color: #228b22;
@@ -622,9 +622,9 @@ main .container .left .profle{
     .main .container .left .profile{
        display: none; 
     }
-    .sidebar h3{
+    /* .sidebar h3{
         display: none;
-    }
+    } */
     .left .btn{
         display: none;
     }
@@ -780,7 +780,7 @@ main .container .left .profle{
                 />
             </div>
             <div class="create">
-                <!-- <label class="btn btn-primary" for="create-post">Create</label> -->
+           
                 <div class="profile-pic">
                     <img src="/img/profile pics/profile.jpg" alt="pic 1" />
                 </div>
@@ -801,7 +801,7 @@ main .container .left .profle{
                       
                     </div>
                 </a>
-                  <div class="sidebar" >
+                  <!-- <div class="sidebar" >
                     <a class="menu-item active"style="border-radius: 10px;" >
                         <span><i class="fa-solid fa-house"></i></span> <h3 class="">Home</h3>
                     </a>
@@ -909,10 +909,37 @@ main .container .left .profle{
                     </a>
                     
                     <label class="btn left-create-post" for="create-post">Create Post</label>
-                </div>
+                </div> -->
               </div>
               
-
+              <div class="modal fade" id="loginform">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <button type="button" class="btn-close btn-close-black" 
+                            data-bs-dismiss="modal" aria-label="Close"></button>
+          
+                            <div class="myform">
+                                <h1 class="text-center">Login Form</h1>
+                                <form action ="#">
+                                    <div class="mb-3 mt-3">
+                                        <label for="email">Email Address</label>
+                                        <input type="email" class="form-control">
+                                    </div>
+                                    <div class="mb-3 mt-3">
+                                        <label for="email">Password</label>
+                                        <input type="password" class="form-control">
+                                    </div>
+                                    <button type="submit" class="btn btn-light mt-3">LOGIN</button>
+                                    <p>Not a Member? <a href="" data-bs-toggle="modal" data-bs-target="#signUpform">Sign Up</a></p>
+                                    <p> <a href="" data-bs-toggle="modal" data-bs-target="#forgotform"> Forgot Password?</a></p>
+                                </form>
+                              
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
 
               <div class="middle" >
               
@@ -921,10 +948,12 @@ main .container .left .profle{
                     <div class="profile-pic" style="margin-right: 10px;">
                         <img src="/img/profile pics/profile.jpg" alt="">
                     </div>
-                    <input type="text" placeholder="What's on your mind Chirag?" id="create-post">
+                    <!-- <input type="button" placeholder="What's on your mind Chirag?" > -->
+                    <!-- <button class="create-post-trigger" type="submit" data-bs-toggle="modal" data-bs-target="#post">What's on your mind Chirag?</button> -->
+                    <button class="car-login" data-bs-toggle="modal" data-bs-target="#loginform">Login</button>
                     <input type="submit" value="Post" class="btn create-post-btn">
                 </form>
-
+             
                 <div class="feeds">
                     
                 
@@ -1213,12 +1242,11 @@ main .container .left .profle{
           </div>
       </main>
 
-        <script>
-            //sidebar
+        <!-- <script>
+           
             const menuItems = document.querySelectorAll('.menu-item');
        
 
-            //remove active class from all menu items
             const changeActiveItem = () => {
                 menuItems.forEach(item => {
                     item.classList.remove('active');
@@ -1233,11 +1261,10 @@ main .container .left .profle{
                     
                     if (item.id != 'notifications') {
                         document.querySelector('.notifications-popup').style.display = 'none';
-                        document.querySelector('.firend-popup').style.display = 'none';
+                     
                     } else {
                         document.querySelector('.notifications-popup').style.display = 'block';
-                        document.querySelector('.friend-popup').style.display = 'block';
-                        // document.querySelector('#notifications .notification-count').style.display='none';
+                       
                     }
                 })
             })
@@ -1249,7 +1276,7 @@ main .container .left .profle{
            
 
           
-        </script>
+        </script> -->
 
         <!-- image modal script -->
         <script>

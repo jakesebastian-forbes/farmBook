@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--divinectorweb.com-->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,8 +16,7 @@
 
     <style>
         body {
-	/* font-family: 'Teko', sans-serif; */
-    overflow-y: hidden;
+    overflow-x: hidden;
     
 }
 .navbar{
@@ -33,7 +31,7 @@
 }
 .navbar-light .navbar-brand {
 	color: #000;
-	/* font-size: 25px; */
+
 	text-transform: uppercase;
 	font-weight: bold;
 	letter-spacing: 2px;
@@ -57,36 +55,19 @@
 	font-size: 18px;
 	line-height: 0.3;
 	background: #FFDE59;
+ 
+}
+.navbar-light .navbar-toggler {
+	color: #FFF;
+	border-color: transparent;
+	background:transparent;
+    margin-right: 5px;
 }
 .carousel-item {
 	height: 100vh;
 	min-height: 300px;
 	background-color: #f7f5eb;
 }
-/* .carousel-caption {
-	bottom: 0;
-	z-index: 2;
-	text-align: left;
-} */
-/* .carousel-caption h5 {
-	font-size: 45px;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	margin-top: 25px;
-	color: #262626;
-} */
-/* .carousel-caption p {
-	font-size: 18px;
-	line-height: 1.9;
-	color: #262626;
-} */
-/* .banner-info .btn {
-	padding: 10px 60px;
-	font-size: 30px;
-	text-transform: uppercase;
-	color: #ffff;
-	background: green;
-} */
 
 .imgBox img {
    
@@ -100,14 +81,13 @@
 }
 
 .carousel-control-prev-icon, .carousel-control-next-icon {
-	/* height: 80px;
-	width: 80px; */
+	
 	outline: black;
 	background-size: 100%, 100%;
 	border-radius: 50%;
 	background-image: none;
 	color: #fff;
-	/* background: green; */
+
 }
 .carousel-control-next-icon:after {
 	content: '>';
@@ -122,12 +102,7 @@
 .carousel-indicators [data-bs-target] {
 	background-color: white;
 }
-.navbar-light .navbar-toggler {
-	color: #FFF;
-	border-color: transparent;
-	background:transparent;
-    margin-right: 5px;
-}
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 	.navbar-nav {
 		text-align: center;
@@ -136,19 +111,11 @@
 	.navbar-collapse {
 		background: transparent;
 	}
-	/* .carousel-caption {
-		bottom: 370px;
-	} */
-	/* .carousel-caption p {
-		width: 100%;
-	} */
+
 	.navbar-collapse .nav-link {
 		color: #FFDE59 !important;
 	}
-	/* .carousel-caption {
-		bottom: 0;
-		text-align: center;
-	} */
+
 }
 @media only screen and (max-width: 767px) {
 	.navbar-nav {
@@ -161,17 +128,19 @@
 		color: #FFDE59 !important;
 	}
 	.carousel-caption {
-		/* bottom: 0; */
+
 		text-align: center;
 	}
-	/* .carousel-caption h1 {
-		font-size: 50px;
-	} */
+
 	.carousel-caption p {
 		width: 100%;
 		line-height: 1.6;
 		font-size: 12px;
 	}
+  /* .carousel-caption h1{
+    font-size: 600px;
+    font-weight: 500px;
+  } */
 	.banner-info .btn {
 		padding: 0 15px;
 		font-size: 20px;
@@ -190,6 +159,9 @@
 	.carousel-control-prev-icon:after {
 		font-size: 30px;
 	}
+
+ 
+
 }
 
 /* LOGIN BUTTON */
@@ -212,37 +184,16 @@
     }
     </style>
 
-<style>
-    
-</style>
+
 <body>
-    <!-- <nav class="navbar navbar-expand-lg navbar-light fixed-top">
-        <div class="container" >
-          <a class="navbar-brand " href="#" style="color: #FFDE59;">
-            <h1 style=" font-size: 30px;font-family: 'Archivo Black', Courier, monospace;">FarmBook</h1>
-        </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="color: #FFDE59 ; ">
-           
-              <li class="nav-item" ><a class="nav-link" href="homepage.html"><i class="fa fa-fw fa-home fa-2x"></i>Home</a></li>
-              <li class="nav-item" ><a class="nav-link"  href="aboutpage.html"><i class="fa fa-fw fa-circle-info fa-2x"></i>About Us</a></li>
-              <li class="nav-item" ><a class="nav-link" href="e-learning.html"><i class="fa fa-fw fa-book fa-2x"></i>E-Learning</a></li>
-              <li class="nav-item" ><a class="nav-link"  href="contact.html"><i class="fa fa-fw fa-phone fa-2x"></i>Contact</i></a></li>
-            </ul>
- 
-          </div>
-        </div>
-    </nav> -->
+  
 
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" >
         <h1 style="color: #FFDE59;font-family: 'Archivo Black';margin-left: 10px;">FarmBook</h1>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon" style="color: aqua;"></span>
         </button>
-        <!-- <div class="nav-links me-2"> -->
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="color: #FFDE59 ; ">
                
@@ -253,47 +204,32 @@
                 </ul>
      
               </div>
-        <!-- </div> -->
+    
         </nav>
 
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="height: 680px;">
         <div class="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
-          <div class="carousel-item active" style="background-image: url(/img/bg/bg9.jpg);  background-size: 1600px 770px;">  
+          <div class="carousel-item active" style="background-image: linear-gradient(rgba(1,2,2,0.5),rgba(0,1,1,0.4)), url(/img/bg/bg2.jpeg);  background-size:cover;height: 680px; background-repeat: no-repeat; ; ">  
             
             <div class="carousel-caption">
-                <b>   <h1 class="display-4">Social Media Platform <br>For <br> Filipino Farmers</h1></b>
+              <h1 class="" >Welcome to<br>For <br>FarmBook</h1>
              
             </div>
           
           </div>
-          <div class="carousel-item" style="background-image: url(/img/bg/bg6.jpeg);  background-size: 1600px 770px;">     
-              
+          <div class="carousel-item" style="background-image: url(/img/bg/bg1.jpeg);  background-size:cover ;height: 680px; background-repeat: no-repeat;">     
             <div class="carousel-caption">
-                <div class="row">
-                    <div class="col-lg-5 col-md-12 col-12">
-                        <div class="banner-info">
-                        
-                <!-- <p><a href="#" class="btn mt-3">Learn More</a></p> -->
-                        </div>
-                    </div>
-                    <div class="col-lg-7 col-md-12 col-12">
-                        <div class="imgBox text-center">
-                            <img src="img/1.png" class="img-fluid" alt="">
-                        </div>
-                    </div>
-                </div>
+              <h1 class="display-4">Welcome to<br>For <br>FarmBook</h1>
             </div>
           </div>
-          <div class="carousel-item" style="background-image: url(/img/bg/bg12.jpg);  background-size: 1600px 770px;">
-            <div class="carousel-caption text-center">
-                <div class="row">
-                  
-                </div>
+          <div class="carousel-item" style="background-image: url(/img/bg/bg13.jpeg);   background-size:cover ;height: 680px; background-repeat: no-repeat;">
+            <div class="carousel-caption">
+              <h1 class="display-4">Welcome to<br>For <br>FarmBook</h1>
             </div>
           </div>
         </div>
@@ -305,13 +241,39 @@
           <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
+
+        <div class="login-div text-center">
+          <button class="car-login" data-bs-toggle="modal" data-bs-target="#loginform">Login</button>
+          
+        </div>
       </div>
 
-    
-      <div class="login-div text-center">
-        <button class="car-login" data-bs-toggle="modal" data-bs-target="#loginform">Login</button>
-        
+
+
+
+     <div class="container  text-md-left mt-5"style="width:auto; overflow-x:hidden">
+   
+      <div class="row  text-md-left">
+              <div class="text-center col-md-4 col-lg-4 col-xl-4 mx-auto mt-3" style=" padding: 1%; padding-right: 3%;" >
+                 
+               
+                    <img src="/img/farmer3.jpeg" alt="" class="responsive" style="height: 450px; width:100%;max-width: 800px; border-radius: 10px;">
+                  </div>
+                 
+              <div class="col-md-8 col-lg-8 col-xl-8 mx-auto mt-3" style="padding: 1%; padding-right: 5%; ">
+                 <h1>Farmbook</h1>
+                 <h5>A Social Media Plaform for Filipino Farmers</h5>
+                 <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni explicabo fugit minima dolores illum. Dolorem, nesciunt. 
+                   Similique tempore inventore enim dolor velit corrupti delectus, possimus sit quae sed quaerat ea.Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni explicabo fugit minima dolores illum. Dolorem, nesciunt. 
+                   Similique tempore inventore enim dolor velit corrupti delectus, possimus sit quae sed quaerat ea</p>
+                   
       </div>
+  </div>
+
+
+
+ 
+     
 
 <style>
     
@@ -508,32 +470,112 @@ p a:hover{
                                 <form action ="#">  
                                 <h4>Address and Contact number</h4>                         
                                 <div class="mb-1 mt-1  justify-content-between">
+                                  
                                   <div class="mb-1 mt-1 mx-2">
                                     
-                                    <label for="FirsName" class="FirstName " style="font-size: small;">Street<i>(Kanto)</i></label>
-                                    <input type="FirstName" class="form-control" style="margin-right: 5px;" size="30">
+                                    <label for="" class="Province" style="font-size: small;">Province<i>(Probinsya)</i></label>
+                                    <select class="select box form-select" aria-label="Default select example" onfocus='this.size=5;' onblur='this.size=1;' 
+                                    onchange='this.size=1; this.blur();'>
+                                      <!-- <option selected>Select Province</option> -->
+                                      <option value="1">Batangas</option>
+                                
+                                    </select>
                                   </div>
+                             
                                   <div class="mb-1 mt-1 mx-2">
-                                    <label for="" class="Middle_Name " style="font-size: small;">Barangay</label>
-                                    <input type="" class="form-control" style="margin-right: 5px;" size="30">
-                                  </div>
-                                  <div class="mb-1 mt-1 mx-2">
-                                    <label for="" class="Last_name" style="font-size: small;">Town/City <i>(Bayan)</i></label>
-                                    <input type="" class="form-control" style="margin-right: 5px;" size="30">
+                                    <style>
+                                    
+                                    </style>
+                                    <label for="" class="Municipality" style="font-size: small;">Municipality/City <i>(Bayan)</i></label>
+                                      
+                                      <select class="select box form-select position-relative" aria-label="multiple select example"  onfocus='this.size=5;' onblur='this.size=1;' 
+                                          onchange='this.size=1; this.blur();' >
+                                        <!-- <option selected>Select Municipality / City</option> -->
+                                        <option value="1">Agoncillo</option>
+                                        <option value="2">Alitagtag </option>s
+                                        <option value="3">Balayan</option>
+                                        <option value="4">Balete </option>
+                                        <option value="5">Batanagas City </option>
+                                        <option value="6">Bauan </option>
+                                        <option value="7">Calaca </option>
+                                        <option value="8">Calatagan </option>
+                                        <option value="9">Cuenca </option>
+                                        <option value="10">Ibaan </option>
+                                        <option value="11">Laurel</option>
+                                        <option value="12">Lemery </option>
+                                        <option value="13">Lian</option>
+                                        <option value="14">Lipa City</option>
+                                        <option value="15">Lobo</option>
+                                        <option value="16">Mabini</option>
+                                        <option value="17">Malvar</option>
+                                        <option value="18">Mataas na kahoy</option>
+                                        <option value="19">Nasugbu</option>
+                                        <option value="20">Padre Garcia </option>
+                                        <option value="21">Rosario </option>
+                                        <option value="22">San Jose </option>
+                                        <option value="23">San Juan</option>
+                                        <option value="24">Taal </option>
+                                        <option value="25">Tanauan </option>
+                                        <option value="26">Tuy</option>
+
+                                  
+                                      </select>
                                   </div>
                                   
                                 </div>
-                              
-                                <div class="mb-1 mt-1 justify-content-between">
+                          
                                   <div class="mb-1 mt-1 mx-2">
-                                    <label for="" class="Last_name" style="font-size: small;">Province<i>(Probinsya)</i></label>
-                                    <input type="" class="form-control" style="margin-right: 5px;" size="30">
+                                    <label for="" class="Barangay" style="font-size: small;">Barangay</i></label>
+                                    <select class="select box form-select position-relative" aria-label="multiple select example"  onfocus='this.size=5;' onblur='this.size=1;' 
+                                    onchange='this.size=1; this.blur();' >
+                                  <!-- <option selected>Select Barangayq</option> -->
+                                  <option value="1">Aga</option>
+                                  <option value="2">Balaytigue</option>
+                                  <option value="3">Banilad</option>
+                                  <option value="4">Barangay 1</option>
+                                  <option value="5">Barangay 2</option>
+                                  <option value="6">Barangay 3</option>
+                                  <option value="7">Barangay 4</option>
+                                  <option value="8">Barangay 5</option>
+                                  <option value="9">Barangay 6</option>
+                                  <option value="10">Barangay 7</option>
+                                  <option value="11">Barangay 8</option>
+                                  <option value="12">Barangay 9</option>
+                                  <option value="13">Barangay 10</option>
+                                  <option value="14">Barangay 11</option>
+                                  <option value="15">Barangay 12</option>
+                                  <option value="16">Bilaran</option>
+                                  <option value="17">Bucana</option>
+                                  <option value="18">Bulihan</option>
+                                  <option value="19">Calayo</option>
+                                  <option value="20">Catandaan</option>
+                                  <option value="21">Cogunan</option>
+                                  <option value="22">Dayap</option>
+                                  <option value="23">Kaylaway</option>
+                                  <option value="24">Kayrilaw</option>
+                                  <option value="25">Latag</option>
+                                  <option value="26">Looc</option>
+                                  <option value="27">Lumbangan</option>
+                                  <option value="28">Malapad na Bato</option>
+                                  <option value="29">Mataas na Pulo</option>
+                                  <option value="30">Maugat</option>
+                                  <option value="31">Munting Indang</option>
+                                  <option value="32">Natipuan</option>
+                                  <option value="33">Pantalan</option>
+                                  <option value="34">Papaya</option>
+                                  <option value="35">Putat</option>
+                                  <option value="36">Reparo</option>
+                                  <option value="37">Talangan</option>
+                                  <option value="38">Tumalim</option>
+                                  <option value="39">Utod</option>
+                                  <option value="40">Wawa</option>
+                                </select>
                                   </div>
                                   <div class="mb-1 mt-1 mx-2">
                                     <label for="" class="Last_name" style="font-size: small;">Contact Number</label>
                                     <input type="" class="form-control" style="margin-right: 5px;" size="30">
                                   </div>
-                                </div>
+                           
                                 </form>
                                 <button type="submit " class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#signUp_Enthusiast"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>
                                 <button type="submit " class="btn-light btn_next" data-bs-toggle="modal" data-bs-target="#second_next_signUp_Enthusiast"><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
@@ -637,34 +679,112 @@ p a:hover{
                             <div class="myform">
                                 <h1 class="text-center">Farmer</h1>
                                 <form action ="#">  
-                                <h4>Address and Contact number</h4>                         
-                                <div class="mb-1 mt-1  justify-content-between">
-                                  <div class="mb-1 mt-1 mx-2">
+                                <h4>Address and Contact number</h4>
+                                <div class="mb-1 mt-1 mx-2">
                                     
-                                    <label for="FirsName" class="FirstName " style="font-size: small;">Street<i>(Kanto)</i></label>
-                                    <input type="FirstName" class="form-control" style="margin-right: 5px;" size="30">
-                                  </div>
-                                  <div class="mb-1 mt-1 mx-2">
-                                    <label for="" class="Middle_Name " style="font-size: small;">Barangay</label>
-                                    <input type="" class="form-control" style="margin-right: 5px;" size="30">
-                                  </div>
-                                  <div class="mb-1 mt-1 mx-2">
-                                    <label for="" class="Last_name" style="font-size: small;">Town/City <i>(Bayan)</i></label>
-                                    <input type="" class="form-control" style="margin-right: 5px;" size="30">
-                                  </div>
-                                  
-                                </div>
+                                  <label for="" class="Province" style="font-size: small;">Province<i>(Probinsya)</i></label>
+                                  <select class="select box form-select" aria-label="Default select example" onfocus='this.size=5;' onblur='this.size=1;' 
+                                  onchange='this.size=1; this.blur();'>
+                                    <!-- <option selected>Select Province</option> -->
+                                    <option value="1">Batangas</option>
                               
-                                <div class="mb-1 mt-1 justify-content-between">
-                                  <div class="mb-1 mt-1 mx-2">
-                                    <label for="" class="Last_name" style="font-size: small;">Province<i>(Probinsya)</i></label>
-                                    <input type="" class="form-control" style="margin-right: 5px;" size="30">
-                                  </div>
+                                  </select>
+                                </div>
+                           
+                                <div class="mb-1 mt-1 mx-2">
+                                  <style>
+                                  
+                                  </style>
+                                  <label for="" class="Municipality" style="font-size: small;">Municipality/City <i>(Bayan)</i></label>
+                                    
+                                    <select class="select box form-select position-relative" aria-label="multiple select example"  onfocus='this.size=5;' onblur='this.size=1;' 
+                                        onchange='this.size=1; this.blur();' >
+                                      <!-- <option selected>Select Municipality / City</option> -->
+                                      <option value="1">Agoncillo</option>
+                                      <option value="2">Alitagtag </option>s
+                                      <option value="3">Balayan</option>
+                                      <option value="4">Balete </option>
+                                      <option value="5">Batanagas City </option>
+                                      <option value="6">Bauan </option>
+                                      <option value="7">Calaca </option>
+                                      <option value="8">Calatagan </option>
+                                      <option value="9">Cuenca </option>
+                                      <option value="10">Ibaan </option>
+                                      <option value="11">Laurel</option>
+                                      <option value="12">Lemery </option>
+                                      <option value="13">Lian</option>
+                                      <option value="14">Lipa City</option>
+                                      <option value="15">Lobo</option>
+                                      <option value="16">Mabini</option>
+                                      <option value="17">Malvar</option>
+                                      <option value="18">Mataas na kahoy</option>
+                                      <option value="19">Nasugbu</option>
+                                      <option value="20">Padre Garcia </option>
+                                      <option value="21">Rosario </option>
+                                      <option value="22">San Jose </option>
+                                      <option value="23">San Juan</option>
+                                      <option value="24">Taal </option>
+                                      <option value="25">Tanauan </option>
+                                      <option value="26">Tuy</option>
+
+                                
+                                    </select>
+                                </div>
+                                
+                              </div>
+                        
+                                <div class="mb-1 mt-1 mx-2">
+                                  <label for="" class="Barangay" style="font-size: small;">Barangay</i></label>
+                                  <select class="select box form-select position-relative" aria-label="multiple select example"  onfocus='this.size=5;' onblur='this.size=1;' 
+                                  onchange='this.size=1; this.blur();' >
+                                <!-- <option selected>Select Barangayq</option> -->
+                                <option value="1">Aga</option>
+                                <option value="2">Balaytigue</option>s
+                                <option value="3">Banilad</option>
+                                <option value="4">Barangay 1</option>
+                                <option value="5">Barangay 2</option>
+                                <option value="6">Barangay 3</option>
+                                <option value="7">Barangay 4</option>
+                                <option value="8">Barangay 5</option>
+                                <option value="9">Barangay 6</option>
+                                <option value="10">Barangay 7</option>
+                                <option value="11">Barangay 8</option>
+                                <option value="12">Barangay 9</option>
+                                <option value="13">Barangay 10</option>
+                                <option value="14">Barangay 11</option>
+                                <option value="15">Barangay 12</option>
+                                <option value="16">Bilaran</option>
+                                <option value="17">Bucana</option>
+                                <option value="18">Bulihan</option>
+                                <option value="19">Calayo</option>
+                                <option value="20">Catandaan</option>
+                                <option value="21">Cogunan</option>
+                                <option value="22">Dayap</option>
+                                <option value="23">Kaylaway</option>
+                                <option value="24">Kayrilaw</option>
+                                <option value="25">Latag</option>
+                                <option value="26">Looc</option>
+                                <option value="27">Lumbangan</option>
+                                <option value="28">Malapad na Bato</option>
+                                <option value="29">Mataas na Pulo</option>
+                                <option value="30">Maugat</option>
+                                <option value="31">Munting Indang</option>
+                                <option value="32">Natipuan</option>
+                                <option value="33">Pantalan</option>
+                                <option value="34">Papaya</option>
+                                <option value="35">Putat</option>
+                                <option value="36">Reparo</option>
+                                <option value="37">Talangan</option>
+                                <option value="38">Tumalim</option>
+                                <option value="39">Utod</option>
+                                <option value="40">Wawa</option>
+                              </select>
+                                </div>
                                   <div class="mb-1 mt-1 mx-2">
                                     <label for="" class="Last_name" style="font-size: small;">Contact Number</label>
                                     <input type="" class="form-control" style="margin-right: 5px;" size="30">
                                   </div>
-                                </div>
+                                
                                 </form>
                                 <button type="submit " class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#signUp_Farmer"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>
                                 <button type="submit " class="btn-light btn_next" data-bs-toggle="modal" data-bs-target="#second_next_signUp_Farmer"><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
@@ -772,30 +892,113 @@ p a:hover{
                                 <div class="mb-1 mt-1  justify-content-between">
                                   <div class="mb-1 mt-1 mx-2">
                                     
-                                    <label for="FirsName" class="FirstName " style="font-size: small;">Street<i>(Kanto)</i></label>
-                                    <input type="FirstName" class="form-control" style="margin-right: 5px;" size="30">
+                                    <label for="" class="Province" style="font-size: small;">Province<i>(Probinsya)</i></label>
+                                    <select class="select box form-select" aria-label="Default select example" onfocus='this.size=5;' onblur='this.size=1;' 
+                                    onchange='this.size=1; this.blur();'>
+                                      <!-- <option selected>Select Province</option> -->
+                                      <option value="1">Batangas</option>
+                                
+                                    </select>
                                   </div>
+                             
                                   <div class="mb-1 mt-1 mx-2">
-                                    <label for="" class="Middle_Name " style="font-size: small;">Barangay</label>
-                                    <input type="" class="form-control" style="margin-right: 5px;" size="30">
-                                  </div>
-                                  <div class="mb-1 mt-1 mx-2">
-                                    <label for="" class="Last_name" style="font-size: small;">Town/City <i>(Bayan)</i></label>
-                                    <input type="" class="form-control" style="margin-right: 5px;" size="30">
+                                    <style>
+                                    
+                                    </style>
+                                    <label for="" class="Municipality" style="font-size: small;">Municipality/City <i>(Bayan)</i></label>
+                                      
+                                      <select class="select box form-select position-relative" aria-label="multiple select example"  onfocus='this.size=5;' onblur='this.size=1;' 
+                                          onchange='this.size=1; this.blur();' >
+                                        <!-- <option selected>Select Municipality / City</option> -->
+                                        <option value="1">Agoncillo</option>
+                                        <option value="2">Alitagtag </option>s
+                                        <option value="3">Balayan</option>
+                                        <option value="4">Balete </option>
+                                        <option value="5">Batanagas City </option>
+                                        <option value="6">Bauan </option>
+                                        <option value="7">Calaca </option>
+                                        <option value="8">Calatagan </option>
+                                        <option value="9">Cuenca </option>
+                                        <option value="10">Ibaan </option>
+                                        <option value="11">Laurel</option>
+                                        <option value="12">Lemery </option>
+                                        <option value="13">Lian</option>
+                                        <option value="14">Lipa City</option>
+                                        <option value="15">Lobo</option>
+                                        <option value="16">Mabini</option>
+                                        <option value="17">Malvar</option>
+                                        <option value="18">Mataas na kahoy</option>
+                                        <option value="19">Nasugbu</option>
+                                        <option value="20">Padre Garcia </option>
+                                        <option value="21">Rosario </option>
+                                        <option value="22">San Jose </option>
+                                        <option value="23">San Juan</option>
+                                        <option value="24">Taal </option>
+                                        <option value="25">Tanauan </option>
+                                        <option value="26">Tuy</option>
+
+                                  
+                                      </select>
                                   </div>
                                   
                                 </div>
-                              
-                                <div class="mb-1 mt-1 justify-content-between">
+                          
                                   <div class="mb-1 mt-1 mx-2">
-                                    <label for="" class="Last_name" style="font-size: small;">Province<i>(Probinsya)</i></label>
-                                    <input type="" class="form-control" style="margin-right: 5px;" size="30">
+                                    <label for="" class="Barangay" style="font-size: small;">Barangay</i></label>
+                                    <select class="select box form-select position-relative" aria-label="multiple select example"  onfocus='this.size=5;' onblur='this.size=1;' 
+                                    onchange='this.size=1; this.blur();' >
+                                  <!-- <option selected></option> -->
+                                  <option value="1">Aga</option>
+                                  <option value="2">Balaytigue</option>s
+                                  <option value="3">Banilad</option>
+                                  <option value="4">Barangay 1</option>
+                                  <option value="5">Barangay 2</option>
+                                  <option value="6">Barangay 3</option>
+                                  <option value="7">Barangay 4</option>
+                                  <option value="8">Barangay 5</option>
+                                  <option value="9">Barangay 6</option>
+                                  <option value="10">Barangay 7</option>
+                                  <option value="11">Barangay 8</option>
+                                  <option value="12">Barangay 9</option>
+                                  <option value="13">Barangay 10</option>
+                                  <option value="14">Barangay 11</option>
+                                  <option value="15">Barangay 12</option>
+                                  <option value="16">Bilaran</option>
+                                  <option value="17">Bucana</option>
+                                  <option value="18">Bulihan</option>
+                                  <option value="19">Calayo</option>
+                                  <option value="20">Catandaan</option>
+                                  <option value="21">Cogunan</option>
+                                  <option value="22">Dayap</option>
+                                  <option value="23">Kaylaway</option>
+                                  <option value="24">Kayrilaw</option>
+                                  <option value="25">Latag</option>
+                                  <option value="26">Looc</option>
+                                  <option value="27">Lumbangan</option>
+                                  <option value="28">Malapad na Bato</option>
+                                  <option value="29">Mataas na Pulo</option>
+                                  <option value="30">Maugat</option>
+                                  <option value="31">Munting Indang</option>
+                                  <option value="32">Natipuan</option>
+                                  <option value="33">Pantalan</option>
+                                  <option value="34">Papaya</option>
+                                  <option value="35">Putat</option>
+                                  <option value="36">Reparo</option>
+                                  <option value="37">Talangan</option>
+                                  <option value="38">Tumalim</option>
+                                  <option value="39">Utod</option>
+                                  <option value="40">Wawa</option>
+                                </select>
                                   </div>
+                                  
+                            </div>
+                              
+                               
                                   <div class="mb-1 mt-1 mx-2">
                                     <label for="" class="Last_name" style="font-size: small;">Contact Number</label>
                                     <input type="" class="form-control" style="margin-right: 5px;" size="30">
                                   </div>
-                                </div>
+                                
                                 </form>
                                 <button type="submit " class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#signUp_Vendor"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>
                                 <button type="submit " class="btn-light btn_next" data-bs-toggle="modal" data-bs-target="#second_next_signUp_Vendor"><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
