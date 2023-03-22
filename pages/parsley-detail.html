@@ -31,34 +31,61 @@
         body{
             overflow-x: hidden !important;
         }
-        .nav-head{ 
-          background-color:#57744B ;
-          display: flex;
-          justify-content: space-between;
-          box-sizing: border-box;
-          padding: 1%;
-          overflow: hidden  ;
-        }
-        .nav-links ul{
-          display: flex;
-          list-style-type: none;
-          font-size: medium;
-        }
-        .nav-links li{
-          justify-content: end;
-          font-family: 'Archivo Black';
-          color: #FFDE59;
-          margin: 0% 14px;
-          cursor: pointer;
-          padding-top: 2%;
-        }
-        .nav-links li a{
-          text-decoration: none;
-          color:#FFDE59 ;
-        }
-        .nav-links li a:hover {
-          color: white;
-        }
+        .navbar{
+      background-color: #57744B;
+      font-family: 'Archivo Black';
+      padding: 12px;
+    }
+    .navbar-nav a {
+      font-size: 15px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .navbar-light .navbar-brand {
+      color: white;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+      color: #FFDE59;
+    }
+    .navbar-light .navbar-nav .nav-link {
+      color: #FFDE59;
+      font-family: 'Archivo Black';
+    }
+    .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+      color: #FFDE59;
+    }
+    .w-100 {
+      height: 100vh;
+    }
+    .navbar-toggler {
+      padding: 1px 5px;
+      font-size: 18px;
+      line-height: 0.3;
+      color: #FFDE59;
+    }
+    .navbar-light .navbar-toggler {
+      border-color: transparent;
+      background:transparent;
+      border: none;
+      outline: none;
+      margin-right: 2%;
+    }
+    .navbar-light .navbar-toggler:focus{
+        outline: none;
+        box-shadow: none;
+      }
+    .navbar-nav {
+      text-align: center;    
+    }
+    .navbar-collapse {
+      background: transparent;
+    }
+    .navbar-collapse .nav-link {
+      color: #FFDE59 !important;
+    }
         .header{
         background-image: linear-gradient(rgba(1,2,2,0.7),rgba(0,1,1,0.4)), url(/img/vegetables/parsley-1.jpeg);
         background-size: cover;
@@ -89,79 +116,69 @@
     </style>
    
    <section class="header">
-   <div class="nav-head d-flex justify-content-between align-items-center " >
-    <h1 style="color: #FFDE59;font-family: 'Archivo Black';">FarmBook</h1>
-
-    <div class="nav-links me-2">
-      <ul>
-        <li><a class="active" href="homepage.html"><i class="fa fa-fw fa-home fa-2x"></i>Home</a></li>
-        <li><a class ="active" href="aboutpage.html"><i class="fa fa-fw fa-circle-info fa-2x"></i>About Us</a></li>
-        <li><a class ="active" href="e-learning.html"><i class="fa fa-fw fa-book fa-2x"></i>E-Learning</a></li>
-        <li><a class ="active" href="contact.html"><i class="fa fa-fw fa-phone fa-2x"></i>Contact</i></a></li>
-     </ul>
-        </div>
-     
- </div>
-
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" >
+      <h1 style="color: #FFDE59;font-family: 'Archivo Black';margin-left: 10px;">FarmBook</h1>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span><i class="fa-solid fa-bars" style="color: #FFDE59;"></i></span>
+      </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="color: #FFDE59;">
+                <li class="nav-item" ><a class="nav-link" href="homepage-test.html"><i class="fa fa-fw fa-home fa-2x"></i>Home</a></li>
+                <li class="nav-item" ><a class="nav-link"  href="aboutUs.html"><i class="fa fa-fw fa-circle-info fa-2x"></i>About Us</a></li>
+                <li class="nav-item" ><a class="nav-link" href="e-learning2.html"><i class="fa fa-fw fa-book fa-2x"></i>E-Learning</a></li>
+                <li class="nav-item" ><a class="nav-link"  href="contact.html"><i class="fa fa-fw fa-phone fa-2x"></i>Contact</i></a></li>
+              </ul>
+            </div>
+      </nav>
  
              
  <div class="site-section">
     <div class="container">
         <h1 style="text-align: center; color: #fff; font-family:Georgia, 'Times New Roman', Times, serif;
-      margin-bottom: 10%; font-size: 70px; margin-left: 2%;">All About Parsley</h1>
+      margin-bottom: 10%; font-size: 70px; margin-left: 2%;margin-top:10%;">All About Parsley</h1>
       <div class="row justify-content-between align-items-center">
         <div class="col-lg-5 order-lg-1 ">
-          <div class="parsley-info">
-            <img src="/img/vegetables/parsley-1.jpeg" style="width: 100%; margin-top: 5%; height: 60%;">
+          <div class="stringbeans-info">
+            <img src="/img/vegetables/parsley-1.jpeg" style="width: 100%; margin-top: 5%; ">
         </div>
         </div>
         
         <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
           <h2 class="text-title mb-2" style="color: #fff; font-family: Georgia, 'Times New Roman', Times, serif;
-          font-size: 42px; letter-spacing: 1px; margin-bottom: 15%; margin-top:8%;">How do parsley grow?</h2>
+          font-size: 42px; letter-spacing: 1px; margin-bottom: 15%; margin-top:8%;">How parsley grow?</h2>
           <p class="mb-3" style="text-align: justify; color: #fff;  letter-spacing: 2px; margin-top: 5%;
-          font-size: 17px;">Pineapple thrives best in sandy loam to clay loam soil which is well-drained,
-            rich in organic matter and has a pH of 4.5 to 5.5. It requires mild (240C to 300C) and
-            relatively uniform temperature throughout the year. It also requires evenly distributed
-            rainfall (100-150 cm/year) and a very short dry season. Pineapple grows best at an
-            elevations of 1,000 feet or 150 to 200 meters above sea level.
-          </p>
+          font-size: 18px;">Parsley is a biennial, not a perennial. What that means is that it grows into a plant one season, and after winter's cold temperatures, it blooms, sets seeds, and dies. The better idea may be to replant in spring, letting it grow all summer and winter. Then, next spring, don't wait for it to bloom.</p>
           <h2 class="text-title mb-2" style="color: #fff; font-family: Georgia, 'Times New Roman', Times, serif;
-          font-size: 42px; letter-spacing: 1px; margin-bottom: 15%;">Nutrition Facts</h2>
-          <p class="mb-3" style="text-align: justify; color: #fff;  letter-spacing: 2px; margin-top: 5%;
-          font-size: 17px;">One cup of fresh pineapple chunks contains approximately: <br> 82 calories,
-          0.2 grams (g) of fat, 0 g of cholesterol, 2 milligrams (mg) of sodium, 21.65 g of total carbohydrate (including 16 grams of sugar and 2.3 grams of fiber),
-          0.89 g of protein.</p>
+          font-size: 42px; letter-spacing: 1px; margin-bottom: 15%;"><br>What season does parsley grow?</h2>
+          <p class="mb-3" style="text-align: justify; color: #fff; letter-spacing: 2px; margin-top: 5%;
+          font-size: 18px;">Parsley is an annual in the North, growing from spring until freezing weather. In milder climates, it is frost-proof and lives through winter. The second spring after planting, the plant blooms, goes to seed, and then finally gives out.</p>
           <h2 class="text-title mb-2" style="color: #fff; font-family: Georgia, 'Times New Roman', Times, serif;
-          font-size: 42px; letter-spacing: 1px; margin-bottom: 15%;">Vitamins and Minerals</h2>
+          font-size: 42px; letter-spacing: 1px; margin-bottom: 15%;"><br>Nutrition Facts</h2>
            <p class="mb-3" style="text-align: justify; color: #fff;  letter-spacing: 2px; margin-top: 5%;
-           font-size: 17px;">The same amount of fresh pineapple chunks provides:<br>131 percent of vitamin C,
-              2 percent of vitamin A, 2 percent of calcium, 3 percent of iron. Pineapple is also a source of important vitamins and minerals, including:
-              thiamin, riboflavin, vitamin B-6, folate, pantothenic acid, magnesium, manganese, potassium, beta-carotene and other antioxidants</p>
+           font-size: 18px;"> Calories: 2,
+          Vitamin A: 12% of the Reference Daily Intake (RDI),
+          Vitamin C: 16% of the RDI,
+          Vitamin K: 154% of the RDI.
         </div>
       </div>
     </div>
   </div>
 
-           <!--difficulty & lifespan -->
+      
         <div class="site-section">
           <div class="container">
             <div class="row justify-content-between align-items-center">
               <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
-                <div class="parsley-info">
+                <div class="stringbeans-info">
                   <img src="/img/vegetables/parsley-2.jpeg" style="width: 100%;">
               </div>
               </div>
 
               <div class="col-lg-5 order-lg-1">
                 <h2 class="text-title mb-2" style="color: #fff; font-family: Georgia, 'Times New Roman', Times, serif;
-                font-size: 45px; letter-spacing: 1px;;">Difficulty and Lifespan</h2>
+                font-size: 45px; letter-spacing: 1px;;">How long does the parsley last?</h2>
                 <p class="mb-3" style="text-align: justify; color: #fff;  letter-spacing: 2px; margin-top: 5%;
-                font-size: 17px;">Pineapples aren't hard to grow but they do take a time commitment; depending on the method, it may be several years until the plant flowers and produces fruit. 
-                  If you want to grow your own pineapples, there are three ways to get started.
-                  Lifespan of a pineapple plant is 7 years. First fruit is borne only after the 2nd year. Every year thereafter each plant produces only 1 fruit.
-                </p>
-              </div>
+                font-size: 18px;">Parsley from the store can last up 7-10 days in the refrigerator if stored properly. Fresh parsley from the garden can even last up to a month. If not stored properly it will go bad within a week.</p>
             </div>
           </div>
         </div>
@@ -174,10 +191,9 @@
             <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
               <h2 class="text-title mb-4" style="color: #fff; font-family: Georgia, 'Times New Roman', Times, serif;
               font-size: 40px; letter-spacing: 1px; margin-bottom: 10%;">How to Know if it's Spoiled?</h2>
-              <p class="mb-4" style="margin-left: 1%; text-align: justify; color: #fff; font-size: 17px; letter-spacing: 2px;">If the bottom is mushy, wet, or moldy, 
-                the pineapple has probably gone bad and is not safe to eat. Take a look at the body as well. 
-                If its color is orange, dark gold, or brown instead of green or yellow, the fruit inside has probably started to spoil.
-                 </p>
+              <p class="mb-4" style="margin-left: 1%; text-align: justify; color: #fff; font-size: 18px; letter-spacing: 2px;">
+                You can tell if parsley has gone bad by color and smell. The leaves should not droop and should be a deep or bright green without any brown or yellow spots, as these are an indication that the parsley has gone bad. An off smell is also an indicator that your parsley has gone off.
+                              </p>
             </div>
             <div class="col-lg-5 order-lg-1">
               <img src = "/img/vegetables/parsley-3.jpg" style="width: 100%;  margin-top: 5%;">
@@ -378,6 +394,9 @@
       </div>
   </div>
 </footer>    
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
   </body>
   </html>

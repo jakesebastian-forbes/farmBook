@@ -13,13 +13,12 @@ $stmt = $conn->prepare("INSERT INTO `accounts` (`id`,`firstName`, `lastName`, `m
 `streetName`,`barangay`,`cityTown`,`contactNo`,`accType_id`) VALUES (?,?,?,?,?,?,?,?,?,?,?)");
 $stmt->bind_param("sssssssssss", $id,$firstName, $lastName,$midName, $email,$hashed_pass,$street_name,$barangay,$city,$contactNo,$accType_id);
 
-
 // fname,midname,lastname,email,password,confirm pass
 // street, barangay, city, province, contact number
 // profile picture
 
 $id = gen_uuid();
-$firstName = "Bill Jerico";
+$firstName = "Bill Jerico2";
 $lastName = "Mercado";
 $midName = 'Pusod';
 $email = "bjmercado@g.batstate-u.ph";
