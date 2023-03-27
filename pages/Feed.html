@@ -22,7 +22,7 @@
             <!-- logo -->
        
             <!-- <h1  style="font-family: 'Archivo Black'; color: #FFDE59; ">FarmBook</h1>   -->
-            <img src="/img/farmbook_logo.png" alt="" class="Logo rounded-circle bg-light p-1 mx-2 " style="width: 60px; height: 60px;border-color: black;">
+            <img src="/img/farmbook_logo.png" alt="" class="Logo rounded-circlep-1 mx-2 " style="width: 60px; height: 60px;border-color: black;">
             <!-- search bar -->
             <div class="input-group ms-1" type="button">
               <!-- mobile -->
@@ -1331,7 +1331,7 @@
     <div class="container-fluid">
       <div class="row justify-content-evenly">
         <!-- ================= Sidebar ================= -->
-        <div class="col-12 col-lg-3 ">
+        <div class="col-12 col-lg-3 " >
           <div class="d-none d-xxl-block h-100 fixed-top overflow-hidden scrollbar" style="max-width: 360px; width: 100%; z-index: 4">
             <ul class="navbar-nav mt-4 ms-3 d-flex flex-column pb-5 mb-5" style="padding-top: 56px">
               <!-- top -->
@@ -1525,26 +1525,28 @@
               </div>
               <hr />
               <!-- actions -->
+              <!-- image button style -->
+              <style>
+                .post_img{
+                    /* background-color: rgb(224, 222, 222); */
+                    border: none;
+                    padding: 7px;
+                    border-radius: 10px;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+                .post_img:active{
+                  background-color: rgb(193, 190, 190);
+            
+                }
+                .post_img:hover{
+                  background-color: rgb(193, 190, 190,0.5);
+                }
+              </style>
               <div class="d-flex flex-column flex-lg-row mt-3 justify-start">
                 <!-- a 1 -->
                 <div class=" dropdown-item roundedm d-flex align-items-center mx-2" >
-                  <style>
-                    .post_img{
-                        /* background-color: rgb(224, 222, 222); */
-                        border: none;
-                        padding: 7px;
-                        border-radius: 10px;
-                        text-decoration: none;
-                        cursor: pointer;
-                    }
-                    .post_img:active{
-                      background-color: rgb(193, 190, 190);
-                
-                    }
-                    .post_img:hover{
-                      background-color: rgb(193, 190, 190,0.5);
-                    }
-                  </style>
+               
                     <label for="post_img" class="post_img " ><i class="fa-solid fa-image" style=" font-size: 20px;"></i> Photo/Video </label>
                     <input type="file" class="post_img"id="post_img" name="myfile" style="display: none; ">
               
@@ -1554,6 +1556,129 @@
             </div>
      
             <!-- posts -->
+
+            <!-- POST STYLE -->
+            <style>
+ 
+              #myImg {
+                  border-radius: 5px;
+                  cursor: pointer;
+                  transition: 0.3s;
+              }
+            
+              #myImg:hover {
+                  opacity: 0.7;
+              }
+            
+              /* The Modal */
+            
+              .myModal {
+                margin-top: 60px;
+                  display: none;
+                  /* Hidden by default */
+                  position: fixed;
+                  /* Stay in place */
+                  z-index: 7;
+                  /* Sit on top */
+                  padding-top: 60px;
+                  /* Location of the box */
+                  left: 0;
+                  top: 0;
+                  width: 100%;
+                  /* Full width */
+                  height: 100%;
+                  /* Full height */
+                  overflow: auto;
+                  /* Enable scroll if needed */
+                  background-color: rgb(0, 0, 0);
+                  /* Fallback color */
+                  background-color: rgba(0, 0, 0, 0.9);
+                  /* Black w/ opacity */
+              }
+            
+              /* Modal Content (image) */
+            
+              .modal-content {
+                  margin: auto;
+                  display: block;
+                  width: 80%;
+                  max-width: 700px;
+              }
+            
+              /* Caption of Modal Image */
+            
+              #caption {
+                  margin: auto;
+                  display: block;
+                  width: 80%;
+                  max-width: 700px;
+                  text-align: center;
+                  color: #ccc;
+                  padding: 10px 0;
+                  height: 150px;
+              }
+            
+              /* Add Animation */
+            
+              .modal-content,
+              #caption {
+                  -webkit-animation-name: zoom;
+                  -webkit-animation-duration: 0.6s;
+                  animation-name: zoom;
+                  animation-duration: 0.6s;
+              }
+            
+              @-webkit-keyframes zoom {
+                  from {
+                    -webkit-transform: scale(0);
+                  }
+                  to {
+                    -webkit-transform: scale(1);
+                  }
+              }
+            
+              @keyframes zoom {
+                  from {
+                    transform: scale(0);
+                  }
+                  to {
+                    transform: scale(1);
+                  }
+              }
+            
+              /* The Close Button */
+            
+              .close {
+                  position: absolute;
+                  top: 15px;
+                  right: 35px;
+                  color: #f1f1f1;
+                  font-size: 40px;
+                  font-weight: bold;
+                  transition: 0.3s;
+              }
+            
+              .close:hover,
+              .close:focus {
+                  color: #bbb;
+                  text-decoration: none;
+                  cursor: pointer;
+              }
+            
+              /* 100% Image Width on Smaller Screens */
+            
+              @media only screen and (max-width: 700px) {
+                  .modal-content {
+                  margin-top: 120px;
+                    width: 100%;
+                  }
+              }
+            </style>
+
+
+
+
+
             <!-- p 1 -->
             <div class="bg-white p-4 rounded shadow mt-3">
               <!-- author -->
@@ -1590,123 +1715,8 @@
                       <!-- <div id="caption"></div> -->
                   </div>
                   <style>
-                    body {
-                       font-family: Arial, Helvetica, sans-serif;
-                    }
-                 
-                    #myImg {
-                       border-radius: 5px;
-                       cursor: pointer;
-                       transition: 0.3s;
-                    }
-                 
-                    #myImg:hover {
-                       opacity: 0.7;
-                    }
-                 
-                    /* The Modal */
-                 
-                    .myModal {
-                      margin-top: 60px;
-                       display: none;
-                       /* Hidden by default */
-                       position: fixed;
-                       /* Stay in place */
-                       z-index: 7;
-                       /* Sit on top */
-                       padding-top: 60px;
-                       /* Location of the box */
-                       left: 0;
-                       top: 0;
-                       width: 100%;
-                       /* Full width */
-                       height: 100%;
-                       /* Full height */
-                       overflow: auto;
-                       /* Enable scroll if needed */
-                       background-color: rgb(0, 0, 0);
-                       /* Fallback color */
-                       background-color: rgba(0, 0, 0, 0.9);
-                       /* Black w/ opacity */
-                    }
-                 
-                    /* Modal Content (image) */
-                 
-                    .modal-content {
-                       margin: auto;
-                       display: block;
-                       width: 80%;
-                       max-width: 700px;
-                    }
-                 
-                    /* Caption of Modal Image */
-                 
-                    #caption {
-                       margin: auto;
-                       display: block;
-                       width: 80%;
-                       max-width: 700px;
-                       text-align: center;
-                       color: #ccc;
-                       padding: 10px 0;
-                       height: 150px;
-                    }
-                 
-                    /* Add Animation */
-                 
-                    .modal-content,
-                    #caption {
-                       -webkit-animation-name: zoom;
-                       -webkit-animation-duration: 0.6s;
-                       animation-name: zoom;
-                       animation-duration: 0.6s;
-                    }
-                 
-                    @-webkit-keyframes zoom {
-                       from {
-                          -webkit-transform: scale(0);
-                       }
-                       to {
-                          -webkit-transform: scale(1);
-                       }
-                    }
-                 
-                    @keyframes zoom {
-                       from {
-                          transform: scale(0);
-                       }
-                       to {
-                          transform: scale(1);
-                       }
-                    }
-                 
-                    /* The Close Button */
-                 
-                    .close {
-                       position: absolute;
-                       top: 15px;
-                       right: 35px;
-                       color: #f1f1f1;
-                       font-size: 40px;
-                       font-weight: bold;
-                       transition: 0.3s;
-                    }
-                 
-                    .close:hover,
-                    .close:focus {
-                       color: #bbb;
-                       text-decoration: none;
-                       cursor: pointer;
-                    }
-                 
-                    /* 100% Image Width on Smaller Screens */
-                 
-                    @media only screen and (max-width: 700px) {
-                       .modal-content {
-                        margin-top: 120px;
-                          width: 100%;
-                       }
-                    }
+                  
+                
                  </style>
 
                  <!--  -->
@@ -1924,185 +1934,10 @@
                       <img class="modal-content " id="img01" />
                       <!-- <div id="caption"></div> -->
                   </div>
-                  <style>
-                    body {
-                       font-family: Arial, Helvetica, sans-serif;
-                    }
-                 
-                    #myImg {
-                       border-radius: 5px;
-                       cursor: pointer;
-                       transition: 0.3s;
-                    }
-                 
-                    #myImg:hover {
-                       opacity: 0.7;
-                    }
-                 
-                    /* The Modal */
-                 
-                    .myModal {
-                      margin-top: 80px;
-                       display: none;
-                       /* Hidden by default */
-                       position: fixed;
-                       /* Stay in place */
-                       z-index: 7;
-                       /* Sit on top */
-                       padding-top: 80px;
-                       /* Location of the box */
-                       left: 0;
-                       top: 0;
-                       width: 100%;
-                       /* Full width */
-                       height: 100%;
-                       /* Full height */
-                       overflow: auto;
-                       /* Enable scroll if needed */
-                       background-color: rgb(0, 0, 0);
-                       /* Fallback color */
-                       background-color: rgba(0, 0, 0, 0.9);
-                       /* Black w/ opacity */
-                    }
-                 
-                    /* Modal Content (image) */
-                 
-                    .modal-content {
-                       margin: auto;
-                       display: block;
-                       width: 80%;
-                       max-width: 700px;
-                    }
-                 
-                    /* Caption of Modal Image */
-                 
-                    #caption {
-                       margin: auto;
-                       display: block;
-                       width: 80%;
-                       max-width: 700px;
-                       text-align: center;
-                       color: #ccc;
-                       padding: 10px 0;
-                       height: 150px;
-                    }
-                 
-                    /* Add Animation */
-                 
-                    .modal-content,
-                    #caption {
-                       -webkit-animation-name: zoom;
-                       -webkit-animation-duration: 0.6s;
-                       animation-name: zoom;
-                       animation-duration: 0.6s;
-                    }
-                 
-                    @-webkit-keyframes zoom {
-                       from {
-                          -webkit-transform: scale(0);
-                       }
-                       to {
-                          -webkit-transform: scale(1);
-                       }
-                    }
-                 
-                    @keyframes zoom {
-                       from {
-                          transform: scale(0);
-                       }
-                       to {
-                          transform: scale(1);
-                       }
-                    }
-                 
-                    /* The Close Button */
-                 
-                    .close {
-                       position: absolute;
-                       top: 15px;
-                       right: 35px;
-                       color: #f1f1f1;
-                       font-size: 40px;
-                       font-weight: bold;
-                       transition: 0.3s;
-                    }
-                 
-                    .close:hover,
-                    .close:focus {
-                       color: #bbb;
-                       text-decoration: none;
-                       cursor: pointer;
-                    }
-                 
-                    /* 100% Image Width on Smaller Screens */
-                 
-                    @media only screen and (max-width: 700px) {
-                       .modal-content {
-                        margin-top: 120px;
-                          width: 100%;
-                       }
-                    }
-                 </style>
-
-                 <!--  -->
-                 <script>
-                  // Get the modal
-                  var modal = document.getElementById("myModal");
-                  // Get the image and insert it inside the modal - use its "alt" text as a caption
-                  var img = document.getElementById("myImg");
-                  var modalImg = document.getElementById("img01");
-                  var captionText = document.getElementById("caption");
-                  img.onclick = function() {
-                     modal.style.display = "block";
-                     modalImg.src = this.src;
-                     captionText.innerHTML = this.alt;
-                  };
-                  // Get the <span> element that closes the modal
-                  var span = document.getElementsByClassName("close")[0];
-                  // When the user clicks on <span> (x), close the modal
-                  span.onclick = function() {
-                     modal.style.display = "none";
-                  };
-               </script>
 
                 <!-- likes & comments -->
                 <div class="post__comment mt-3 position-relative">
-               
-                  <style>
-                    
-                        .like-btn{
-                            
-                            border-radius: 10px;
-                            border: none;
-                            background-color:transparent;
-                            color: black;
-                            padding: 5px 5px;
-                            font-size: 20px; /* Set a font size */
-                            cursor: pointer; /* Mouse pointer on hover */
-                            color: black;
-                            width: 100%;
-                            
-                            
-                            
-                        }
-
-                        .like-btn:hover {
-                            Background-color:rgb(219, 219, 219)
-                        }
-
-                        .like-btn:active {
-                            Background-color:rgb(219, 219, 219,0.5)
-                        }
-   
-                        .comment-1:hover{
-                          Background-color:rgb(219, 219, 219);
-                          border-radius: 10px;
-                        }
-                        .input-comment:hover{
-                          Background-color:rgb(219, 219, 219);
-                          border-radius: 10px;
-                        }
-                  </style>
+ 
                   <hr>
                   <!-- comments start-->
                   <div class="accordion" id="accordionExample">
@@ -2208,6 +2043,156 @@
                 </div>
               </div>
             </div>
+             <!-- p 3 -->
+             <div class="bg-white p-4 rounded shadow mt-3">
+              <!-- author -->
+              <div class="d-flex justify-content-between">
+                <!-- avatar -->
+                <div class="d-flex">
+                  <img src="/img/profile pics/profile3.jpg" alt="avatar" class="rounded-circle me-2"  style="width: 38px; height: 38px; object-fit: cover"/>
+                  <div>
+                    <p class="m-0 fw-bold">Fank Ocean</p>
+                    <span class="text-muted fs-7">July 16 at 2:25 pm</span>
+                  </div>
+                </div>
+             
+              </div>
+              <!-- post content -->
+              <div class="mt-3">
+                <!-- content -->
+                <div >
+                  <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Quae fuga incidunt consequatur tenetur doloremque officia
+                    corrupti provident tempore vitae labore?
+                  </p>
+                  <div class="text-center d-block my-2 " style="column-gap: 10px;"  >
+            
+                    
+                        <img src="/img/Vegetables/onions-3.jpg" id="myImg" alt="post image"class="img-fluid rounded " style="object-fit: none; object-position: center;   width: 100%;max-height: 215px;" />
+                     
+                      
+                   
+                    
+                        <img src="/img/Vegetables/zuchinni-1.jpeg " id="myImg" alt="post image"class="img-fluid rounded " style="object-fit: none; object-position: center;   width: 100%;max-height: 215px;" />
+                      
+                      
+                  </div>
+             
+                </div>
+                
+
+
+                <!-- likes & comments -->
+                <div class="post__comment mt-3 position-relative">
+               
+                 
+                  <hr>
+                  <!-- comments start-->
+                  <div class="accordion" id="accordionExample">
+                    <div class="accordion-item border-0">
+                    
+                      <!-- <hr /> -->
+                      <!-- comment & like bar -->
+                      <div class="d-flex justify-content-around">
+                        <div class=" dropdown-item rounded d-flex justify-content-center align-items-center pointer p-1 ">
+                          <button type="button" class="like-btn "> <span class="d-flex justify-content-center "><i class="fas fa-thumbs-up mt-1 mx-3"></i><p class="m-0" >Like</p></span></button>
+                          
+                          
+                        </div>
+                        <div class=" dropdown-item rounded d-flex justify-content-center align-items-center pointer p-1 ">
+                        <button type="button" class="like-btn " data-bs-toggle="collapse"  data-bs-target="#collapsePost1" aria-expanded="false"   aria-controls="collapsePost1"> <span class="d-flex justify-content-center "><i class="fa-solid fa-comment mt-1 mx-3"></i><p class="m-0" >Comment</p></span></button>
+                          
+                          
+                        </div>
+                      </div>
+                      <!-- comment expand -->
+                      <div id="collapsePost1"  class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <hr />
+                        <div class="accordion-body">
+                          <!-- comment 1 -->
+                          <div class="comment-1 d-flex align-items-center p-2">
+                            <!-- avatar -->
+                            <img src="/img/profile pics/profile5.jpg" alt="avatar" class="rounded-circle me-2"  style="width: 40px;height: 40px;object-fit: cover;"/>
+                            <!-- comment text -->
+                            <div class="p-3 rounded comment__input w-100">
+                              <!-- comment menu of author -->
+                              <div class="d-flex justify-content-end">
+                                <!-- icon -->
+                                <i class="fas fa-ellipsis-h text-blue pointer" id="post1CommentMenuButton" data-bs-toggle="dropdown"aria-expanded="false"></i>
+                                <!-- menu -->
+                                <ul
+                                  class="dropdown-menu border-0 shadow"
+                                  aria-labelledby="post1CommentMenuButton"
+                                >
+                                 
+                                  <li class="d-flex align-items-center">
+                                    <a class=" dropdown-item d-flex justify-content-around align-items-center fs-7 "  href="#" >
+                                      Delete Comment
+                                    </a
+                                    >
+                                  </li>
+                                </ul>
+                              </div>
+                              <p class="fw-bold m-0">Paul Walker</p>
+                              <p class="m-0 fs-7 bg-gray p-2 rounded">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit.
+                              </p>
+                            </div>
+                          </div>
+                          <!-- comment 2 -->
+                          <div class="comment-1 d-flex align-items-center p-2">
+                            <!-- avatar -->
+                            <img src="/img/profile pics/profile6.jpg" alt="avatar" class="rounded-circle me-2"  style="width: 40px;height: 40px;object-fit: cover;"/>
+                            <!-- comment text -->
+                            <div class="p-3 rounded comment__input w-100">
+                              <!-- comment menu of author -->
+                              <div class="d-flex justify-content-end">
+                                <!-- icon -->
+                                <i class="fas fa-ellipsis-h text-blue pointer" id="post1CommentMenuButton" data-bs-toggle="dropdown"aria-expanded="false"></i>
+                                <!-- menu -->
+                                <ul class="dropdown-menu border-0 shadow" aria-labelledby="post1CommentMenuButton" >
+                                 
+                                  <li class="d-flex align-items-center">
+                                    <a class=" dropdown-item d-flex justify-content-around align-items-center fs-7 "  href="#" >
+                                      Delete Comment
+                                    </a
+                                    >
+                                  </li>
+                                </ul>
+                              </div>
+                              <p class="fw-bold m-0">Peter Parker</p>
+                              <p class="m-0 fs-7 bg-gray p-2 rounded">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit.
+                              </p>
+                            </div>
+                           
+                          </div>
+                          <!-- create comment -->
+                          <form class="d-flex my-1">
+                            <!-- avatar -->
+                            <div class="input-comment d-flex  align-items-center p-3" style="width: 100%;">
+                            <div>
+                              <img src="/img/profile pics/profile.jpg "alt=" avatar "class="rounded-circle me-2" style=" width: 38px;height: 38px;object-fit: cover;"/>
+                            </div>
+                            <!-- input -->
+                            
+                              <input type="text" class="form-control border-0 rounded-pill bg-gray" placeholder="Write a comment" />
+                            </div>
+                        
+                          </form>
+                          <!-- end -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- end -->
+                </div>
+              </div>
+            </div>
+            
           </div>
         </div>
         <!-- ================= Chatbar ================= -->
