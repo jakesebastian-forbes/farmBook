@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../bootstrap-5.2.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Archivo Black' rel='stylesheet'>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -14,57 +14,14 @@
     <script src="https://kit.fontawesome.com/1c020da525.js" crossorigin="anonymous"></script>
     <title>Homepage</title>
 
-</head>
+
 
     <style>
         body {
     overflow-x: hidden;
     
 }
-.navbar{
-    background-color: #57744B;
-    font-family: 'Archivo Black';
-  
-}
-.navbar-nav a {
-	font-size: 15px;
-	text-transform: uppercase;
-	font-weight: 500;
-}
-.navbar-light .navbar-brand {
-	color: #000;
 
-	text-transform: uppercase;
-	font-weight: bold;
-	letter-spacing: 2px;
-  
-}
-
-.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
-	color: #FFDE59;
-}
-.navbar-light .navbar-nav .nav-link {
-	color: #FFDE59;
-}
-.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
-	color: #FFDE59;
-}
-.w-100 {
-	height: 100vh;
-}
-.navbar-toggler {
-	padding: 1px 5px;
-	font-size: 18px;
-	line-height: 0.3;
-	background: #FFDE59;
- 
-}
-.navbar-light .navbar-toggler {
-	color: #FFF;
-	border-color: transparent;
-	background:transparent;
-    margin-right: 5px;
-}
 .carousel-item {
 	height: 100vh;
 	min-height: 300px;
@@ -186,28 +143,11 @@
     }
     </style>
 
-
+</head>
 <body>
   
 
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" >
-        <h1 style="color: #FFDE59;font-family: 'Archivo Black';margin-left: 10px;">FarmBook</h1>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon" style="color: aqua;"></span>
-        </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="color: #FFDE59 ; ">
-               
-                  <li class="nav-item" ><a class="nav-link" href="homepage.html"><i class="fa fa-fw fa-home fa-2x"></i>Home</a></li>
-                  <li class="nav-item" ><a class="nav-link"  href="aboutpage.html"><i class="fa fa-fw fa-circle-info fa-2x"></i>About Us</a></li>
-                  <li class="nav-item" ><a class="nav-link" href="e-learning.html"><i class="fa fa-fw fa-book fa-2x"></i>E-Learning</a></li>
-                  <li class="nav-item" ><a class="nav-link"  href="contact.html"><i class="fa fa-fw fa-phone fa-2x"></i>Contact</i></a></li>
-                </ul>
-     
-              </div>
-    
-        </nav>
+   <?php include "components/nav_bar.php"?>
 
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="height: 680px;">
         <div class="carousel-indicators">
@@ -216,7 +156,7 @@
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
-          <div class="carousel-item active" style="background-image: linear-gradient(rgba(1,2,2,0.5),rgba(0,1,1,0.4)), url(/img/bg/bg2.jpeg);  background-size:cover;height: 680px; background-repeat: no-repeat; ; ">  
+          <div class="carousel-item active" style="background-image: linear-gradient(rgba(1,2,2,0.5),rgba(0,1,1,0.4)), url(img/bg/bg2.jpeg);  background-size:cover;height: 680px; background-repeat: no-repeat; ; ">  
             
             <div class="carousel-caption">
               <h1 class="" >Welcome to<br>For <br>FarmBook</h1>
@@ -224,12 +164,12 @@
             </div>
           
           </div>
-          <div class="carousel-item" style="background-image: url(/img/bg/bg1.jpeg);  background-size:cover ;height: 680px; background-repeat: no-repeat;">     
+          <div class="carousel-item" style="background-image:linear-gradient(rgba(1,2,2,0.5),rgba(0,1,1,0.4)), url(img/bg/bg1.jpeg);  background-size:cover ;height: 680px; background-repeat: no-repeat;">     
             <div class="carousel-caption">
               <h1 class="display-4">Welcome to<br>For <br>FarmBook</h1>
             </div>
           </div>
-          <div class="carousel-item" style="background-image: url(/img/bg/bg13.jpeg);   background-size:cover ;height: 680px; background-repeat: no-repeat;">
+          <div class="carousel-item" style="background-image:  url(img/bg/bg13.jpeg);   background-size:cover ;height: 680px; background-repeat: no-repeat;">
             <div class="carousel-caption">
               <h1 class="display-4">Welcome to<br>For <br>FarmBook</h1>
             </div>
@@ -259,7 +199,7 @@
               <div class="text-center col-md-4 col-lg-4 col-xl-4 mx-auto mt-3" style=" padding: 1%; padding-right: 3%;" >
                  
                
-                    <img src="/img/farmer3.jpeg" alt="" class="responsive" style="height: 450px; width:100%;max-width: 800px; border-radius: 10px;">
+                    <img src="img/farmer3.jpeg" alt="" class="responsive" style="height: 450px; width:100%;max-width: 800px; border-radius: 10px;">
                   </div>
                  
               <div class="col-md-8 col-lg-8 col-xl-8 mx-auto mt-3" style="padding: 1%; padding-right: 5%; ">
@@ -295,8 +235,8 @@
 .myform .btn{
     width: 100%;
     font-weight: 800;
-    color:black ;
-    background-color: #228b22;
+    color:#FFDE59 ;
+    background-color: #57744B;
     border-radius: 10px;
     padding: 0.5em 0;
 }
@@ -389,13 +329,13 @@ p a:hover{
                             <form action ="#">
                                 <div class="signUp_as_list">
                                     <div class="mb-3 mt-3">
-                                        <button type="submit" class="btn singnUpAs_btn btn-light mt-3 mx-1 rounded-2 " data-bs-toggle="modal" data-bs-target="#signUp_Enthusiast" >Enthusiast</button>
+                                        <button type="submit" class="btn singnUpAs_btn btn-light mt-3 mx-1 rounded-2 " data-bs-toggle="modal" data-bs-target="#signUp_Form" >Enthusiast</button>
                                     </div>
                                     <div class="mb-3 mt-3">
-                                        <button type="submit" class="btn singnUpAs_btn btn-light mt-3 mx-1 rounded-2 " data-bs-toggle="modal" data-bs-target="#signUp_Farmer">Farmer</button>
+                                        <button type="submit" class="btn singnUpAs_btn btn-light mt-3 mx-1 rounded-2 " data-bs-toggle="modal" data-bs-target="#signUp_Form">Farmer</button>
                                     </div>
                                     <div class="mb-3 mt-3">
-                                        <button type="submit" class="btn singnUpAs_btn btn-light mt-3 mx-1 rounded-2 " data-bs-toggle="modal" data-bs-target="#signUp_Vendor">Vendor</button>
+                                        <button type="submit" class="btn singnUpAs_btn btn-light mt-3 mx-1 rounded-2 " data-bs-toggle="modal" data-bs-target="#signUp_Form">Vendor</button>
                                     </div>
                                 </div>
                                 <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a></p>
@@ -405,8 +345,90 @@ p a:hover{
                   </div>
                 </div>
             </div>
-     <!-- ENTHUSIAST -->
-            <div class="modal fade " id="signUp_Enthusiast">
+
+
+<style>
+  .image-preview-container {
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 3rem;
+    border-radius: 20px;
+}
+
+.image-preview-container img {
+    width: 100%;
+    display: none;
+    margin-bottom: 30px;
+}
+.image-preview-container input {
+    display: none;
+}
+
+.image-preview-container label {
+    display: block;
+    width: 45%;
+    height: 45px;
+    margin-left: 25%;
+    text-align: center;
+    background: #8338ec;
+    color: #fff;
+    font-size: 15px;
+    text-transform: Uppercase;
+    font-weight: 400;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+</style>
+<script>
+  const previewImage = (event) => {
+    /**
+     * Get the selected files.
+     */
+    const imageFiles = event.target.files;
+    /**
+     * Count the number of files selected.
+     */
+    const imageFilesLength = imageFiles.length;
+    /**
+     * If at least one image is selected, then proceed to display the preview.
+     */
+    if (imageFilesLength > 0) {
+        /**
+         * Get the image path.
+         */
+        const imageSrc = URL.createObjectURL(imageFiles[0]);
+        /**
+         * Select the image preview element.
+         */
+        const imagePreviewElement = document.querySelector("#preview-selected-image");
+        /**
+         * Assign the path to the image preview element.
+         */
+        imagePreviewElement.src = imageSrc;
+        /**
+         * Show the element by changing the display value to "block".
+         */
+        imagePreviewElement.style.display = "block";
+    }
+};
+</script>
+<style>
+  .file-upload{
+    border-radius:10px;
+    background-color:#57744B;
+    padding: 3%
+
+  }
+</style>
+
+ 
+
+              <!--  -->
+            <div class="modal fade " id="signUp_Form">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-body">
@@ -414,7 +436,7 @@ p a:hover{
                             data-bs-dismiss="modal" aria-label="Close"></button>
           
                             <div class="myform">
-                                <h1 class="text-center">Enthusiast</h1>
+                                <!-- <h1 class="text-center">Farmer</h1> -->
                                 <form action ="#">
                                  
                                   <div class="mb-1 mt-1 d-block justify-content-between">
@@ -450,7 +472,7 @@ p a:hover{
                                     </div>
                                   </div>
                                   <button type="submit " class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#signUpform"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>  
-                                  <button type="submit " class="btn-light btn_next" data-bs-toggle="modal" data-bs-target="#next_signUp_Enthusiast"><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
+                                  <button type="submit " class="btn-light btn_next" data-bs-toggle="modal" data-bs-target="#next_signUp_Form"><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
                                   <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
       
                                 </form>
@@ -460,7 +482,7 @@ p a:hover{
                     </div>
               </div>
 
-              <div class="modal fade " id="next_signUp_Enthusiast">
+              <div class="modal fade " id="next_signUp_Form">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-body">
@@ -468,218 +490,7 @@ p a:hover{
                             data-bs-dismiss="modal" aria-label="Close"></button>
           
                             <div class="myform">
-                                <h1 class="text-center">Enthusiast</h1>
-                                <form action ="#">  
-                                <h4>Address and Contact number</h4>                         
-                                <div class="mb-1 mt-1  justify-content-between">
-                                  
-                                  <div class="mb-1 mt-1 mx-2">
-                                    
-                                    <label for="" class="Province" style="font-size: small;">Province<i>(Probinsya)</i></label>
-                                    <select class="select box form-select" aria-label="Default select example" onfocus='this.size=5;' onblur='this.size=1;' 
-                                    onchange='this.size=1; this.blur();'>
-                                      <!-- <option selected>Select Province</option> -->
-                                      <option value="1">Batangas</option>
-                                
-                                    </select>
-                                  </div>
-                             
-                                  <div class="mb-1 mt-1 mx-2">
-                                    <style>
-                                    
-                                    </style>
-                                    <label for="" class="Municipality" style="font-size: small;">Municipality/City <i>(Bayan)</i></label>
-                                      
-                                      <select class="select box form-select position-relative" aria-label="multiple select example"  onfocus='this.size=5;' onblur='this.size=1;' 
-                                          onchange='this.size=1; this.blur();' >
-                                        <!-- <option selected>Select Municipality / City</option> -->
-                                        <option value="1">Agoncillo</option>
-                                        <option value="2">Alitagtag </option>s
-                                        <option value="3">Balayan</option>
-                                        <option value="4">Balete </option>
-                                        <option value="5">Batanagas City </option>
-                                        <option value="6">Bauan </option>
-                                        <option value="7">Calaca </option>
-                                        <option value="8">Calatagan </option>
-                                        <option value="9">Cuenca </option>
-                                        <option value="10">Ibaan </option>
-                                        <option value="11">Laurel</option>
-                                        <option value="12">Lemery </option>
-                                        <option value="13">Lian</option>
-                                        <option value="14">Lipa City</option>
-                                        <option value="15">Lobo</option>
-                                        <option value="16">Mabini</option>
-                                        <option value="17">Malvar</option>
-                                        <option value="18">Mataas na kahoy</option>
-                                        <option value="19">Nasugbu</option>
-                                        <option value="20">Padre Garcia </option>
-                                        <option value="21">Rosario </option>
-                                        <option value="22">San Jose </option>
-                                        <option value="23">San Juan</option>
-                                        <option value="24">Taal </option>
-                                        <option value="25">Tanauan </option>
-                                        <option value="26">Tuy</option>
-
-                                  
-                                      </select>
-                                  </div>
-                                  
-                                </div>
-                          
-                                  <div class="mb-1 mt-1 mx-2">
-                                    <label for="" class="Barangay" style="font-size: small;">Barangay</i></label>
-                                    <select class="select box form-select position-relative" aria-label="multiple select example"  onfocus='this.size=5;' onblur='this.size=1;' 
-                                    onchange='this.size=1; this.blur();' >
-                                  <!-- <option selected>Select Barangayq</option> -->
-                                  <option value="1">Aga</option>
-                                  <option value="2">Balaytigue</option>
-                                  <option value="3">Banilad</option>
-                                  <option value="4">Barangay 1</option>
-                                  <option value="5">Barangay 2</option>
-                                  <option value="6">Barangay 3</option>
-                                  <option value="7">Barangay 4</option>
-                                  <option value="8">Barangay 5</option>
-                                  <option value="9">Barangay 6</option>
-                                  <option value="10">Barangay 7</option>
-                                  <option value="11">Barangay 8</option>
-                                  <option value="12">Barangay 9</option>
-                                  <option value="13">Barangay 10</option>
-                                  <option value="14">Barangay 11</option>
-                                  <option value="15">Barangay 12</option>
-                                  <option value="16">Bilaran</option>
-                                  <option value="17">Bucana</option>
-                                  <option value="18">Bulihan</option>
-                                  <option value="19">Calayo</option>
-                                  <option value="20">Catandaan</option>
-                                  <option value="21">Cogunan</option>
-                                  <option value="22">Dayap</option>
-                                  <option value="23">Kaylaway</option>
-                                  <option value="24">Kayrilaw</option>
-                                  <option value="25">Latag</option>
-                                  <option value="26">Looc</option>
-                                  <option value="27">Lumbangan</option>
-                                  <option value="28">Malapad na Bato</option>
-                                  <option value="29">Mataas na Pulo</option>
-                                  <option value="30">Maugat</option>
-                                  <option value="31">Munting Indang</option>
-                                  <option value="32">Natipuan</option>
-                                  <option value="33">Pantalan</option>
-                                  <option value="34">Papaya</option>
-                                  <option value="35">Putat</option>
-                                  <option value="36">Reparo</option>
-                                  <option value="37">Talangan</option>
-                                  <option value="38">Tumalim</option>
-                                  <option value="39">Utod</option>
-                                  <option value="40">Wawa</option>
-                                </select>
-                                  </div>
-                                  <div class="mb-1 mt-1 mx-2">
-                                    <label for="" class="Last_name" style="font-size: small;">Contact Number</label>
-                                    <input type="" class="form-control" style="margin-right: 5px;" size="30">
-                                  </div>
-                           
-                                </form>
-                                <button type="submit " class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#signUp_Enthusiast"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>
-                                <button type="submit " class="btn-light btn_next" data-bs-toggle="modal" data-bs-target="#second_next_signUp_Enthusiast"><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
-                                <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
-                                  
-                            </div>
-                        </div>
-                      </div>
-                    </div>
-                </div>
-
-
-
-                 <div class="modal fade" id="second_next_signUp_Enthusiast">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <button type="button" class="btn-close btn-close-black" 
-                                data-bs-dismiss="modal" aria-label="Close"></button>
-              
-                                <div class="myform text-center">
-                                    <h3 class="text-center">Farmer</h3>
-                                    <form action ="#" class="insert_profile_pic">
-                                      <h4>Profile Picture</h4>
-                                        <img src="/img/profile pics/profile2.png" class="card-img-top insert_pic" alt="..." >
-           
-                                      <input type="file" class="form-control mt-2" id="customFile" />
-                                    </form>
-                                    <button type="submit" class="btn btn-light mt-3">Sign up</button>
-                                    <button type="submit " class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#next_signUp_Enthusiast"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>
-          
-                                    <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
-                                </div>
-                            </div>
-                          </div>
-                        </div>  
-                </div>
-
-                <!-- FARMER -->
-            <div class="modal fade " id="signUp_Farmer">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <button type="button" class="btn-close btn-close-black" 
-                            data-bs-dismiss="modal" aria-label="Close"></button>
-          
-                            <div class="myform">
-                                <h1 class="text-center">Farmer</h1>
-                                <form action ="#">
-                                 
-                                  <div class="mb-1 mt-1 d-block justify-content-between">
-                                    <h4>Name</h4>
-                                    
-                                      <div class="mb-1 mt-1 mx-2">
-                                        <label for="" class="FirstName " style="font-size: small;">First Name <i>(Pangalan)</i></label>
-                                        <input type="" class="form-control" >
-                                      </div>
-                                      <div class="mb-1 mt-1 mx-2">
-                                        <label for="" class="Middle_Name " style="font-size: small;">Middle Name<i>(Gitnang Pangalan)</i></label>
-                                        <input type="" class="form-control">
-                                      </div>
-                                      <div class="mb-1 mt-1 mx-2">
-                                        <label for="" class="Last_name" style="font-size: small;">Last Name <i>(Apelyido)</i></label>
-                                        <input type="" class="form-control" >
-                                      </div>
-                                  </div>
-                                  
-                                  <div class="mb-1 mt-3 d-block justify-content-between">
-                                    <h4>Email and Password</h4>
-                                    <div class="mb-1 mt-1 mx-2">
-                                      <label for="" class="Last_name" style="font-size: small;">Email</label>
-                                      <input type="email" class="form-control" >
-                                    </div>
-                                    <div class="mb-1 mt-1 mx-2">
-                                      <label for="" class="Last_name" style="font-size: small;">Password</label>
-                                      <input type="password" class="form-control" >
-                                    </div>
-                                    <div class="mb-1 mt-1 mx-2">
-                                      <label for="email" class="Last_name" style="font-size: small;">Confirm Password</label>
-                                      <input type="password" class="form-control" >
-                                    </div>
-                                  </div>
-                                  <button type="submit " class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#signUpform"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>  
-                                  <button type="submit " class="btn-light btn_next" data-bs-toggle="modal" data-bs-target="#next_signUp_Farmer"><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
-                                  <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
-      
-                                </form>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
-              </div>
-
-              <div class="modal fade " id="next_signUp_Farmer">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <button type="button" class="btn-close btn-close-black" 
-                            data-bs-dismiss="modal" aria-label="Close"></button>
-          
-                            <div class="myform">
-                                <h1 class="text-center">Farmer</h1>
+                                <!-- <h1 class="text-center">Farmer</h1> -->
                                 <form action ="#">  
                                 <h4>Address and Contact number</h4>
                                 <div class="mb-1 mt-1 mx-2">
@@ -788,8 +599,8 @@ p a:hover{
                                   </div>
                                 
                                 </form>
-                                <button type="submit " class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#signUp_Farmer"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>
-                                <button type="submit " class="btn-light btn_next" data-bs-toggle="modal" data-bs-target="#second_next_signUp_Farmer"><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
+                                <button type="submit " class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#signUp_Form"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>
+                                <button type="submit " class="btn-light btn_next" data-bs-toggle="modal" data-bs-target="#second_signUp_Form"><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
                                 <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
                                   
                             </div>
@@ -800,7 +611,7 @@ p a:hover{
 
 
 
-                 <div class="modal fade" id="second_next_signUp_Farmer">
+                 <div class="modal fade" id="second_signUp_Form">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-body">
@@ -808,15 +619,21 @@ p a:hover{
                                 data-bs-dismiss="modal" aria-label="Close"></button>
               
                                 <div class="myform text-center">
-                                    <h3 class="text-center">Farmer</h3>
-                                    <form action ="#" class="insert_profile_pic">
+                                    <!-- <h3 class="text-center">Farmer</h3> -->
+                                   <form action ="#" class="insert_profile_pic text-center d-block ">
                                       <h4>Profile Picture</h4>
-                                        <img src="/img/profile pics/profile2.png" class="card-img-top insert_pic" alt="..." >
-           
-                                      <input type="file" class="form-control mt-2" id="customFile" />
+                                      <div class="text-center d-flex mx-auto">
+                                      <img id="preview-selected-image"  class="card-img-top insert_pic mx-auto my-3 " alt="..." />
+                                       
+                                      </div>
+                                     
+
+                                  <label for="file-upload" class="file-upload">Upload Image</label>
+                                  <input type="file" id="file-upload" accept="image/*" onchange="previewImage(event);" style="display:none" />
+                                 
                                     </form>
                                     <button type="submit" class="btn btn-light mt-3">Sign up</button>
-                                    <button type="submit " class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#next_signUp_Farmer"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>
+                                    <button type="submit " class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#next_signUp_Form"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>
           
                                     <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
                                 </div>
@@ -825,62 +642,8 @@ p a:hover{
                         </div>  
                 </div>
 
-                  <!-- VENDOR -->
-            <div class="modal fade " id="signUp_Vendor">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <button type="button" class="btn-close btn-close-black" 
-                            data-bs-dismiss="modal" aria-label="Close"></button>
-          
-                            <div class="myform">
-                                <h1 class="text-center">Vendor</h1>
-                                <form action ="#">
-                                 
-                                  <div class="mb-1 mt-1 d-block justify-content-between">
-                                    <h4>Name</h4>
-                                    
-                                      <div class="mb-1 mt-1 mx-2">
-                                        <label for="" class="FirstName " style="font-size: small;">First Name <i>(Pangalan)</i></label>
-                                        <input type="" class="form-control" >
-                                      </div>
-                                      <div class="mb-1 mt-1 mx-2">
-                                        <label for="" class="Middle_Name " style="font-size: small;">Middle Name<i>(Gitnang Pangalan)</i></label>
-                                        <input type="" class="form-control">
-                                      </div>
-                                      <div class="mb-1 mt-1 mx-2">
-                                        <label for="" class="Last_name" style="font-size: small;">Last Name <i>(Apelyido)</i></label>
-                                        <input type="" class="form-control" >
-                                      </div>
-                                  </div>
-                                  
-                                  <div class="mb-1 mt-3 d-block justify-content-between">
-                                    <h4>Email and Password</h4>
-                                    <div class="mb-1 mt-1 mx-2">
-                                      <label for="" class="Last_name" style="font-size: small;">Email</label>
-                                      <input type="email" class="form-control" >
-                                    </div>
-                                    <div class="mb-1 mt-1 mx-2">
-                                      <label for="" class="Last_name" style="font-size: small;">Password</label>
-                                      <input type="password" class="form-control" >
-                                    </div>
-                                    <div class="mb-1 mt-1 mx-2">
-                                      <label for="email" class="Last_name" style="font-size: small;">Confirm Password</label>
-                                      <input type="password" class="form-control" >
-                                    </div>
-                                  </div>
-                                  <button type="submit " class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#signUpform"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>  
-                                  <button type="submit " class="btn-light btn_next" data-bs-toggle="modal" data-bs-target="#next_signUp_Vendor"><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
-                                  <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
-      
-                                </form>
-                            </div>
-                        </div>
-                      </div>
-                    </div>
-              </div>
-
-              <div class="modal fade " id="next_signUp_Vendor">
+                
+        
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-body">
