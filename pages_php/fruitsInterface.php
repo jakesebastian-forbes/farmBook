@@ -344,7 +344,7 @@ while($rows = mysqli_fetch_assoc($result))
     ?>
 
 <!--* footer -->
-<?php require '../page_component/footer.php'?>
+<?php require '../components/footer.php'?>
 
    
   

@@ -4,7 +4,7 @@ var ph_location = (function () {
      $.ajax({
        'async': false,
        'global': false,
-       'url': "philippine_provinces_cities_municipalities_and_barangays_2019v2.json",
+       'url': "js\\philippine_provinces_cities_municipalities_and_barangays_2019v2.json",
        'dataType': "json",
        'success': function (data) {
          ph_location = data;
@@ -23,6 +23,15 @@ var selected_region,selected_province,selected_city,selected_barangay;
  //load province
    //load city
      //load barangay
+
+function load_region(){
+  // $('#input_region')
+  $('#input_region').children().remove();
+for (var i = 1; i <= Object.keys(ph_location).length; i++) { //load all regions
+ $("#input_region").append('<option value="' + i + '" >' + ph_location[i].region_name + '</option>');
+}
+
+}
 
 function select_region(){
  selected_region = $('#input_region')[0].value;
@@ -79,19 +88,19 @@ function select_barangay(){
 //$( "#input_region option:selected" ).text();
 
  // ****  do on load 
-getMonth(); // get date from selected month
+// getMonth(); // get date from selected month
 
-for (var i = currYear - 16; i >= currYear - 100; i--) { //** / load year available for signup
-   $("#input_bday_year").append('<option value="' + i + '" >' + i + '</option>');
- }
-
-
-for (var i = 1; i <= Object.keys(ph_location).length; i++) { //load all regions
- $("#input_region").append('<option value="' + i + '" >' + ph_location[i].region_name + '</option>');
-}
+// for (var i = currYear - 16; i >= currYear - 100; i--) { //** / load year available for signup
+//    $("#input_bday_year").append('<option value="' + i + '" >' + i + '</option>');
+//  }
 
 
+// for (var i = 1; i <= Object.keys(ph_location).length; i++) { //load all regions
+//  $("#input_region").append('<option value="' + i + '" >' + ph_location[i].region_name + '</option>');
+// }
 
+
+load_region();
 select_region();
 select_province();
 select_city();

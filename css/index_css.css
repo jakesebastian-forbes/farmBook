@@ -1,0 +1,232 @@
+body {
+    overflow-x: hidden;
+    
+}
+
+.carousel-item {
+	height: 100vh;
+	min-height: 300px;
+	background-color: #f7f5eb;
+}
+
+.imgBox img {
+   
+	width: 650px;
+}
+
+.carousel-caption{
+    top: 40%;
+    text-transform: capitalize;
+    
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+	
+	outline: black;
+	background-size: 100%, 100%;
+	border-radius: 50%;
+	background-image: none;
+	color: #fff;
+
+}
+.carousel-control-next-icon:after {
+	content: '>';
+	font-size: 55px;
+	color: white;
+}
+.carousel-control-prev-icon:after {
+	content: '<';
+	font-size: 55px;
+	color: #fff;
+}
+.carousel-indicators [data-bs-target] {
+	background-color: white;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.navbar-nav {
+		text-align: center;
+       
+	}
+	.navbar-collapse {
+		background: transparent;
+	}
+
+	.navbar-collapse .nav-link {
+		color: #FFDE59 !important;
+	}
+
+}
+@media only screen and (max-width: 767px) {
+	.navbar-nav {
+		text-align: center;
+	}
+	.navbar-collapse {
+		background:transparent;
+	}
+	.navbar-collapse .nav-link {
+		color: #FFDE59 !important;
+	}
+	.carousel-caption {
+
+		text-align: center;
+	}
+
+	.carousel-caption p {
+		width: 100%;
+		line-height: 1.6;
+		font-size: 12px;
+	}
+  /* .carousel-caption h1{
+    font-size: 600px;
+    font-weight: 500px;
+  } */
+	.banner-info .btn {
+		padding: 0 15px;
+		font-size: 20px;
+	}
+	.imgBox .img-fluid {
+		max-width: 80%;
+		height: auto;
+	}
+	.carousel-control-prev-icon, .carousel-control-next-icon {
+		height: 50px;
+		width: 50px;
+	}
+	.carousel-control-next-icon:after {
+		font-size: 30px;
+	}
+	.carousel-control-prev-icon:after {
+		font-size: 30px;
+	}
+
+ 
+
+}
+
+/* LOGIN BUTTON */
+    .car-login{
+        position: absolute;
+        background-color: #FFDE59;
+        top: 80%;
+        width: 150px;
+        border-radius: 10px;
+        font-size: 20px;        
+    }
+    .car-login:hover{
+        background-color: rgba(255,222,89,0.5);
+    }
+
+    .login-div{
+        text-align: center;
+        margin-right: 140px;
+        
+    }
+
+    .form-control{
+        background-color:#DDDDDD;
+        color: black;
+        padding-left: 20px;
+        border: 0px;
+        border-bottom: 1px solid #fff;
+        border-radius: 10px;
+    }
+    
+    .btn-close{
+        float: right;
+    }
+    
+    .myform .btn{
+        width: 100%;
+        font-weight: 800;
+        color:#FFDE59 ;
+        background-color: #57744B;
+        border-radius: 10px;
+        padding: 0.5em 0;
+    }
+    
+    .myform .btn:hover{
+        color: #333;
+    }
+    p{
+        text-align: center;
+        padding-top: 2em;
+        color: black;
+    }
+    
+    p a {
+        color: black ;
+        text-decoration: none;
+    }
+    p a:hover{
+        color: blue;
+    }
+    .btn_next{
+        float: right; 
+        border-radius: 10px;
+        border-color: transparent;
+        background-color: transparent;
+        font-size: 25px;
+    }
+    .btn_next:hover{
+      color: grey;
+    }
+    
+    .btn_back{
+        float: left; 
+        border-radius: 10px;
+        border-color: transparent;
+        background-color: transparent;
+        font-size: 25px;
+    }
+    .btn_back:hover{
+      color: grey;
+    }
+    
+    .insert_pic{
+        height:110px;
+        width:110px;
+        border-radius: 50px;
+    }
+
+    .image-preview-container {
+        width: 50%;
+        margin: 0 auto;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 3rem;
+        border-radius: 20px;
+    }
+    
+    .image-preview-container img {
+        width: 100%;
+        display: none;
+        margin-bottom: 30px;
+    }
+    .image-preview-container input {
+        display: none;
+    }
+    
+    .image-preview-container label {
+        display: block;
+        width: 45%;
+        height: 45px;
+        margin-left: 25%;
+        text-align: center;
+        background: #8338ec;
+        color: #fff;
+        font-size: 15px;
+        text-transform: Uppercase;
+        font-weight: 400;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .file-upload{
+        border-radius:10px;
+        background-color:#57744B;
+        padding: 3%
+    
+      }

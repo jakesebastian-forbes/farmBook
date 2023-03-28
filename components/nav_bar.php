@@ -55,9 +55,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="color: #FFDE59 ; ">
        <!--======================= di nagana pag nasa index=================== -->
-          <li class="nav-item" ><a class="nav-link" href="../index2.php" style=" color: #FFDE59;"   ><i class="fa fa-fw fa-home fa-2x"></i>Home</a></li>
-          <li class="nav-item" ><a class="nav-link" href="../pages_php/aboutUs.php" style=" color: #FFDE59;" ><i class="fa fa-fw fa-circle-info fa-2x"></i>About Us</a></li>
-          <li class="nav-item" ><a class="nav-link" href="../pages_php/e-learning2.php" style=" color: #FFDE59;" ><i class="fa fa-fw fa-book fa-2x"></i>E-Learning</a></li>
+          <li class="nav-item" ><a class="nav-link" href="../index.php" style=" color: #FFDE59;"   id="link_home"><i class="fa fa-fw fa-home fa-2x"></i>Home</a></li>
+          <li class="nav-item" ><a class="nav-link" href="aboutUs.php" style=" color: #FFDE59;" id="link_about"><i class="fa fa-fw fa-circle-info fa-2x"></i>About Us</a></li>
+          <li class="nav-item" ><a class="nav-link" href="e-learning2.php" style=" color: #FFDE59;" id="link_e-learning"><i class="fa fa-fw fa-book fa-2x"></i>E-Learning</a></li>
           <!-- <li class="nav-item" ><a class="nav-link"  href="contact.html"><i class="fa fa-fw fa-phone fa-2x"></i>Contact</i></a></li> -->
         </ul>
 
