@@ -297,7 +297,7 @@ p a:hover{
   
                     <div class="myform">
                         <h1 class="text-center">Login Form</h1>
-                        <form action ="#">
+                        <form action ="#" id="login_form">
                             <div class="mb-3 mt-3">
                                 <label for="email">Email Address</label>
                                 <input type="email" class="form-control">
@@ -307,9 +307,11 @@ p a:hover{
                                 <input type="password" class="form-control">
                             </div>
                             <button type="submit" class="btn btn-light mt-3">LOGIN</button>
-                            <p>Not a Member? <a href="" data-bs-toggle="modal" data-bs-target="#signUpform">Sign Up</a></p>
-                            <p> <a href="" data-bs-toggle="modal" data-bs-target="#forgotform"> Forgot Password?</a></p>
+                           
                         </form>
+
+                        <p>Not a Member? <a href="" data-bs-toggle="modal" data-bs-target="#signUpform">Sign Up</a></p>
+                        <p> <a href="" data-bs-toggle="modal" data-bs-target="#forgotform"> Forgot Password?</a></p>
                       
                     </div>
                 </div>
@@ -326,7 +328,7 @@ p a:hover{
       
                         <div class="myform">
                             <h1 class="text-center">Sign-up as</h1>
-                            <form action ="#">
+                            <form action ="#" id="signup_form_classes">
                                 <div class="signUp_as_list">
                                     <div class="mb-3 mt-3">
                                         <button type="submit" class="btn singnUpAs_btn btn-light mt-3 mx-1 rounded-2 " data-bs-toggle="modal" data-bs-target="#signUp_Form" >Enthusiast</button>
@@ -338,8 +340,9 @@ p a:hover{
                                         <button type="submit" class="btn singnUpAs_btn btn-light mt-3 mx-1 rounded-2 " data-bs-toggle="modal" data-bs-target="#signUp_Form">Vendor</button>
                                     </div>
                                 </div>
-                                <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a></p>
+                              
                             </form>   
+                            <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a></p>
                         </div>
                     </div>
                   </div>
@@ -383,6 +386,7 @@ p a:hover{
     justify-content: center;
 }
 </style>
+
 <script>
   const previewImage = (event) => {
     /**
@@ -437,7 +441,7 @@ p a:hover{
           
                             <div class="myform">
                                 <!-- <h1 class="text-center">Farmer</h1> -->
-                                <form action ="#">
+                                <form action ="#" id="signup_form_basics">
                                  
                                   <div class="mb-1 mt-1 d-block justify-content-between">
                                     <h4>Name</h4>
@@ -491,13 +495,14 @@ p a:hover{
           
                             <div class="myform">
                                 <!-- <h1 class="text-center">Farmer</h1> -->
-                                <form action ="#">  
+                                <form action ="#" id="signup_form_contacts">  
                                 <h4>Address and Contact number</h4>
                                 <div class="mb-1 mt-1 mx-2">
                                     
                                   <label for="" class="Province" style="font-size: small;">Province<i>(Probinsya)</i></label>
-                                  <select class="select box form-select" aria-label="Default select example" onfocus='this.size=5;' onblur='this.size=1;' 
-                                  onchange='this.size=1; this.blur();'>
+                                  <select class="select box form-select" aria-label="Default select example" 
+                                  onfocus='this.size=5;' onblur='this.size=1;' 
+                                  onchange='this.size=1; this.blur();' id= "">
                                     <!-- <option selected>Select Province</option> -->
                                     <option value="1">Batangas</option>
                               
@@ -513,33 +518,7 @@ p a:hover{
                                     <select class="select box form-select position-relative" aria-label="multiple select example"  onfocus='this.size=5;' onblur='this.size=1;' 
                                         onchange='this.size=1; this.blur();' >
                                       <!-- <option selected>Select Municipality / City</option> -->
-                                      <option value="1">Agoncillo</option>
-                                      <option value="2">Alitagtag </option>s
-                                      <option value="3">Balayan</option>
-                                      <option value="4">Balete </option>
-                                      <option value="5">Batanagas City </option>
-                                      <option value="6">Bauan </option>
-                                      <option value="7">Calaca </option>
-                                      <option value="8">Calatagan </option>
-                                      <option value="9">Cuenca </option>
-                                      <option value="10">Ibaan </option>
-                                      <option value="11">Laurel</option>
-                                      <option value="12">Lemery </option>
-                                      <option value="13">Lian</option>
-                                      <option value="14">Lipa City</option>
-                                      <option value="15">Lobo</option>
-                                      <option value="16">Mabini</option>
-                                      <option value="17">Malvar</option>
-                                      <option value="18">Mataas na kahoy</option>
-                                      <option value="19">Nasugbu</option>
-                                      <option value="20">Padre Garcia </option>
-                                      <option value="21">Rosario </option>
-                                      <option value="22">San Jose </option>
-                                      <option value="23">San Juan</option>
-                                      <option value="24">Taal </option>
-                                      <option value="25">Tanauan </option>
-                                      <option value="26">Tuy</option>
-
+                                      
                                 
                                     </select>
                                 </div>
@@ -551,46 +530,7 @@ p a:hover{
                                   <select class="select box form-select position-relative" aria-label="multiple select example"  onfocus='this.size=5;' onblur='this.size=1;' 
                                   onchange='this.size=1; this.blur();' >
                                 <!-- <option selected>Select Barangayq</option> -->
-                                <option value="1">Aga</option>
-                                <option value="2">Balaytigue</option>s
-                                <option value="3">Banilad</option>
-                                <option value="4">Barangay 1</option>
-                                <option value="5">Barangay 2</option>
-                                <option value="6">Barangay 3</option>
-                                <option value="7">Barangay 4</option>
-                                <option value="8">Barangay 5</option>
-                                <option value="9">Barangay 6</option>
-                                <option value="10">Barangay 7</option>
-                                <option value="11">Barangay 8</option>
-                                <option value="12">Barangay 9</option>
-                                <option value="13">Barangay 10</option>
-                                <option value="14">Barangay 11</option>
-                                <option value="15">Barangay 12</option>
-                                <option value="16">Bilaran</option>
-                                <option value="17">Bucana</option>
-                                <option value="18">Bulihan</option>
-                                <option value="19">Calayo</option>
-                                <option value="20">Catandaan</option>
-                                <option value="21">Cogunan</option>
-                                <option value="22">Dayap</option>
-                                <option value="23">Kaylaway</option>
-                                <option value="24">Kayrilaw</option>
-                                <option value="25">Latag</option>
-                                <option value="26">Looc</option>
-                                <option value="27">Lumbangan</option>
-                                <option value="28">Malapad na Bato</option>
-                                <option value="29">Mataas na Pulo</option>
-                                <option value="30">Maugat</option>
-                                <option value="31">Munting Indang</option>
-                                <option value="32">Natipuan</option>
-                                <option value="33">Pantalan</option>
-                                <option value="34">Papaya</option>
-                                <option value="35">Putat</option>
-                                <option value="36">Reparo</option>
-                                <option value="37">Talangan</option>
-                                <option value="38">Tumalim</option>
-                                <option value="39">Utod</option>
-                                <option value="40">Wawa</option>
+                           
                               </select>
                                 </div>
                                   <div class="mb-1 mt-1 mx-2">
@@ -620,7 +560,8 @@ p a:hover{
               
                                 <div class="myform text-center">
                                     <!-- <h3 class="text-center">Farmer</h3> -->
-                                   <form action ="#" class="insert_profile_pic text-center d-block ">
+                                   <form action ="#" class="insert_profile_pic text-center d-block "
+                                   id="signup_form_picture">
                                       <h4>Profile Picture</h4>
                                       <div class="text-center d-flex mx-auto">
                                       <img id="preview-selected-image"  class="card-img-top insert_pic mx-auto my-3 " alt="..." />
@@ -644,163 +585,12 @@ p a:hover{
 
                 
         
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-body">
-                            <button type="button" class="btn-close btn-close-black" 
-                            data-bs-dismiss="modal" aria-label="Close"></button>
-          
-                            <div class="myform">
-                                <h1 class="text-center">Vendor</h1>
-                                <form action ="#">  
-                                <h4>Address and Contact number</h4>                         
-                                <div class="mb-1 mt-1  justify-content-between">
-                                  <div class="mb-1 mt-1 mx-2">
-                                    
-                                    <label for="" class="Province" style="font-size: small;">Province<i>(Probinsya)</i></label>
-                                    <select class="select box form-select" aria-label="Default select example" onfocus='this.size=5;' onblur='this.size=1;' 
-                                    onchange='this.size=1; this.blur();'>
-                                      <!-- <option selected>Select Province</option> -->
-                                      <option value="1">Batangas</option>
-                                
-                                    </select>
-                                  </div>
-                             
-                                  <div class="mb-1 mt-1 mx-2">
-                                    <style>
-                                    
-                                    </style>
-                                    <label for="" class="Municipality" style="font-size: small;">Municipality/City <i>(Bayan)</i></label>
-                                      
-                                      <select class="select box form-select position-relative" aria-label="multiple select example"  onfocus='this.size=5;' onblur='this.size=1;' 
-                                          onchange='this.size=1; this.blur();' >
-                                        <!-- <option selected>Select Municipality / City</option> -->
-                                        <option value="1">Agoncillo</option>
-                                        <option value="2">Alitagtag </option>s
-                                        <option value="3">Balayan</option>
-                                        <option value="4">Balete </option>
-                                        <option value="5">Batanagas City </option>
-                                        <option value="6">Bauan </option>
-                                        <option value="7">Calaca </option>
-                                        <option value="8">Calatagan </option>
-                                        <option value="9">Cuenca </option>
-                                        <option value="10">Ibaan </option>
-                                        <option value="11">Laurel</option>
-                                        <option value="12">Lemery </option>
-                                        <option value="13">Lian</option>
-                                        <option value="14">Lipa City</option>
-                                        <option value="15">Lobo</option>
-                                        <option value="16">Mabini</option>
-                                        <option value="17">Malvar</option>
-                                        <option value="18">Mataas na kahoy</option>
-                                        <option value="19">Nasugbu</option>
-                                        <option value="20">Padre Garcia </option>
-                                        <option value="21">Rosario </option>
-                                        <option value="22">San Jose </option>
-                                        <option value="23">San Juan</option>
-                                        <option value="24">Taal </option>
-                                        <option value="25">Tanauan </option>
-                                        <option value="26">Tuy</option>
-
-                                  
-                                      </select>
-                                  </div>
-                                  
-                                </div>
-                          
-                                  <div class="mb-1 mt-1 mx-2">
-                                    <label for="" class="Barangay" style="font-size: small;">Barangay</i></label>
-                                    <select class="select box form-select position-relative" aria-label="multiple select example"  onfocus='this.size=5;' onblur='this.size=1;' 
-                                    onchange='this.size=1; this.blur();' >
-                                  <!-- <option selected></option> -->
-                                  <option value="1">Aga</option>
-                                  <option value="2">Balaytigue</option>s
-                                  <option value="3">Banilad</option>
-                                  <option value="4">Barangay 1</option>
-                                  <option value="5">Barangay 2</option>
-                                  <option value="6">Barangay 3</option>
-                                  <option value="7">Barangay 4</option>
-                                  <option value="8">Barangay 5</option>
-                                  <option value="9">Barangay 6</option>
-                                  <option value="10">Barangay 7</option>
-                                  <option value="11">Barangay 8</option>
-                                  <option value="12">Barangay 9</option>
-                                  <option value="13">Barangay 10</option>
-                                  <option value="14">Barangay 11</option>
-                                  <option value="15">Barangay 12</option>
-                                  <option value="16">Bilaran</option>
-                                  <option value="17">Bucana</option>
-                                  <option value="18">Bulihan</option>
-                                  <option value="19">Calayo</option>
-                                  <option value="20">Catandaan</option>
-                                  <option value="21">Cogunan</option>
-                                  <option value="22">Dayap</option>
-                                  <option value="23">Kaylaway</option>
-                                  <option value="24">Kayrilaw</option>
-                                  <option value="25">Latag</option>
-                                  <option value="26">Looc</option>
-                                  <option value="27">Lumbangan</option>
-                                  <option value="28">Malapad na Bato</option>
-                                  <option value="29">Mataas na Pulo</option>
-                                  <option value="30">Maugat</option>
-                                  <option value="31">Munting Indang</option>
-                                  <option value="32">Natipuan</option>
-                                  <option value="33">Pantalan</option>
-                                  <option value="34">Papaya</option>
-                                  <option value="35">Putat</option>
-                                  <option value="36">Reparo</option>
-                                  <option value="37">Talangan</option>
-                                  <option value="38">Tumalim</option>
-                                  <option value="39">Utod</option>
-                                  <option value="40">Wawa</option>
-                                </select>
-                                  </div>
-                                  
-                            </div>
-                              
-                               
-                                  <div class="mb-1 mt-1 mx-2">
-                                    <label for="" class="Last_name" style="font-size: small;">Contact Number</label>
-                                    <input type="" class="form-control" style="margin-right: 5px;" size="30">
-                                  </div>
-                                
-                                </form>
-                                <button type="submit " class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#signUp_Vendor"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>
-                                <button type="submit " class="btn-light btn_next" data-bs-toggle="modal" data-bs-target="#second_next_signUp_Vendor"><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
-                                <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
-                                  
-                            </div>
-                        </div>
-                      </div>
+                
                     </div>
                 </div>
 
 
 
-                 <div class="modal fade" id="second_next_signUp_Vendor">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <button type="button" class="btn-close btn-close-black" 
-                                data-bs-dismiss="modal" aria-label="Close"></button>
-              
-                                <div class="myform text-center">
-                                    <h3 class="text-center">Vendor</h3>
-                                    <form action ="#" class="insert_profile_pic">
-                                      <h4>Profile Picture</h4>
-                                        <img src="/img/profile pics/profile2.png" class="card-img-top insert_pic" alt="..." >
-           
-                                      <input type="file" class="form-control mt-2" id="customFile" />
-                                    </form>
-                                    <button type="submit" class="btn btn-light mt-3">Sign up</button>
-                                    <button type="submit " class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#next_signUp_Vendor"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>
-          
-                                    <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
-                                </div>
-                            </div>
-                          </div>
-                        </div>  
-                </div>
 
                 <div class="modal fade" id="forgotform">
                     <div class="modal-dialog modal-dialog-centered">
@@ -811,7 +601,7 @@ p a:hover{
               
                                 <div class="myform">
                                     <h1 class="text-center">Forgot Password</h1>
-                                    <form action ="#">
+                                    <form action ="#" id="form_reset">
                                       <div class="md-form mt-5">
                                         <label data-error="wrong" data-success="right" for="orangeForm-email">Your email</label>
                                         <input type="email" id="orangeForm-email" class="form-control validate">
@@ -841,7 +631,7 @@ p a:hover{
                                   <div class="myform">
                                       <h1 class="text-center">Reset Your Password</h1>
                                       <p>Strong passwords include numbers, letters, and punctuation marks. </p>
-                                      <form action ="#">
+                                      <form action ="#" id="form_new_pass">
                                         <div class="md-form mb-2">
                                             <label data-error="wrong" data-success="right" for="orangeForm-email">Enter new password</label>
                                             <input type="email" id="orangeForm-email" class="form-control validate">
