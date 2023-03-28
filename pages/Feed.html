@@ -295,7 +295,7 @@
 
   </head>
   <div class="container">
-    <body class=" postion-relative" style="   background-color: #E4E4E4;">
+    <body class=" postion-absolute" style="   background-color: #E4E4E4;">
       <!-- ================= Appbar ================= -->
       <div class="d-flex align-items-center fixed-top shadow " style="min-height: 56px; z-index: 5; background-color: #57744B;">
         <div class="container-fluid">
@@ -1540,13 +1540,14 @@
       </div>
   
       <!-- ================= Main ================= -->
-      <div class="container-fluid">
-        <div class="row justify-content-evenly">
+      <div class="container">
+        <div class="row ">
           <!-- ================= Sidebar ================= -->
-          <div class="col-12 col-lg-3 " >
-            <div class="d-none d-xxl-block h-100 fixed-top overflow-hidden scrollbar" style="max-width: 360px; width: 100%; z-index: 4">
+          <!-- <div class="col-12 col-lg-3  " style="background-color: aqua;"> -->
+            
+            <div class="d-none justify-content-center d-xxl-block h-100 fixed-top overflow-hidden scrollbar " style="max-width: 300px; width: 100%; z-index: 4; background-color: aqua; ">
              
-              <div class="dropdown-itemrounded text-center  ms-3 d-flex flex-column " style="margin-top: 90px;">
+              <div class="dropdown-itemrounded text-center    d-flex flex-column " style="margin-top: 90px;">
                 <a href="#" class=" d-block align-items-center text-decoration-none text-dark" >
                   <div class="p-2">
                     <img src="/img/profile pics/profile.jpg" alt="avatar"class="rounded-circle me-2"style="width: 80px; height: 80px; object-fit: cover"/>
@@ -1672,13 +1673,10 @@
   
             </div>
             
-          </div>
+          <!-- </div> -->
           <!-- ================= Timeline ================= -->
-          <div class="col-12 col-lg-6 pb-5" >
-            <div
-              class="d-flex flex-column justify-content-center w-100 mx-auto"
-              style="padding-top: 56px; max-width: 680px"
-            >
+          <!-- <div class="col-12 col-lg-6 pb-5" > -->
+            <div class="d-flex flex-column justify-content-center w-100 mx-auto" style="padding-top: 56px; max-width: 680px; background-color: #FFDE59;">
              
               <!-- create post -->
               <div class="bg-white p-3 mt-5 rounded border shadow">
@@ -2237,13 +2235,11 @@
               </div>
               
             </div>
-          </div>
+          <!-- </div> -->
           <!-- ================= Chatbar ================= -->
-          <style>
-            
-          </style>
-          <div class="col-12 col-lg-3">
-            <div class="d-none d-xxl-block  h-100 fixed-top end-0 overflow-hidden scrollbar "  style=" max-width: 360px;  width: 100%; z-index: 4;padding-top: 56px; left: initial !important;" >
+          
+          <!-- <div class="col-12 col-lg-3"> -->
+            <div class="d-none d-xxl-block  h-100 fixed-top end-0 overflow-hidden scrollbar "  style=" max-width: 360px;  width: 100%; z-index: 4;padding-top: 56px; left: initial !important; background-color: pink;" >
               <div class="p-3 mt-4">
                 <!-- sponsors -->
                 <h5 class="text-muted">Weather</h5>
@@ -2303,7 +2299,7 @@
   
               </div>
             </div>
-          </div>
+          <!-- </div> -->
         </div>
       </div>
   
