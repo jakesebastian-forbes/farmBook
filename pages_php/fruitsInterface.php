@@ -58,44 +58,66 @@
         <div class="container">
             <h1 class="fruit-header">Fruits</h1>
             <div class="fruits-gallery">
+<?php
 
-              <div class="pic pineapple">
+function get_page($rows){
+                
+    $divide = $rows/12;
+    $int = (int)$divide;
+    $decimal = $divide - $int;
+    $final = 0;
+    if($decimal > 0){
+        $final = $int + 1;
+    }
+
+    return $final;
+}
+$curr_page;
+
+$full_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+if (($pos = strpos($full_url, "=")) !== FALSE) { 
+    $curr_page = substr($full_url, $pos+1); 
+}else{
+    $curr_page = 1;
+}
+  
+// echo $curr_page;
+// $page = 0;
+$max_row = 12 * $curr_page;
+$min_row = ($max_row + 1) - 12;
+
+
+$conn = new mysqli('localhost','root','','farmbook_db');
+
+if($conn->connect_error){
+  die('Connection failed : ' . $conn->connect_error);
+ }else{
+
+$query = "SELECT ROW_NUMBER() OVER(ORDER BY title ASC) as `row`,`title`,`cover_img`,`category` FROM learning_contents WHERE category = 'fruits';";
+
+$result = mysqli_query($conn,$query);
+
+while($rows = mysqli_fetch_assoc($result))
+    {
+
+      if($rows['row'] <= $max_row & $rows['row'] >= $min_row ){
+?>
+              <div class="pic <?php echo $rows['title']?>">
                     <figure class="effect-ming tm-pic-item">
-                        <img src ="../img/fruits/fruit-pineapple.jpeg" alt="Image" class="img-fluid"> 
+                    <?php echo '<img src=data:image/jpeg;base64,'.base64_encode( $rows['cover_img']) .' alt="Image" class="img-fluid">'?>
                         <figcaption class="d-flex align-items-center justify-content-center">
-                          <h2>Pineapple</h2>
-                            <a href="../pages_php/fruit-detail.php"></a>
+                          <h2><?php echo $rows['title']?></h2>
+                            <a href="../pages/e-learning/fruits/fruit-detail.php?title=<?php echo $rows['title']?>"></a>
                       </figcaption>                
                     </figure>
                </div>
-               <div class="pic grapes">
-                <figure class="effect-ming tm-pic-item">
-                    <img src="../img/fruits/fruit-grapes.jpeg" alt="Image" class="img-fluid">
-                    <figcaption class="d-flex align-items-center justify-content-center">
-                        <h2>Grapes</h2>
-                        <a href="../pages_php/fruit-detail.php"></a>
-                    </figcaption>                    
-                </figure>
-            </div>
-                  <div class="pic avocado">
-                    <figure class="effect-ming tm-pic-item">
-                        <img src="../img/fruits/fruit-avocado.jpeg" alt="Image" class="img-fluid">
-                        <figcaption class="d-flex align-items-center justify-content-center">
-                            <h2>Avocado</h2>
-                            <a href="../pages_php/fruit-detail.php"></a>
-                        </figcaption>                    
-                    </figure>
-              </div>
-                  <div class="pic lemon">
-                    <figure class="effect-ming tm-pic-item">
-                        <img src="../img/fruits/fruit-lemon.jpeg" alt="Image" class="img-fluid">
-                        <figcaption class="d-flex align-items-center justify-content-center">
-                            <h2>Lemon</h2>
-                            <a href="../pages_php/fruit-detail.php"></a>
-                        </figcaption>                    
-                    </figure>
-                  </div>
-               
+           
+                 <?php
+      }
+    }
+}
+                 ?>
      </div>
            
 
@@ -276,137 +298,69 @@
 
           </style>
 
-             <nav aria-label="page-navigation">
-            <ul class="pagination pagination-lg pagination-circle justify-content-center" style="margin-top: 10%;">
-            <li class="page-item active" aria-current="page">
-                <span class="page-link">
-                1
-                <span class="visually-hidden">(current)</span>
-                </span>
-            </li>
-            <li class="page-item"><a class="page-link" href="../pages_php/fruitsInterface2.php">2</a></li>
-            <li class="page-item"><a class="page-link" href="../pages_php/fruitsInterface3.php">3</a></li>
-            </ul>
+          <?php
+
+            $conn = new mysqli('localhost','root','','farmbook_db');
+
+            if($conn->connect_error){
+              die('Connection failed : ' . $conn->connect_error);
+             }else{
+
+            $query = "SELECT COUNT(id) as 'total_rows' FROM learning_contents WHERE category = 'fruits';";
+          
+            $result = mysqli_query($conn,$query);
+
+            while($rows = mysqli_fetch_assoc($result))
+                {
+                 
+                    $page = get_page($rows['total_rows']);
+                  
+                
+          ?>
+
+        <nav aria-label="page-navigation">
+            <ul class="pagination pagination-lg pagination-circle justify-content-center" style="margin-top: 10%;"
+            total-pages = "<?php echo $page;  ?>" current-page = "<?php echo $curr_page?>" id = "page_navigation">
+            <?php
+                // * create the page numbers
+                for($i = 1; $i <= $page; $i++){
+                    if($i == $curr_page){
+                        echo "<li class='page-item active' aria-current='page'><a class='page-link' href = 'fruitsInterface.php?page=$i'>".$i."</a></li>";
+                    }else{
+                        echo "<li class='page-item' aria-current='page'><a class='page-link' href = 'fruitsInterface.php?page=$i'>".$i."</a></li>";
+                    }
+                }
+            ?>
+        
+        </ul>
+            
+
+
         </nav>
 
-<!-- footer start--> 
-    <footer class="bg-light text-dark pt-5 pb-4" style="margin-top: 5%;">
-        <div class="container text-center text-md-left">
-            <div class="row text-center text-md-left">
-                    <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <h5 class="text-uppercase mb-4 font-weight-bold text-info" style="text-decoration: none">FarmBook</h5>
-                        <hr class="mb-4" style="height: 2px; color: black">
-                        <p>lorem ipsum dolor sit amet, consetetur adipisicing elit, sed do eiusmod tempor 
-                            incididunt labore at dolore magna aliqua.
-                        </p>
-                    </div>
-                    
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                        <h5 class="text-uppercase mb-4 font-weight-bold text-info">About</h5>
-                        <hr class="mb-4" style="height: 2px; color: black;">
-                        <p>
-                            <a href="#" class="text-dark" style="text-decoration: none;">Our Story</a>
-                        </p>
-                        <p>
-                            <a href="#" class="text-dark" style="text-decoration: none;">Contacts</a>
-                        </p>
-                        <p>
-                            <a href="#" class="text-dark" style="text-decoration: none;">Farmers Join!</a>
-                        </p>
-                        <p>
-                            <a href="#" class="text-dark" style="text-decoration: none;">How to Sell Farm Products Online?</a>
-                        </p>
-                    </div>
-    
-                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                        <h5 class="text-uppercase mb-4 font-weight-bold text-info">Resources</h5>
-                        <hr class="mb-4" style="height: 2px; color: black;">
-                        <p>
-                            <a href="#" class="text-dark" style="text-decoration: none;">Farming Tutorials</a>
-                        </p>
-                        <p>
-                            <a href="#" class="text-dark" style="text-decoration: none;">Food Types</a>
-                        </p>
-                        <p>
-                            <a href="#" class="text-dark" style="text-decoration: none;">Farmbook Feed</a>
-                        </p>
-                        <p>
-                            <a href="#" class="text-dark" style="text-decoration: none;">E-Learning</a>
-                        </p>
-                        <p>
-                          <a href="#" class="text-dark" style="text-decoration: none;">Farming Techniques</a>
-                      </p>
-                      <p>
-                        <a href="#" class="text-dark" style="text-decoration: none;">Tips in Farming</a>
-                    </p>
-                    </div>
-    
-                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                        <h5 class="text-uppercase mb-4 font-weight-bold text-info">Contacts</h5>
-                        <hr class="mb-4" style="height: 2px; color: black">
-                        <p>
-                           <li class="fas fa-home mr-3"></li> Nasugbu Nas 4231, PH
-                        </p>
-                        <p>
-                            <li class="fas fa-envelope mr-3"></li> farmbook@gmail.com
-                         </p>
-                         <p>
-                            <li class="fas fa-phone mr-3"></li> +9353081922
-                         </p>
-                         <p>
-                            <li class="fas fa-print mr-3"></li> +9353081922
-                         </p>
-                    </div>
-    
-                    <hr class="mb-4">
-                    <div class="row d-flex justify-content-center">
-                        <div>
-                            <p>
-                                Copyright 2020 All Rights Reserved By :
-                                <a href="#" style="text-decoration: none;">
-                                    <strong class="text-info">The Providers</strong>
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                    <div class="row d-flex justify-content-center">
-                        <div class="text-center">
-                            <ul class="list-unstyled list-inline">
-                                <li class="list-inline-item">
-                                    <a href="#" class="text-dark"><i class="fab fa-facebook"></i></a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class="text-dark"><i class="fab fa-twitter"></i></a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class="text-dark"><i class="fab fa-google-plus"></i></a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class="text-dark"><i class="fab fa-linkedin-in"></i></a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a href="#" class="text-dark"><i class="fab fa-youtube"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-    
-            </div>
-        </div>
-    </footer>                       
-    <!-- footer end -->
-  
-    <!-- lightbox -->
-    <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+        <?php 
+                }
+            }
+    ?>
+
+<!--* footer -->
+<?php require '../page_component/footer.php'?>
+
+   
   
   
   </body>
-  </html>
+ 
   
-    
+  <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+   <script src = "../dependencies/jquery-3.6.4.js"></script>
+  
+<script>
+  
 
-  </body>
+</script>
+
   </html>
   
