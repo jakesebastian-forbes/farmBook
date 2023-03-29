@@ -66,24 +66,621 @@
 
 
 
-     <div class="container  text-md-left mt-5"style="width:auto; overflow-x:hidden">
-   
-      <div class="row  text-md-left">
-              <div class="text-center col-md-4 col-lg-4 col-xl-4 mx-auto mt-3" style=" padding: 1%; padding-right: 3%;" >
-                 
-               
-                    <img src="img/farmer3.jpeg" alt="" class="responsive" style="height: 450px; width:100%;max-width: 800px; border-radius: 10px;">
+    <div class="container-xxl py-5">
+      <div class="container">
+    
+          <div class="row g-5 align-items-center">
+              <div class="col-lg-6">
+                  <!-- <h6 class="section-title text-start text-about text-uppercase" style="font-size: 15px; color: #57744B; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Explore</h6> -->
+                  <h6 class="section-title text-center text-secondary text-uppercase" style="
+                  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-top: 2%;">Explore</h6>
+                  <h1 class="farm-header mb-4"><span class="text-farmbook text-uppercase" style="color: green;">FarmBook</span></h1>
+                  <p class="mb-4" style="text-align: justify; font-size: large;">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et
+                      lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet. Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos.
+                        Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+            </div>
+
+              <div class="col-lg-6">
+                  <div class="row g-3">
+                      <div class="col-6 text-end">
+                          <img class="img-fluid rounded w-100" src="img/bg/farmers-img3.jpeg" 
+                          style="margin-top: 3%; height: 90%; width: 80%;">
+                      </div>
+                      <div class="col-6 text-start">
+                          <img class="img-fluid rounded w-100" src="img/bg/farmers-img1.jpeg"
+                          style="margin-top: 0; height: 130%; width: 88%;">
+                      </div>
+                      <div class="col-6 text-end">
+                          <img class="img-fluid rounded w-50" src="img/bg/farmers-img2.jpeg"
+                          style=" height: 65%; width: 100%;">
+                      </div>
+                      <div class="col-6 text-start">
+                          <img class="img-fluid rounded w-75" src="img/bg/farmers-img4.jpeg"
+                          style="margin-top: 20%; height: 90%; width: 110%;">
+                      </div>
                   </div>
-                 
-              <div class="col-md-8 col-lg-8 col-xl-8 mx-auto mt-3" style="padding: 1%; padding-right: 5%; ">
-                 <h1>Farmbook</h1>
-                 <h5>A Social Media Plaform for Filipino Farmers</h5>
-                 <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni explicabo fugit minima dolores illum. Dolorem, nesciunt. 
-                   Similique tempore inventore enim dolor velit corrupti delectus, possimus sit quae sed quaerat ea.Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni explicabo fugit minima dolores illum. Dolorem, nesciunt. 
-                   Similique tempore inventore enim dolor velit corrupti delectus, possimus sit quae sed quaerat ea</p>
-                   
+              </div>
+          </div>
+      </div>
+    </div>
+
+    <style>
+    .container-fluid{
+     margin-top: 2%;
+     background-color: whitesmoke;
+      }
+     .section-title {
+    position: relative;
+     display: inline-block;
+     }
+ .section-title::before {
+      position: absolute;
+      content: "";
+      width: 45px;
+     height: 2px;
+      top: 50%;
+      left: -55px;
+     margin-top: -1px;
+     background: green;
+  }
+  .section-title::after {
+      position: absolute;
+      content: "";
+     width: 45px;
+     height: 2px;
+      top: 50%;
+     right: -55px;
+     margin-top: -1px;
+     background: green;
+     }
+               
+     .section-title.text-start::before,
+     .section-title.text-end::after {
+         display: none;
+     }
+     .btn.btn-success{
+        background: #afc275;
+        border:0px;
+        color:#fff;
+        box-shadow: 0 0 1px #ccc;
+        transform-origin: 50% 50%;
+        transition-duration: 0.5s;
+        transition-timing-function: ease-out;
+        box-shadow:0px 0px 0 100px #228B22 inset;
+        transform-origin: 0 0;
+     }
+     .btn.btn-success:hover {
+        color: #000;
+        box-shadow:0px 0px 0 0px #8A9A5B inset;
+        transform: scale(1);
+        }
+     
+ </style>
+
+<section class="explore">
+  <div class="explore-content">
+    
+</div>
+</section>
+
+<section class="about" id="about">
+  <!-- <h1 class="heading" style="margin-bottom: 4%;margin-top: 3%;"> <span>  Food</span>Types</h1> -->
+  <div class="text-center">
+    <h6 class="section-title text-center text-secondary text-uppercase" style="
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-top: 6%;">Food Types</h6>
+      <h1 class="mb-5" style="font-size: 50px; font-family:Georgia, 'Times New Roman', Times, serif;">
+        Food <span class="text-farmbook" style="color: green;">Types</span></h1>
+  </div>
+  <div class="foodtypes-gallery">
+    <div class="pic veggies">
+          <figure class="effect-ming tm-pic-item">
+              <img src ="img/bg/bg13.jpeg" alt="Image" class="img-fluid"> 
+              <figcaption class="d-flex align-items-center justify-content-center">
+                <h2>Fruits & Vegetables</h2>
+            </figcaption>                
+          </figure>
+     </div>
+     <div class="pic fruits">
+      <figure class="effect-ming tm-pic-item">
+          <img src="img/bg/bg15.jpg" alt="Image" class="img-fluid">
+          <figcaption class="d-flex align-items-center justify-content-center">
+              <h2>Crops</h2>
+          </figcaption>                    
+      </figure>
+  </div>
+</div>
+ </div>
+   </section>
+
+
+<section class="about" id="about">
+  <div class="text-center">
+    <h6 class="section-title text-center text-secondary text-uppercase" style="
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin-top: 10%;">E-Learning</h6>
+      <h1 class="mb-5" style="font-size: 50px; font-family:Georgia, 'Times New Roman', Times, serif;">
+        Farmbook <span class="text-farmbook" style="color: green;">E-Learning</span></h1>
+  </div>
+    
+<div class="container">
+  <div class="card">
+      <div class="img">
+              <img src="img/bg/bg18.jpg" alt="">
+          </div>
+          <div class="content">
+              <h1>Tips</h1>
+              <p>Tips in Farming</p>
+          </div>
+      </div>
+      <div class="card">
+        <div class="img">
+          <img src="img/bg/bg17.jpg" alt="">
+      </div>
+      <div class="content">
+          <h1>Basics</h1>
+          <p>Fruits, Vegetables, Crops </p>
       </div>
   </div>
+  <div class="card">
+      <div class="img">
+          <img src="img/bg/bg19.jpg" alt="">
+      </div>
+      <div class="content">
+          <h1>Techniques</h1>
+          <p>Techniques in Farming</p>
+      </div>
+  </div>
+</div>
+</section>
+
+<section class="explore">
+  <div class="explore-content">
+</div>
+</section>
+        <!-- yt tutorial start -->
+        <div class="container youtube-tutorial" style="background: white;">
+          <div class="col-lg-12 order-lg-2 mb-4 mb-lg-0">
+          <div class="row">
+            <div class="text-center">
+              <h6 class="section-title text-center text-secondary text-uppercase">E-Learning</h6>
+                <h1 class="mb-5" style="font-size: 50px;">Farming<span class="text-farmbook" style="color: green;"> Videos</span></h1>
+            </div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/fRlUhUWS0Hk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+            encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="col-sm-4" style="margin-top: 2%;"></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/h6ly4g5SC2o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+            encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="col-sm-4" style="margin-top: 2%;"></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/ZsJVsQe66ko" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+            encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="col-sm-4" style="margin-top: 2%;"></iframe>
+          
+      </div>
+      </div>
+      </div>
+    
+        <style>
+          @media only screen and (min-width: 768px) {
+        iframe{
+          height: 17em;
+          width: 32%;
+        }
+        .container-fluid .youtube-tutorial{
+          width: 50%;
+        }
+        } 
+       
+        </style>
+
+
+
+
+<style>
+  
+ .heading{
+      text-align: center;
+      font-size: 4rem;
+      color: #000;
+      padding: 20px;
+      margin: 2rem 0;
+      background: rgb(195, 220, 195);
+    }
+    .heading span{
+      color: rgb(27, 69, 27);
+    }
+    @media (max-width: 450px){
+      html{
+        font-size: 50%;
+      }
+      .heading{
+        font-size: 3rem;
+      }
+    }
+  .container{
+    margin: 50px auto 0;
+    width: 85%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.card{
+    margin: 10px;
+    width: 360px;
+    height: 390px;
+    margin-top: 1%;
+    position: relative;
+    background-color: beige;
+    overflow: hidden;
+    margin-bottom: 6%;
+}
+.card .img{
+    width: 100%;
+    height: 320px;
+}
+.card .img img{
+    width: 100%;
+    height: 100%;
+}
+.card .content{
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(23, 133, 111);
+    transition: 0.5s;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.card .content h1{
+    margin-top: 10px;
+    letter-spacing: 1px;
+    color: white;
+    text-align: center;
+}
+.card .content p{
+    text-align: justify;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 25px;
+    text-align: center;
+    margin-top: 1%;
+}
+.card:hover .content{
+    height: 180px;
+}
+
+@media(max-width:748px){
+    .container{
+        justify-content: center;
+    }
+}
+</style>
+
+
+  <style>
+          *{
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+              font-family: sans-serif;
+          }
+
+    .explore{
+        width: 100%;
+        height: 30vh;
+        margin-top: 6%;
+        background-image:linear-gradient(rgba(0,0.1,0.1,0.1),rgba(1,1,0,0.3)), url("img/bg/bg20.jpg");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        align-items: center;
+        background-attachment: fixed;
+      }
+    
+      .explore-content{
+        width: 60%;
+        padding: 60px;
+        color: whitesmoke;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+      .explore-content .line{
+        margin-bottom: 50px;
+      }
+    
+      .explore-content h1{
+        font-size: 7vmin;
+        margin: 50px;
+    
+      }
+      .explore-content p{
+        color: rgb (221,221,221);
+        font-size: 20px;
+      }
+    
+          input{
+              display: none;
+          }
+          .container{
+              width: 100%;
+              text-align: center;
+          }
+          .fruit-header{
+              font-weight: normal;
+              font-size: 35px;
+              position: relative;
+              margin: 40px 0;
+              margin-bottom: 5%;
+          }
+          .fruit-header::before{
+              content: '';
+              position: absolute;
+              width: 100px;
+              height: 3px;
+              background-color: rgb(20, 220, 140);
+              bottom: -10px;
+              left: 50%;
+              transform: translateX(-50%);
+              animation: animate 4s linear infinite;
+          }
+          .foodtypes-gallery{
+              width: 80%;
+              margin: auto;
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              grid-gap: 50px;
+              margin-right: 10%;
+              margin-bottom: 3%;
+          }
+          .pic{
+              position: relative;
+              height: 200px;
+              border-radius: 10px;
+              cursor: pointer;
+          }
+          .pic img{
+              width: 100%;
+              height: 100%;
+              border-radius: 10px;
+              object-fit: cover;
+          }
+          .tm-pic-item {
+              position: relative;
+              overflow: hidden;
+              text-align: center;
+              cursor: pointer;
+              height: 240px;
+              border-radius: 10px;
+              box-shadow: 3px 3px 5px lightgray;
+          }
+          .tm-pic-item img {
+              min-height: 100%;
+              max-width: 100%;
+              opacity: 0.8;
+              border-radius: 10px;
+              transition: .5s;
+          }
+          .tm-pic-item figcaption {
+              padding: 5em;
+              color: #fff;
+              text-transform: uppercase;
+              font-size: 1.25em;
+              -webkit-backface-visibility: hidden;
+              backface-visibility: hidden;
+          }
+          
+          .tm-pic-item figcaption::before,
+          .tm-pic-item figcaption::after {
+              pointer-events: none;
+          }
+          
+          .tm-pic-item figcaption,
+          .tm-pic-item figcaption > a {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+          }
+          
+          .tm-pic-item figcaption > a {
+              z-index: 1000;
+              text-indent: 200%;
+              white-space: nowrap;
+              font-size: 0;
+              opacity: 0;
+          }
+          
+          .tm-pic-item h2 {
+              word-spacing: -0.15em;
+              font-weight: 300;
+          }
+          
+          .tm-pic-item h2,
+          .tm-pic-item p {
+              margin: 0;
+          }
+          
+          .tm-pic-item p {
+              letter-spacing: 1px;
+              font-size: 68.5%;
+          }
+          
+          .tm-gallery div.d-block { animation: show .5s ease; }
+          
+          @keyframes show {
+              0% {
+                  opacity: 0;
+                  transform: scale(0.9);
+              }
+              100% {
+                  opacity: 1;
+                  transform: scale(1);
+              }
+          }
+          
+          figure.effect-ming {
+              background: #030c17;
+          }
+          
+          figure.effect-ming img {
+              opacity: 0.9;
+              -webkit-transition: opacity 0.35s;
+              transition: opacity 0.35s;
+          }
+          
+          figure.effect-ming figcaption::before {
+              position: absolute;
+              top: 20px;
+              right: 20px;
+              bottom: 20px;
+              left: 20px;
+              border: 2px solid #fff;
+              box-shadow: 0 0 0 30px rgba(255,255,255,0.2);
+              content: '';
+              opacity: 0;
+              -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+              transition: opacity 0.35s, transform 0.35s;
+              -webkit-transform: scale3d(1.4,1.4,1);
+              transform: scale3d(1.4,1.4,1);
+          }
+          
+          figure.effect-ming h2 {
+              font-size: 1.3em;
+              opacity: 0;
+              -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+              transition: opacity 0.35s, transform 0.35s;
+              -webkit-transform: scale(1.5);
+              transform: scale(1.5);
+          }
+          
+          figure.effect-ming:hover figcaption::before,
+          figure.effect-ming:hover h2 {
+              opacity: 1;
+              -webkit-transform: scale3d(1,1,1);
+              transform: scale3d(1,1,1);
+          }
+          
+          figure.effect-ming:hover figcaption { background-color: rgba(58,52,42,0); }
+          figure.effect-ming:hover img { opacity: 0.4; }
+          i {
+              font-style: italic;
+          }
+        </style>
+
+
+
+
+<!-- footer start--> 
+    <footer class="bg-light text-dark pt-5 pb-4" style="margin-top: 5%;">
+      <div class="container text-center text-md-left">
+          <div class="row text-center text-md-left">
+                  <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                      <h5 class="text-uppercase mb-4 font-weight-bold text-info" style="text-decoration: none">FarmBook</h5>
+                      <hr class="mb-4" style="height: 2px; color: black">
+                      <p>Farmbook is an online farmers market where local farmers sell vegetables and fruits online. Browse their products, contact them directly and choose what you want to buy. You can pick-your own or have it delivered right to you. Your healthy lifestyle starts here!
+
+
+                      </p>
+                  </div>
+                  
+                  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                      <h5 class="text-uppercase mb-4 font-weight-bold text-info">About</h5>
+                      <hr class="mb-4" style="height: 2px; color: black;">
+                      <p>
+                          <a href="#" class="text-dark" style="text-decoration: none;">Our Story</a>
+                      </p>
+                      <p>
+                          <a href="#" class="text-dark" style="text-decoration: none;">Contacts</a>
+                      </p>
+                      <p>
+                          <a href="#" class="text-dark" style="text-decoration: none;">Farmers Join!</a>
+                      </p>
+                      <p>
+                          <a href="#" class="text-dark" style="text-decoration: none;">How to Sell Farm Products Online?</a>
+                      </p>
+                  </div>
+  
+                  <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                      <h5 class="text-uppercase mb-4 font-weight-bold text-info">Resources</h5>
+                      <hr class="mb-4" style="height: 2px; color: black;">
+                      <p>
+                          <a href="#" class="text-dark" style="text-decoration: none;">Farming Tutorials</a>
+                      </p>
+                      <p>
+                          <a href="#" class="text-dark" style="text-decoration: none;">Food Types</a>
+                      </p>
+                      <p>
+                          <a href="#" class="text-dark" style="text-decoration: none;">Farmbook Feed</a>
+                      </p>
+                      <p>
+                          <a href="#" class="text-dark" style="text-decoration: none;">E-Learning</a>
+                      </p>
+                      <p>
+                        <a href="#" class="text-dark" style="text-decoration: none;">Farming Techniques</a>
+                    </p>
+                    <p>
+                      <a href="#" class="text-dark" style="text-decoration: none;">Tips in Farming</a>
+                  </p>
+                  </div>
+  
+                  <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                      <h5 class="text-uppercase mb-4 font-weight-bold text-info">Contacts</h5>
+                      <hr class="mb-4" style="height: 2px; color: black">
+                      <p>
+                         <li class="fas fa-home mr-3"></li> Nasugbu Nas 4231, PH
+                      </p>
+                      <p>
+                          <li class="fas fa-envelope mr-3"></li> farmbook@gmail.com
+                       </p>
+                       <p>
+                          <li class="fas fa-phone mr-3"></li> +9353081922
+                       </p>
+                       <p>
+                          <li class="fas fa-print mr-3"></li> +9353081922
+                       </p>
+                  </div>
+  
+                  <hr class="mb-4">
+                  <div class="row d-flex justify-content-center">
+                      <div>
+                          <p>
+                              Copyright 2020 All Rights Reserved By :
+                              <a href="#" style="text-decoration: none;">
+                                  <strong class="text-info">The Providers</strong>
+                              </a>
+                          </p>
+                      </div>
+                  </div>
+                  <div class="row d-flex justify-content-center">
+                      <div class="text-center">
+                          <ul class="list-unstyled list-inline">
+                              <li class="list-inline-item">
+                                  <a href="#" class="text-dark"><i class="fab fa-facebook"></i></a>
+                              </li>
+                              <li class="list-inline-item">
+                                  <a href="#" class="text-dark"><i class="fab fa-twitter"></i></a>
+                              </li>
+                              <li class="list-inline-item">
+                                  <a href="#" class="text-dark"><i class="fab fa-google-plus"></i></a>
+                              </li>
+                              <li class="list-inline-item">
+                                  <a href="#" class="text-dark"><i class="fab fa-linkedin-in"></i></a>
+                              </li>
+                              <li class="list-inline-item">
+                                  <a href="#" class="text-dark"><i class="fab fa-youtube"></i></a>
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+  
+          </div>
+      </div>
+  </footer>                       
+  <!-- footer end -->
+
+  <!-- lightbox -->
+  <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+
 
 
 <script>
