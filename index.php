@@ -32,19 +32,19 @@
           <div class="carousel-item active" style="background-image: linear-gradient(rgba(1,2,2,0.5),rgba(0,1,1,0.4)), url(img/bg/bg2.jpeg);  background-size:cover;height: 680px; background-repeat: no-repeat; ; ">  
             
             <div class="carousel-caption">
-              <h1 class="" >Welcome to<br>For <br>FarmBook</h1>
+              <h1 class="" >Welcome to <br>FarmBook</h1>
              
             </div>
           
           </div>
           <div class="carousel-item" style="background-image:linear-gradient(rgba(1,2,2,0.5),rgba(0,1,1,0.4)), url(img/bg/bg1.jpeg);  background-size:cover ;height: 680px; background-repeat: no-repeat;">     
             <div class="carousel-caption">
-              <h1 class="display-4">Welcome to<br>For <br>FarmBook</h1>
+              <h1 class="display-4">Welcome to <br>FarmBook</h1>
             </div>
           </div>
           <div class="carousel-item" style="background-image:  url(img/bg/bg13.jpeg);   background-size:cover ;height: 680px; background-repeat: no-repeat;">
             <div class="carousel-caption">
-              <h1 class="display-4">Welcome to<br>For <br>FarmBook</h1>
+              <h1 class="display-4">Welcome to <br>FarmBook</h1>
             </div>
           </div>
         </div>

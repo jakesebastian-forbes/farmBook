@@ -9,7 +9,7 @@ $conn = new mysqli('localhost','root','','farmbook_db');
 if($conn->connect_error){
     die('Connection failed : ' . $conn->connect_error);
 }else{
-    echo $login_email." , ".$login_password;
+    // echo $login_email." , ".$login_password;
     //get user password where username
     $query = "SELECT `email`,`username`,`password` FROM `accounts` WHERE `email` = '$login_email';";
 
@@ -26,13 +26,14 @@ if($conn->connect_error){
     $verify = password_verify($login_password, $val_password); //check if password match
 
         if($verify == 1 ){ // if password match
-            echo "Welcome";
-            // header()
+            // echo "Welcome";
+            header('Location: ../pages_php/feed.php');
           
 
         }else{ // password not match
         
-            echo "ayaw ko nga";
+            echo "Password mismatch. Please try again.<br>
+            <a href='../index.php'>TRY AGAIN</a";
         }
 
             
