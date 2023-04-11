@@ -1,3 +1,7 @@
+<?php
+ session_start();
+?>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -297,6 +301,12 @@
   <!-- <div class="container"> -->
     <body class=" position-relative" style="   background-color: #E4E4E4;">
       <!-- ================= Appbar ================= -->
+
+      <?php 
+     
+      echo $_SESSION["acc_id"];
+      echo $_SESSION["full_name"];
+      ?>
       <div class="d-flex align-items-center fixed-top shadow " style="min-height: 56px; z-index: 5; background-color: #57744B;">
         <div class="container-fluid">
           <div class="row align-items-center" style="background-color: #57744B; height: 80px;">
@@ -729,7 +739,7 @@
                  <img src="../img/profile pics/profile.jpg" class="rounded-circle me-2" alt="avatar" style="width: 40px; height: 40px; object-fit: cover"/>
                 
                   <div>
-                    <p class="m-0">Mac Miller</p>
+                    <p class="m-0"><?php echo $_SESSION['full_name']?></p>
                     <p class="m-0 text-muted">See your profile</p>
                   </div>
                 </li>
@@ -739,7 +749,7 @@
                   <ul class="navbar-nav">
                     <li class="nav-item">
                       <a
-                        href="./index.html"
+                        href="../php_func/logout.php"
                         class="d-flex text-decoration-none text-dark"
                       >
                         <i class="fas fa-cog bg-gray p-2 rounded-circle"></i>
@@ -1554,7 +1564,7 @@
                   </div>
                   <div>
                     <!-- <p class="m-0">Mac Miller</p> -->
-                    <h3 class="m-0">Mac Miller</h3>
+                    <h3 class="m-0"><?php echo $_SESSION["full_name"]?></h3>
                   </div>
                 </a>
               </div>
@@ -1719,7 +1729,7 @@
                             </div>
                        
                             <!-- options -->
-                            <div class=" d-flex justify-content-between border border-1 border-light rounded mt-2 mx-2" style="">
+                            <div class=" d-flex justify-content-between border border-1 border-light rounded mt-2 mx-2">
                               
                               <style>
                               

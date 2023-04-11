@@ -11,11 +11,11 @@ if($conn->connect_error){
 }else{
     // echo $login_email." , ".$login_password;
     //get user password where username
-    $query = "SELECT `email`,`username`,`password` FROM `accounts` WHERE `email` = '$login_email';";
+    $query = "SELECT `id`,`email`,`username`,`password` FROM `accounts` WHERE `email` = '$login_email';";
 
     $result = mysqli_query($conn,$query); //get result
 
-    $credencials = mysqli_fetch_assoc($result); //staff credencials
+    $credencials = mysqli_fetch_assoc($result); 
     if($credencials == NULL){
         echo "No such user.";
     }
@@ -27,6 +27,16 @@ if($conn->connect_error){
 
         if($verify == 1 ){ // if password match
             // echo "Welcome";
+            $query2 = "SELECT `id`,`email`,`username`,`firstName`,`lastName` FROM `accounts` WHERE `email` = '$login_email';";
+
+            $result2 = mysqli_query($conn,$query2); //get result
+        
+            $acc_details = mysqli_fetch_assoc($result2); 
+
+            session_start();
+            $_SESSION["acc_id"] = $acc_details['id'];
+            $_SESSION["full_name"] = $acc_details['firstName'].' '.$acc_details['lastName'];
+  
             header('Location: ../pages_php/feed.php');
           
 

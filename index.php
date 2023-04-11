@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,8 +62,24 @@
         </button>
 
         <div class="login-div text-center">
-          <button class="car-login" data-bs-toggle="modal" data-bs-target="#loginform">Login</button>
+  
+
+          <!-- <button class="car-login" data-bs-toggle="modal" data-bs-target="#loginform" id = "d_loginbtn"
+          >Login</button> -->
           
+          <?php
+          if (isset($_SESSION["acc_id"])) {
+            // print "session already exists";
+           echo '<button class="car-login" id = "d_loginbtn" onclick = "window.location.href = '.'`pages_php/feed.php`'.' ";>Login</button>';
+  
+        }
+        else {
+          echo ' <button class="car-login" data-bs-toggle = "modal" data-bs-target="#loginform" id = "d_loginbtn">Login</button>';
+  
+
+        }
+          ?>
+
         </div>
       </div>
 
@@ -1035,6 +1055,10 @@
   $("#link_home")[0].setAttribute("href","index.php");
   $("#link_about")[0].setAttribute("href","pages_php/aboutUs.php");
   $("#link_e-learning")[0].setAttribute("href","pages_php/e-learning2.php");
+
+
+//login
+
 
 
   function select_class(n){
