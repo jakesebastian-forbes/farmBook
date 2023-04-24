@@ -1,0 +1,14 @@
+{
+  "name": "adyen",
+  "version": "1.0.0",
+  "description": "adyen SDK",
+  "main": "adyen.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@adyen/api-library": "^13.1.1"
+  }
+}

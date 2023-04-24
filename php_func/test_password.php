@@ -3,10 +3,11 @@
 
 
 
-$password = 'luffy';
+$password = 'nicorobin';
 
 $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
 // echo strlen($hashed_pass);
+echo $password . "\n";
 echo $hashed_pass;
 
 

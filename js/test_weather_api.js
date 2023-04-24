@@ -99,3 +99,4 @@ $("#btn_txtloc").click(function(){ //! doesn't work just yet
   console.log(area);
   get_weather();
 });
+ 

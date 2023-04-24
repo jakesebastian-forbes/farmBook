@@ -54,4 +54,6 @@ try {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 
+// https://app.sendinblue.com/marketing-dashboard
+
 ?>

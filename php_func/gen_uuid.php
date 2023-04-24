@@ -22,6 +22,6 @@ function gen_uuid() {
     );
 }
 
-echo gen_uuid();
-
+// echo gen_uuid();
+echo strlen(gen_uuid());
 ?>
