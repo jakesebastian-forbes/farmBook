@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketplace</title>
+
+    <link rel="stylesheet" href="../bootstrap-5.2.2/css/bootstrap.min.css"/>
+    <script src="https://kit.fontawesome.com/134428d8b1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://kit.fontawesome.com/82727f4033.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Archivo Black' rel='stylesheet'> 
+
+
+</head>
+<style>
+    .navbar{
+        background-color: #57744B;
+  font-family: 'Archivo Black';
+  padding: 12px;
+    }
+    .navbar-nav a {
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 500;
+}  
+.navbar-light .navbar-brand {
+  /* color: white; */
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+} 
+.navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+  color: #FFDE59;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: #FFDE59;
+  font-family: 'Archivo Black';
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: #FFDE59;
+}
+
+</style>
+<body style="background-color: #E4E4E4;">
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top px-2" >
+        <h1 style="color: #FFDE59;font-family: 'Archivo Black';margin-left: 10px;">FarmBook</h1>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="color: aqua;"></span>
+        </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="color: #FFDE59 ; ">
+               <!--======================= di nagana pag nasa index=================== -->
+                  <li class="nav-item" ><a class="nav-link" href="" style=" color: #FFDE59;"   id="link_home"><i class="fa fa-fw fa-home fa-2x"></i>Home</a></li>
+                  <li class="nav-item" ><a class="nav-link" href="" style=" color: #FFDE59;" id="link_about"><i class="fa fa-fw fa-circle-info fa-2x"></i>About Us</a></li>
+                  <li class="nav-item" ><a class="nav-link" href="" style=" color: #FFDE59;" id="link_e-learning"><i class="fa fa-fw fa-book fa-2x"></i>E-Learning</a></li>
+                  <!-- <li class="nav-item" ><a class="nav-link"  href="contact.html"><i class="fa fa-fw fa-phone fa-2x"></i>Contact</i></a></li> -->
+                </ul>
+        
+              </div>
+        
+        </nav>  
+       
+    
+    <div id="carouselExampleCaptions" class="carousel slide " data-bs-ride="carousel" style="height: 400px; " >
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner ">
+          <div class="carousel-item active" style="background-image: linear-gradient(rgba(1,2,2,0.5),rgba(0,1,1,0.4)), url(/img/bg/bg10.jpg);  background-size:cover;height: 400px; background-repeat: no-repeat; ; ">  
+            
+            <div class="carousel-caption h-50">
+                <h1 class="display-4">FarmBook Marketplace</h1>
+             
+            </div> 
+          </div>
+          <div class="carousel-item" style="background-image:linear-gradient(rgba(1,2,2,0.5),rgba(0,1,1,0.4)), url(/img/bg/bg12.jpg);  background-size:cover ;height: 400px; background-repeat: no-repeat;">     
+            <div class="carousel-caption h-50">
+                <h1 class="display-4">FarmBook Marketplace</h1>
+            </div>
+          </div>
+          <div class="carousel-item" style="background-image:  url(/img/bg/bg13.jpeg);   background-size:cover ;height: 400px; background-repeat: no-repeat;">
+            <div class="carousel-caption h-50">
+                <h1 class="display-4">FarmBook Marketplace</h1>
+            </div>
+          </div>
+          <div class="login-div text-center">
+            <button class="car-login" data-bs-toggle="modal" data-bs-target="#loginform">Login</button>
+            
+          </div>
+         
+        </div>
+        
+        <button class="carousel-control-prev" type="button"  data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button> 
+      
+        
+      </div>
+   
+ 
+    <div class="row d-flex mx-3">
+     <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right ">
+        <div class="product-categorie-box ">
+          <div class="tab-content" id="tabContent" >
+<!-- ALL CATEGORY -->
+            <div class="tab-pane fade show active" id="cat-all" role="tabpanel" aria-labelledby="cat-all-tab" >
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
+                    <div class="row mt-5 mx-1">
+                       
+                      <h1 class="ms-3">ALL</h1>
+               
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                       
+                  <div class="products-single fix px-4 py-4">
+                    <a href="#">
+                      <div class="box-img-hover">
+                          <!-- <div class="type-lb">
+                              <p class="sale">Sale</p>
+                          </div> -->
+                          <img src="/img/crops/crop-wheat.jpeg" class="img-fluid prod-img" alt="Image">
+                          
+                      </div>
+                      <div class="why-text">
+                          <h4>Lorem ipsum dolor sit amet</h4>
+                          <h5> $9.79</h5>
+                      </div>
+                    </a>
+                    <div class="mask-icon justify-content-end d-flex gap-2">
+                                    
+                      <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                      <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                  </div>
+                  </div>
+                  
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                       
+                <div class="products-single fix px-4 py-4">
+                  <a href="#">
+                    <div class="box-img-hover">
+                        <!-- <div class="type-lb">
+                            <p class="sale">Sale</p>
+                        </div> -->
+                        <img src="/img/fruits/calamansi-1.jpeg" class="img-fluid prod-img" alt="Image">
+                        
+                    </div>
+                    <div class="why-text">
+                        <h4>Lorem ipsum dolor sit amet</h4>
+                        <h5> $9.79</h5>
+                    </div>
+                  </a>
+                  <div class="mask-icon justify-content-end d-flex gap-2">
+                                  
+                    <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                    <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                </div>
+                </div>
+                
+            </div>
+  
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                       
+              <div class="products-single fix px-4 py-4">
+                <a href="#">
+                  <div class="box-img-hover">
+                      <!-- <div class="type-lb">
+                          <p class="sale">Sale</p>
+                      </div> -->
+                      <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
+                      
+                  </div>
+                  <div class="why-text">
+                      <h4>Lorem ipsum dolor sit amet</h4>
+                      <h5> $9.79</h5>
+                  </div>
+                </a>
+                <div class="mask-icon justify-content-end d-flex gap-2">
+                                
+                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+              </div>
+              </div>
+              
+          </div>
+  
+          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                       
+            <div class="products-single fix px-4 py-4">
+              <a href="#">
+                <div class="box-img-hover">
+                    <!-- <div class="type-lb">
+                        <p class="sale">Sale</p>
+                    </div> -->
+                    <img src="/img/crops/crop-corn.jpg" class="img-fluid prod-img" alt="Image">
+                    
+                </div>
+                <div class="why-text">
+                    <h4>Lorem ipsum dolor sit amet</h4>
+                    <h5> $9.79</h5>
+                </div>
+              </a>
+              <div class="mask-icon justify-content-end d-flex gap-2">
+                              
+                <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+            </div>
+            </div>
+            
+        </div>       
+                    </div>
+                </div>
+            
+            </div>
+            </div>
+<!-- VEGETABLE CATEGORY -->
+            <div class="tab-pane fade show active" id="cat-veg" role="tabpanel" aria-labelledby="cat-veg-tab" >
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
+                    <div class="row mt-5 mx-1">
+                      
+                      <h1 class="ms-3">VEGETABLE</h1>
+              
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                      
+                  <div class="products-single fix px-4 py-4">
+                    <a href="#">
+                      <div class="box-img-hover">
+                          <!-- <div class="type-lb">
+                              <p class="sale">Sale</p>
+                          </div> -->
+                          <img src="/img/Vegetables/onion-bg.jpg" class="img-fluid prod-img" alt="Image">
+                          
+                      </div>
+                      <div class="why-text">
+                          <h4>Lorem ipsum dolor sit amet</h4>
+                          <h5> $9.79</h5>
+                      </div>
+                    </a>
+                    <div class="mask-icon justify-content-end d-flex gap-2">
+                                    
+                      <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                      <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                  </div>
+                  </div>
+                  
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                      
+                <div class="products-single fix px-4 py-4">
+                  <a href="#">
+                    <div class="box-img-hover">
+                        <!-- <div class="type-lb">
+                            <p class="sale">Sale</p>
+                        </div> -->
+                        <img src="/img/Vegetables/eggplant-1.jpeg" class="img-fluid prod-img" alt="Image">
+                        
+                    </div>
+                    <div class="why-text">
+                        <h4>Lorem ipsum dolor sit amet</h4>
+                        <h5> $9.79</h5>
+                    </div>
+                  </a>
+                  <div class="mask-icon justify-content-end d-flex gap-2">
+                                  
+                    <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                    <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                </div>
+                </div>
+                
+            </div>
+
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                      
+              <div class="products-single fix px-4 py-4">
+                <a href="#">
+                  <div class="box-img-hover">
+                      <!-- <div class="type-lb">
+                          <p class="sale">Sale</p>
+                      </div> -->
+                      <img src="/img/Vegetables/pumpkin-bg.jpeg" class="img-fluid prod-img" alt="Image">
+                      
+                  </div>
+                  <div class="why-text">
+                      <h4>Lorem ipsum dolor sit amet</h4>
+                      <h5> $9.79</h5>
+                  </div>
+                </a>
+                <div class="mask-icon justify-content-end d-flex gap-2">
+                                
+                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+              </div>
+              </div>
+              
+            </div>
+
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                      
+            <div class="products-single fix px-4 py-4">
+              <a href="#">
+                <div class="box-img-hover">
+                    <!-- <div class="type-lb">
+                        <p class="sale">Sale</p>
+                    </div> -->
+                    <img src="/img/Vegetables/bellpepper-3.jpg" class="img-fluid prod-img" alt="Image">
+                    
+                </div>
+                <div class="why-text">
+                    <h4>Lorem ipsum dolor sit amet</h4>
+                    <h5> $9.79</h5>
+                </div>
+              </a>
+              <div class="mask-icon justify-content-end d-flex gap-2">
+                              
+                <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+            </div>
+            </div>
+
+            </div>       
+                    </div>
+                </div>
+
+            </div>
+            </div>
+<!-- FRUITS CATEGORY -->
+            <div class="tab-pane fade show active" id="cat-fruit" role="tabpanel" aria-labelledby="cat-fruit-tab" >
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
+                    <div class="row mt-5 mx-1">
+                      
+                      <h1 class="ms-3">FRUITS</h1>
+              
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                      
+                  <div class="products-single fix px-4 py-4">
+                    <a href="#">
+                      <div class="box-img-hover">
+                          <!-- <div class="type-lb">
+                              <p class="sale">Sale</p>
+                          </div> -->
+                          <img src="/img/fruits/banana-3.jpg" class="img-fluid prod-img" alt="Image">
+                          
+                      </div>
+                      <div class="why-text">
+                          <h4>Lorem ipsum dolor sit amet</h4>
+                          <h5> $9.79</h5>
+                      </div>
+                    </a>
+                    <div class="mask-icon justify-content-end d-flex gap-2">
+                                    
+                      <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                      <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                  </div>
+                  </div>
+                  
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                      
+                <div class="products-single fix px-4 py-4">
+                  <a href="#">
+                    <div class="box-img-hover">
+                        <!-- <div class="type-lb">
+                            <p class="sale">Sale</p>
+                        </div> -->
+                        <img src="/img/fruits/fruit-melon.jpeg" class="img-fluid prod-img" alt="Image">
+                        
+                    </div>
+                    <div class="why-text">
+                        <h4>Lorem ipsum dolor sit amet</h4>
+                        <h5> $9.79</h5>
+                    </div>
+                  </a>
+                  <div class="mask-icon justify-content-end d-flex gap-2">
+                                  
+                    <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                    <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                </div>
+                </div>
+                
+            </div>
+
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                      
+              <div class="products-single fix px-4 py-4">
+                <a href="#">
+                  <div class="box-img-hover">
+                      <!-- <div class="type-lb">
+                          <p class="sale">Sale</p>
+                      </div> -->
+                      <img src="/img/fruits/calamansi-1.jpeg" class="img-fluid prod-img" alt="Image">
+                      
+                  </div>
+                  <div class="why-text">
+                      <h4>Lorem ipsum dolor sit amet</h4>
+                      <h5> $9.79</h5>
+                  </div>
+                </a>
+                <div class="mask-icon justify-content-end d-flex gap-2">
+                                
+                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+              </div>
+              </div>
+              
+            </div>
+
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                      
+            <div class="products-single fix px-4 py-4">
+              <a href="#">
+                <div class="box-img-hover">
+                    <!-- <div class="type-lb">
+                        <p class="sale">Sale</p>
+                    </div> -->
+                    <img src="/img/fruits/fruit-papaya.jpg" class="img-fluid prod-img" alt="Image">
+                    
+                </div>
+                <div class="why-text">
+                    <h4>Lorem ipsum dolor sit amet</h4>
+                    <h5> $9.79</h5>
+                </div>
+              </a>
+              <div class="mask-icon justify-content-end d-flex gap-2">
+                              
+                <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+            </div>
+            </div>
+
+            </div>       
+                    </div>
+                </div>
+
+            </div>
+            </div>
+<!-- CROP CATEGORY -->
+            <div class="tab-pane fade show active" id="cat-crop" role="tabpanel" aria-labelledby="cat-crop-tab" >
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
+                    <div class="row mt-5 mx-1">
+                      
+                      <h1 class="ms-3">CROPS</h1>
+              
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                      
+                  <div class="products-single fix px-4 py-4">
+                    <a href="#">
+                      <div class="box-img-hover">
+                          <!-- <div class="type-lb">
+                              <p class="sale">Sale</p>
+                          </div> -->
+                          <img src="/img/crops/crop-corn.jpg" class="img-fluid prod-img" alt="Image">
+                          
+                      </div>
+                      <div class="why-text">
+                          <h4>Lorem ipsum dolor sit amet</h4>
+                          <h5> $9.79</h5>
+                      </div>
+                    </a>
+                    <div class="mask-icon justify-content-end d-flex gap-2">
+                                    
+                      <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                      <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                  </div>
+                  </div>
+                  
+              </div>
+              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                      
+                <div class="products-single fix px-4 py-4">
+                  <a href="#">
+                    <div class="box-img-hover">
+                        <!-- <div class="type-lb">
+                            <p class="sale">Sale</p>
+                        </div> -->
+                        <img src="/img/crops/crop-wheat.jpeg class="img-fluid prod-img" alt="Image">
+                        
+                    </div>
+                    <div class="why-text">
+                        <h4>Lorem ipsum dolor sit amet</h4>
+                        <h5> $9.79</h5>
+                    </div>
+                  </a>
+                  <div class="mask-icon justify-content-end d-flex gap-2">
+                                  
+                    <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                    <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                </div>
+                </div>
+                
+            </div>
+
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                      
+              <div class="products-single fix px-4 py-4">
+                <a href="#">
+                  <div class="box-img-hover">
+                      <!-- <div class="type-lb">
+                          <p class="sale">Sale</p>
+                      </div> -->
+                      <img src="/img/crops/crop-wheat.jpeg" class="img-fluid prod-img" alt="Image">
+                      
+                  </div>
+                  <div class="why-text">
+                      <h4>Lorem ipsum dolor sit amet</h4>
+                      <h5> $9.79</h5>
+                  </div>
+                </a>
+                <div class="mask-icon justify-content-end d-flex gap-2">
+                                
+                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+              </div>
+              </div>
+              
+            </div>
+
+            <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                      
+            <div class="products-single fix px-4 py-4">
+              <a href="#">
+                <div class="box-img-hover">
+                    <!-- <div class="type-lb">
+                        <p class="sale">Sale</p>
+                    </div> -->
+                    <img src="/img/crops/crop-wheat.jpeg"class="img-fluid prod-img" alt="Image">
+                    
+                </div>
+                <div class="why-text">
+                    <h4>Lorem ipsum dolor sit amet</h4>
+                    <h5> $9.79</h5>
+                </div>
+              </a>
+              <div class="mask-icon justify-content-end d-flex gap-2">
+                              
+                <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+            </div>
+            </div>
+
+            </div>       
+                    </div>
+                </div>
+
+            </div>
+            </div>
+          </div>
+
+        
+      </div>
+    </div>
+
+    <!-- LEFT -->
+      <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left  mt-5" >
+        <div class="product-categori mt-1 ">
+            <div class="search-product ">
+                <form action="#">
+                    <input class="form-control rounded" placeholder="Search here..." type="text">
+                    <button type="submit"> <i class="fa fa-search rounded"></i> </button>
+                </form>
+            </div>
+            <div class="filter-sidebar-left">
+                <div class="title-left">
+                    <h3>Categories</h3>
+                </div>
+                <ul class="nav d-block text-center bg-success py-3 rounded">
+                        
+                <li class="nav-item nav_list py-1 mx-3 rounded cat-nav">
+                  <a class="nav-link link active" id="cat-all-tab" data-bs-toggle="tab" data-bs-target="#cat-all" href="#" style="color: black;">ALL</a>
+                </li>
+                <li class="nav-item nav_list py-1 mx-3 rounded cat-nav">
+                  <a class="nav-link link" id="cat-veg-tab" data-bs-toggle="tab" data-bs-target="#cat-veg" href="#" style="color: black;">VEGETABLES</a>
+                </li>
+                <li class="nav-item nav_list py-1 mx-3 rounded cat-nav">
+                  <a class="nav-link link" id="cat-fruit-tab" data-bs-toggle="tab" data-bs-target="#cat-fruit" href="#" style="color: black;">FRUITS</a>
+                </li>
+                <li class="nav-item nav_list py-1 mx-3 rounded cat-nav">
+                  <a class="nav-link link" id="cat-crop-tab" data-bs-toggle="tab" data-bs-target="#cat-crop" href="#" style="color: black;">CROPS</a>
+                </li>
+                
+            
+
+            </ul>
+            </div>
+          
+        </div>
+    </div>
+  </div>
+
+
+</body>
+
+<style>
+
+  .box-img-hover img{
+    width: 300px;
+    height: 200px;
+    border-radius: 25px;
+ 
+  }
+  .products-single{
+    background-color: white;
+    border-radius: 25px;
+    color: black;
+   
+  }
+
+
+
+  .products-single image:hover{
+    background-color:rgba(255,255,255,0.5);
+  }
+
+  .products-single a{
+    color: black;
+    text-decoration: none;
+  }
+
+  .add-to-cart-btn{
+  
+    
+    color: white;
+  }
+ /* search */
+ .search-product {
+     position: relative;
+}
+ .search-product input[type="text"] {
+   
+     border: 0;
+     box-shadow: none;
+     border-radius: 0;
+     color: #ffffff;
+     height: 55px;
+     font-weight: 300;
+     font-size: 16px;
+     margin-bottom: 15px;
+     padding: 0 20px;
+     -webkit-transition: all .5s ease;
+     -moz-transition: all .5s ease;
+     transition: all .5s ease;
+     width: 100%;
+     outline: 0;
+}
+ .search-product .form-control::-moz-placeholder {
+     color: #ffffff;
+     opacity: 1;
+}
+ .search-product button {
+     background: #000000;
+     color: #ffffff;
+     font-size: 18px;
+     position: absolute;
+     right: 0px;
+     padding: 12px 15px;
+     top: 0;
+     line-height: 27px;
+     border: none;
+     cursor: pointer;
+     height: 100%;
+}
+ .search-product button:hover{
+     background: rgba(0,0,0,0.5);
+}
+
+
+/* ===== left ===== */
+
+.cat-nav:hover{
+  background-color: #FFDE59 ;
+
+}
+</style>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="dependencies\jquery-3.6.4.js"></script>
+<script src="js\get_address.js"></script>
+</html>
