@@ -784,7 +784,7 @@ session_start();
     
                         <div class="myform">
                             <h1 class="text-center">Sign-up as</h1>
-                            <form action ="#" id="signup_form_classes">
+                            <!-- <form id="signup_form_classes"> -->
                                 <p style = "display:none" name = "class" id="class"></p>
                                 <div class="signUp_as_list">
                                     <div class="mb-3 mt-3">
@@ -801,7 +801,7 @@ session_start();
                                     </div>
                                 </div>
                               
-                            </form>   
+                            <!-- </form>    -->
                             <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a></p>
                         </div>
                     </div>
@@ -851,12 +851,14 @@ session_start();
                                       <input type="password" class="form-control" id="input_password">
                                     </div>
                                     <div class="mb-1 mt-1 mx-2">
-                                      <label for="email" class="Last_name" style="font-size: small;">Confirm Password</label>
-                                      <input type="password" class="form-control" id="input_con_password">
+                                      <label for="email" class="Last_name" style="font-size: small;" >Confirm Password</label>
+                                    
+                                      <input type="password" class="form-control" id="input_con_password" >
+                                      <span id='message'></span>
                                     </div>
                                   </div>
                                   <button type="button" class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#signUpform"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>  
-                                  <button type="button" class="btn-light btn_next" data-bs-toggle="modal" data-bs-target="#next_signUp_Form"><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
+                                  <button type="button" class="btn-light btn_next" data-bs-toggle="modal" data-bs-target="#next_signUp_Form" id="btn_next_basic"><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
                                   <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
       
                                 </form>
@@ -1048,6 +1050,7 @@ session_start();
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="dependencies\jquery-3.6.4.js"></script>
 <script src="js\get_address.js"></script>
+<script src="js\insert_new_user.js"></script>
 
 <script>
 
@@ -1058,46 +1061,6 @@ session_start();
 
 
 //login
-
-
-
-  function select_class(n){
-    $("#class")[0].value = n;
-  }
-
-  
-var fname,lname,mname,email,password,con_password,region,province,city,barangay,contact;
-var my_arr = [fname,lname,mname,email,password,con_password,region,province,city,barangay,contact]
-var my_ids = ["input_fname","input_lname","input_mname","input_email","input_password","input_con_password",
-"input_region","input_province","input_city","input_barangay",'input_contact']
-
-  function get_value(id){
-    return $("#"+id)[0].value;
-  }
-
-  function store(vars,ids){
-    //get everything as is to restore
-    for(var i = 0; i< vars.length; i++){
-        vars[i] = get_value(ids[i]);
-        console.log(vars[i]);
-    }
-
-  }
-
-  function store2(fname,lname,mname,email,password,con_password,region,province,city,barangay,contact){
-    //get everything as text to put on the db
-    fname = get_value("input_fname");
-    mname = get_value("input_mname");
-    lname = get_value("input_lname");
-    email = get_value("input_email");
-    password = get_value("input_password");
-    con_password = get_value("input_con_password");
-    region = $("#input_region option:selected").text();
-    province = $("#input_province option:selected").text();
-    city = $("#input_city option:selected").text();
-    barangay = $("#input_barangay option:selected").text()
-    
-  }
 
 
 

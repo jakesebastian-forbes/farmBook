@@ -35,7 +35,8 @@ if($conn->connect_error){
 
             session_start();
             $_SESSION["acc_id"] = $acc_details['id'];
-            $_SESSION["full_name"] = $acc_details['firstName'].' '.$acc_details['lastName'];
+            $_SESSION["firstName"] = $acc_details['firstName'];
+            $_SESSION["lastName"] = $acc_details['lastName'];
   
             header('Location: ../pages_php/feed.php');
           
