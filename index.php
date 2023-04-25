@@ -858,7 +858,10 @@ session_start();
                                     </div>
                                   </div>
                                   <button type="button" class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#signUpform"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>  
-                                  <button type="button" class="btn-light btn_next" data-bs-toggle="modal" data-bs-target="#next_signUp_Form" id="btn_next_basic"><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
+                                  <button type="button" class="btn-light btn_next" data-bs-toggle="modal" data-bs-target="#next_signUp_Form" id="btn_next_basic" disabled>
+                                    <!-- <i class="fa-sharp fa-solid fa-arrow-right" disabled = "disabled"></i> -->
+                                    next
+                                  </button>
                                   <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
       
                                 </form>
@@ -935,7 +938,11 @@ session_start();
                                 
                                 </form>
                                 <button type="submit " class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#signUp_Form"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>
-                                <button type="submit " class="btn-light btn_next" data-bs-toggle="modal" data-bs-target="#second_signUp_Form"><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
+                                <!-- <button type="submit " class="btn-light btn_next" data-bs-toggle="modal" data-bs-target="#second_signUp_Form"><i class="fa-sharp fa-solid fa-arrow-right"></i></button> -->
+                                <!-- <form action= method="post"> -->
+                                <button type="submit" class="btn btn-success btn_next mt-3"
+                                onclick = "insert_user()">Sign up</button>
+                                <!-- </form> -->
                                 <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
                                   
                             </div>
@@ -946,7 +953,7 @@ session_start();
 
 
 
-                 <div class="modal fade" id="second_signUp_Form">
+                 <!-- <<div class="modal fade" id="second_signUp_Form">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-body">
@@ -954,7 +961,7 @@ session_start();
                                 data-bs-dismiss="modal" aria-label="Close"></button>
               
                                 <div class="myform text-center">
-                                    <!-- <h3 class="text-center">Farmer</h3> -->
+                                 
                                    <form action ="#" class="insert_profile_pic text-center d-block "
                                    id="signup_form_picture">
                                       <h4>Profile Picture</h4>
@@ -976,7 +983,7 @@ session_start();
                             </div>
                           </div>
                         </div>  
-                </div>
+                </div>  -->
 
                 
         

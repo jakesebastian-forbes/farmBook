@@ -6,7 +6,7 @@
 // "input_region","input_province","input_city","input_barangay",'input_contact'];
 
 var fname,lname,mname,email,password,con_password;
-var region,province,city,barangay,contact;
+var region,province,city,barangay,contact_no;
 var address,class_;
 
 
@@ -19,12 +19,14 @@ function select_class(n){
     $('#input_password, #input_con_password').on('keyup', function () {
         if ($('#input_password').val() == $('#input_con_password').val()) {
           $('#message').html('Matching').css('color', 'green');
-        } else 
+          $('#btn_next_basic').removeAttr("disabled");
+        } else {
           $('#message').html('Not Matching').css('color', 'red');
           $('#btn_next_basic').attr("disabled","disabled");
             //   console.log("u called?!");
-      });
-
+      }
+    }
+  )
 
 //get everything as is to restore
   function store_basic(){
@@ -35,35 +37,56 @@ function select_class(n){
     lname =  $("#input_lname")[0].value;
     email =  $("#input_email")[0].value;
     password =  $("#input_password")[0].value;
+    address = $("#input_region option:selected").text() + ',' +$("#input_province option:selected").text() + ',' +
+    $("#input_city option:selected").text() + ',' + $("#input_barangay option:selected").text();
+    contact_no =  $("#input_contact")[0].value;
 
   }
 
 
   function insert_user(){
-  
+
+    console.log("called insert");
 //put ajax here
+store_basic();
+logs();
+
+$.post({
+
+  type: "POST",
+url: "php_func\\db_insert_create_account.php",
+data: 
+{
+  fname: fname,
+  mname : mname,
+  lname : lname,
+  email : email,
+  password : password,
+  address : address,
+  contact_no : contact_no,
+  class : class_
+},
+cache: false,
+ success: function(data) {
+ console.log(data);
+ },
+ error: function(xhr, status, error) {
+ console.error(xhr);
+ }
+}
+);
+console.log("after");
+logs();
 
   }
 
-  function logs(vars){
-    for(var i = 0; i< vars.length; i++){
-        console.log(my_arr[i]);
-
-    }
+  function logs(){
+    console.log(class_)
+    console.log(fname);
+    console.log(mname);
+    console.log(lname);
+    console.log(email);
+    console.log(password);
+    console.log(address);
+    console.log(contact_no);
   }
-// fname,lname,mname,email,password,con_password,region,province,city,barangay,contact
-//   function store2(){
-//     //get everything as text to put on the db
-//     fname = get_value("input_fname");
-//     mname = get_value("input_mname");
-//     lname = get_value("input_lname");
-//     email = get_value("input_email");
-//     password = get_value("input_password");
-//     con_password = get_value("input_con_password");
-//     region = $("#input_region option:selected").text();
-//     province = $("#input_province option:selected").text();
-//     city = $("#input_city option:selected").text();
-//     barangay = $("#input_barangay option:selected").text();
-    
-//   }
-
