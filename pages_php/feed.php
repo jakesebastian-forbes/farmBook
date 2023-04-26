@@ -1,5 +1,6 @@
 <?php
  session_start();
+ 
 ?>
 
 <html lang="en">
@@ -2055,41 +2056,7 @@ onclick = "img_view(this.id)"/>
                   <div class="card text-center" style="color: #4B515D; border-radius: 10px; width: 20rem; margin-top: 20px;">
                     <div class="card-body p-4">
           
-                      <div class="d-flex">
-                        <h6 class="flex-grow-1">Nasugbu, Batangas</h6>
-                        
-                      </div>
-          
-                      <div class="d-flex flex-column text-center mt-2 mb-4">
-                        <h6 class="display-4 mb-0 font-weight-bold" style="color: #1C2331;"> 28°C </h6>
-                        <span class="small" style="color: #868B94">Sunny</span>
-                      </div>
-                      <!-- <div class="forecast d-flex"> -->
-                      <div class="days_forecast d-flex justify-content-center p-2">
-                            <div class="day1 d-block text-center p-1 mx-2" style="border: solid  rgb(40, 38, 38,0.5); width: 80px;border-radius: 10px;">
-                                <img class="1st_day_img" src="../img/Weather/Sunny.png" alt="">
-                                <div class="dets d-block">
-                                  <small>Mon</small><br>
-                                  <small>25°C </small>
-                                </div>
-                                
-                            </div>
-                            <div class="day2 d-blocktext-center p-1 mx-2" style="border: solid rgb(40, 38, 38,0.5);width: 80px; border-radius: 10px;">
-                                <img class="2nd_day_img" src="../img/Weather/Sunny.png" alt="">
-                                <div class="dets d-block">
-                                  <small>Mon</small><br>
-                                  <small>25°C </small>
-                                </div>
-                            </div>
-                            <div class="day3 d-block p-1 mx-2" style="border: solid  rgb(40, 38, 38,0.5); width: 80px; border-radius: 10px;">
-                                <img class="3rd_day_img" src="../img/Weather/Sunny.png" alt="">
-                                <div class="dets d-block">
-                                  <small>Mon</small><br>
-                                  <small>25°C </small>
-                                </div>
-                            </div>
-                       
-                     
+                    <div id="openweathermap-widget-15"></div>
                       </div>
                     <!-- </div> -->
                       <button type="button" class="forecast_btn mt-3">See full forecast</button>
@@ -2117,8 +2084,11 @@ onclick = "img_view(this.id)"/>
         crossorigin="anonymous"
       ></script>
       <script src="./main.js"></script>
+
+      <script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 15,cityid: '1698032',appid: 'e2630aae7335274da681acc3f37f2620',units: 'metric',containerid: 'openweathermap-widget-15',  });  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script>
+
     </body>
-  </div>
+  <!-- </div> -->
   
 </html>
 

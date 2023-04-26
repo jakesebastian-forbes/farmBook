@@ -2,11 +2,12 @@
 
 // for($i = 0; $i<100; $i++){
 
+	function feed_content(){
 $items = array(
-	'friend'         => 50,
-	'public'       => 25,
-	'recommended' => 10,
-	'e-learning'     => 15,
+	'friend'         => 70,
+	'public'       => 5,
+	'recommended' => 5,
+	'e-learning'     => 20,
 );
 
 $max = 0;
@@ -28,5 +29,8 @@ foreach ($items as $item => $max)
 }
 
 echo 'The selected item is "' . $item . '"';
+	}
 // }
+
+feed_content();
 ?>
