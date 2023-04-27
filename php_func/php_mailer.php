@@ -10,6 +10,7 @@ use PHPMailer\PHPMailer\Exception;
 require '..\dependencies\phpmailer\vendor\autoload.php';
 require 'generate_otp.php';
 
+function send_otp($send_to_mail,$send_to_name){
 
 //Create an instance; passing `true` enables exceptions
 $mail = new PHPMailer(true);
@@ -18,10 +19,10 @@ try {
     //Server settings
     $mail->SMTPDebug = 3;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp-relay.sendinblue.com';                     //Set the SMTP server to send through
+    $mail->Host       = 'smtp.sendgrid.net';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'farmbook.ph.co@gmail.com';                     //SMTP username
-    $mail->Password   = 'j0zTn6f3PX4bGVyY';                               //SMTP password
+    $mail->Username   = 'apikey';                     //SMTP username
+    $mail->Password   = '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';                               //SMTP password
     $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
     $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
@@ -29,7 +30,7 @@ try {
     $mail->setFrom('farmbook.ph.co@gmail.com', 'Farmbook');
 
 //https://app.sendinblue.com/settings/keys/smtp
-    $mail->addAddress('aybeniichan@gmail.com', 'Reignoel Rodriguez');     //Add a recipient
+    $mail->addAddress($send_to_mail);     //Add a recipient
 
 
     // $mail->addAddress('ellen@example.com');               //Name is optional
@@ -44,16 +45,28 @@ try {
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
     $mail->Subject = 'OTP code for account confirmation';
-    $mail->Body    = 'Hi aybeniichan! Your OTP code is :<b>'.generateNumericOTP(7).'</b>.
-    Please do not share this code to anyone. This code will expire in 10 minutes. oyy miss';
+    $mail->Body    = 'Hi '. ucwords($send_to_name) .'! <br> Your OTP code is : <b>'.generateNumericOTP(7).'</b> .
+    Please do not share this code to anyone. <br> This code will expire in 10 minutes. ';
     // $mail->AltBody = '';
 
-    $mail->send();
-    echo 'Message has been sent';
+ //send the message, check for errors
+if (!$mail->send()) {
+    echo 'Mailer Error: '. $mail->ErrorInfo;
+ } else {
+    echo 'Message sent!';
+ }
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
 
 // https://app.sendinblue.com/marketing-dashboard
 
+// another_try
+// xsmtpsib-e4107c6993eb3e98b0d3182265d82030e0d6ec38244725606f6c197bc12e11ca-7s6yKU3NhwTJSq1X
+
+// sendgrid
+// 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
+}
+
+// send_otp('jforbes557@gmail.com', 'jake sebastian forbes');
 ?>

@@ -1,5 +1,6 @@
 <?php
  session_start();
+ 
 ?>
 
 <html lang="en">
@@ -180,20 +181,21 @@
  <!-- POST STYLE -->
  <style>
    
-  #myImg {
+  .myImg {
       border-radius: 5px;
       cursor: pointer;
       transition: 0.3s;
   }
 
-  #myImg:hover {
+  .myImg:hover {
       opacity: 0.7;
   }
 
   /* The Modal */
-
+ 
   .myModal {
-    margin-top: 60px;
+    /* margin-top: 60px; */
+      margin-bottom: 0;
       display: none;
       /* Hidden by default */
       position: fixed;
@@ -1812,15 +1814,17 @@ $conn = new mysqli('localhost','root','','farmbook_db');
 if($conn->connect_error){
   die('Connection failed : ' . $conn->connect_error);
  }else{
- $query = "SELECT CONCAT(accounts.firstName, ' ', accounts.lastName) AS `Account Owner`, caption, GROUP_CONCAT(posting_medias.media)
-  AS `Medias`,dateTime AS `Date and Time` FROM postings INNER JOIN accounts ON postings.acc_id = accounts.id LEFT JOIN posting_medias 
- ON postings.id = posting_medias.posting_id GROUP BY postings.id;";
+ $query = "SELECT CONCAT(accounts.firstName, ' ', accounts.lastName) AS `Account Owner`,accounts.id as `account_id`,
+ postings.id as `post_id`, caption, CONCAT(posting_medias.media) AS `Medias`,dateTime AS `Date and Time`
+ FROM postings INNER JOIN accounts ON postings.acc_id = accounts.id LEFT JOIN posting_medias 
+  ON postings.id = posting_medias.posting_id GROUP BY postings.id;";
 
 $result = mysqli_query($conn,$query);
 
 while($rows = mysqli_fetch_assoc($result))
     {
 
+      $post_id = $rows['post_id'];
       
     ?>
   
@@ -1848,42 +1852,75 @@ while($rows = mysqli_fetch_assoc($result))
                     <div class="row">
                       <div style = "display: flex; flex-wrap: wrap;">
 
-                      <div style="display: flex; flex-direction: column; ">  
-                          <!-- <?php// echo 'src=data:image/jpeg;base64,'.base64_encode( $rows['profileImg'])?> -->
-                       <img <?php echo 'src=data:image/jpeg;base64,'.base64_encode( $rows['Medias'])?> id="myImg" alt="post image" 
-                       class="img-fluid rounded " style = "aspect-ratio: 50/49; height: 200px;"/>
-                      </div>
+<?PHP
+if($rows['Medias'] != NULL){
+
+  $conn2 = new mysqli('localhost','root','','farmbook_db');
+
+  if($conn2->connect_error){
+    die('Connection failed : ' . $conn->connect_error);
+   }else{
+   $query2 = "SELECT id,media,posting_id FROM posting_medias WHERE posting_id = '$post_id';";
+  
+  $result2 = mysqli_query($conn2,$query2);
+  
+  while($rows2 = mysqli_fetch_assoc($result2)){
+
+   
+      
+
+?>
+                  
                      
-                        
+            
+
+<div style="display: flex; flex-direction: column; ">
+<img <?php echo "src=data:image/jpeg;base64,".base64_encode($rows2['media']);?> id="<?php echo $rows2['id']?>" alt="post image"
+class="img-fluid rounded myImg" style = "aspect-ratio: 50/49; height: 200px;"
+onclick = "img_view(this.id)"/>
+</div>
+
+<?php
+ }
+    }
+  }
+  
+              ?>          
                       </div>
                     </div>
                
                   </div>
                   
                     <!-- The Modal -->
-                      <div id="myModal" class="modal myModal px-5">
+                    <div class="modal-container">
+
+                      <div id="modal_img_display" class="modal myModal px-5">
                         <span class="close">×</span>
-                        <img class="modal-content " id="img01" />
+                        <img class="modal-content " id="modal_img" />
                         <!-- <div id="caption"></div> -->
+                    </div>
                     </div>
        
                    <script>
                     // Get the modal
                     var modal = document.getElementById("myModal");
-                    // Get the image and insert it inside the modal - use its "alt" text as a caption
-                    var img = document.getElementById("myImg");
-                    var modalImg = document.getElementById("img01");
-                    var captionText = document.getElementById("caption");
-                    img.onclick = function() {
+                    // // Get the image and insert it inside the modal - use its "alt" text as a caption
+              
+                    function img_view(id) {
+                       var post_img = document.getElementById(id);
+                       console.log(id)
+                       var modal = document.getElementById("modal_img_display");
+                       var modalImg = document.getElementById("modal_img");
+                      //  var captionText = document.getElementById("caption");
                        modal.style.display = "block";
-                       modalImg.src = this.src;
-                       captionText.innerHTML = this.alt;
-                    };
-                    // Get the <span> element that closes the modal
-                    var span = document.getElementsByClassName("close")[0];
+                       modalImg.src = post_img.src;
+                      //  captionText.innerHTML = this.alt;
+                      var span = document.getElementsByClassName("close")[0];
                     // When the user clicks on <span> (x), close the modal
                     span.onclick = function() {
                        modal.style.display = "none";
+                    };
+                    
                     };
                  </script>
   
@@ -2019,41 +2056,7 @@ while($rows = mysqli_fetch_assoc($result))
                   <div class="card text-center" style="color: #4B515D; border-radius: 10px; width: 20rem; margin-top: 20px;">
                     <div class="card-body p-4">
           
-                      <div class="d-flex">
-                        <h6 class="flex-grow-1">Nasugbu, Batangas</h6>
-                        
-                      </div>
-          
-                      <div class="d-flex flex-column text-center mt-2 mb-4">
-                        <h6 class="display-4 mb-0 font-weight-bold" style="color: #1C2331;"> 28°C </h6>
-                        <span class="small" style="color: #868B94">Sunny</span>
-                      </div>
-                      <!-- <div class="forecast d-flex"> -->
-                      <div class="days_forecast d-flex justify-content-center p-2">
-                            <div class="day1 d-block text-center p-1 mx-2" style="border: solid  rgb(40, 38, 38,0.5); width: 80px;border-radius: 10px;">
-                                <img class="1st_day_img" src="../img/Weather/Sunny.png" alt="">
-                                <div class="dets d-block">
-                                  <small>Mon</small><br>
-                                  <small>25°C </small>
-                                </div>
-                                
-                            </div>
-                            <div class="day2 d-blocktext-center p-1 mx-2" style="border: solid rgb(40, 38, 38,0.5);width: 80px; border-radius: 10px;">
-                                <img class="2nd_day_img" src="../img/Weather/Sunny.png" alt="">
-                                <div class="dets d-block">
-                                  <small>Mon</small><br>
-                                  <small>25°C </small>
-                                </div>
-                            </div>
-                            <div class="day3 d-block p-1 mx-2" style="border: solid  rgb(40, 38, 38,0.5); width: 80px; border-radius: 10px;">
-                                <img class="3rd_day_img" src="../img/Weather/Sunny.png" alt="">
-                                <div class="dets d-block">
-                                  <small>Mon</small><br>
-                                  <small>25°C </small>
-                                </div>
-                            </div>
-                       
-                     
+                    <div id="openweathermap-widget-15"></div>
                       </div>
                     <!-- </div> -->
                       <button type="button" class="forecast_btn mt-3">See full forecast</button>
@@ -2081,8 +2084,11 @@ while($rows = mysqli_fetch_assoc($result))
         crossorigin="anonymous"
       ></script>
       <script src="./main.js"></script>
+
+      <script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 15,cityid: '1698032',appid: 'e2630aae7335274da681acc3f37f2620',units: 'metric',containerid: 'openweathermap-widget-15',  });  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script>
+
     </body>
-  </div>
+  <!-- </div> -->
   
 </html>
 
