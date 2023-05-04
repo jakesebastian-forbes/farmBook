@@ -34,6 +34,7 @@ if($conn->connect_error){
             $acc_details = mysqli_fetch_assoc($result2); 
 
             session_start();
+            $_SESSION["logged_in"] = true;
             $_SESSION["acc_id"] = $acc_details['id'];
             $_SESSION["firstName"] = $acc_details['firstName'];
             $_SESSION["lastName"] = $acc_details['lastName'];

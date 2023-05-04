@@ -7,7 +7,7 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
-require '..\dependencies\phpmailer\vendor\autoload.php';
+require 'dependencies\phpmailer\vendor\autoload.php';
 require 'generate_otp.php';
 
 function send_otp($send_to_mail,$send_to_name){
@@ -19,10 +19,10 @@ try {
     //Server settings
     $mail->SMTPDebug = 3;                      //Enable verbose debug output
     $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.sendgrid.net';                     //Set the SMTP server to send through
+    $mail->Host       = 'smtp-relay.sendinblue.com';                     //Set the SMTP server to send through
     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'apikey';                     //SMTP username
-    $mail->Password   = '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';                               //SMTP password
+    $mail->Username   = 'farmbook.ph.co@gmail.com';                     //SMTP username
+    $mail->Password   = 'j0zTn6f3PX4bGVyY';                               //SMTP password
     $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
     $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
@@ -68,5 +68,5 @@ if (!$mail->send()) {
 // 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
 }
 
-// send_otp('jforbes557@gmail.com', 'jake sebastian forbes');
+send_otp('gracenote0323@gmail.com', 'jake sebastian forbes');
 ?>

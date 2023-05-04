@@ -1,6 +1,6 @@
 <?php
  session_start();
- 
+ $page_title = 'feed';
 ?>
 
 <html lang="en">
@@ -1609,13 +1609,13 @@ while($rows = mysqli_fetch_assoc($result))
                 
                 <!-- top 2 -->
                 <li lass="dropdown-item side-item-li p-1 rounded">
-                  <a href="#" class=" d-flex align-items-center text-decoration-none text-dark ">
+                  <a href="marketplace.php" class=" d-flex align-items-center text-decoration-none text-dark ">
                     <div class="p-2">
                       <i class="fas fa-cloud-sun "style="width: 50px; height: 50px; object-fit: cover;font-size: 40px;"></i>
                      
                     </div>
                     <div>
-                      <h4 class="ms-2">Weather</h4>
+                      <h4 class="ms-2">Marketplace</h4>
                      
                     </div>
                   </a>
@@ -1623,7 +1623,7 @@ while($rows = mysqli_fetch_assoc($result))
          
                 <!-- top 3 -->
                 <li class="dropdown-item side-item-li p-1 rounded">
-                  <a href="e-learning2.php" class=" d-flex align-items-center text-decoration-none text-dark ">
+                  <a href="e-learning.php" class=" d-flex align-items-center text-decoration-none text-dark ">
                     <div class="p-2">
                       <i class="fa-solid fa-book"style="width: 50px; height: 50px; object-fit: cover;font-size: 40px;"></i>
                      
@@ -2047,20 +2047,20 @@ onclick = "img_view(this.id)"/>
           <!-- ================= Chatbar ================= -->
           
           <div class="col-12 col-lg-3 position-relative" >
-            <div class="d-none d-xxl-block  overflow-hidden scrollbar position-fixed " style=" max-width: 300px;  width: 100%; z-index: 4;padding-top: 56px; left: initial !important;" >
+            <div class="d-none d-xxl-block  overflow-hidden scrollbar position-fixed " style="  width: 100%; z-index: 4;padding-top: 56px; left: initial !important;" >
               <div class="p-3 mt-4">
                 <!-- sponsors -->
                 <h5 class="text-muted">Weather</h5>
                 <!-- s 1 -->
                 <li class="dropdown-item my-2 d-flex justify-content-between">
-                  <div class="card text-center" style="color: #4B515D; border-radius: 10px; width: 20rem; margin-top: 20px;">
+                  <div class="card text-center" style="color: #4B515D; border-radius: 10px; margin-top: 20px;">
                     <div class="card-body p-4">
           
                     <div id="openweathermap-widget-15"></div>
                       </div>
                     <!-- </div> -->
-                      <button type="button" class="forecast_btn mt-3">See full forecast</button>
-          
+                      <a href="full_forecast_navbar.php"><button type="button" class="forecast_btn my-3">See full forecast</button>
+                      </a>
                     </div>
                   </div>
                 </li>

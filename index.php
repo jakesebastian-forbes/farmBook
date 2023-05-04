@@ -1,5 +1,6 @@
 <?php
 session_start();
+$page_title = 'index';
 ?>
 
 <!DOCTYPE html>
@@ -821,7 +822,7 @@ session_start();
           
                             <div class="myform">
                                 <!-- <h1 class="text-center">Farmer</h1> -->
-                                <form action ="#" id="signup_form_basics">
+
                                  
                                   <div class="mb-1 mt-1 d-block justify-content-between">
                                     <h4>Name</h4>
@@ -844,7 +845,8 @@ session_start();
                                     <h4>Email and Password</h4>
                                     <div class="mb-1 mt-1 mx-2">
                                       <label for="" class="Last_name" style="font-size: small;">Email</label>
-                                      <input type="email" class="form-control" required id="input_email">
+                                      <input type="email" class="form-control" required id="input_email" onkeyup="showHint(this.value)">
+                                      <p id= "email_status"></p>
                                     </div>
                                     <div class="mb-1 mt-1 mx-2">
                                       <label for="" class="Last_name" style="font-size: small;">Password</label>
@@ -864,7 +866,7 @@ session_start();
                                   </button>
                                   <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
       
-                                </form>
+                             
                             </div>
                         </div>
                       </div>
@@ -952,43 +954,6 @@ session_start();
                 </div>
 
 
-
-                 <!-- <<div class="modal fade" id="second_signUp_Form">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <button type="button" class="btn-close btn-close-black" 
-                                data-bs-dismiss="modal" aria-label="Close"></button>
-              
-                                <div class="myform text-center">
-                                 
-                                   <form action ="#" class="insert_profile_pic text-center d-block "
-                                   id="signup_form_picture">
-                                      <h4>Profile Picture</h4>
-                                      <div class="text-center d-flex mx-auto">
-                                      <img id="preview-selected-image"  class="card-img-top insert_pic mx-auto my-3 " alt="..." />
-                                       
-                                      </div>
-                                     
-
-                                  <label for="file-upload" class="file-upload">Upload Image</label>
-                                  <input type="file" id="file-upload" accept="image/*" onchange="previewImage(event);" style="display:none" />
-                                 
-                                    </form>
-                                    <button type="submit" class="btn btn-light mt-3">Sign up</button>
-                                    <button type="submit " class="btn-light btn_back"  data-bs-toggle="modal" data-bs-target="#next_signUp_Form"><i class="fa-sharp fa-solid fa-arrow-left"></i></button>
-          
-                                    <p>Already have an account?<a href=""  data-bs-toggle="modal" data-bs-target="#loginform">Login</a> </p> 
-                                </div>
-                            </div>
-                          </div>
-                        </div>  
-                </div>  -->
-
-                
-        
-              
-
                 <div class="modal fade" id="forgotform">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
@@ -1052,27 +1017,42 @@ session_start();
 
   
 
-   
-</body>
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="dependencies\jquery-3.6.4.js"></script>
 <script src="js\get_address.js"></script>
 <script src="js\insert_new_user.js"></script>
 
+
 <script>
-
-  //change links
-  $("#link_home")[0].setAttribute("href","index.php");
-  $("#link_about")[0].setAttribute("href","pages_php/aboutUs.php");
-  $("#link_e-learning")[0].setAttribute("href","pages_php/e-learning2.php");
-
-
-//login
+//change links
+$("#link_home")[0].setAttribute("href","index.php");
+$("#link_about")[0].setAttribute("href","pages_php/aboutUs.php");
+$("#link_e-learning")[0].setAttribute("href","pages_php/e-learning2.php");
 
 
+var modalId = localStorage.getItem('openModal');
+function open_modal(){
+console.log('attempting open');
 
+
+if (modalId != null){
+console.log(modalId + "1");
+$("#loginform").modal("show");
+// localStorage.removeItem('openModal');
+}else{
+
+console.log(modalId);
+}
+
+
+}
+
+open_modal();
 
 
 
 </script>
+</body>
 </html>

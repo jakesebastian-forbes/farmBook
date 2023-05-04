@@ -19,6 +19,7 @@
     <style>
       body{
             overflow-x: hidden !important;
+            scroll-behavior: smooth;
         }
     
     .w-100 {

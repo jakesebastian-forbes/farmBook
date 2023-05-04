@@ -1,3 +1,8 @@
+<?php
+$page_title = 'marketplace'
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,25 +51,7 @@
 </style>
 <body style="background-color: #E4E4E4;">
 
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top px-2" >
-        <h1 style="color: #FFDE59;font-family: 'Archivo Black';margin-left: 10px;">FarmBook</h1>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon" style="color: aqua;"></span>
-        </button>
-        
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="color: #FFDE59 ; ">
-               <!--======================= di nagana pag nasa index=================== -->
-                  <li class="nav-item" ><a class="nav-link" href="" style=" color: #FFDE59;"   id="link_home"><i class="fa fa-fw fa-home fa-2x"></i>Home</a></li>
-                  <li class="nav-item" ><a class="nav-link" href="" style=" color: #FFDE59;" id="link_about"><i class="fa fa-fw fa-circle-info fa-2x"></i>About Us</a></li>
-                  <li class="nav-item" ><a class="nav-link" href="" style=" color: #FFDE59;" id="link_e-learning"><i class="fa fa-fw fa-book fa-2x"></i>E-Learning</a></li>
-                  <!-- <li class="nav-item" ><a class="nav-link"  href="contact.html"><i class="fa fa-fw fa-phone fa-2x"></i>Contact</i></a></li> -->
-                </ul>
-        
-              </div>
-        
-        </nav>  
-       
+    <?php require '..\components\nav_bar.php';?>
     
     <div id="carouselExampleCaptions" class="carousel slide " data-bs-ride="carousel" style="height: 400px; " >
         <div class="carousel-indicators">
