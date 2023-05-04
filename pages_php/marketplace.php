@@ -98,7 +98,45 @@ $page_title = 'marketplace'
    
  
     <div class="row d-flex mx-3">
-     <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-right ">
+        <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-right  mt-5" >
+            <div class="product-categori mt-1 ">
+                <div class="search-product ">
+                    <form action="#">
+                        <input class="form-control rounded" placeholder="Search here..." type="text">
+                        <button type="submit"> <i class="fa fa-search rounded"></i> </button>
+                    </form>
+                </div>
+                
+                <div class="filter-sidebar-left pe-5">
+                    <div class="title-left">
+                        <h3>Categories</h3>
+                    </div>
+                    
+                    <ul class="nav nav-pills nav-ul d-block ms-5 py-3 rounded" style="background-color: #57744B;">
+                            
+                    <li class="nav-item cat nav_list py-1 mx-3 my-2 rounded cat-nav " role="presentation">
+                      <a class="nav-link cat-item text-dark" id="cat-all-tab" data-bs-toggle="tab" data-bs-target="#cat-all" href="#" style="color: black;"><i class="fa-solid fa-basket-shopping" style="font-size: 20px ;"></i>  ALL</a>
+                    </li>
+                    <li class="nav-item cat nav_list py-1 mx-3 my-2 rounded cat-nav  " role="presentation">
+                      <a class="nav-link cat-item  text-dark" id="cat-veg-tab" data-bs-toggle="tab" data-bs-target="#cat-veg" href="#" style="color: black;"> <i class="	fas fa-carrot" style="font-size: 20px ;"></i> VEGETABLES</a>
+                    </li>
+                    <li class="nav-item cat nav_list py-1 mx-3 my-2 rounded cat-nav " role="presentation">
+                      <a class="nav-link cat-item  text-dark" id="cat-fruit-tab" data-bs-toggle="tab" data-bs-target="#cat-fruit" href="#" style="color: black;"> <i class="	fas fa-apple-alt" style="font-size: 20px ;"></i> FRUITS</a>
+                    </li>
+                    <li class="nav-item cat nav_list py-1 mx-3 my-2 rounded cat-nav" role="presentation" >
+                      <a class="nav-link cat-item  text-dark" id="cat-crop-tab" data-bs-toggle="tab" data-bs-target="#cat-crop" href="#" style="color: black;"><i class="fa-solid fa-wheat"></i>CROPS</a>
+                    </li>
+                    <!-- text-white link-dark -->
+                
+    
+                    </ul>
+                </div>
+              
+            </div>
+        </div>
+
+
+     <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-left ">
         <div class="product-categorie-box ">
           <div class="tab-content" id="tabContent" >
 <!-- ALL CATEGORY -->
@@ -112,7 +150,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                               
                         <div class="products-single fix px-4 py-4">
-                          <a href="#">
+                          <a href="/pages/single-product.html">
                             <div class="box-img-hover">
                                 <!-- <div class="type-lb">
                                     <p class="sale">Sale</p>
@@ -137,7 +175,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                                 
                       <div class="products-single fix px-4 py-4">
-                        <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -162,7 +200,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                         
                         <div class="products-single fix px-4 py-4">
-                          <a href="#">
+                            <a href="/pages/single-product.html">
                             <div class="box-img-hover">
                                 <!-- <div class="type-lb">
                                     <p class="sale">Sale</p>
@@ -187,7 +225,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                                 
                           <div class="products-single fix px-4 py-4">
-                            <a href="#">
+                            <a href="/pages/single-product.html">
                               <div class="box-img-hover">
                                   <!-- <div class="type-lb">
                                       <p class="sale">Sale</p>
@@ -212,7 +250,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                               
                       <div class="products-single fix px-4 py-4">
-                      <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -237,7 +275,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                       
                       <div class="products-single fix px-4 py-4">
-                          <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -262,7 +300,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                               
                       <div class="products-single fix px-4 py-4">
-                          <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -287,7 +325,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                               
                       <div class="products-single fix px-4 py-4">
-                      <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -312,7 +350,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                       
                       <div class="products-single fix px-4 py-4">
-                          <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -337,7 +375,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                               
                       <div class="products-single fix px-4 py-4">
-                          <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -362,7 +400,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                               
                       <div class="products-single fix px-4 py-4">
-                      <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -387,7 +425,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                       
                       <div class="products-single fix px-4 py-4">
-                          <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -424,7 +462,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                               
                         <div class="products-single fix px-4 py-4">
-                          <a href="#">
+                            <a href="/pages/single-product.html">
                             <div class="box-img-hover">
                                 <!-- <div class="type-lb">
                                     <p class="sale">Sale</p>
@@ -449,7 +487,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                                 
                       <div class="products-single fix px-4 py-4">
-                        <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -474,7 +512,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                         
                         <div class="products-single fix px-4 py-4">
-                          <a href="#">
+                            <a href="/pages/single-product.html">
                             <div class="box-img-hover">
                                 <!-- <div class="type-lb">
                                     <p class="sale">Sale</p>
@@ -499,7 +537,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                                 
                           <div class="products-single fix px-4 py-4">
-                            <a href="#">
+                            <a href="/pages/single-product.html">
                               <div class="box-img-hover">
                                   <!-- <div class="type-lb">
                                       <p class="sale">Sale</p>
@@ -524,7 +562,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                               
                       <div class="products-single fix px-4 py-4">
-                      <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -549,7 +587,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                       
                       <div class="products-single fix px-4 py-4">
-                          <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -574,7 +612,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                               
                       <div class="products-single fix px-4 py-4">
-                          <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -599,7 +637,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                               
                       <div class="products-single fix px-4 py-4">
-                      <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -624,7 +662,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                       
                       <div class="products-single fix px-4 py-4">
-                          <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -649,7 +687,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                               
                       <div class="products-single fix px-4 py-4">
-                          <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -674,7 +712,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                               
                       <div class="products-single fix px-4 py-4">
-                      <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -699,7 +737,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                       
                       <div class="products-single fix px-4 py-4">
-                          <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -737,7 +775,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                               
                         <div class="products-single fix px-4 py-4">
-                          <a href="#">
+                            <a href="/pages/single-product.html">
                             <div class="box-img-hover">
                                 <!-- <div class="type-lb">
                                     <p class="sale">Sale</p>
@@ -762,7 +800,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                                 
                       <div class="products-single fix px-4 py-4">
-                        <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -787,7 +825,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                         
                         <div class="products-single fix px-4 py-4">
-                          <a href="#">
+                            <a href="/pages/single-product.html">
                             <div class="box-img-hover">
                                 <!-- <div class="type-lb">
                                     <p class="sale">Sale</p>
@@ -812,7 +850,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                                 
                           <div class="products-single fix px-4 py-4">
-                            <a href="#">
+                            <a href="/pages/single-product.html">
                               <div class="box-img-hover">
                                   <!-- <div class="type-lb">
                                       <p class="sale">Sale</p>
@@ -837,7 +875,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                               
                       <div class="products-single fix px-4 py-4">
-                      <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -862,7 +900,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                       
                       <div class="products-single fix px-4 py-4">
-                          <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -887,7 +925,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                               
                       <div class="products-single fix px-4 py-4">
-                          <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -912,7 +950,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                               
                       <div class="products-single fix px-4 py-4">
-                      <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -937,7 +975,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                       
                       <div class="products-single fix px-4 py-4">
-                          <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -962,7 +1000,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                               
                       <div class="products-single fix px-4 py-4">
-                          <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -987,7 +1025,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                               
                       <div class="products-single fix px-4 py-4">
-                      <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -1012,7 +1050,7 @@ $page_title = 'marketplace'
                       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                       
                       <div class="products-single fix px-4 py-4">
-                          <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -1050,7 +1088,7 @@ $page_title = 'marketplace'
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                               
                       <div class="products-single fix px-4 py-4">
-                        <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -1075,7 +1113,7 @@ $page_title = 'marketplace'
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                               
                     <div class="products-single fix px-4 py-4">
-                      <a href="#">
+                        <a href="/pages/single-product.html">
                         <div class="box-img-hover">
                             <!-- <div class="type-lb">
                                 <p class="sale">Sale</p>
@@ -1100,7 +1138,7 @@ $page_title = 'marketplace'
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                       
                       <div class="products-single fix px-4 py-4">
-                        <a href="#">
+                        <a href="/pages/single-product.html">
                           <div class="box-img-hover">
                               <!-- <div class="type-lb">
                                   <p class="sale">Sale</p>
@@ -1125,7 +1163,7 @@ $page_title = 'marketplace'
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                               
                         <div class="products-single fix px-4 py-4">
-                          <a href="#">
+                            <a href="/pages/single-product.html">
                             <div class="box-img-hover">
                                 <!-- <div class="type-lb">
                                     <p class="sale">Sale</p>
@@ -1150,7 +1188,7 @@ $page_title = 'marketplace'
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                             
                     <div class="products-single fix px-4 py-4">
-                    <a href="#">
+                        <a href="/pages/single-product.html">
                         <div class="box-img-hover">
                             <!-- <div class="type-lb">
                                 <p class="sale">Sale</p>
@@ -1175,7 +1213,7 @@ $page_title = 'marketplace'
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                     
                     <div class="products-single fix px-4 py-4">
-                        <a href="#">
+                        <a href="/pages/single-product.html">
                         <div class="box-img-hover">
                             <!-- <div class="type-lb">
                                 <p class="sale">Sale</p>
@@ -1200,7 +1238,7 @@ $page_title = 'marketplace'
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                             
                     <div class="products-single fix px-4 py-4">
-                        <a href="#">
+                        <a href="/pages/single-product.html">
                         <div class="box-img-hover">
                             <!-- <div class="type-lb">
                                 <p class="sale">Sale</p>
@@ -1225,7 +1263,7 @@ $page_title = 'marketplace'
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                             
                     <div class="products-single fix px-4 py-4">
-                    <a href="#">
+                        <a href="/pages/single-product.html">
                         <div class="box-img-hover">
                             <!-- <div class="type-lb">
                                 <p class="sale">Sale</p>
@@ -1250,7 +1288,7 @@ $page_title = 'marketplace'
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                     
                     <div class="products-single fix px-4 py-4">
-                        <a href="#">
+                        <a href="/pages/single-product.html">
                         <div class="box-img-hover">
                             <!-- <div class="type-lb">
                                 <p class="sale">Sale</p>
@@ -1275,7 +1313,7 @@ $page_title = 'marketplace'
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                             
                     <div class="products-single fix px-4 py-4">
-                        <a href="#">
+                        <a href="/pages/single-product.html">
                         <div class="box-img-hover">
                             <!-- <div class="type-lb">
                                 <p class="sale">Sale</p>
@@ -1300,7 +1338,7 @@ $page_title = 'marketplace'
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                             
                     <div class="products-single fix px-4 py-4">
-                    <a href="#">
+                        <a href="/pages/single-product.html">
                         <div class="box-img-hover">
                             <!-- <div class="type-lb">
                                 <p class="sale">Sale</p>
@@ -1325,7 +1363,7 @@ $page_title = 'marketplace'
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                     
                     <div class="products-single fix px-4 py-4">
-                        <a href="#">
+                        <a href="/pages/single-product.html">
                         <div class="box-img-hover">
                             <!-- <div class="type-lb">
                                 <p class="sale">Sale</p>
@@ -1363,42 +1401,7 @@ $page_title = 'marketplace'
     </div>
 
     <!-- LEFT -->
-      <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-left  mt-5" >
-        <div class="product-categori mt-1 ">
-            <div class="search-product ">
-                <form action="#">
-                    <input class="form-control rounded" placeholder="Search here..." type="text">
-                    <button type="submit"> <i class="fa fa-search rounded"></i> </button>
-                </form>
-            </div>
-            
-            <div class="filter-sidebar-left pe-5">
-                <div class="title-left">
-                    <h3>Categories</h3>
-                </div>
-                
-                <ul class="nav nav-pills nav-ul d-block ms-5 py-3 rounded" style="background-color: #57744B;">
-                        
-                <li class="nav-item cat nav_list py-1 mx-3 my-2 rounded cat-nav " role="presentation">
-                  <a class="nav-link cat-item text-dark" id="cat-all-tab" data-bs-toggle="tab" data-bs-target="#cat-all" href="#" style="color: black;"><i class="fa-solid fa-basket-shopping" style="font-size: 20px ;"></i>  ALL</a>
-                </li>
-                <li class="nav-item cat nav_list py-1 mx-3 my-2 rounded cat-nav  " role="presentation">
-                  <a class="nav-link cat-item  text-dark" id="cat-veg-tab" data-bs-toggle="tab" data-bs-target="#cat-veg" href="#" style="color: black;"> <i class="	fas fa-carrot" style="font-size: 20px ;"></i> VEGETABLES</a>
-                </li>
-                <li class="nav-item cat nav_list py-1 mx-3 my-2 rounded cat-nav " role="presentation">
-                  <a class="nav-link cat-item  text-dark" id="cat-fruit-tab" data-bs-toggle="tab" data-bs-target="#cat-fruit" href="#" style="color: black;"> <i class="	fas fa-apple-alt" style="font-size: 20px ;"></i> FRUITS</a>
-                </li>
-                <li class="nav-item cat nav_list py-1 mx-3 my-2 rounded cat-nav" role="presentation" >
-                  <a class="nav-link cat-item  text-dark" id="cat-crop-tab" data-bs-toggle="tab" data-bs-target="#cat-crop" href="#" style="color: black;"><i class="fa-solid fa-wheat"></i>CROPS</a>
-                </li>
-                <!-- text-white link-dark -->
-            
-
-                </ul>
-            </div>
-          
-        </div>
-    </div>
+   
   </div>
 
   <nav aria-label="page-navigation">
