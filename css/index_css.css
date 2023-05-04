@@ -29,7 +29,7 @@ body {
 	color: #fff;
 
 }
-.carousel-control-next-icon:after {
+/* .carousel-control-next-icon:after {
 	content: '>';
 	font-size: 55px;
 	color: white;
@@ -38,7 +38,7 @@ body {
 	content: '<';
 	font-size: 55px;
 	color: #fff;
-}
+} */
 .carousel-indicators [data-bs-target] {
 	background-color: white;
 }
@@ -93,12 +93,12 @@ body {
 		height: 50px;
 		width: 50px;
 	}
-	.carousel-control-next-icon:after {
+	/* .carousel-control-next-icon:after {
 		font-size: 30px;
 	}
 	.carousel-control-prev-icon:after {
 		font-size: 30px;
-	}
+	} */
 
  
 

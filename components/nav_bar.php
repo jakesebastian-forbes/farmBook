@@ -1,14 +1,16 @@
-<?php ?>
+
 <!DOCTYPE html5>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <!-- <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <title>Document</title> -->
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../bootstrap-5.2.2/css/bootstrap.min.css"/>
+
+  
+    <link rel="stylesheet" href="bootstrap-5.2.2\css\bootstrap.min.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Archivo Black' rel='stylesheet'>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
@@ -55,9 +57,21 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="color: #FFDE59 ; ">
        <!--======================= di nagana pag nasa index=================== -->
-          <li class="nav-item" ><a class="nav-link" href="../index.php" style=" color: #FFDE59;"   id="link_home"><i class="fa fa-fw fa-home fa-2x"></i>Home</a></li>
+       <?php
+            if($page_title != 'index'){
+
+              echo '<li class="nav-item" ><a class="nav-link" href="../pages_php\feed.php" style=" color: #FFDE59;"   id="link_home"><i class="fa fa-fw fa-home fa-2x"></i>Home</a></li>';
+            }
+            else{
+              echo '  <li class="nav-item" ><a class="nav-link" href="../index.php" style=" color: #FFDE59;"   id="link_home"><i class="fa fa-fw fa-home fa-2x"></i>Home</a></li>';
+
+            }
+
+          ?>
+        
           <li class="nav-item" ><a class="nav-link" href="aboutUs.php" style=" color: #FFDE59;" id="link_about"><i class="fa fa-fw fa-circle-info fa-2x"></i>About Us</a></li>
-          <li class="nav-item" ><a class="nav-link" href="e-learning2.php" style=" color: #FFDE59;" id="link_e-learning"><i class="fa fa-fw fa-book fa-2x"></i>E-Learning</a></li>
+          <li class="nav-item" ><a class="nav-link" href="e-learning.php" style=" color: #FFDE59;" id="link_e-learning"><i class="fa fa-fw fa-book fa-2x"></i>E-Learning</a></li>
+         
           <!-- <li class="nav-item" ><a class="nav-link"  href="contact.html"><i class="fa fa-fw fa-phone fa-2x"></i>Contact</i></a></li> -->
         </ul>
 

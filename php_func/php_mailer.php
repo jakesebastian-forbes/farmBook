@@ -7,7 +7,7 @@ use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
-require '.\dependencies\phpmailer\vendor\autoload.php';
+require 'dependencies\phpmailer\vendor\autoload.php';
 require 'generate_otp.php';
 
 function send_otp($send_to_mail,$send_to_name){

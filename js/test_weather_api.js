@@ -100,3 +100,6 @@ $("#btn_txtloc").click(function(){ //! doesn't work just yet
   get_weather();
 });
  
+
+
+

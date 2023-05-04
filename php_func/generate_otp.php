@@ -26,6 +26,6 @@ function generateNumericOTP($n)
 }
 
 // Main program
-$n = 7;
-echo generateNumericOTP(7);
+// $n = 7;
+// echo generateNumericOTP(7);
 ?>
