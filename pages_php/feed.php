@@ -1,6 +1,7 @@
 <?php
  session_start();
  $page_title = 'feed';
+//  $acc_in_sess = $_SESSION['acc_id'];
 ?>
 
 <html lang="en">
@@ -108,7 +109,7 @@
       Background-color:rgb(219, 219, 219)
   }
 
-  .like-btn:active {
+  .like-btn-active {
       Background-color:rgb(219, 219, 219,0.5);
       color: blue;
   }
@@ -306,24 +307,23 @@
 
       <?php 
      
-      
 $conn = new mysqli('localhost','root','','farmbook_db');
 
 if($conn->connect_error){
   die('Connection failed : ' . $conn->connect_error);
  }else{
 
-$query = "SELECT t1.id, t1.firstName, t1.lastName,t2.profileImg,t2.dateTime, t2.status 
+$query = 'SELECT t1.id, t1.firstName, t1.lastName,t2.profilePic,t2.dateTime, t2.status 
 FROM `accounts` as t1
-INNER JOIN `profile_images` as t2
+INNER JOIN `profile_pictures` as t2
 ON t1.id = t2.acc_id
-WHERE (t1.firstName = 'Monkey' and t1.lastName = 'Luffy') AND status = 1";
+WHERE (t1.id = "'.$_SESSION['acc_id'].'") AND status = 1';
 
 $result = mysqli_query($conn,$query);
 
 while($rows = mysqli_fetch_assoc($result))
     {
-      $profile = 'src=data:image/jpeg;base64,'.base64_encode( $rows['profileImg']) ;
+      $profile = 'src=data:image/jpeg;base64,'.base64_encode( $rows['profilePic']) ;
     }
   }
       ?>
@@ -1808,7 +1808,7 @@ while($rows = mysqli_fetch_assoc($result))
 
 <?php
 
-
+// posts
 $conn = new mysqli('localhost','root','','farmbook_db');
 
 if($conn->connect_error){
@@ -1829,7 +1829,7 @@ while($rows = mysqli_fetch_assoc($result))
     ?>
   
               <!-- p 1 -->
-              <div class="bg-white p-4 rounded shadow mt-3">
+              <div class="bg-white p-4 rounded shadow mt-3" id= <?php echo $post_id?>>
                 <!-- author -->
                 <div class="d-flex justify-content-between">
                   <!-- avatar -->
@@ -1853,7 +1853,7 @@ while($rows = mysqli_fetch_assoc($result))
                       <div style = "display: flex; flex-wrap: wrap;">
 
 <?PHP
-if($rows['Medias'] != NULL){
+if($rows['Medias'] != NULL){  //posts' media/s
 
   $conn2 = new mysqli('localhost','root','','farmbook_db');
 
@@ -1940,30 +1940,118 @@ onclick = "img_view(this.id)"/>
                         <!-- comment & like bar -->
                         <div class="d-flex justify-content-around">
                           <div class=" dropdown-item rounded d-flex justify-content-center align-items-center pointer p-1 ">
-                            <button type="button" class="like-btn "> <span class="d-flex justify-content-center "><i class="fas fa-thumbs-up mt-1 mx-3"></i><p class="m-0" >Like</p></span></button>
+                          <?php
                             
+                            //posts' media/s
+
+                              $conn3 = new mysqli('localhost','root','','farmbook_db');
+                              try{
+                              if($conn3->connect_error){
+                                die('Connection failed : ' . $conn3->connect_error);
+                               }else{
+                                
+                               $query3 = "SELECT `id`,`acc_id`,`posting_id`,`data`,`dateModified` 
+                               FROM `posting_interactions` WHERE (`acc_id` = '".$_SESSION['acc_id']."' AND
+                                `posting_id` = '$post_id') and `data` = 'LIKE';";
+                              
+                              $result3 = mysqli_query($conn3,$query3);
+                              
+                              if($rows3 = mysqli_fetch_assoc($result3)){
+                              
                             
+                                  echo "<button type='button' class='like-btn' id = 'like_btn_".$post_id."' 
+                                  value = 'true'
+                                  onclick = 'toggle_like(this.id,this.value,`".$_SESSION['acc_id']."`)'>";
+      
+                                  echo '<span class="d-flex justify-content-center ">
+                                  <i class = "fas fa-thumbs-up mt-1 mx-3" style="color: blue;"></i>
+                                  <p class = "m-0" style="color: blue;">Liked</p></span>
+                                </button>';
+                            
+        
+                          }else{
+                            
+                            echo "<button type='button' class='like-btn' id = 'like_btn_".$post_id."' 
+                            value = 'false'
+                            onclick = 'toggle_like(this.id,this.value,`".$_SESSION['acc_id']."`)'>";
+
+                            echo '<span class="d-flex justify-content-center ">
+                            <i class="fas fa-thumbs-up mt-1 mx-3" style="color: black;"></i>
+                            <p class="m-0" style="color: black;">Like</p></span>
+                          </button>';
+                          // }
+
+                          }
+                        }
+                      }
+                      catch(Exception $e){
+                        echo $e;
+                    
+                    }
+                            ?>
+                        
                           </div>
+
+
                           <div class=" dropdown-item rounded d-flex justify-content-center align-items-center pointer p-1 ">
-                          <button type="button" class="comment-btn " data-bs-toggle="collapse"  data-bs-target="#collapsePost1" aria-expanded="false"   aria-controls="collapsePost1"> <span class="d-flex justify-content-center "><i class="fa-solid fa-comment mt-1 mx-3"></i><p class="m-0" >Comment</p></span></button>
+                          <button type="button" class="comment-btn " data-bs-toggle="collapse"  
+                          data-bs-target="<?php echo '#comment_section_'.$post_id ?>" aria-expanded="false" 
+                            aria-controls="comment_section_"> 
+                            <span class="d-flex justify-content-center ">
+                              <i class="fa-solid fa-comment mt-1 mx-3"></i>
+                              <p class="m-0" >Comment</p>
+                            </span></button>
                             
                             
                           </div>
                         </div>
                         <!-- comment expand -->
-                        <div id="collapsePost1"  class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div id="<?php echo'comment_section_'.$post_id ?>"  
+                        class="accordion-collapse collapse" aria-labelledby="headingTwo" 
+                        data-bs-parent="#accordionExample">
                           <hr />
                           <div class="accordion-body">
                             <!-- comment 1 -->
-                            <div class="comment-1 d-flex align-items-center p-2">
+
+                            <?php
+                            
+                            //posts' media/s
+
+                              $conn4 = new mysqli('localhost','root','','farmbook_db');
+                              try{
+                              if($conn4->connect_error){
+                                die('Connection failed : ' . $conn4->connect_error);
+                               }else{
+                                
+                               $query4 = "SELECT t1.id as `comment_id`,t1.acc_id,t1.posting_id,t1.data as `comment`,t1.dateModified,
+                               t2.id, CONCAT(t2.firstName,' ',t2.lastName) as fullname,
+                               t3.profilePic as `profile_pic`,t3.status
+                               FROM posting_interactions as t1
+                               JOIN accounts as t2 
+                               ON t1.acc_id = t2.id 
+                               JOIN profile_pictures as t3
+                               ON t2.id = t3.acc_id
+                               WHERE t1.data != 'LIKE' 
+                               AND t1.posting_id = '$post_id'
+                               AND t3.status = '1'";
+                              
+                              $result4 = mysqli_query($conn4,$query4);
+                              
+                              while($rows4 = mysqli_fetch_assoc($result4)){
+                              
+                              ?>
+                            <div class="comment d-flex align-items-center p-2" id = "comment_<?php echo $rows4['comment_id']?>">
                               <!-- avatar -->
-                              <img src="../img/profile pics/profile5.jpg" alt="avatar" class="rounded-circle me-2"  style="width: 40px;height: 40px;object-fit: cover;"/>
+                              <img <?php echo 'src=data:image/jpeg;base64,'.base64_encode($rows4['profile_pic'])?>
+                               alt="avatar" class="rounded-circle me-2" 
+                               style="width: 40px;height: 40px;object-fit: cover;"/>
                               <!-- comment text -->
                               <div class="p-3 rounded comment__input w-100">
                                 <!-- comment menu of author -->
                                 <div class="d-flex justify-content-end">
                                   <!-- icon -->
-                                  <i class="fas fa-ellipsis-h text-blue pointer" id="post1CommentMenuButton" data-bs-toggle="dropdown"aria-expanded="false"></i>
+                                  <i class="fas fa-ellipsis-h text-blue pointer" id="post1CommentMenuButton" 
+                                  data-bs-toggle="dropdown"aria-expanded="false"></i>
                                   <!-- menu -->
                                   <ul
                                     class="dropdown-menu border-0 shadow"
@@ -1978,55 +2066,41 @@ onclick = "img_view(this.id)"/>
                                     </li>
                                   </ul>
                                 </div>
-                                <p class="fw-bold m-0">Paul Walker</p>
+                                <p class="fw-bold m-0"><?php echo $rows4['fullname']?></p>
                                 <p class="m-0 fs-7 bg-gray p-2 rounded">
-                                  Lorem ipsum dolor sit amet, consectetur
-                                  adipiscing elit.
+                                  <?php echo $rows4['comment']?>
                                 </p>
                               </div>
                             </div>
-                            <!-- comment 2 -->
-                            <div class="comment-1 d-flex align-items-center p-2">
-                              <!-- avatar -->
-                              <img src="../img/profile pics/profile6.jpg" alt="avatar" class="rounded-circle me-2"  style="width: 40px;height: 40px;object-fit: cover;"/>
-                              <!-- comment text -->
-                              <div class="p-3 rounded comment__input w-100">
-                                <!-- comment menu of author -->
-                                <div class="d-flex justify-content-end">
-                                  <!-- icon -->
-                                  <i class="fas fa-ellipsis-h text-blue pointer" id="post1CommentMenuButton" data-bs-toggle="dropdown"aria-expanded="false"></i>
-                                  <!-- menu -->
-                                  <ul class="dropdown-menu border-0 shadow" aria-labelledby="post1CommentMenuButton" >
-                                   
-                                    <li class="d-flex align-items-center">
-                                      <a class=" dropdown-item d-flex justify-content-around align-items-center fs-7 "  href="#" >
-                                        Delete Comment
-                                      </a
-                                      >
-                                    </li>
-                                  </ul>
-                                </div>
-                                <p class="fw-bold m-0">Peter Parker</p>
-                                <p class="m-0 fs-7 bg-gray p-2 rounded">
-                                  Lorem ipsum dolor sit amet, consectetur
-                                  adipiscing elit.
-                                </p>
-                              </div>
-                             
-                            </div>
+                            <?php
+                            
+                              }
+                               }
+                              }catch(Exception $e){
+                                echo $e;
+                              }
+    
+                            ?>
+                         
+                           
                             <!-- create comment -->
-                            <form class="d-flex my-1">
+                            <!-- <form class="d-flex my-1"> -->
                               <!-- avatar -->
                               <div class="input-comment d-flex  align-items-center p-3" style="width: 100%;">
                               <div>
-                                <img src="../img/profile pics/profile.jpg "alt=" avatar "class="rounded-circle me-2" style=" width: 38px;height: 38px;object-fit: cover;"/>
+                                <img <?php echo $profile?> alt=" avatar "class="rounded-circle me-2" 
+                                style=" width: 38px;height: 38px;object-fit: cover;"/>
                               </div>
                               <!-- input -->
                               
-                                <input type="text" class="form-control border-0 rounded-pill bg-gray" placeholder="Write a comment" />
+                                <input type="text" class="form-control border-0 rounded-pill bg-gray"
+                                 placeholder="Write a comment" />
+                                <button type="submit" onclick = "">send</button>
+                                
+
                               </div>
                           
-                            </form>
+                            <!-- </form> -->
                             <!-- end -->
                           </div>
                         </div>
@@ -2038,6 +2112,10 @@ onclick = "img_view(this.id)"/>
               </div>
   
 <?php
+
+    
+
+
     }
   }
 ?>
@@ -2083,7 +2161,9 @@ onclick = "img_view(this.id)"/>
         integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
         crossorigin="anonymous"
       ></script>
+      <script src="../dependencies\jquery-3.6.4.js"></script>
       <script src="./main.js"></script>
+      <script src="../js\like_toggle.js"></script>
 
       <script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 15,cityid: '1698032',appid: 'e2630aae7335274da681acc3f37f2620',units: 'metric',containerid: 'openweathermap-widget-15',  });  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script>
 
