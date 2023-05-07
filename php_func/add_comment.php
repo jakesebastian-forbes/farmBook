@@ -21,9 +21,7 @@ if($conn->connect_error){
   $stmt->bind_param("sssss", $uuid,$user_id,$post_id,$data_,$timestamp);
   $stmt->execute();
   
-  echo "
-  
-  ";
+  echo $uuid;
 
 }
 

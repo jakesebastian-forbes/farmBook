@@ -850,7 +850,7 @@
 
     <!-- footer start-->
     
-    <footer class="bg-light text-dark pt-5 pb-4" style="margin-top: 3%; width: 101%;">
+    <!-- <footer class="bg-light text-dark pt-5 pb-4" style="margin-top: 3%; width: 101%;">
       <div class="container text-center text-md-left">
           <div class="row text-center text-md-left">
                   <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
@@ -953,7 +953,8 @@
   
           </div>
       </div>
-  </footer>
+  </footer> -->
+  <?php include "../components/footer.php"?>
 
   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">

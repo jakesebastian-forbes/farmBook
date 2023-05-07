@@ -114,7 +114,7 @@
 
   .like-btn-active {
       Background-color:rgb(219, 219, 219,0.5);
-      color: blue;
+      color: green;
   }
 
   .comment-1:hover{
@@ -363,7 +363,7 @@ while($rows = mysqli_fetch_assoc($result))
                     style="min-height: 40px; min-width: 300px"
                   >
                     <i class="fas fa-search me-1 text-muted"></i>
-                    <p class="m-0 fs-7 text-muted">Search Flexbook</p>
+                    <p class="m-0 fs-7 text-muted">Search</p>
                   </div>
                 </span>
                 <!-- search menu -->
@@ -515,30 +515,30 @@ while($rows = mysqli_fetch_assoc($result))
                       </div>
                    
                       <div>
-                        <p class="m-0">Friends</p>
-                        <span class="fs-7 text-muted" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio, commodi.</span>
+                        <p class="m-1 h4">Friends</p>
+                        <!-- <span class="fs-7 text-muted" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio, commodi.</span> -->
                       </div>
                     </a>
                   </li>
                   <!-- s2 -->
                   <li class="my-2 p-1">
-                    <a href="#" class="text-decoration-none text-dark d-flex align-items-centerjustify-content-between ">
+                    <a href="full_forecast_navbar.php" class="text-decoration-none text-dark d-flex align-items-centerjustify-content-between ">
                       <div class="p-2"> 
                    
-                        <i class="fas fa-cloud-sun "   style="font-size: 35px; object-fit: cover;"></i>
+                        <i class="fas fa-shop "   style="font-size: 35px; object-fit: cover;"></i>
                         
                       </div>
                    
                       <div>
-                        <p class="m-0">Weather</p>
-                        <span class="fs-7 text-muted" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio, commodi.</span>
+                        <p class="m-1 h4">Weather</p>
+                        <!-- <span class="fs-7 text-muted" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio, commodi.</span> -->
                       </div>
                     </a>
                   </li>
   
                    <!-- s3 -->
                    <li class="my-2 p-1">
-                    <a href="#" class="text-decoration-none text-dark d-flex align-items-centerjustify-content-between ">
+                    <a href="e-learning.php" class="text-decoration-none text-dark d-flex align-items-centerjustify-content-between ">
                       <div class="p-2"> 
                    
                         <i class="fa-solid fa-book" style="font-size: 35px; object-fit: cover;"></i>
@@ -546,8 +546,8 @@ while($rows = mysqli_fetch_assoc($result))
                       </div>
                    
                       <div>
-                        <p class="m-0">E-Learning</p>
-                        <span class="fs-7 text-muted" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio, commodi.</span>
+                        <p class="m-1 h4">E-Learning</p>
+                        <!-- <span class="fs-7 text-muted" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio, commodi.</span> -->
                       </div>
                     </a>
                   </li>
@@ -759,13 +759,14 @@ while($rows = mysqli_fetch_assoc($result))
                 style="width: 23em"
               >
                 <!-- avatar -->
-                <li class="dropdown-item p-1 rounded d-flex" type="button">
+                <li class="dropdown-item p-1 rounded d-flex">
                  <img <?php echo $profile?> class="rounded-circle me-2" alt="avatar" style="width: 40px; height: 40px; object-fit: cover"
                  id = "dropdown_profile"/>
-                
+                  <!--  -->
                   <div>
-                    <p class="m-0"><?php echo $_SESSION['firstName']." ".$_SESSION['lastName']?></p>
-                    <p class="m-0 text-muted">See your profile</p>
+                    <p class="m-0" id ="small_name"><?php echo $_SESSION['firstName']." ".$_SESSION['lastName']?></p>
+                    <a href="../pages/profile-em.html">
+                    <p class="m-0 text-muted">See your profile</p></a>
                   </div>
                 </li>
            
@@ -1162,9 +1163,6 @@ while($rows = mysqli_fetch_assoc($result))
                 <div class="d-flex align-items-center mx-2    ">
               
                   <button type="submit" class="send_btn" > <i class="material-icons">send</i></button>
-                   
-                
-             
                 </div>
               </div>
             </div>
@@ -1590,7 +1588,7 @@ while($rows = mysqli_fetch_assoc($result))
                   </div>
                   <div>
                     <!-- <p class="m-0">Mac Miller</p> -->
-                    <h3 class="m-0"><?php echo $_SESSION['firstName']." ".$_SESSION['lastName']?></h3>
+                    <h3 class="m-0" id = "big_name"><?php echo $_SESSION['firstName']." ".$_SESSION['lastName']?></h3>
                   </div>
                 </a>
               </div>
@@ -1648,59 +1646,84 @@ while($rows = mysqli_fetch_assoc($result))
   
             <h4 class="mx-4">Friend Requests</h4>
            <div class="friend-sidebar mx-4" style="overflow: auto; overflow-y: scroll; height: 302px; width: 90%; ;" >
-            <!-- request 1 -->
-              <div class="requests d-block bg-light my-2 py-1 px-4 mx-1 rounded" style="height: 130px;">
-                <div class="info d-flex my-1 gap-2 pt-2" >
-                  <div class="req-profile-pic " >
-                      <img src="../img/profile pics/profile6.jpg"  class="friend-req-prof rounded-circle " style="height: 50px; width: 50px;" >
-                  </div>
-                  <div class="">
-                      <h5>Peter Parker</h5>
-                      <p class="text-muted">8 mutual friends</p>
-                      
-                  </div>
-              </div>
-              <div class="action ">
-                  <button class="btn btn-primary btn-sm">Accept</button>
-                  <button class="btn btn-secondary btn-sm">Decline</button>
-              </div>
-              </div>
-              <!-- request 2 -->
-              <div class="requests d-block bg-light my-2 py-1 px-4 mx-1 rounded" style="height: 130px;">
-                <div class="info d-flex my-1 gap-2 pt-2" >
-                  <div class="req-profile-pic " >
-                      <img src="../img/profile pics/profile6.jpg"  class="friend-req-prof rounded-circle " style="height: 50px; width: 50px;" >
-                  </div>
-                  <div class="">
-                      <h5>Peter Parker</h5>
-                      <p class="text-muted">8 mutual friends</p>
-                      
-                  </div>
-              </div>
-              <div class="action ">
-                  <button class="btn btn-primary btn-sm">Accept</button>
-                  <button class="btn btn-secondary btn-sm">Decline</button>
-              </div>
-              </div>
 
-               <!-- request 2 -->
-               <div class="requests d-block bg-light my-2 py-1 px-4 mx-1 rounded" style="height: 130px;">
+           <?php 
+     
+     $conn_fr = new mysqli('localhost','root','','farmbook_db');
+     
+     if($conn_fr->connect_error){
+       die('Connection failed : ' . $conn_fr->connect_error);
+      }else{
+     
+     $query_fr = "SELECT ai.id as `post_id`, p.profilePic as `profile`,
+     CONCAT(b.firstName, ' ', b.lastName) AS 'Friend_Request_List', ai.dateTime AS 'Date and Time'
+     FROM account_interactions ai
+     INNER JOIN accounts a ON ai.user2_id = a.id
+     INNER JOIN accounts b ON ai.accOwner_id = b.id
+     LEFT JOIN profile_pictures p ON a.id = p.acc_id
+     WHERE interactionType = 'Added' 
+     AND a.id = '".$_SESSION['acc_id']."'  AND p.status = 1
+     AND NOT EXISTS (
+       SELECT 1
+       FROM account_interactions ai2
+       WHERE ai2.user2_id = a.id
+       AND ai2.accOwner_id = b.id
+       AND ai2.interactionType IN ('Blocked', 'Accepted'))
+     AND NOT EXISTS (
+       SELECT 1
+       FROM account_interactions ai2
+       WHERE ai2.user2_id = b.id
+       AND ai2.accOwner_id = a.id
+       AND ai2.interactionType IN ('Blocked', 'Accepted'))";
+     
+      // echo $query_fr;
+     $result_fr = mysqli_query($conn_fr,$query_fr);
+     
+     if(mysqli_num_rows($result_fr) == 0){
+      echo "<p>No pending friend requests.</p>";
+      
+    }
+    else{
+      while($rows_fr = mysqli_fetch_assoc($result_fr))
+      {
+
+       if($rows_fr['profile'] == NULL){
+         $profile_fr = "src = ../img/avatar_placeholder.png";
+       }else{
+        $profile_fr = 'src=data:image/jpeg;base64,'.base64_encode($rows_fr['profile']) ;
+       }
+    
+    
+    
+    ?>
+
+
+            <!-- request  -->
+              <div class="requests d-block bg-light my-2 py-1 px-4 mx-1 rounded" style="height: 130px;"
+              id = "<?php echo "fr_".$rows_fr['post_id']?>">
                 <div class="info d-flex my-1 gap-2 pt-2" >
-                  <div class="req-profile-pic " >
-                      <img src="../img/profile pics/profile6.jpg"  class="friend-req-prof rounded-circle " style="height: 50px; width: 50px;" >
+                  <div class="req-profile-pic" >
+                      <img <?php echo $profile_fr?> class="friend-req-prof rounded-circle " style="height: 50px; width: 50px;" >
                   </div>
                   <div class="">
-                      <h5>Peter Parker</h5>
-                      <p class="text-muted">8 mutual friends</p>
-                      
+                      <h5><?php echo $rows_fr['Friend_Request_List']?></h5>
+                      <!-- <p class="text-muted">8 mutual friends</p> -->
+                      <?php echo "haysst";?>
                   </div>
               </div>
               <div class="action ">
-                  <button class="btn btn-primary btn-sm">Accept</button>
+                  <button class="btn btn-primary btn-sm bg-success" >Accept</button>
                   <button class="btn btn-secondary btn-sm">Decline</button>
               </div>
               </div>
+             
+               
             
+            <?php
+      }
+            }
+          }
+            ?>
              
            </div>
   
@@ -1945,7 +1968,7 @@ onclick = "img_view(this.id)"/>
                           <div class=" dropdown-item rounded d-flex justify-content-center align-items-center pointer p-1 ">
                           <?php
                             
-                            //posts' media/s
+                 
 
                               $conn3 = new mysqli('localhost','root','','farmbook_db');
                               try{
@@ -2018,7 +2041,7 @@ onclick = "img_view(this.id)"/>
 
                             <?php
                             
-                            //posts' media/s
+                            //comment
 
                               $conn4 = new mysqli('localhost','root','','farmbook_db');
                               try{
@@ -2036,7 +2059,8 @@ onclick = "img_view(this.id)"/>
                                ON t2.id = t3.acc_id
                                WHERE t1.data != 'LIKE' 
                                AND t1.posting_id = '$post_id'
-                               AND t3.status = '1'";
+                               AND t3.status = '1'
+                               ORDER BY t1.dateModified ASC";
                               
                               $result4 = mysqli_query($conn4,$query4);
                               
@@ -2089,8 +2113,13 @@ onclick = "img_view(this.id)"/>
                             <!-- create comment -->
                             <!-- <form class="d-flex my-1"> -->
                               <!-- avatar -->
-                              <div class="input-comment d-flex  align-items-center p-3" style="width: 100%;">
-                              <div>
+                           
+                          
+                     
+                          </div> <!-- accordion end-->
+
+                          <div class="input-comment d-flex  align-items-center p-3" style="width: 100%;" id ="write_comment">
+                              <div id = "profile_icon">
                                 <img <?php echo $profile?> alt=" avatar "class="rounded-circle me-2" 
                                 style=" width: 38px;height: 38px;object-fit: cover;"/>
                               </div>
@@ -2105,13 +2134,7 @@ onclick = "img_view(this.id)"/>
 
                                  <!-- use this instead of the enter button to send a comment -->
                                 <button type="submit" onclick = "submit_comment('<?php echo $post_id?>','<?php echo $_SESSION['acc_id']?>')">send</button>
-                                
-
                               </div>
-                          
-                            <!-- </form> -->
-                            <!-- end -->
-                          </div>
                         </div>
                       </div>
                     </div>
@@ -2146,7 +2169,7 @@ onclick = "img_view(this.id)"/>
                     <div id="openweathermap-widget-15"></div>
                       </div>
                     <!-- </div> -->
-                      <a href="full_forecast_navbar.php"><button type="button" class="forecast_btn my-3">See full forecast</button>
+                      <a href="full_forecast_navbar.php"><button type="button" class="forecast_btn my-3 text-white">See full forecast</button>
                       </a>
                     </div>
                   </div>

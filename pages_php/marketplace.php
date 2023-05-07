@@ -1,5 +1,7 @@
 <?php
-$page_title = 'marketplace'
+$page_title = 'marketplace';
+
+require "../php_func/marketplace_content.php";
 
 ?>
 
@@ -100,11 +102,14 @@ $page_title = 'marketplace'
     <div class="row d-flex mx-3">
         <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-right  mt-5" >
             <div class="product-categori mt-1 ">
+                <!-- search box -->
                 <div class="search-product ">
-                    <form action="#">
-                        <input class="form-control rounded" placeholder="Search here..." type="text" style = "color:black;"> 
+                    <!-- <form action="#"> -->
+                        <input class="form-control rounded" placeholder="Search here..." 
+                        type="text" style = "color:black;"
+                        id = "search_products_box"> 
                         <button type="submit"> <i class="fa fa-search rounded"></i> </button>
-                    </form>
+                    <!-- </form> -->
                 </div>
                 
                 <div class="filter-sidebar-left pe-5">
@@ -124,7 +129,7 @@ $page_title = 'marketplace'
                       <a class="nav-link cat-item  text-dark" id="cat-fruit-tab" data-bs-toggle="tab" data-bs-target="#cat-fruit" href="#" style="color: black;"> <i class="	fas fa-apple-alt" style="font-size: 20px ;"></i> FRUITS</a>
                     </li>
                     <li class="nav-item cat nav_list py-1 mx-3 my-2 rounded cat-nav" role="presentation" >
-                      <a class="nav-link cat-item  text-dark" id="cat-crop-tab" data-bs-toggle="tab" data-bs-target="#cat-crop" href="#" style="color: black;"><i class="fa-solid fa-wheat"></i>CROPS</a>
+                      <a class="nav-link cat-item  text-dark" id="cat-crop-tab" data-bs-toggle="tab" data-bs-target="#cat-crop" href="#" style="color: black;"><i class="fa-solid fa-seedling" style="color: #000000;"></i></i>CROPS</a>
                     </li>
                     <!-- text-white link-dark -->
                 
@@ -146,56 +151,15 @@ $page_title = 'marketplace'
                     <div class="row mt-5 mx-1">
                        
                       <h1 class="ms-3">ALL</h1>
-               
+                      <a href="./pages/single-product.html"> 
                       
       <?php 
-     
-     $conn = new mysqli('localhost','root','','farmbook_db');
-     
-     if($conn->connect_error){
-       die('Connection failed : ' . $conn->connect_error);
-      }else{
-     
-     $query = 'SELECT `id`, `accOwner_id`, `productName`, `category`, `product_img`, `description`, `transactionType`, `price` FROM `products` ';
-     
-     $result = mysqli_query($conn,$query);
-     
-     while($rows = mysqli_fetch_assoc($result))
-         {
-           $product_img = 'src=data:image/jpeg;base64,'.base64_encode( $rows['product_img']) ;
-      
-           ?>
-                      <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                              
-                        <div class="products-single fix px-4 py-4" id="product_<?php $rows['id']?>">
-                          <a href="/pages/single-product.html">
-                            <div class="box-img-hover">
-                                <!-- <div class="type-lb">
-                                    <p class="sale">Sale</p>
-                                </div> -->
-                                <img <?php echo $product_img?> class="img-fluid prod-img" alt="Image">
-                                
-                            </div>
-                            <div class="why-text">
-                                <h4><?php echo $rows['productName']?></h4>
-                                <h5><?php echo "₱".$rows['price'].".00"?></h5>
-                            </div>
-                          </a>
-                          <div class="mask-icon justify-content-end d-flex gap-2">
-                                          
-                            <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                            <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                        </div>
-                        </div>
-                        
-                      </div>
-                      <?php
-                      
-                    }
-                }
-                ?>
-  
+        $query = "SELECT ROW_NUMBER() OVER(ORDER BY id ASC) as `row`,`id`, `accOwner_id`, `productName`, `category`, `product_img`, `description`, `transactionType`, `price`
+         FROM `products`";
+        content($query);
 
+                ?>
+                      </a>
                
                     </div>
                 </div>
@@ -211,55 +175,12 @@ $page_title = 'marketplace'
                       <h1 class="ms-3">VEGETABLES</h1>
               
            
-                      
-      <?php 
-     
-     $conn = new mysqli('localhost','root','','farmbook_db');
-     
-     if($conn->connect_error){
-       die('Connection failed : ' . $conn->connect_error);
-      }else{
-     
-     $query = 'SELECT `id`, `accOwner_id`, `productName`, `category`, `product_img`, `description`, `transactionType`, `price` 
-     FROM `products` WHERE `category` = "VEGETABLE"';
-     
-     $result = mysqli_query($conn,$query);
-     
-     while($rows = mysqli_fetch_assoc($result))
-         {
-           $product_img = 'src=data:image/jpeg;base64,'.base64_encode( $rows['product_img']) ;
-      
-           ?>
-                      <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                              
-                        <div class="products-single fix px-4 py-4" id="product_<?php $rows['id']?>">
-                          <a href="/pages/single-product.html">
-                            <div class="box-img-hover">
-                                <!-- <div class="type-lb">
-                                    <p class="sale">Sale</p>
-                                </div> -->
-                                <img <?php echo $product_img?> class="img-fluid prod-img" alt="Image">
-                                
-                            </div>
-                            <div class="why-text">
-                                <h4><?php echo $rows['productName']?></h4>
-                                <h5><?php echo "₱".$rows['price'].".00"?></h5>
-                            </div>
-                          </a>
-                          <div class="mask-icon justify-content-end d-flex gap-2">
-                                          
-                            <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                            <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                        </div>
-                        </div>
-                        
-                      </div>
-                      <?php
-                      
-                    }
-                }
+                      <?php 
+        $query = "SELECT ROW_NUMBER() OVER(ORDER BY id ASC) as `row`,`id`, `accOwner_id`, `productName`, `category`, `product_img`, `description`, `transactionType`, `price`
+         FROM `products` WHERE `category` = 'VEGETABLE'";
+        content($query);
+
                 ?>
-   
             
                     </div>
                 </div>
@@ -274,55 +195,13 @@ $page_title = 'marketplace'
                       
                       <h1 class="ms-3">FRUITS</h1>
                     
-                      
-      <?php 
-     
-     $conn = new mysqli('localhost','root','','farmbook_db');
-     
-     if($conn->connect_error){
-       die('Connection failed : ' . $conn->connect_error);
-      }else{
-     
-     $query = 'SELECT `id`, `accOwner_id`, `productName`, `category`, `product_img`, `description`, `transactionType`, `price` 
-     FROM `products` WHERE `category` = "FRUIT"';
-     
-     $result = mysqli_query($conn,$query);
-     
-     while($rows = mysqli_fetch_assoc($result))
-         {
-           $product_img = 'src=data:image/jpeg;base64,'.base64_encode( $rows['product_img']) ;
-      
-           ?>
-                      <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                              
-                        <div class="products-single fix px-4 py-4" id="product_<?php $rows['id']?>">
-                          <a href="/pages/single-product.html">
-                            <div class="box-img-hover">
-                                <!-- <div class="type-lb">
-                                    <p class="sale">Sale</p>
-                                </div> -->
-                                <img <?php echo $product_img?> class="img-fluid prod-img" alt="Image">
-                                
-                            </div>
-                            <div class="why-text">
-                                <h4><?php echo $rows['productName']?></h4>
-                                <h5><?php echo "₱".$rows['price'].".00"?></h5>
-                            </div>
-                          </a>
-                          <div class="mask-icon justify-content-end d-flex gap-2">
-                                          
-                            <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                            <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                        </div>
-                        </div>
-                        
-                      </div>
-                      <?php
-                      
-                    }
-                }
+    
+                      <?php 
+        $query = "SELECT ROW_NUMBER() OVER(ORDER BY id ASC) as `row`,`id`, `accOwner_id`, `productName`, `category`, `product_img`, `description`, `transactionType`, `price`
+         FROM `products` WHERE `category` = 'FRUIT'";
+        content($query);
+
                 ?>
-  
 
 
 
@@ -341,56 +220,13 @@ $page_title = 'marketplace'
                       
                       <h1 class="ms-3">CROPS</h1>
               
-                      
-      <?php 
-     
-     $conn = new mysqli('localhost','root','','farmbook_db');
-     
-     if($conn->connect_error){
-       die('Connection failed : ' . $conn->connect_error);
-      }else{
-     
-     $query = 'SELECT `id`, `accOwner_id`, `productName`, `category`, `product_img`, `description`, `transactionType`, `price`
-      FROM `products` WHERE `category` = "crop" ';
-     
-     $result = mysqli_query($conn,$query);
-     
-     while($rows = mysqli_fetch_assoc($result))
-         {
-           $product_img = 'src=data:image/jpeg;base64,'.base64_encode( $rows['product_img']) ;
-      
-           ?>
-                      <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                              
-                        <div class="products-single fix px-4 py-4" id="product_<?php $rows['id']?>">
-                          <a href="/pages/single-product.html">
-                            <div class="box-img-hover">
-                                <!-- <div class="type-lb">
-                                    <p class="sale">Sale</p>
-                                </div> -->
-                                <img <?php echo $product_img?> class="img-fluid prod-img" alt="Image">
-                                
-                            </div>
-                            <div class="why-text">
-                                <h4><?php echo $rows['productName']?></h4>
-                                <h5><?php echo "₱".$rows['price'].".00"?></h5>
-                            </div>
-                          </a>
-                          <div class="mask-icon justify-content-end d-flex gap-2">
-                                          
-                            <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                            <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                        </div>
-                        </div>
-                        
-                      </div>
-                      <?php
-                      
-                    }
-                }
-                ?>
-  
+            
+                      <?php 
+        $query = "SELECT ROW_NUMBER() OVER(ORDER BY id ASC) as `row`,`id`, `accOwner_id`, `productName`, `category`, `product_img`, `description`, `transactionType`, `price`
+         FROM `products` WHERE `category` = 'CROP'";
+        content($query);
 
+                ?>
         
                    
                     </div>
