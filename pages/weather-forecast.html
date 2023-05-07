@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../bootstrap-5.2.2/css/bootstrap.min.css"/>
+    <script src="https://kit.fontawesome.com/8c65d0b7d2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://kit.fontawesome.com/82727f4033.css" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Archivo Black' rel='stylesheet'> 
+
+</head>
+<style>
+    .navbar{
+        background-color: #57744B;
+        font-family: 'Archivo Black';
+        padding: 12px;
+            }
+    .navbar-nav a {
+        font-size: 15px;
+        text-transform: uppercase;
+        font-weight: 500;
+        }  
+    .navbar-light .navbar-brand {
+        /* color: white; */
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 2px;
+     } 
+    .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
+        color: #FFDE59;
+    }
+    .navbar-light .navbar-nav .nav-link {
+        color: #FFDE59;
+        font-family: 'Archivo Black';
+        }
+        .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+        color: #FFDE59;
+        }
+
+        /* ==== Search ==== */
+.search-loc button{
+   background-color: #57744B;
+   color: white;
+}
+.search-loc button:hover{
+   background-color: rgba(87,116,75,0.5);
+   /* color: white; */
+}
+
+.search-loc button:active{
+   background-color: #57744B;
+   color: white;
+}
+</style>
+<body  style="background-color: #E4E4E4;">
+    
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top px-2" >
+        <h1 style="color: #FFDE59;font-family: 'Archivo Black';margin-left: 10px;">FarmBook</h1>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="color: aqua;"></span>
+        </button>
+        
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="color: #FFDE59 ; ">
+               <!--======================= di nagana pag nasa index=================== -->
+                  <li class="nav-item" ><a class="nav-link" href="" style=" color: #FFDE59;"   id="link_home"><i class="fa fa-fw fa-home fa-2x"></i>Home</a></li>
+                  <li class="nav-item" ><a class="nav-link" href="" style=" color: #FFDE59;" id="link_about"><i class="fa fa-fw fa-circle-info fa-2x"></i>About Us</a></li>
+                  <li class="nav-item" ><a class="nav-link" href="" style=" color: #FFDE59;" id="link_e-learning"><i class="fa fa-fw fa-book fa-2x"></i>E-Learning</a></li>
+                  <!-- <li class="nav-item" ><a class="nav-link"  href="contact.html"><i class="fa fa-fw fa-phone fa-2x"></i>Contact</i></a></li> -->
+                </ul>
+        
+              </div>
+        
+    </nav>  
+
+    <div class="container px-5 py-1 " style="margin-top: 100px;">
+        <div class="search-loc  d-flex" style="float: right;" >
+            <input type="text" class="rounded-start" placeholder="Search Location.." >
+            <button type="submit" class="rounded-end" ><i class="fa fa-search rounded"></i></button>
+        </div>
+        
+       <div class="row  mt-5 my-2 justify-content-center" >
+        <div class="col-md-8">
+            <div class="card shadow mt-1 rounded" >
+                <div class="card-header text-center " style="background-color: #57744B; color: white;">
+                    <h2>Nasugbu, Batangas</h2>
+                    <h3>Monday, April 11, 2023</h3>
+                </div>
+                <div class="card-body" style="background-image:url(/img/Weather/weather.jpg); color: white;">
+                    <div class="row">
+                        <div class="col-md-6 text-center">
+                            <h2 class="display-1 ">15&#176;C</h2>
+                            <img src="/img/Weather/sun.png" alt="" style="height: 80px; width: 80px;">
+                            <h3>Sunny</h3>  
+                        </div>
+                        <div class="col-md-6 text-center">
+                            <h3>Details</h3>
+                            <h5>Humidity: 62%</h5>
+                            <h5>Wind: 7 km/h</h5>
+                            <h5>Pressure: 1014 hPa</h5>
+                            <h5>Sunrise: 06:17 AM</h5>
+                            <h5>Sunset: 07:46 PM</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="container mt-2">
+            <div class="card">
+                <div class="card-header text-center" style="background-color: #57744B; color: white;">
+                    <h5>Weekly Forecast</h5>
+                </div>
+                <div class="card-body text-center" style="background-image: url(/img/Weather/weather.jpg);">
+                    <div class="row row-cols-1 row-cols-md-5 g-4">
+                        <div class="col">
+                            <div class="card h-100 pt-2" >
+                          
+                                <img src="/img/Weather/sun.png" alt="" class="card-img-top mx-auto  " style="height: 60px; width: 60px;">
+                                <div class="card-body">
+                                <h6 class="card-title">Monday</h6>
+                                <p class="card-text">Sunny Day.</p>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card h-100 pt-2" >
+                          
+                                <img src="/img/Weather/cloudy.png" alt="" class="card-img-top mx-auto" style="height: 60px; width: 60px;">
+                                <div class="card-body">
+                                <h6 class="card-title">Tuesday</h6>
+                                <p class="card-text">Partly Cloudy</p>
+                                
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card h-100 pt-2" >
+                          
+                                <img src="/img/Weather/cloudy.png"  alt="" class="card-img-top mx-auto" style="height: 60px; width: 60px;">
+                                <div class="card-body">
+                                <h6 class="card-title">Wednesday</h6>
+                                <p class="card-text">Partly Cloudy</p>
+                                
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card h-100 pt-2" >
+                          
+                                <img src="/img/Weather/sun.png"  alt="" class="card-img-top mx-auto" style="height: 60px; width: 60px;">
+                                <div class="card-body">
+                                <h6 class="card-title">Thursday</h6>
+                                <p class="card-text">Sunny Day</p>
+                                
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card h-100 pt-2" >
+                          
+                                <img src="/img/Weather/sun.png" alt="" class="card-img-top mx-auto" style="height: 60px; width: 60px;">
+                                <div class="card-body">
+                                <h6 class="card-title">Friday</h6>
+                                <p class="card-text">Sunny Day</p>
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+       
+    </div>
+
+          <!-- footer start--> 
+<footer class="bg-light text-dark pt-5 pb-4" style="margin-top: 5%;">
+    <div class="container text-center text-md-left">
+        <div class="row text-center text-md-left">
+                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-info" style="text-decoration: none">FarmBook</h5>
+                    <hr class="mb-4" style="height: 2px; color: black">
+                    <p>lorem ipsum dolor sit amet, consetetur adipisicing elit, sed do eiusmod tempor 
+                        incididunt labore at dolore magna aliqua.
+                    </p>
+                </div>
+                
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-info">About</h5>
+                    <hr class="mb-4" style="height: 2px; color: black;">
+                    <p>
+                        <a href="#" class="text-dark" style="text-decoration: none;">Our Story</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-dark" style="text-decoration: none;">Contacts</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-dark" style="text-decoration: none;">Farmers Join!</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-dark" style="text-decoration: none;">How to Sell Farm Products Online?</a>
+                    </p>
+                </div>
+  
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-info">Resources</h5>
+                    <hr class="mb-4" style="height: 2px; color: black;">
+                    <p>
+                        <a href="#" class="text-dark" style="text-decoration: none;">Farming Tutorials</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-dark" style="text-decoration: none;">Food Types</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-dark" style="text-decoration: none;">Farmbook Feed</a>
+                    </p>
+                    <p>
+                        <a href="#" class="text-dark" style="text-decoration: none;">E-Learning</a>
+                    </p>
+                    <p>
+                      <a href="#" class="text-dark" style="text-decoration: none;">Farming Techniques</a>
+                  </p>
+                  <p>
+                    <a href="#" class="text-dark" style="text-decoration: none;">Tips in Farming</a>
+                </p>
+                </div>
+  
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+                    <h5 class="text-uppercase mb-4 font-weight-bold text-info">Contacts</h5>
+                    <hr class="mb-4" style="height: 2px; color: black">
+                    <p>
+                       <li class="fas fa-home mr-3"></li> Nasugbu Nas 4231, PH
+                    </p>
+                    <p>
+                        <li class="fas fa-envelope mr-3"></li> farmbook@gmail.com
+                     </p>
+                     <p>
+                        <li class="fas fa-phone mr-3"></li> +9353081922
+                     </p>
+                     <p>
+                        <li class="fas fa-print mr-3"></li> +9353081922
+                     </p>
+                </div>
+  
+                <hr class="mb-4">
+                <div class="row d-flex justify-content-center">
+                    <div>
+                        <p>
+                            Copyright 2020 All Rights Reserved By :
+                            <a href="#" style="text-decoration: none;">
+                                <strong class="text-info">The Providers</strong>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-center">
+                    <div class="text-center">
+                        <ul class="list-unstyled list-inline">
+                            <li class="list-inline-item">
+                                <a href="#" class="text-dark"><i class="fab fa-facebook"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="text-dark"><i class="fab fa-twitter"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="text-dark"><i class="fab fa-google-plus"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="text-dark"><i class="fab fa-linkedin-in"></i></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a href="#" class="text-dark"><i class="fab fa-youtube"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+    </div>
+  </footer>                       
+  <!-- footer end -->
+</body>
+</html>

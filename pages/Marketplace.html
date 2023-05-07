@@ -42,7 +42,17 @@
   color: #FFDE59;
 }
 
-
+/* ==== Sidebar ==== */
+.cat .cat-item {
+        background-color:rgba(247,219,106)
+    }
+    .cat .cat-item:hover {
+        background-color:rgba(247,219,106,0.5);
+    }
+    .cat .cat-item.active {
+        background-color:rgba(247,219,106,0.5);
+        transform: translateY(4px);
+    }
 </style>
 <body style="background-color: #E4E4E4;">
 
@@ -1094,7 +1104,7 @@
             <div class="tab-pane fade " id="cat-crop" role="tabpanel" aria-labelledby="cat-crop-tab" >
               <div class="tab-content">
                 <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
-                    <div class="row mt-5 mx-1">
+                        
                       
                       <h1 class="ms-3">CROPS</h1>
               
@@ -1653,16 +1663,7 @@
             transform: translateY(4px);
         }
 */
-    .cat .cat-item {
-        background-color:rgba(247,219,106)
-    }
-    .cat .cat-item:hover {
-        background-color:rgba(247,219,106,0.5);
-    }
-    .cat .cat-item.active {
-        background-color:rgba(247,219,106,0.5);
-        transform: translateY(4px);
-    }
+    
 
 
 </style>
