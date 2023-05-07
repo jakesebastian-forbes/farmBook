@@ -27,7 +27,8 @@
     color:#555e58;
     text-transform:capitalize;
     font-weight:400;
-    background-color: rgb(197, 210, 197);
+    /* background-color: rgb(197, 210, 197); */
+    background-color: #e4e4e4;
     margin:0;
     padding:0;
 }
@@ -278,7 +279,8 @@ overflow-y: scroll;
       width:260px;
       overflow:auto;
       transition:all 0.3s;
-      background-color:rgb(116, 141, 116);
+      /* background-color:rgb(116, 141, 116); */
+      background-color: #57744B;
       box-shadow:0 0 30px 0 rgba(200 200 200 / 20%);
   }
   
@@ -875,8 +877,12 @@ overflow-y: scroll;
     background-color: #9ab48f;
   }
   .nav-pills .nav-link.active{
-   background-color:#6d8162;
+    background-color: #9ab48f;
+ 
+   
   }
+  
+  
 /* header */
 </style>
 
@@ -903,7 +909,7 @@ overflow-y: scroll;
                             <ul class="nav nav-pills text-center"> 
                 
                                 <li class="nav-item nav_list w-100">
-                                    <a class="nav-link link active" id="dashboard-tab" data-bs-toggle="tab" data-bs-target="#dashboard" href="#" style="color: white;"><i class="bi bi-card-list fa-2x"></i> </i><span>Dashboard</span></a>
+                                    <a class="nav-link link active " id="dashboard-tab" data-bs-toggle="tab" data-bs-target="#dashboard" href="#" style="color: white;"><i class="bi bi-card-list fa-2x"></i><span>Dashboard</span></a>
                                 </li>
                                 <li class="nav-item nav_list w-100">
                                   <a class="nav-link link " id="verification-tab" data-bs-toggle="tab" data-bs-target="#verification" href="#" style="color: white;"><i class="bi bi-calendar2-check fa-2x"></i><span>Verification</span></a>
@@ -932,7 +938,7 @@ overflow-y: scroll;
                 <div class="tab-content" id="tabContent" >
             <!-- DASHBOARD TAB -->
             <div class="tab-pane fade show active" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab"  style="height: 100%;">
-                 <div class="main-container" style="overflow-y: scroll;" >
+                 <div class="main-container" style="overflow-y: auto;" >
                     <div class="main-title">
                         <p class="font-weight-bold">Welcome, Admin!</p>
                     </div>
@@ -941,32 +947,32 @@ overflow-y: scroll;
             
                         <div class="card">
                         <div class="card-inner">
-                            <p class="text-primary">PRODUCTS</p>
-                            <span class="material-icons-outlined text-blue">inventory_2</span>
+                            <h3 class="text-primary">Pending</h3>
+                            <i class="fa-regular fa-clock fa-2x text-primary"></i>
                         </div>
                         <span class="text-primary font-weight-bold">249</span>
                         </div>
             
                         <div class="card">
                         <div class="card-inner">
-                            <p class="text-primary">PURCHASE ORDERS</p>
-                            <span class="material-icons-outlined text-orange">add_shopping_cart</span>
+                            <h3 class="text-primary">Approved</h3>
+                            <i class="fa-solid fa-check fa-2x text-primary"></i>
                         </div>
                         <span class="text-primary font-weight-bold">83</span>
                         </div>
             
                         <div class="card">
                         <div class="card-inner">
-                            <p class="text-primary">SALES ORDERS</p>
-                            <span class="material-icons-outlined text-green">shopping_cart</span>
+                            <h3 class="text-primary">Disapproved</h3>
+                            <i class="fa-sharp fa-solid fa-xmark fa-2x text-primary"></i>
                         </div>
                         <span class="text-primary font-weight-bold">79</span>
                         </div>
             
                         <div class="card">
                         <div class="card-inner">
-                            <p class="text-primary">INVENTORY ALERTS</p>
-                            <span class="material-icons-outlined text-red">notification_important</span>
+                          <h3 class="text-primary">Active Users</h3>
+                          <i class="fa-solid fa-user fa-2x text-primary"></i>
                         </div>
                         <span class="text-primary font-weight-bold">56</span>
                         </div>
@@ -995,15 +1001,15 @@ overflow-y: scroll;
 
                 <!-- VERIFICATION TAB -->
             <div class="tab-pane fade show" id="verification" role="tabpanel" aria-labelledby="verification-tab" >
-                <ul class="nav nav-pills ">
-                    <li class="nav-item nav_list">
-                        <a class="nav-link link active " id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending" href="#" style="color: black;"><i class="bi bi-card-list fa-2x"></i> </i><span>Pending</span></a>
+                <ul class="nav nav-pills  ps-4 mx-4 rounded " style="background-color: #6d8162;">
+                    <li class="nav-item nav_list mx-2 my-2">
+                        <a class="nav-link link active text-white" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending" href="#" style="color: black;"><i class="bi bi-card-list fa-2x"></i> </i><span> Pending</span></a>
                     </li>
-                    <li class="nav-item nav_list">
-                        <a class="nav-link link " id="approved-tab" data-bs-toggle="tab" data-bs-target="#approved" href="#" style="color: black;"><i class="bi bi-calendar2-check fa-2x"></i><span>Approved</span></a>
+                    <li class="nav-item nav_list mx-2 my-2">
+                        <a class="nav-link link text-white" id="approved-tab" data-bs-toggle="tab" data-bs-target="#approved" href="#" style="color: black;"><i class="bi bi-calendar2-check fa-2x"></i><span> Approved</span></a>
                     </li>
-                    <li class="nav-item nav_list">
-                        <a class="nav-link link " id="disapproved-tab" data-bs-toggle="tab" data-bs-target="#disapproved" href="#" style="color: black;"><i class="bi bi-person-x fa-2x"></i><span>Disapproved</span></a>
+                    <li class="nav-item nav_list my-2  mx-2">
+                        <a class="nav-link link text-white" id="disapproved-tab" data-bs-toggle="tab" data-bs-target="#disapproved" href="#" style="color: black;"><i class="bi bi-person-x fa-2x"></i><span> Disapproved</span></a>
                     </li>
                 </ul> 
 
@@ -1017,11 +1023,11 @@ overflow-y: scroll;
                             <h1 style="color: black;">Pending</h1>
                     <ul class="nav nav-pills">
                                 
-                    <li class="nav-item nav_list">
+                    <li class="nav-item nav_list mx-2">
                         <a class="nav-link link active text-dark-gray" id="vendors-tab" data-bs-toggle="tab" data-bs-target="#vendors" href="#" style="color: black; 
                         ">Vendors</a>
                     </li>
-                    <li class="nav-item nav_list">
+                    <li class="nav-item nav_list mx-2">
                     <a class="nav-link link text-dark-gray" id="farmers-tab" data-bs-toggle="tab" data-bs-target="#farmers" href="#" style="color: black;">Farmers</a>
                     </li>
                 </ul>
@@ -1065,10 +1071,10 @@ overflow-y: scroll;
                 </td>
                 <td>Benj Samonte</td>
                 <td class="text-lowercase">mm/dd/yyyy</td>
-                <td><img src = "/img/docu/docu1.jpg" style="width: 150px;" ></td>
-                <td><img src = "/img/docu/docu1.jpg" style="width: 150px;" ></td>
-                <td><img src = "/img/docu/docu1.jpg" style="width: 150px;" ></td>
-                <td><img src = "/img/docu/docu1.jpg" style="width: 150px;" ></td>
+                <td><img src = "/img/docu/docu1.jpg" style="width: 150px;height: 100px; object-fit: cover;" ></td>
+                <td><img src = "/img/docu/docu1.jpg" style="width: 150px; height: 100px; object-fit: cover;" ></td>
+                <td><img src = "/img/docu/docu1.jpg" style="width: 150px; height: 100px; object-fit: cover;" ></td>
+                <td><img src = "/img/docu/docu1.jpg" style="width: 150px; height: 100px; object-fit: cover;" ></td>
                 <td>
                     <div class="p-0 d-flex justify-content-lg-end justify-content-center">
                     <a href="#approveVendorModal" class="btn btn-success" data-toggle="modal"
@@ -1122,8 +1128,8 @@ overflow-y: scroll;
                 </td>
                 <td>Benj Samonte</td>
                 <td class="text-lowercase">mm/dd/yyyy</td>
-                <td><img src = "/img/docu/docu1.jpg" style="width: 150px; margin-left: 10%; object-fit: cover;" ></td>
-                <td><img src = "/img/docu/docu1.jpg" style="width: 150px; margin-left: 10%; object-fit: cover;"></td>
+                <td><img src = "/img/docu/docu1.jpg" style="width: 150px; height: 100px; object-fit: cover;" ></td>
+                <td><img src = "/img/docu/docu1.jpg" style="width: 150px; height: 100px; object-fit: cover;"></td>
                 
                 <td>
                     <div class="p-0 d-flex justify-content-lg-end justify-content-center">
@@ -1174,20 +1180,14 @@ overflow-y: scroll;
             <table class="table table-striped table-hover">
             <thead>
                 <tr>
-                <th>
-
-                    <!-- <span class="custom-checkbox">
-                                        <input type="checkbox" id="selectAll">
-                                        <label for="selectAll"></label>
-                                    </span> -->
-                </th>
+               <th></th>
                 <th>Username</th>
                 <th style="padding-left: 1%;">Date & Time</th>
                 <th style="padding-left: 5%;">Docu1</th>
                 <th style="padding-left: 5%;">Docu2</th>
                 <th style="padding-left: 5%;">Docu3</th>
                 <th style="padding-left: 5%;">Docu4</th>
-                <th style="padding-left: 6%;">Actions</th>
+                <!-- <th style="padding-left: 6%;">Actions</th> -->
                 </tr>
             </thead>
             <tbody>
@@ -1200,11 +1200,11 @@ overflow-y: scroll;
                 </td>
                 <td>Benj Samonte</td>
                 <td class="text-lowercase">mm/dd/yyyy</td>
-                <td><img src = "/img/docu/docu1.jpg" style="width: 150px;" ></td>
-                <td><img src = "/img/docu/docu1.jpg" style="width: 150px;" ></td>
-                <td><img src = "/img/docu/docu1.jpg" style="width: 150px;" ></td>
-                <td><img src = "/img/docu/docu1.jpg" style="width: 150px;" ></td>
-                <td>
+                <td><img src = "/img/profile pics/profile2.png" style="width: 150px;height: 100px;object-fit: cover;" ></td>
+                <td><img src = "/img/profile pics/profile2.png"style="width: 150px; height: 100px; object-fit: cover" ></td>
+                <td><img src = "/img/profile pics/profile2.png" style="width: 150px; height: 100px; object-fit: cover" ></td>
+                <td><img src = "/img/profile pics/profile2.png" style="width: 150px; height: 100px; object-fit: cover" ></td>
+                <!-- <td>
                     <div class="p-0 d-flex justify-content-lg-end justify-content-center">
                     <a href="#approveVendorModal" class="btn btn-success" data-toggle="modal"
                     style="padding: 5px; color: white; font-size: 14px; font-weight: 100; margin-right: 3%;">
@@ -1212,7 +1212,7 @@ overflow-y: scroll;
                         <a href="#disapproveVendorModal" class="btn btn-danger" data-toggle="modal"
                         style="padding: 5px; color: white; font-size: 14px; font-weight: 100">
                         <i class="material-icons">close</i> <span>Disapprove</span></a>
-                </td>
+                </td> -->
                 </tr>
                 
             </tbody>
@@ -1232,7 +1232,7 @@ overflow-y: scroll;
                         <div class="col-md-12">
                         <div class="table-wrapper">
 
-            <table class="table table-striped table-hover" style="justify-content: space-evenly;">
+            <table class="table table-striped table-hover justify-content-between" >
             <thead>
                 <tr>
                 <th>
@@ -1240,16 +1240,17 @@ overflow-y: scroll;
                 </th>
                 <th>Username</th>
                 <th style="padding-left: 1%;">Date & Time</th>
-                <th style="padding-left: 8%;">Docu1</th>
-                <th style="padding-left: 8%;">Docu2</th>
-                <th style="padding-left: 6%;">Actions</th>
+                <th style="padding-left: 5%;">Docu1</th>
+                <th style="padding-left: 5%;">Docu2</th>
+              
+              
                 </tr>
 
             </thead>
-            <tbody>
+            <tbody >
 
 
-                <tr>
+                <tr >
                 <td>
                     <span class="custom-checkbox">
                     <input type="checkbox" id="checkbox1" name="options[]" value="1">
@@ -1260,10 +1261,11 @@ overflow-y: scroll;
                
                 <td>Benj Samonte</td>
                 <td class="text-lowercase">mm/dd/yyyy</td>
-                <td><img src = "/img/docu/docu1.jpg" style="width: 150px; margin-left: 10%; object-fit: cover;" ></td>
-                <td><img src = "/img/docu/docu1.jpg" style="width: 150px; margin-left: 10%; object-fit: cover;"></td>
+                <td ><img src = "/img/profile pics/profile2.png"  style="width: 150px; height: 100px ; object-fit: cover;" ></td>
+                <td><img src = "/img/profile pics/profile2.png" style="width: 150px; height: 100px ; object-fit: cover;" ></td>
+                <!-- <td><img src = "/img/docu/docu1.jpg" style="width: 150px; ; object-fit: cover;"></td> -->
 
-                <td>
+                <!-- <td>
                     <div class="p-0 d-flex justify-content-lg-end justify-content-center">
                     <a href="#approveVendorModal" class="btn btn-success" 
                     style="padding: 5px; color: white; font-size: 14px; font-weight: 100; margin-right: 3%;">
@@ -1272,7 +1274,7 @@ overflow-y: scroll;
                         style="padding: 5px; color: white; font-size: 14px; font-weight: 100">
                         <i class="material-icons">close</i> <span>Disapprove</span></a>
                 
-                </td>
+                </td> -->
                 </tr>
             </tbody>
             </table>
@@ -1316,20 +1318,14 @@ overflow-y: scroll;
                 <table class="table table-striped table-hover">
                 <thead>
                     <tr>
-                    <th>
-    
-                        <!-- <span class="custom-checkbox">
-                                            <input type="checkbox" id="selectAll">
-                                            <label for="selectAll"></label>
-                                        </span> -->
-                    </th>
-                    <th>Username</th>
-                    <th style="padding-left: 1%;">Date & Time</th>
-                    <th style="padding-left: 5%;">Docu1</th>
-                    <th style="padding-left: 5%;">Docu2</th>
-                    <th style="padding-left: 5%;">Docu3</th>
-                    <th style="padding-left: 5%;">Docu4</th>
-                    <th style="padding-left: 6%;">Actions</th>
+                        <th></th>
+                        <th>Username</th>
+                        <th style="padding-left: 1%;">Date & Time</th>
+                        <th style="padding-left: 5%;">Docu1</th>
+                        <th style="padding-left: 5%;">Docu2</th>
+                        <th style="padding-left: 5%;">Docu3</th>
+                        <th style="padding-left: 5%;">Docu4</th>
+                    <!-- <th style="padding-left: 6%;">Actions</th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -1342,11 +1338,11 @@ overflow-y: scroll;
                     </td>
                     <td>Benj Samonte</td>
                     <td class="text-lowercase">mm/dd/yyyy</td>
-                    <td><img src = "/img/docu/docu1.jpg" style="width: 150px;" ></td>
-                    <td><img src = "/img/docu/docu1.jpg" style="width: 150px;" ></td>
-                    <td><img src = "/img/docu/docu1.jpg" style="width: 150px;" ></td>
-                    <td><img src = "/img/docu/docu1.jpg" style="width: 150px;" ></td>
-                    <td>
+                    <td><img src = "/img/docu/docu1.jpg" style="width: 150px; height: 100px;" ></td>
+                    <td><img src = "/img/docu/docu1.jpg" style="width: 150px; height: 100px;" ></td>
+                    <td><img src = "/img/docu/docu1.jpg" style="width: 150px; height: 100px;" ></td>
+                    <td><img src = "/img/docu/docu1.jpg" style="width: 150px; height: 100px;" ></td>
+                    <!-- <td>
                         <div class="p-0 d-flex justify-content-lg-end justify-content-center">
                         <a href="#approveVendorModal" class="btn btn-success" data-toggle="modal"
                         style="padding: 5px; color: white; font-size: 14px; font-weight: 100; margin-right: 3%;">
@@ -1354,7 +1350,7 @@ overflow-y: scroll;
                             <a href="#disapproveVendorModal" class="btn btn-danger" data-toggle="modal"
                             style="padding: 5px; color: white; font-size: 14px; font-weight: 100">
                             <i class="material-icons">close</i> <span>Disapprove</span></a>
-                    </td>
+                    </td> -->
                     </tr>
                  
                 </tbody>
@@ -1377,14 +1373,12 @@ overflow-y: scroll;
                 <table class="table table-striped table-hover" style="justify-content: space-evenly;">
                 <thead>
                     <tr>
-                    <th>
-                    
-                    </th>
-                    <th>Username</th>
-                    <th style="padding-left: 1%;">Date & Time</th>
-                    <th style="padding-left: 8%;">Docu1</th>
-                    <th style="padding-left: 8%;">Docu2</th>
-                    <th style="padding-left: 6%;">Actions</th>
+                        <th></th>
+                        <th>Username</th>
+                        <th style="padding-left: 1%;">Date & Time</th>
+                        <th style="padding-left: 5%;">Docu1</th>
+                        <th style="padding-left: 5%;">Docu2</th>
+                      
                     </tr>
     
                 </thead>
@@ -1400,10 +1394,10 @@ overflow-y: scroll;
                     </td>
                     <td>Benj Samonte</td>
                     <td class="text-lowercase">mm/dd/yyyy</td>
-                    <td><img src = "/img/docu/docu1.jpg" style="width: 150px; margin-left: 10%; object-fit: cover;" ></td>
-                    <td><img src = "/img/docu/docu1.jpg" style="width: 150px; margin-left: 10%; object-fit: cover;"></td>
+                    <td><img src = "/img/profile pics/profile2.png" style="width: 150px; height: 100px ; object-fit: cover;" ></td>
+                    <td><img src = "/img/profile pics/profile2.png" style="width: 150px; height: 100px ; object-fit: cover;"></td>
                     
-                    <td>
+                    <!-- <td>
                         <div class="p-0 d-flex justify-content-lg-end justify-content-center">
                         <a href="#approveVendorModal" class="btn btn-success" data-toggle="modal"
                         style="padding: 5px; color: white; font-size: 14px; font-weight: 100; margin-right: 3%;">
@@ -1411,7 +1405,7 @@ overflow-y: scroll;
                             <a href="#disapproveVendorModal" class="btn btn-danger" data-toggle="modal"
                             style="padding: 5px; color: white; font-size: 14px; font-weight: 100">
                             <i class="material-icons">close</i> <span>Disapprove</span></a>
-                    </td>
+                    </td> -->
                     </tr>
 
                 </tbody>
