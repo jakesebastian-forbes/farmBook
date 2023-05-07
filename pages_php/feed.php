@@ -1,5 +1,8 @@
 <?php
  session_start();
+ if (!isset($_SESSION['logged_in'])) {
+    header("Location: ../index.php");
+}
  $page_title = 'feed';
 //  $acc_in_sess = $_SESSION['acc_id'];
 ?>
@@ -2040,6 +2043,7 @@ onclick = "img_view(this.id)"/>
                               while($rows4 = mysqli_fetch_assoc($result4)){
                               
                               ?>
+                              <!-- comment real -->
                             <div class="comment d-flex align-items-center p-2" id = "comment_<?php echo $rows4['comment_id']?>">
                               <!-- avatar -->
                               <img <?php echo 'src=data:image/jpeg;base64,'.base64_encode($rows4['profile_pic'])?>
@@ -2058,12 +2062,11 @@ onclick = "img_view(this.id)"/>
                                     aria-labelledby="post1CommentMenuButton"
                                   >
                                    
-                                    <li class="d-flex align-items-center">
+                                    <!-- <li class="d-flex align-items-center">
                                       <a class=" dropdown-item d-flex justify-content-around align-items-center fs-7 "  href="#" >
                                         Delete Comment
-                                      </a
-                                      >
-                                    </li>
+                                      </a>
+                                    </li> -->
                                   </ul>
                                 </div>
                                 <p class="fw-bold m-0"><?php echo $rows4['fullname']?></p>
@@ -2093,9 +2096,15 @@ onclick = "img_view(this.id)"/>
                               </div>
                               <!-- input -->
                               
-                                <input type="text" class="form-control border-0 rounded-pill bg-gray"
-                                 placeholder="Write a comment" />
-                                <button type="submit" onclick = "">send</button>
+                                <input type="text" class="form-control border-0 rounded-pill bg-gray comment-write"
+                                 placeholder="Write a comment" 
+                                 id = "write_comment_<?php echo $post_id?>"
+                                 
+                                 />
+
+
+                                 <!-- use this instead of the enter button to send a comment -->
+                                <button type="submit" onclick = "submit_comment('<?php echo $post_id?>','<?php echo $_SESSION['acc_id']?>')">send</button>
                                 
 
                               </div>
@@ -2164,9 +2173,14 @@ onclick = "img_view(this.id)"/>
       <script src="../dependencies\jquery-3.6.4.js"></script>
       <script src="./main.js"></script>
       <script src="../js\like_toggle.js"></script>
+      <script src="../js\comments.js"></script>
 
       <script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 15,cityid: '1698032',appid: 'e2630aae7335274da681acc3f37f2620',units: 'metric',containerid: 'openweathermap-widget-15',  });  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script>
 
+      <script>
+      
+
+      </script>
     </body>
   <!-- </div> -->
   

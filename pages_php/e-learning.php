@@ -66,7 +66,9 @@
 
      
 
-              <?php include "../components/nav_bar.php"?>
+              <?php 
+              $page_title = "E-LEARNING";
+              include "../components/nav_bar.php"?>
   
   <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">

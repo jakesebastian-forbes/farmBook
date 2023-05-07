@@ -48,7 +48,9 @@
 </style>
 
  
-   <?php include "../components/nav_bar.php"?>
+   <?php 
+   $page_title = "ABOUT US";
+   include "../components/nav_bar.php"?>
 
   <div class="header">
     <div class="text-box">
