@@ -50,7 +50,9 @@
 </style>
 
   
-<?php include "../components/nav_bar.php"?>
+<?php 
+$page_title = "FRUITS";
+include "../components/nav_bar.php"?>
 
     <div class="header">
     </div>

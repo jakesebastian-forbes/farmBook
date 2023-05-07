@@ -1029,7 +1029,7 @@ $page_title = 'index';
 //change links
 $("#link_home")[0].setAttribute("href","index.php");
 $("#link_about")[0].setAttribute("href","pages_php/aboutUs.php");
-$("#link_e-learning")[0].setAttribute("href","pages_php/e-learning2.php");
+$("#link_e-learning")[0].setAttribute("href","pages_php/e-learning.php");
 
 
 var modalId = localStorage.getItem('openModal');
