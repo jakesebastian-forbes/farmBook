@@ -312,11 +312,12 @@
      
 $conn = new mysqli('localhost','root','','farmbook_db');
 
+$GLOBALS['profile'];
 if($conn->connect_error){
   die('Connection failed : ' . $conn->connect_error);
  }else{
 
-$query = 'SELECT t1.id, t1.firstName, t1.lastName,t2.profilePic,t2.dateTime, t2.status 
+$query = 'SELECT t1.id, t1.firstName, t1.lastName,t2.profilePic as `profile`,t2.dateTime, t2.status 
 FROM `accounts` as t1
 INNER JOIN `profile_pictures` as t2
 ON t1.id = t2.acc_id
@@ -326,8 +327,17 @@ $result = mysqli_query($conn,$query);
 
 while($rows = mysqli_fetch_assoc($result))
     {
-      $profile = 'src=data:image/jpeg;base64,'.base64_encode( $rows['profilePic']) ;
+
+      if(is_null($rows['profile'])){
+        $profile = "src = ../img/avatar_placeholder.png";
+      }else{
+       $profile = 'src=data:image/jpeg;base64,'.base64_encode($rows['profile']) ;
+      }
+      // $profile = 'src=data:image/jpeg;base64,'.base64_encode( $rows['profilePic']) ;
+      // echo $profile."        profile178";
     }
+
+   
   }
       ?>
       <div class="d-flex align-items-center fixed-top shadow " style="min-height: 56px; z-index: 5; background-color: #57744B;">
@@ -522,7 +532,7 @@ while($rows = mysqli_fetch_assoc($result))
                   </li>
                   <!-- s2 -->
                   <li class="my-2 p-1">
-                    <a href="full_forecast_navbar.php" class="text-decoration-none text-dark d-flex align-items-centerjustify-content-between ">
+                    <a href="marketplace.php" class="text-decoration-none text-dark d-flex align-items-centerjustify-content-between ">
                       <div class="p-2"> 
                    
                         <i class="fas fa-shop "   style="font-size: 35px; object-fit: cover;"></i>
@@ -530,7 +540,7 @@ while($rows = mysqli_fetch_assoc($result))
                       </div>
                    
                       <div>
-                        <p class="m-1 h4">Weather</p>
+                        <p class="m-1 h4">Marketplace</p>
                         <!-- <span class="fs-7 text-muted" >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio, commodi.</span> -->
                       </div>
                     </a>
@@ -587,7 +597,7 @@ while($rows = mysqli_fetch_assoc($result))
                     <input
                       type="text"
                       class="form-control rounded-pill border-0 bg-gray"
-                      placeholder="Search Messenger"
+                      placeholder="Search Message"
                     />
                   </div>
                 </li>
@@ -748,9 +758,12 @@ while($rows = mysqli_fetch_assoc($result))
   
               <!-- secondary menu -->
               <div class=" rounded-circle p-1 d-flex  align-items-center  justify-content-center mx-2 " type="button" id="chatMenu"data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
-                <img <?php echo $profile?> class="rounded-circle me-2" alt="avatar" style="width: 40px; height: 40px; object-fit: cover"
+                <img <?php echo $profile;?> class="rounded-circle me-2" alt="avatar" style="width: 40px; height: 40px; object-fit: cover"
                 id = "profile_navbar_right"/>
                 
+                <?php 
+               
+                ?>
               </div>
               <!-- secondary menu dd -->
               <ul
@@ -765,7 +778,7 @@ while($rows = mysqli_fetch_assoc($result))
                   <!--  -->
                   <div>
                     <p class="m-0" id ="small_name"><?php echo $_SESSION['firstName']." ".$_SESSION['lastName']?></p>
-                    <a href="../pages/profile-em.html">
+                    <a href="profile.php">
                     <p class="m-0 text-muted">See your profile</p></a>
                   </div>
                 </li>
@@ -1612,7 +1625,7 @@ while($rows = mysqli_fetch_assoc($result))
                 <li lass="dropdown-item side-item-li p-1 rounded">
                   <a href="marketplace.php" class=" d-flex align-items-center text-decoration-none text-dark ">
                     <div class="p-2">
-                      <i class="fas fa-cloud-sun "style="width: 50px; height: 50px; object-fit: cover;font-size: 40px;"></i>
+                      <i class="fas fa-shop "style="width: 50px; height: 50px; object-fit: cover;font-size: 40px;"></i>
                      
                     </div>
                     <div>
@@ -1749,7 +1762,7 @@ while($rows = mysqli_fetch_assoc($result))
                   />
                 </div>
                 <!-- create modal -->
-                <div class="modal fade" id="createModal" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true" data-bs-backdrop="false" >
+                <div class="modal fade" id="createModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content" >
                       <!-- head -->
@@ -1799,7 +1812,7 @@ while($rows = mysqli_fetch_assoc($result))
                       </div>
                       <!-- footer -->
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-primary w-100">
+                        <button type="button" class="btn btn-success w-100">
                           Post
                         </button>
                       </div>
@@ -2160,7 +2173,7 @@ onclick = "img_view(this.id)"/>
             <div class="d-none d-xxl-block  overflow-hidden scrollbar position-fixed " style="  width: 100%; z-index: 4;padding-top: 56px; left: initial !important;" >
               <div class="p-3 mt-4">
                 <!-- sponsors -->
-                <h5 class="text-muted">Weather</h5>
+                <h5 class="text-muted"></h5>
                 <!-- s 1 -->
                 <li class="dropdown-item my-2 d-flex justify-content-between">
                   <div class="card text-center" style="color: #4B515D; border-radius: 10px; margin-top: 20px;">

@@ -1,8 +1,6 @@
 <?php
 $page_title = 'marketplace';
-
 require "../php_func/marketplace_content.php";
-
 ?>
 
 <!DOCTYPE html>
@@ -62,19 +60,19 @@ require "../php_func/marketplace_content.php";
           <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner ">
-          <div class="carousel-item active" style="background-image: linear-gradient(rgba(1,2,2,0.5),rgba(0,1,1,0.4)), url(/img/bg/bg10.jpg);  background-size:cover;height: 400px; background-repeat: no-repeat; ; ">  
+          <div class="carousel-item active" style="background-image: linear-gradient(rgba(1,2,2,0.5),rgba(0,1,1,0.4)), url(../img/bg/bg10.jpg);  background-size:cover;height: 400px; background-repeat: no-repeat; ; ">  
             
             <div class="carousel-caption h-50">
                 <h1 class="display-4">FarmBook Marketplace</h1>
              
             </div> 
           </div>
-          <div class="carousel-item" style="background-image:linear-gradient(rgba(1,2,2,0.5),rgba(0,1,1,0.4)), url(/img/bg/bg12.jpg);  background-size:cover ;height: 400px; background-repeat: no-repeat;">     
+          <div class="carousel-item" style="background-image:linear-gradient(rgba(1,2,2,0.5),rgba(0,1,1,0.4)), url(../img/bg/bg12.jpg);  background-size:cover ;height: 400px; background-repeat: no-repeat;">     
             <div class="carousel-caption h-50">
                 <h1 class="display-4">FarmBook Marketplace</h1>
             </div>
           </div>
-          <div class="carousel-item" style="background-image:  url(/img/bg/bg13.jpeg);   background-size:cover ;height: 400px; background-repeat: no-repeat;">
+          <div class="carousel-item" style="background-image:  url(../img/bg/bg13.jpeg);   background-size:cover ;height: 400px; background-repeat: no-repeat;">
             <div class="carousel-caption h-50">
                 <h1 class="display-4">FarmBook Marketplace</h1>
             </div>
@@ -151,14 +149,14 @@ require "../php_func/marketplace_content.php";
                     <div class="row mt-5 mx-1">
                        
                       <h1 class="ms-3">ALL</h1>
-                      <a href="./pages/single-product.html"> 
-                      
-      <?php 
+                      <?php 
         $query = "SELECT ROW_NUMBER() OVER(ORDER BY id ASC) as `row`,`id`, `accOwner_id`, `productName`, `category`, `product_img`, `description`, `transactionType`, `price`
          FROM `products`";
         content($query);
 
                 ?>
+                      <a href="./pages/single-product.html"> 
+                      
                       </a>
                
                     </div>

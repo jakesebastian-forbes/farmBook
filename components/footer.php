@@ -14,16 +14,13 @@
                       <h5 class="text-uppercase mb-4 font-weight-bold" style="color: white;">About</h5>
                       <hr class="mb-4" style="height: 2px; color:white">
                       <p>
-                          <a href="#"  style="text-decoration: none; color: white;">Our Story</a>
+                          <a href="../pages_php/aboutUs.php"  style="text-decoration: none; color: white;">Our Story</a>
                       </p>
                       <p>
-                          <a href="#"  style="text-decoration: none;color: white;">Contacts</a>
+                          <a href="../pages/ContactUs.php"  style="text-decoration: none;color: white;">Contacts</a>
                       </p>
                       <p>
-                          <a href="#" style="text-decoration: none;color: white;">Farmers Join!</a>
-                      </p>
-                      <p>
-                          <a href="#"  style="text-decoration: none;color: white;">How to Sell Farm Products Online?</a>
+                          <a href="../pages/how_to_farm.php"  style="text-decoration: none;color: white;">How to Sell Farm Products Online?</a>
                       </p>
                   </div>
   
