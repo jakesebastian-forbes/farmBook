@@ -1755,9 +1755,10 @@
               </div>
 
               <style>
-                .nav_list:hover{
+                /* .nav_list:hover{
                   background-color: rgb(87,116,75,0.5);
-                }
+                } */
+                
                 .edit-profile-btn{
                   width: 100px;
                   height: 30px;
@@ -1771,10 +1772,51 @@
                 .edit-profile-btn:active{
                   background-color: rgb(87,116,75);
                 }
+
+                /* .nav .nav-item {
+        background-color:rgba(247,219,106)
+    } */
+    /* .nav .nav-item:hover {
+        background-color:rgba(247,219,106,0.5);
+    } */
+    /* .cat .cat-item {
+        background-color:rgba(247,219,106)
+    } */
+    .cat .cat-item:hover {
+      background-color: rgb(87,116,75,0.5);
+    }
+    .cat .cat-item.active {
+      background-color: rgb(87,116,75);
+      
+    }
                 
-                .nav_list{
-                  border-radius: 10px;
-                }
+   /* Products */
+   .box-img-hover img{
+    width: 200px;
+    object-fit: cover;
+    height: 150px;
+    /* border-radius: 25px; */
+    margin-bottom: 20PX;
+ 
+  }
+  .products-single{
+    background-color: white;
+    border-radius: 25px;
+    color: black;
+   
+  }
+
+
+
+  .products-single image:hover{
+    background-color:rgba(255,255,255,0.5);
+  }
+
+  .products-single a{
+    color: black;
+    text-decoration: none;
+  }
+   /*  */
               </style>
 
               <div class="right__col">
@@ -1782,19 +1824,38 @@
                 <div class="container">
                     <div class="row justify-content-center">
                       <div class="col-auto" style="height: 600px; ">
-                        <div class="bg-light d-flex mt-3 justify-content-between" style="border-radius: 10PX;">
-                          <ul class="nav ">
+                        <div class="bg-light d-flex mt-3 justify-content-between rounded" >
+                          <!-- <ul class="nav  nav-pills rounded">
                         
-                            <li class="nav-item nav_list">
+                            <li class="nav-item nav_list rounded">
                               <a class="nav-link link active" id="posts-tab" data-bs-toggle="tab" data-bs-target="#posts" href="#" style="color: black;">POSTS</a>
                           </li>
-                          <li class="nav-item nav_list">
+                          <li class="nav-item nav_list rounded">
                             <a class="nav-link link" id="photos-tab" data-bs-toggle="tab" data-bs-target="#photos" href="#" style="color: black;">PHOTOS</a>
                           </li>
                         
                       
   
-                      </ul>
+                      </ul> -->
+
+                      <ul class="nav nav-pills   rounded">
+                            
+                        <li class="nav-item cat nav_list  rounded cat-nav " role="presentation">
+                          <a class="nav-link cat-item text-dark active" id="posts-tab" data-bs-toggle="tab" data-bs-target="#posts" href="#" style="color: black;">POSTS</a>
+                        </li>
+                        <li class="nav-item cat nav_list rounded cat-nav  " role="presentation">
+                          <a class="nav-link cat-item  text-dark" id="photos-tab" data-bs-toggle="tab" data-bs-target="#photos" href="#" style="color: black;"> PHOTOS</a>
+                        </li>
+                        <li class="nav-item cat nav_list rounded cat-nav  " role="presentation">
+                          <a class="nav-link cat-item  text-dark" id="products-tab" data-bs-toggle="tab" data-bs-target="#products" href="#" style="color: black;">PRODUCTS</a>
+                        </li>
+                       
+                        <!-- text-white link-dark -->
+                    
+        
+                        </ul>
+
+
                       <div class="mt-1 " style="justify-content: right; margin-right: 5px;">
                         <button type="button" class="edit-profile-btn">Edit Profile</button>
                       </div>
@@ -2411,6 +2472,162 @@
                               </div>
                             </div>
                               
+                            <div class="tab-pane fade" id="products" role="tabpanel" aria-labelledby="products-tab">
+                             <div class="mt-4 mb-4" style="height: 530px; overflow-y: auto;">
+
+                               <div class="add-product">
+
+                                <button type="button" class="btn btn-success me-4" data-bs-toggle="modal" data-bs-target="#exampleModal" style="float: right;">
+                                Add Product
+                                </button>
+                                 
+                              <!-- Modal -->
+                              <div class="modal fade " style="margin-top: 10%;" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                  <div class="modal-content">
+                                      <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                      </div>
+                                      <div class="modal-body" style="text-align: left;">
+                                          <form>
+                                              <div class="row">
+                                                <div class="col-md-6 mb-3">
+                                                  <label for="Product Name" class="form-label">Product name</label>
+                                                  <input type="text" class="form-control" id="product-name" required>
+                                                </div>
+                                                <div class="col-md-6 mb-3">
+                                                  <label for="Product price" class="form-label">Price</label>
+                                                  <input type="number" class="form-control" id="product-price" required>
+                                                </div>
+                                              </div>
+                                            
+                                              <div class="mb-3">
+                                                <label for="Description" class="form-label">Description</label>
+                                                <input type="text" class="form-control" id="description" required>
+                                                <small class="form-text text-muted"></small>
+                                              </div>
+                                            
+                                              <div class="mb-3">
+                                                <label for="product-img" class="form-label">Image</label>
+                                                <input type="file" class="form-control" id="product-img" required>
+                                              </div>
+                                            </form>
+                                      </div>
+                                      <div class="modal-footer">
+                                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                      <button type="button" class="btn btn-primary">Add Product</button>
+                                      </div>
+                                  </div>
+                                  </div>
+                              </div>
+                               </div>
+                              <div class="row mt-5 mx-1">
+                                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                              
+                                  <div class="products-single fix px-4 py-4">
+                                    <a href="/pages/single-product.html">
+                                      <div class="box-img-hover text-center">
+                                          <!-- <div class="type-lb">
+                                              <p class="sale">Sale</p>
+                                          </div> -->
+                                          <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img rounded" alt="Image">
+                                          
+                                      </div>
+                                      <div class="why-text">
+                                          <h4>Lorem ipsum dolor sit amet</h4>
+                                          <h5> $9.79</h5>
+                                      </div>
+                                    </a>
+                                   
+                                  </div>
+                                  
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                              
+                                  <div class="products-single fix px-4 py-4">
+                                    <a href="/pages/single-product.html">
+                                      <div class="box-img-hover text-center">
+                                          <!-- <div class="type-lb">
+                                              <p class="sale">Sale</p>
+                                          </div> -->
+                                          <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img rounded " alt="Image">
+                                          
+                                      </div>
+                                      <div class="why-text">
+                                          <h4>Lorem ipsum dolor sit amet</h4>
+                                          <h5> $9.79</h5>
+                                      </div>
+                                    </a>
+                                   
+                                  </div>
+                                  
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                              
+                                  <div class="products-single fix px-4 py-4">
+                                    <a href="/pages/single-product.html">
+                                      <div class="box-img-hover text-center">
+                                          <!-- <div class="type-lb">
+                                              <p class="sale">Sale</p>
+                                          </div> -->
+                                          <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img rounded" alt="Image">
+                                          
+                                      </div>
+                                      <div class="why-text">
+                                          <h4>Lorem ipsum dolor sit amet</h4>
+                                          <h5> $9.79</h5>
+                                      </div>
+                                    </a>
+                                   
+                                  </div>
+                                  
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                              
+                                  <div class="products-single fix px-4 py-4">
+                                    <a href="/pages/single-product.html">
+                                      <div class="box-img-hover text-center">
+                                          <!-- <div class="type-lb">
+                                              <p class="sale">Sale</p>
+                                          </div> -->
+                                          <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img rounded" alt="Image">
+                                          
+                                      </div>
+                                      <div class="why-text">
+                                          <h4>Lorem ipsum dolor sit amet</h4>
+                                          <h5> $9.79</h5>
+                                      </div>
+                                    </a>
+                                   
+                                  </div>
+                                  
+                                </div>
+                                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                              
+                                  <div class="products-single fix px-4 py-4">
+                                    <a href="/pages/single-product.html">
+                                      <div class="box-img-hover text-center">
+                                          <!-- <div class="type-lb">
+                                              <p class="sale">Sale</p>
+                                          </div> -->
+                                          <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img rounded" alt="Image">
+                                          
+                                      </div>
+                                      <div class="why-text">
+                                          <h4>Lorem ipsum dolor sit amet</h4>
+                                          <h5> $9.79</h5>
+                                      </div>
+                                    </a>
+                                   
+                                  </div>
+                                  
+                                </div>
+                                
+                                
+                              
+                              </div>
+                            </div>
                               
                             
                           
