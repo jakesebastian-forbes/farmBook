@@ -180,13 +180,14 @@
 
   /* sidebar */
   .cat .cat-item {
-        background-color:rgba(247,219,106)
+        background-color:rgba(87,116,75);
+        
     }
     .cat .cat-item:hover {
-        background-color:rgba(247,219,106,0.5);
+        background-color:rgba(87,116,75,0.5);
     }
     .cat .cat-item.active {
-        background-color:rgba(247,219,106,0.5);
+        background-color:rgba(87,116,75,0.5);
         transform: translateY(4px);
     }
   </style>
@@ -1459,671 +1460,418 @@
                 </div>
               </div>
               </div> -->
-
-              <div class="row d-flex mx-3 " style="margin-top: 90px;">
-                <div class="col-xl-3 col-lg-3 col-sm-12 col-xs-12 sidebar-shop-right  mt-5  h-100" >
-                    <div class="product-categori mt-1 ">
-                       
-                        
-                        <div class="filter-sidebar-left pe-5">
-                            <div class="title-left">
-                           
-                            </div>
-                            
-                            <ul class="nav nav-pills nav-ul d-block ms-5 py-3 rounded" style="background-color: #57744B;">
-                                    
+              <div class="container-fluid mx-5 " style="margin-top: 80px;">
+                <div class="row">
+                  <nav id="sidebarMenu" class="col-md-3 col-lg-2 position-fixed vh-100 mt-5 sidebar" style="background-color: #e4e4e4">
+                    <div class="position-sticky pt-1  mx-1">
+                        <style>
+                            .user-info img{
+                                border-radius: 50px;
+                                height: 100px;
+                                width: 100px;
+                            }
+                        </style>
+                      <div class="user-info text-center">
+                        <img src="/img/profile pics/profile.jpg"  class="img-fluid" alt="">
+                        <h4>Mac Miller</h4>
+                      </div>
+                        <ul class="nav nav-pills nav-ul d-block mt-4 py-3 rounded bg-light"     >
+                                
                             <li class="nav-item cat nav_list py-1 mx-3 my-2 rounded cat-nav " role="presentation">
-                              <a class="nav-link cat-item text-dark" id="cat-all-tab" data-bs-toggle="tab" data-bs-target="#cat-all" href="#" style="color: black;"><i class="fa-solid fa-basket-shopping" style="font-size: 20px ;"></i>  ALL</a>
+                            <a class="nav-link cat-item text-white" id="cat-all-tab" data-bs-toggle="tab" data-bs-target="#cat-all" href="#" style="color: black;"><i class="fa-solid fa-user-group" style="font-size: 20px;"></i> Friend list</a>
                             </li>
                             <li class="nav-item cat nav_list py-1 mx-3 my-2 rounded cat-nav  " role="presentation">
-                              <a class="nav-link cat-item  text-dark" id="cat-veg-tab" data-bs-toggle="tab" data-bs-target="#cat-veg" href="#" style="color: black;"> <i class="	fas fa-carrot" style="font-size: 20px ;"></i> VEGETABLES</a>
+                            <a class="nav-link cat-item  text-white" id="cat-veg-tab" data-bs-toggle="tab" data-bs-target="#cat-veg" href="#" style="color: black;"> <i class="	fas fa-carrot" style="font-size: 20px ;"></i> VEGETABLES</a>
                             </li>
-                            </ul>
-                        </div>
-                      
+                        </ul>
                     </div>
+                  </nav>
+                  <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                    <!-- main content goes here --> <div class="product-categorie-box ">
+      <div class="tab-content  mx-3" id="tabContent" >
+        <!-- ALL CATEGORY -->
+                <div class="tab-pane fade show active" id="cat-all" role="tabpanel" aria-labelledby="cat-all-tab" >
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
+                        <div class="row mt-5 mx-1">
+                           
+                          <h1 class="ms-3">ALL</h1>
+                   
+                        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 mb-3 ">
+                                  
+                            <div class="friend d-flex fix px-4 py-4 bg-light rounded justify-content-between">
+                                <a href="/pages/single-product.html" class="d-flex">
+                                    <div class="box-img-hover text-center">
+                                        <img src="/img/profile pics/profile2.png" class="img-fluid prod-img" alt="Image" style="height: 50px; 
+                                        width: 50px;">     
+                                    </div>
+                                    <h5>Izuku Midoriya</h5>  
+                                </a>
+                                <div class="dropdown">
+                                    <button class="btn btn-secondary dropdown-toggle " type="button" id="ellipsisDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="appearance: none;">
+                                      <i class="bi bi-three-dots"></i>
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="ellipsisDropdown">
+                                      <li><a class="dropdown-item" href="#">Option 1</a></li>
+                                      <li><a class="dropdown-item" href="#">Option 2</a></li>
+                                      <li><a class="dropdown-item" href="#">Option 3</a></li>
+                                    </ul>
+                                  </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 mb-3 ">
+                                  
+                            <div class="friend d-flex fix px-4 py-4 bg-light rounded">
+                                <a href="/pages/single-product.html" class="d-flex">
+                                    <div class="box-img-hover text-center">
+                                        <img src="/img/profile pics/profile2.png" class="img-fluid prod-img" alt="Image" style="height: 50px; 
+                                        width: 50px;">     
+                                    </div>
+                                    <h5>Izuku Midoriya</h5>  
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 mb-3 ">
+                                  
+                            <div class="friend d-flex fix px-4 py-4 bg-light rounded">
+                                <a href="/pages/single-product.html" class="d-flex">
+                                    <div class="box-img-hover text-center">
+                                        <img src="/img/profile pics/profile2.png" class="img-fluid prod-img" alt="Image" style="height: 50px; 
+                                        width: 50px;">     
+                                    </div>
+                                    <h5>Izuku Midoriya</h5>  
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                
+                </div>
+                </div>
+        <!-- VEGETABLES CATEGORY -->
+                <div class="tab-pane fade " id="cat-veg" role="tabpanel" aria-labelledby="cat-veg-tab" >
+                  <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
+                        <div class="row mt-5 mx-1">
+                          
+                          <h1 class="ms-3">VEGETABLES</h1>
+                  
+                          <div class="col-sm-6 col-md-6 col-lg-6 col-xl-6 mb-3 ">
+                                  
+                            <div class="products-single fix px-4 py-4">
+                                <a href="/pages/single-product.html">
+                                <div class="box-img-hover">
+                                    <!-- <div class="type-lb">
+                                        <p class="sale">Sale</p>
+                                    </div> -->
+                                    <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
+                                    
+                                </div>
+                                <div class="why-text">
+                                    <h4>Lorem ipsum dolor sit amet</h4>
+                                    <h5> $9.79</h5>
+                                </div>
+                              </a>
+                              <div class="mask-icon justify-content-end d-flex gap-2">
+                                              
+                                <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                                <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                            </div>
+                            </div>
+                            
+                          </div>
+        
+                          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                                    
+                          <div class="products-single fix px-4 py-4">
+                            <a href="/pages/single-product.html">
+                              <div class="box-img-hover">
+                                  <!-- <div class="type-lb">
+                                      <p class="sale">Sale</p>
+                                  </div> -->
+                                  <img src="/img/crops/crop-corn.jpg" class="img-fluid prod-img" alt="Image">
+                                  
+                              </div>
+                              <div class="why-text">
+                                  <h4>Lorem ipsum dolor sit amet</h4>
+                                  <h5> $9.79</h5>
+                              </div>
+                            </a>
+                            <div class="mask-icon justify-content-end d-flex gap-2">
+                                            
+                              <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                              <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                          </div>
+                          </div>
+        
+                          </div>
+                          
+                          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                            
+                            <div class="products-single fix px-4 py-4">
+                                <a href="/pages/single-product.html">
+                                <div class="box-img-hover">
+                                    <!-- <div class="type-lb">
+                                        <p class="sale">Sale</p>
+                                    </div> -->
+                                    <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
+                                    
+                                </div>
+                                <div class="why-text">
+                                    <h4>Lorem ipsum dolor sit amet</h4>
+                                    <h5> $9.79</h5>
+                                </div>
+                              </a>
+                              <div class="mask-icon justify-content-end d-flex gap-2">
+                                              
+                                <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                                <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                            </div>
+                            </div>
+                            
+                          </div>
+        
+                          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                                    
+                              <div class="products-single fix px-4 py-4">
+                                <a href="/pages/single-product.html">
+                                  <div class="box-img-hover">
+                                      <!-- <div class="type-lb">
+                                          <p class="sale">Sale</p>
+                                      </div> -->
+                                      <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
+                                      
+                                  </div>
+                                  <div class="why-text">
+                                      <h4>Lorem ipsum dolor sit amet</h4>
+                                      <h5> $9.79</h5>
+                                  </div>
+                                </a>
+                                <div class="mask-icon justify-content-end d-flex gap-2">
+                                                
+                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                              </div>
+                              </div>
+                              
+                            </div>
+        
+                          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                                  
+                          <div class="products-single fix px-4 py-4">
+                            <a href="/pages/single-product.html">
+                              <div class="box-img-hover">
+                                  <!-- <div class="type-lb">
+                                      <p class="sale">Sale</p>
+                                  </div> -->
+                                  <img src="/img/crops/crop-corn.jpg" class="img-fluid prod-img" alt="Image">
+                                  
+                              </div>
+                              <div class="why-text">
+                                  <h4>Lorem ipsum dolor sit amet</h4>
+                                  <h5> $9.79</h5>
+                              </div>
+                          </a>
+                          <div class="mask-icon justify-content-end d-flex gap-2">
+                                          
+                              <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                              <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                          </div>
+                          </div>
+        
+                          </div>
+                          
+                          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                          
+                          <div class="products-single fix px-4 py-4">
+                            <a href="/pages/single-product.html">
+                              <div class="box-img-hover">
+                                  <!-- <div class="type-lb">
+                                      <p class="sale">Sale</p>
+                                  </div> -->
+                                  <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
+                                  
+                              </div>
+                              <div class="why-text">
+                                  <h4>Lorem ipsum dolor sit amet</h4>
+                                  <h5> $9.79</h5>
+                              </div>
+                              </a>
+                              <div class="mask-icon justify-content-end d-flex gap-2">
+                                              
+                              <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                              <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                          </div>
+                          </div>
+                          
+                          </div>
+        
+                          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                                  
+                          <div class="products-single fix px-4 py-4">
+                            <a href="/pages/single-product.html">
+                              <div class="box-img-hover">
+                                  <!-- <div class="type-lb">
+                                      <p class="sale">Sale</p>
+                                  </div> -->
+                                  <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
+                                  
+                              </div>
+                              <div class="why-text">
+                                  <h4>Lorem ipsum dolor sit amet</h4>
+                                  <h5> $9.79</h5>
+                              </div>
+                              </a>
+                              <div class="mask-icon justify-content-end d-flex gap-2">
+                                              
+                              <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                              <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                          </div>
+                          </div>
+                          
+                          </div>
+        
+                          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                                  
+                          <div class="products-single fix px-4 py-4">
+                            <a href="/pages/single-product.html">
+                              <div class="box-img-hover">
+                                  <!-- <div class="type-lb">
+                                      <p class="sale">Sale</p>
+                                  </div> -->
+                                  <img src="/img/crops/crop-corn.jpg" class="img-fluid prod-img" alt="Image">
+                                  
+                              </div>
+                              <div class="why-text">
+                                  <h4>Lorem ipsum dolor sit amet</h4>
+                                  <h5> $9.79</h5>
+                              </div>
+                          </a>
+                          <div class="mask-icon justify-content-end d-flex gap-2">
+                                          
+                              <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                              <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                          </div>
+                          </div>
+        
+                          </div>
+                          
+                          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                          
+                          <div class="products-single fix px-4 py-4">
+                            <a href="/pages/single-product.html">
+                              <div class="box-img-hover">
+                                  <!-- <div class="type-lb">
+                                      <p class="sale">Sale</p>
+                                  </div> -->
+                                  <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
+                                  
+                              </div>
+                              <div class="why-text">
+                                  <h4>Lorem ipsum dolor sit amet</h4>
+                                  <h5> $9.79</h5>
+                              </div>
+                              </a>
+                              <div class="mask-icon justify-content-end d-flex gap-2">
+                                              
+                              <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                              <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                          </div>
+                          </div>
+                          
+                          </div>
+        
+                          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                                  
+                          <div class="products-single fix px-4 py-4">
+                            <a href="/pages/single-product.html">
+                              <div class="box-img-hover">
+                                  <!-- <div class="type-lb">
+                                      <p class="sale">Sale</p>
+                                  </div> -->
+                                  <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
+                                  
+                              </div>
+                              <div class="why-text">
+                                  <h4>Lorem ipsum dolor sit amet</h4>
+                                  <h5> $9.79</h5>
+                              </div>
+                              </a>
+                              <div class="mask-icon justify-content-end d-flex gap-2">
+                                              
+                              <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                              <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                          </div>
+                          </div>
+                          
+                          </div>
+        
+                          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                                  
+                          <div class="products-single fix px-4 py-4">
+                            <a href="/pages/single-product.html">
+                              <div class="box-img-hover">
+                                  <!-- <div class="type-lb">
+                                      <p class="sale">Sale</p>
+                                  </div> -->
+                                  <img src="/img/crops/crop-corn.jpg" class="img-fluid prod-img" alt="Image">
+                                  
+                              </div>
+                              <div class="why-text">
+                                  <h4>Lorem ipsum dolor sit amet</h4>
+                                  <h5> $9.79</h5>
+                              </div>
+                          </a>
+                          <div class="mask-icon justify-content-end d-flex gap-2">
+                                          
+                              <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                              <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                          </div>
+                          </div>
+        
+                          </div>
+                          
+                          <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
+                          
+                          <div class="products-single fix px-4 py-4">
+                            <a href="/pages/single-product.html">
+                              <div class="box-img-hover">
+                                  <!-- <div class="type-lb">
+                                      <p class="sale">Sale</p>
+                                  </div> -->
+                                  <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
+                                  
+                              </div>
+                              <div class="why-text">
+                                  <h4>Lorem ipsum dolor sit amet</h4>
+                                  <h5> $9.79</h5>
+                              </div>
+                              </a>
+                              <div class="mask-icon justify-content-end d-flex gap-2">
+                                              
+                              <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
+                              <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
+                          </div>
+                          </div>
+                          
+                          </div>
+                          
+                
+                        </div>
+                    </div>
+        
+                </div>
+                </div>
+        
                 </div>
         
         
-             <div class="col-xl-9 col-lg-9 col-sm-12 col-xs-12 shop-content-left ">
-                <div class="product-categorie-box ">
-                  <div class="tab-content" id="tabContent" >
-        <!-- ALL CATEGORY -->
-                    <div class="tab-pane fade show active" id="cat-all" role="tabpanel" aria-labelledby="cat-all-tab" >
-                      <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
-                            <div class="row mt-5 mx-1">
-                               
-                              <h1 class="ms-3">ALL</h1>
-                       
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                                      
-                                <div class="products-single fix px-4 py-4">
-                                  <a href="/pages/single-product.html">
-                                    <div class="box-img-hover text-center">
-                                        <!-- <div class="type-lb">
-                                            <p class="sale">Sale</p>
-                                        </div> -->
-                                        <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
-                                        
-                                    </div>
-                                    <div class="why-text">
-                                        <h4>Lorem ipsum dolor sit amet</h4>
-                                        <h5> $9.79</h5>
-                                    </div>
-                                  </a>
-                                  <div class="mask-icon justify-content-end d-flex gap-2">
-                                                  
-                                    <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                    <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                                </div>
-                                </div>
-                                
-                              </div>
-          
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                                        
-                              <div class="products-single fix px-4 py-4">
-                                <a href="/pages/single-product.html">
-                                  <div class="box-img-hover">
-                                      <!-- <div class="type-lb">
-                                          <p class="sale">Sale</p>
-                                      </div> -->
-                                      <img src="/img/crops/crop-corn.jpg" class="img-fluid prod-img" alt="Image">
-                                      
-                                  </div>
-                                  <div class="why-text">
-                                      <h4>Lorem ipsum dolor sit amet</h4>
-                                      <h5> $9.79</h5>
-                                  </div>
-                                </a>
-                                <div class="mask-icon justify-content-end d-flex gap-2">
-                                                
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                              </div>
-                              </div>
-          
-                              </div>
-                              
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                                
-                                <div class="products-single fix px-4 py-4">
-                                    <a href="/pages/single-product.html">
-                                    <div class="box-img-hover">
-                                        <!-- <div class="type-lb">
-                                            <p class="sale">Sale</p>
-                                        </div> -->
-                                        <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
-                                        
-                                    </div>
-                                    <div class="why-text">
-                                        <h4>Lorem ipsum dolor sit amet</h4>
-                                        <h5> $9.79</h5>
-                                    </div>
-                                  </a>
-                                  <div class="mask-icon justify-content-end d-flex gap-2">
-                                                  
-                                    <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                    <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                                </div>
-                                </div>
-                                
-                              </div>
-          
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                                        
-                                  <div class="products-single fix px-4 py-4">
-                                    <a href="/pages/single-product.html">
-                                      <div class="box-img-hover">
-                                          <!-- <div class="type-lb">
-                                              <p class="sale">Sale</p>
-                                          </div> -->
-                                          <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
-                                          
-                                      </div>
-                                      <div class="why-text">
-                                          <h4>Lorem ipsum dolor sit amet</h4>
-                                          <h5> $9.79</h5>
-                                      </div>
-                                    </a>
-                                    <div class="mask-icon justify-content-end d-flex gap-2">
-                                                    
-                                      <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                      <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                                  </div>
-                                  </div>
-                                  
-                                </div>
-            
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                                      
-                              <div class="products-single fix px-4 py-4">
-                                <a href="/pages/single-product.html">
-                                  <div class="box-img-hover">
-                                      <!-- <div class="type-lb">
-                                          <p class="sale">Sale</p>
-                                      </div> -->
-                                      <img src="/img/crops/crop-corn.jpg" class="img-fluid prod-img" alt="Image">
-                                      
-                                  </div>
-                                  <div class="why-text">
-                                      <h4>Lorem ipsum dolor sit amet</h4>
-                                      <h5> $9.79</h5>
-                                  </div>
-                              </a>
-                              <div class="mask-icon justify-content-end d-flex gap-2">
-                                              
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                              </div>
-                              </div>
-          
-                              </div>
-                              
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                              
-                              <div class="products-single fix px-4 py-4">
-                                <a href="/pages/single-product.html">
-                                  <div class="box-img-hover">
-                                      <!-- <div class="type-lb">
-                                          <p class="sale">Sale</p>
-                                      </div> -->
-                                      <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
-                                      
-                                  </div>
-                                  <div class="why-text">
-                                      <h4>Lorem ipsum dolor sit amet</h4>
-                                      <h5> $9.79</h5>
-                                  </div>
-                                  </a>
-                                  <div class="mask-icon justify-content-end d-flex gap-2">
-                                                  
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                              </div>
-                              </div>
-                              
-                              </div>
-          
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                                      
-                              <div class="products-single fix px-4 py-4">
-                                <a href="/pages/single-product.html">
-                                  <div class="box-img-hover">
-                                      <!-- <div class="type-lb">
-                                          <p class="sale">Sale</p>
-                                      </div> -->
-                                      <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
-                                      
-                                  </div>
-                                  <div class="why-text">
-                                      <h4>Lorem ipsum dolor sit amet</h4>
-                                      <h5> $9.79</h5>
-                                  </div>
-                                  </a>
-                                  <div class="mask-icon justify-content-end d-flex gap-2">
-                                                  
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                              </div>
-                              </div>
-                              
-                              </div>
-          
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                                      
-                              <div class="products-single fix px-4 py-4">
-                                <a href="/pages/single-product.html">
-                                  <div class="box-img-hover">
-                                      <!-- <div class="type-lb">
-                                          <p class="sale">Sale</p>
-                                      </div> -->
-                                      <img src="/img/crops/crop-corn.jpg" class="img-fluid prod-img" alt="Image">
-                                      
-                                  </div>
-                                  <div class="why-text">
-                                      <h4>Lorem ipsum dolor sit amet</h4>
-                                      <h5> $9.79</h5>
-                                  </div>
-                              </a>
-                              <div class="mask-icon justify-content-end d-flex gap-2">
-                                              
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                              </div>
-                              </div>
-          
-                              </div>
-                              
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                              
-                              <div class="products-single fix px-4 py-4">
-                                <a href="/pages/single-product.html">
-                                  <div class="box-img-hover">
-                                      <!-- <div class="type-lb">
-                                          <p class="sale">Sale</p>
-                                      </div> -->
-                                      <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
-                                      
-                                  </div>
-                                  <div class="why-text">
-                                      <h4>Lorem ipsum dolor sit amet</h4>
-                                      <h5> $9.79</h5>
-                                  </div>
-                                  </a>
-                                  <div class="mask-icon justify-content-end d-flex gap-2">
-                                                  
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                              </div>
-                              </div>
-                              
-                              </div>
-          
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                                      
-                              <div class="products-single fix px-4 py-4">
-                                <a href="/pages/single-product.html">
-                                  <div class="box-img-hover">
-                                      <!-- <div class="type-lb">
-                                          <p class="sale">Sale</p>
-                                      </div> -->
-                                      <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
-                                      
-                                  </div>
-                                  <div class="why-text">
-                                      <h4>Lorem ipsum dolor sit amet</h4>
-                                      <h5> $9.79</h5>
-                                  </div>
-                                  </a>
-                                  <div class="mask-icon justify-content-end d-flex gap-2">
-                                                  
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                              </div>
-                              </div>
-                              
-                              </div>
-          
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                                      
-                              <div class="products-single fix px-4 py-4">
-                                <a href="/pages/single-product.html">
-                                  <div class="box-img-hover">
-                                      <!-- <div class="type-lb">
-                                          <p class="sale">Sale</p>
-                                      </div> -->
-                                      <img src="/img/crops/crop-corn.jpg" class="img-fluid prod-img" alt="Image">
-                                      
-                                  </div>
-                                  <div class="why-text">
-                                      <h4>Lorem ipsum dolor sit amet</h4>
-                                      <h5> $9.79</h5>
-                                  </div>
-                              </a>
-                              <div class="mask-icon justify-content-end d-flex gap-2">
-                                              
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                              </div>
-                              </div>
-          
-                              </div>
-                              
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                              
-                              <div class="products-single fix px-4 py-4">
-                                <a href="/pages/single-product.html">
-                                  <div class="box-img-hover">
-                                      <!-- <div class="type-lb">
-                                          <p class="sale">Sale</p>
-                                      </div> -->
-                                      <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
-                                      
-                                  </div>
-                                  <div class="why-text">
-                                      <h4>Lorem ipsum dolor sit amet</h4>
-                                      <h5> $9.79</h5>
-                                  </div>
-                                  </a>
-                                  <div class="mask-icon justify-content-end d-flex gap-2">
-                                                  
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                              </div>
-                              </div>
-                              
-                              </div>
-                            </div>
-                        </div>
-                    
-                    </div>
-                    </div>
-        <!-- VEGETABLES CATEGORY -->
-                    <div class="tab-pane fade " id="cat-veg" role="tabpanel" aria-labelledby="cat-veg-tab" >
-                      <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
-                            <div class="row mt-5 mx-1">
-                              
-                              <h1 class="ms-3">VEGETABLES</h1>
-                      
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                                      
-                                <div class="products-single fix px-4 py-4">
-                                    <a href="/pages/single-product.html">
-                                    <div class="box-img-hover">
-                                        <!-- <div class="type-lb">
-                                            <p class="sale">Sale</p>
-                                        </div> -->
-                                        <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
-                                        
-                                    </div>
-                                    <div class="why-text">
-                                        <h4>Lorem ipsum dolor sit amet</h4>
-                                        <h5> $9.79</h5>
-                                    </div>
-                                  </a>
-                                  <div class="mask-icon justify-content-end d-flex gap-2">
-                                                  
-                                    <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                    <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                                </div>
-                                </div>
-                                
-                              </div>
-          
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                                        
-                              <div class="products-single fix px-4 py-4">
-                                <a href="/pages/single-product.html">
-                                  <div class="box-img-hover">
-                                      <!-- <div class="type-lb">
-                                          <p class="sale">Sale</p>
-                                      </div> -->
-                                      <img src="/img/crops/crop-corn.jpg" class="img-fluid prod-img" alt="Image">
-                                      
-                                  </div>
-                                  <div class="why-text">
-                                      <h4>Lorem ipsum dolor sit amet</h4>
-                                      <h5> $9.79</h5>
-                                  </div>
-                                </a>
-                                <div class="mask-icon justify-content-end d-flex gap-2">
-                                                
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                              </div>
-                              </div>
-          
-                              </div>
-                              
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                                
-                                <div class="products-single fix px-4 py-4">
-                                    <a href="/pages/single-product.html">
-                                    <div class="box-img-hover">
-                                        <!-- <div class="type-lb">
-                                            <p class="sale">Sale</p>
-                                        </div> -->
-                                        <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
-                                        
-                                    </div>
-                                    <div class="why-text">
-                                        <h4>Lorem ipsum dolor sit amet</h4>
-                                        <h5> $9.79</h5>
-                                    </div>
-                                  </a>
-                                  <div class="mask-icon justify-content-end d-flex gap-2">
-                                                  
-                                    <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                    <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                                </div>
-                                </div>
-                                
-                              </div>
-          
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                                        
-                                  <div class="products-single fix px-4 py-4">
-                                    <a href="/pages/single-product.html">
-                                      <div class="box-img-hover">
-                                          <!-- <div class="type-lb">
-                                              <p class="sale">Sale</p>
-                                          </div> -->
-                                          <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
-                                          
-                                      </div>
-                                      <div class="why-text">
-                                          <h4>Lorem ipsum dolor sit amet</h4>
-                                          <h5> $9.79</h5>
-                                      </div>
-                                    </a>
-                                    <div class="mask-icon justify-content-end d-flex gap-2">
-                                                    
-                                      <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                      <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                                  </div>
-                                  </div>
-                                  
-                                </div>
-            
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                                      
-                              <div class="products-single fix px-4 py-4">
-                                <a href="/pages/single-product.html">
-                                  <div class="box-img-hover">
-                                      <!-- <div class="type-lb">
-                                          <p class="sale">Sale</p>
-                                      </div> -->
-                                      <img src="/img/crops/crop-corn.jpg" class="img-fluid prod-img" alt="Image">
-                                      
-                                  </div>
-                                  <div class="why-text">
-                                      <h4>Lorem ipsum dolor sit amet</h4>
-                                      <h5> $9.79</h5>
-                                  </div>
-                              </a>
-                              <div class="mask-icon justify-content-end d-flex gap-2">
-                                              
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                              </div>
-                              </div>
-          
-                              </div>
-                              
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                              
-                              <div class="products-single fix px-4 py-4">
-                                <a href="/pages/single-product.html">
-                                  <div class="box-img-hover">
-                                      <!-- <div class="type-lb">
-                                          <p class="sale">Sale</p>
-                                      </div> -->
-                                      <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
-                                      
-                                  </div>
-                                  <div class="why-text">
-                                      <h4>Lorem ipsum dolor sit amet</h4>
-                                      <h5> $9.79</h5>
-                                  </div>
-                                  </a>
-                                  <div class="mask-icon justify-content-end d-flex gap-2">
-                                                  
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                              </div>
-                              </div>
-                              
-                              </div>
-          
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                                      
-                              <div class="products-single fix px-4 py-4">
-                                <a href="/pages/single-product.html">
-                                  <div class="box-img-hover">
-                                      <!-- <div class="type-lb">
-                                          <p class="sale">Sale</p>
-                                      </div> -->
-                                      <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
-                                      
-                                  </div>
-                                  <div class="why-text">
-                                      <h4>Lorem ipsum dolor sit amet</h4>
-                                      <h5> $9.79</h5>
-                                  </div>
-                                  </a>
-                                  <div class="mask-icon justify-content-end d-flex gap-2">
-                                                  
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                              </div>
-                              </div>
-                              
-                              </div>
-          
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                                      
-                              <div class="products-single fix px-4 py-4">
-                                <a href="/pages/single-product.html">
-                                  <div class="box-img-hover">
-                                      <!-- <div class="type-lb">
-                                          <p class="sale">Sale</p>
-                                      </div> -->
-                                      <img src="/img/crops/crop-corn.jpg" class="img-fluid prod-img" alt="Image">
-                                      
-                                  </div>
-                                  <div class="why-text">
-                                      <h4>Lorem ipsum dolor sit amet</h4>
-                                      <h5> $9.79</h5>
-                                  </div>
-                              </a>
-                              <div class="mask-icon justify-content-end d-flex gap-2">
-                                              
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                              </div>
-                              </div>
-          
-                              </div>
-                              
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                              
-                              <div class="products-single fix px-4 py-4">
-                                <a href="/pages/single-product.html">
-                                  <div class="box-img-hover">
-                                      <!-- <div class="type-lb">
-                                          <p class="sale">Sale</p>
-                                      </div> -->
-                                      <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
-                                      
-                                  </div>
-                                  <div class="why-text">
-                                      <h4>Lorem ipsum dolor sit amet</h4>
-                                      <h5> $9.79</h5>
-                                  </div>
-                                  </a>
-                                  <div class="mask-icon justify-content-end d-flex gap-2">
-                                                  
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                              </div>
-                              </div>
-                              
-                              </div>
-          
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                                      
-                              <div class="products-single fix px-4 py-4">
-                                <a href="/pages/single-product.html">
-                                  <div class="box-img-hover">
-                                      <!-- <div class="type-lb">
-                                          <p class="sale">Sale</p>
-                                      </div> -->
-                                      <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
-                                      
-                                  </div>
-                                  <div class="why-text">
-                                      <h4>Lorem ipsum dolor sit amet</h4>
-                                      <h5> $9.79</h5>
-                                  </div>
-                                  </a>
-                                  <div class="mask-icon justify-content-end d-flex gap-2">
-                                                  
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                              </div>
-                              </div>
-                              
-                              </div>
-          
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                                      
-                              <div class="products-single fix px-4 py-4">
-                                <a href="/pages/single-product.html">
-                                  <div class="box-img-hover">
-                                      <!-- <div class="type-lb">
-                                          <p class="sale">Sale</p>
-                                      </div> -->
-                                      <img src="/img/crops/crop-corn.jpg" class="img-fluid prod-img" alt="Image">
-                                      
-                                  </div>
-                                  <div class="why-text">
-                                      <h4>Lorem ipsum dolor sit amet</h4>
-                                      <h5> $9.79</h5>
-                                  </div>
-                              </a>
-                              <div class="mask-icon justify-content-end d-flex gap-2">
-                                              
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                              </div>
-                              </div>
-          
-                              </div>
-                              
-                              <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                              
-                              <div class="products-single fix px-4 py-4">
-                                <a href="/pages/single-product.html">
-                                  <div class="box-img-hover">
-                                      <!-- <div class="type-lb">
-                                          <p class="sale">Sale</p>
-                                      </div> -->
-                                      <img src="/img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img" alt="Image">
-                                      
-                                  </div>
-                                  <div class="why-text">
-                                      <h4>Lorem ipsum dolor sit amet</h4>
-                                      <h5> $9.79</h5>
-                                  </div>
-                                  </a>
-                                  <div class="mask-icon justify-content-end d-flex gap-2">
-                                                  
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-bookmark"></i> </button>
-                                  <button class="btn add-to-cart-btn btn-success"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                              </div>
-                              </div>
-                              
-                              </div>
-                              
-                    
-                            </div>
-                        </div>
         
-                    </div>
-                    </div>
-
-                    </div>
-        
-        
-        
-                  </div>
-        
-                
               </div>
-            </div>
+                  </main>
+                </div>
+              </div>
 </body>
 <script
 src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
