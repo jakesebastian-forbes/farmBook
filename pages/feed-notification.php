@@ -214,7 +214,7 @@
                     style="min-height: 40px; min-width: 300px"
                   >
                     <i class="fas fa-search me-1 text-muted"></i>
-                    <p class="m-0 fs-7 text-muted">Search Flexbook</p>
+                    <p class="m-0 fs-7 text-muted">Search</p>
                   </div>
                 </span>
                 <!-- search menu -->
