@@ -309,10 +309,10 @@
       <!-- ================= Appbar ================= -->
 
       <?php 
-     
+     $GLOBALS['profile'];
 $conn = new mysqli('localhost','root','','farmbook_db');
 
-$GLOBALS['profile'];
+
 if($conn->connect_error){
   die('Connection failed : ' . $conn->connect_error);
  }else{
@@ -335,6 +335,7 @@ while($rows = mysqli_fetch_assoc($result))
       }
       // $profile = 'src=data:image/jpeg;base64,'.base64_encode( $rows['profilePic']) ;
       // echo $profile."        profile178";
+      $_SESSION['profile_pic'] = $profile;
     }
 
    
@@ -519,7 +520,7 @@ while($rows = mysqli_fetch_assoc($result))
                
                   <!-- s1 -->
                   <li class="my-2 p-1">
-                    <a href="#" class="text-decoration-none text-dark d-flex align-items-centerjustify-content-between ">
+                    <a href="friends.php" class="text-decoration-none text-dark d-flex align-items-centerjustify-content-between ">
                       <div class="p-2"> 
                         <i class="fa-solid fa-user-group "   style="font-size: 35px; object-fit: cover;"></i>
                       </div>
@@ -773,7 +774,7 @@ while($rows = mysqli_fetch_assoc($result))
               >
                 <!-- avatar -->
                 <li class="dropdown-item p-1 rounded d-flex">
-                 <img <?php echo $profile?> class="rounded-circle me-2" alt="avatar" style="width: 40px; height: 40px; object-fit: cover"
+                 <img <?php echo $_SESSION['profile_pic']?> class="rounded-circle me-2" alt="avatar" style="width: 40px; height: 40px; object-fit: cover"
                  id = "dropdown_profile"/>
                   <!--  -->
                   <div>
@@ -1609,7 +1610,7 @@ while($rows = mysqli_fetch_assoc($result))
               <ul class="navbar-nav side-nav mt-4 ms-3 d-flex flex-column  mb-3 bg-light rounded mx-2 my-1" >
               
                 <li class="dropdown-item side-item-li p-1 rounded">
-                  <a href="#" class=" d-flex align-items-center text-decoration-none text-dark ">
+                  <a href="friends.php" class=" d-flex align-items-center text-decoration-none text-dark ">
                     <div class="p-2">
                       <i class="fa-solid fa-user-group "   style="width: 40px; height: 40px; object-fit: cover;font-size: 40px;"></i>
                      
@@ -1758,10 +1759,14 @@ while($rows = mysqli_fetch_assoc($result))
                     <img <?php echo $profile?> alt="avatar" class="rounded-circle me-2"style="width: 38px; height: 38px; object-fit: cover"
                     id = "status_profile"/>
                   </div>
-                  <input type="text"class="form-control rounded-pill border-0 bg-gray pointer" disabled placeholder="What's on your mind?"data-bs-toggle="modal"data-bs-target="#createModal"
+                  <input type="text"class="form-control rounded-pill border-0 bg-gray pointer" disabled placeholder="What's on your mind?" data-bs-toggle="modal"data-bs-target="#createModal"
                   />
                 </div>
                 <!-- create modal -->
+
+              <!-- PHP -->
+              <!-- INSERT INTO `postings` (`id`, `acc_id`, `caption`, `postingType`, `dateTime`) VALUES ('', '9444ddd0-b688-11ed-ade2-00ffb10308e5', 'san makakabile?', 'Seeking', '2023-05-07 23:37:39.000000'); -->
+              
                 <div class="modal fade" id="createModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
                   <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content" >
@@ -1770,7 +1775,7 @@ while($rows = mysqli_fetch_assoc($result))
                         <h5 class="text-dark text-center w-100 m-0"id="exampleModalLabel">
                           Create Post
                         </h5>
-                        <button type="button"class="btn-close" data-bs-dismiss="modal"aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"aria-label="Close"></button>
                       </div>
                       <!-- body -->
                       <div class="modal-body my-1 px-3" >
@@ -1781,14 +1786,18 @@ while($rows = mysqli_fetch_assoc($result))
                               <div class="p-2">
                                 <img src="../img/profile pics/profile.jpg" alt="from fb" class="rounded-circle" style=" width: 38px; height: 38px; object-fit: cover;"/>
                               </div>
-                              <div>
-                                <p class="m-0 fw-bold">Mac Miller</p>
-                              
+                              <div class="d-flex gap-4">
+                                <p class="m-0 fw-bold" id="fname">Mac <span id="lname">Miller </span> </p>
+                                <select name="mySelectPosting" id="postingType" class="btn btn-sm bg-success text-white">
+                                  <option value="seeking"selected>seeking</option>
+                                  <option value="seller">seller</option>
+                                  <option value="Queries">Queries</option>
+                                </select>
                               </div>
                             </div>
                             <!-- text -->
                             <div >
-                              <textarea cols="30"rows="5" class="form-control border-1" placeholder="What's on your mind?" ></textarea>
+                              <textarea cols="30"rows="5" class="form-control border-1" id="caption" placeholder="What's on your mind?" ></textarea>
                             </div>
                        
                             <!-- options -->
@@ -1807,18 +1816,55 @@ while($rows = mysqli_fetch_assoc($result))
                             </div>
                           <!-- </div> -->
                         </div>
-  
+                       
+            
                         <!-- end -->
                       </div>
                       <!-- footer -->
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-success w-100">
+                        <button type="button" class="btn btn-success w-100" id="submitBtn2">
                           Post
                         </button>
                       </div>
                     </div>
                   </div>
                 </div>
+                <script>
+            $(document).ready(function() {
+              // Handle form submission
+              $('#submitBtn2').click(function(e) {
+                e.preventDefault(); // Prevent the default form submission
+
+                // Get the values from the input fields
+                // var id = $('#name').val();
+                // var fname = $('#fname').val();
+                // var lname = $('#lname').val();
+                // var mname = $('#email').val();
+                var caption = $('#caption').val();
+                var postingType = $('#postingType').val();
+
+                // Send the data to the PHP script using AJAX
+                $.ajax({
+                  url: 'db_insert_createPost.php',
+                  method: 'POST',
+                  data: {
+                    id: id,
+                    caption: caption,
+                    postingType: postingType
+                    
+                  },
+                  success: function(response) {
+                    alert(response); // Display the response from the PHP script
+                  },
+                  error: function(xhr, status, error) {
+                    console.log(xhr.responseText); // Log any error messages to the console
+                  }
+                });
+              });
+            });
+            </script>
+  
+                
                 <hr />
                 <!-- actions -->
                 <!-- image button style -->

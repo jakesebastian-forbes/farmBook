@@ -3,7 +3,7 @@
  if (!isset($_SESSION['logged_in'])) {
     header("Location: ../index.php");
 }
- $page_title = 'profile';
+ $page_title = 'PROFILE';
 //  $acc_in_sess = $_SESSION['acc_id'];
 ?>
 
@@ -13,7 +13,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?php echo $page_title ?></title>
 
     <link rel="stylesheet" href="../bootstrap-5.2.2/css/bootstrap.min.css"/>
     <script src="https://kit.fontawesome.com/134428d8b1.js" crossorigin="anonymous"></script>
@@ -308,8 +308,8 @@
     <body class=" position-relative" style="   background-color: #E4E4E4;">
         <!-- ================= Appbar ================= -->
         <?php 
-      $page_title = "profile";
-      include "../components/appBar.php"?>
+      $page_title = "PROFILE";
+      include "../components/nav_bar.php"?>
     
         <style>
             /*
@@ -509,34 +509,58 @@
                
             </header>
             <div class="cols__container">
+            <?php
+    $conn = new mysqli('localhost','root','','farmbook_db');
+
+
+    if($conn->connect_error){
+      die('Connection failed : ' . $conn->connect_error);
+      }else{
+    
+    $query = "SELECT `id`, CONCAT(`firstName`,' ',`lastName`) as `fullname`, `farmBusName`, `contactNo`, `email`, `verification`, `accountBio`, `address`, `birthDate`, `userName`, `password`, `dateCreated`, `accountType` FROM `accounts` 
+    WHERE `id` = '".$_SESSION['acc_id']."'";;
+    
+    $result = mysqli_query($conn,$query);
+    
+    while($rows = mysqli_fetch_assoc($result))
+        {
+    
+       
+   
+    ?>
+      
               <div class="left__col bg-light" style="height: 400px;">
+   
                 <div class="img__container">
-                  <img src="../img/profile pics/profile.jpg" alt="" />
+                  <img <?PHP echo $_SESSION["profile_pic"]?> alt="" />
                   <span></span>
                 </div>
                 <div class="profile-info mt-5 mb-0 " >
-                    <h2>Mac Miller</h2>
+                    <h2><?php echo $rows['fullname']?></h2>
                     <!-- <p>UX/UI Designer</p>
                     <p>anna@example.com</p> -->
                 </div>
               
                 <!-- FARMERS PROFILE -->
                 <ul class="about px-5 py-2" >
-                  <li class="mx-3"><span>4,073</span> Followers</li>
+                  <li class="mx-3"><span>4,073</span>Product Lists</li>
                   <li><span class="text-center">322</span>Friends</li>
                 </ul>
       
-                <div class="content "style=" text-align: left; margin-left:40px" >
+                <div class="content "style=" text-align: left; margin-left:30px" >
                   <!-- <p>Works asadasdasdasdaddddddddddddddddddddss</p> -->
                   <!-- address -->
-                  <p> <i class="fa-solid fa-location-dot"></i> From <span>Nasugbu, Batangas</span></p>
+                  <p> <i class="fa-solid fa-location-dot"></i> From <span><?php echo $rows['address']?></span></p>
                   <!-- bio -->
                   <p> <i class="fa fa-clipboard-check"></i> Lives in <span>Farmer</span></p>
                   <!-- accountType -->
                   <p ><i class="fa-solid fa-briefcase"></i> Works as <span>Farmer</span></p>
                   <p ><i class="fa fa-bag-heart-fill"></i> Farm Name <span>Strawberry Farm</span></p>
                   
-                 
+                 <?php
+                    }            
+                    }
+                 ?>
                 
                  
                   
@@ -615,36 +639,19 @@
                     <div class="row justify-content-center">
                       <div class="col-auto" style="height: 600px; ">
                         <div class="bg-light d-flex mt-3 justify-content-between rounded" >
-                          <!-- <ul class="nav  nav-pills rounded">
-                        
-                            <li class="nav-item nav_list rounded">
-                              <a class="nav-link link active" id="posts-tab" data-bs-toggle="tab" data-bs-target="#posts" href="#" style="color: black;">POSTS</a>
-                          </li>
-                          <li class="nav-item nav_list rounded">
-                            <a class="nav-link link" id="photos-tab" data-bs-toggle="tab" data-bs-target="#photos" href="#" style="color: black;">PHOTOS</a>
-                          </li>
-                        
-                      
-  
-                      </ul> -->
-
+                       <!--========== NAV-PILLS ========== -->
                       <ul class="nav nav-pills rounded">
-                            
-                        <li class="nav-item cat nav_list  rounded cat-nav " role="presentation">
-                          <a class="nav-link cat-item text-dark active" id="posts-tab" data-bs-toggle="tab" data-bs-target="#posts" href="#" style="color: black;">POSTS</a>
-                        </li>
-                        <li class="nav-item cat nav_list rounded cat-nav  " role="presentation">
-                          <a class="nav-link cat-item  text-dark" id="photos-tab" data-bs-toggle="tab" data-bs-target="#photos" href="#" style="color: black;"> PHOTOS</a>
-                        </li>
-                        <li class="nav-item cat nav_list rounded cat-nav  " role="presentation">
-                          <a class="nav-link cat-item  text-dark" id="products-tab" data-bs-toggle="tab" data-bs-target="#products" href="#" style="color: black;">PRODUCTS</a>
-                        </li>
-                       
-                        <!-- text-white link-dark -->
-                    
-        
-                        </ul>
-
+                          <li class="nav-item cat nav_list  rounded cat-nav " role="presentation">
+                            <a class="nav-link cat-item text-dark active" id="posts-tab" data-bs-toggle="tab" data-bs-target="#posts" href="#" style="color: black;">POSTS</a>
+                          </li>
+                          <!-- <li class="nav-item cat nav_list rounded cat-nav  " role="presentation">
+                            <a class="nav-link cat-item  text-dark" id="photos-tab" data-bs-toggle="tab" data-bs-target="#photos" href="#" style="color: black;"> PHOTOS</a>
+                          </li> -->
+                          <li class="nav-item cat nav_list rounded cat-nav  " role="presentation">
+                            <a class="nav-link cat-item  text-dark" id="products-tab" data-bs-toggle="tab" data-bs-target="#products" href="#" style="color: black;">PRODUCTS</a>
+                          </li>
+                      </ul>
+    <!--========== NAV-PILLS ========== -->
 
                       <div class="mt-1 " style="justify-content: right; margin-right: 5px;">
                         <button type="button" class="edit-profile-btn" data-bs-toggle="modal" data-bs-target="#editModal">Edit Profile</button>
@@ -658,7 +665,27 @@
                                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                       </div>
                                       <div class="modal-body" style="text-align: left;">
-                                          <form>
+                                      <form enctype="multipart/form-data" method="post" action="update_profile.php">
+<?php
+                                      $conn = new mysqli('localhost','root','','farmbook_db');
+
+if($conn->connect_error){
+  die('Connection failed : ' . $conn->connect_error);
+ }else{
+ $query = "SELECT CONCAT(accounts.firstName, ' ', accounts.lastName) AS `Account Owner`,accounts.id as `account_id`,
+ postings.id as `post_id`, caption, CONCAT(posting_medias.media) AS `Medias`,dateTime AS `Date and Time`
+ FROM postings INNER JOIN accounts ON postings.acc_id = accounts.id LEFT JOIN posting_medias 
+  ON postings.id = posting_medias.posting_id GROUP BY postings.id;";
+
+$result = mysqli_query($conn,$query);
+
+while($rows = mysqli_fetch_assoc($result))
+    {
+ 
+      $post_id = $rows['post_id'];
+      
+    ?>
+                                      
                                               <div class="row">
                                                 <div class="col-md-6 mb-3">
                                                   <label for="Product Name" class="form-label">Username</label>
@@ -669,7 +696,13 @@
                                                   <input type="number" class="form-control" id="product-price" required>
                                                 </div>
                                               </div>
-                                            
+
+                                              <div class="mb-3">
+                                                <label for="address" class="form-label">Address</label>
+                                                <input type="text" class="form-control" id="address" required>
+                                                <small class="form-text text-muted"></small>
+                                              </div>
+
                                               <div class="mb-3">
                                                 <label for="Description" class="form-label">Bio</label>
                                                 <input type="text" class="form-control" id="description" required>
@@ -680,6 +713,12 @@
                                                 <label for="product-img" class="form-label">Profile</label>
                                                 <input type="file" class="form-control" id="product-img" required>
                                               </div>
+
+                                              <?php
+    }
+  }
+                                              
+                                              ?>
                                             </form>
                                       </div>
                                       <div class="modal-footer">
@@ -696,11 +735,12 @@
                         <div class="tab-content" id="tabContent" >
                             <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab" >
                               
+                            <!-- ======  POST ===== -->
                               
                               
                               <div class="mt-4 mb-4" style="height: 530px; overflow-y: auto;">
 
-                                 <!-- create post -->
+            <!--========== create post ==========-->
                                 <div class="bg-white p-3 mt-2 mx-2 rounded border shadow">
                                   <!-- avatar -->
                                   <div class="d-flex" type="button">
@@ -715,6 +755,7 @@
                                     <div class="modal-dialog modal-dialog-centered">
                                       <div class="modal-content" >
                                         <!-- head -->
+                                    
                                         <div class="modal-header align-items-center">
                                           <h5 class="text-dark text-center w-100 m-0"id="exampleModalLabel">
                                             Create Post
@@ -785,522 +826,337 @@
                     
                                   </div>
                                 </div>
-
+            <!--========== create post ==========-->
+<!-- ========== FEED POST ========= -->
                                 <!--post 1  -->
-                                <div class="bg-white p-4 rounded shadow mt-3 mx-2 my-4">
-                                  <!-- author -->
-                                  <div class="d-flex justify-content-between">
-                                    <!-- avatar -->
-                                    <div class="d-flex">
-                                      <img src="../img/profile pics/profile2.png" alt="avatar" class="rounded-circle me-2"  style="width: 38px; height: 38px; object-fit: cover"/>
-                                      <div>
-                                        <p class="m-0 fw-bold">Izuku Midoriya</p>
-                                        <span class="text-muted fs-7">July 17 at 1:23 pm</span>
-                                      </div>
-                                    </div>
-                                 
-                                  </div>
-                                  <!-- post content -->
-                                  <div class="mt-3">
-                                    <!-- content -->
-                                    <div>
-                                      <p>
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                        Quae fuga incidunt consequatur tenetur doloremque officia
-                                        corrupti provident tempore vitae labore?
-                                      </p>
-                                      <div class="text-center">
-                                        <img src="../img/Vegetables/cabbage-3.jpg" id="myImg" alt="post image"class="img-fluid rounded " style="object-fit: none; object-position: center;   width: 90%;max-height: 280px;" />
-                                      </div>
-                                 
-                                    </div>
-                                    
-                                      <!-- The Modal -->
-                                        <div id="myModal" class="modal myModal px-5">
-                                          <span class="close">×</span>
-                                          <img class="modal-content " id="img01" />
-                                          <!-- <div id="caption"></div> -->
-                                      </div>
-                         
-                                     <script>
-                                      // Get the modal
-                                      var modal = document.getElementById("myModal");
-                                      // Get the image and insert it inside the modal - use its "alt" text as a caption
-                                      var img = document.getElementById("myImg");
-                                      var modalImg = document.getElementById("img01");
-                                      var captionText = document.getElementById("caption");
-                                      img.onclick = function() {
-                                         modal.style.display = "block";
-                                         modalImg.src = this.src;
-                                         captionText.innerHTML = this.alt;
-                                      };
-                                      // Get the <span> element that closes the modal
-                                      var span = document.getElementsByClassName("close")[0];
-                                      // When the user clicks on <span> (x), close the modal
-                                      span.onclick = function() {
-                                         modal.style.display = "none";
-                                      };
-                                   </script>
-                    
-                                    <!-- likes & comments -->
-                                    <div class="post__comment mt-3 position-relative">
-                                   
-                                      <style>
-                                        
-                                           
-                                      </style>
-                                      <hr>
-                                      <!-- comments start-->
-                                      <div class="accordion" id="accordionExample">
-                                        <div class="accordion-item border-0">
-                                        
-                                          <!-- <hr /> -->
-                                          <!-- comment & like bar -->
-                                          <div class="d-flex justify-content-around">
-                                            <div class=" dropdown-item rounded d-flex justify-content-center align-items-center pointer p-1 ">
-                                              <button type="button" class="like-btn "> <span class="d-flex justify-content-center "><i class="fas fa-thumbs-up mt-1 mx-3"></i><p class="m-0" >Like</p></span></button>
-                                              
-                                              
-                                            </div>
-                                            <div class=" dropdown-item rounded d-flex justify-content-center align-items-center pointer p-1 ">
-                                            <button type="button" class="comment-btn " data-bs-toggle="collapse"  data-bs-target="#collapsePost1" aria-expanded="false"   aria-controls="collapsePost1"> <span class="d-flex justify-content-center "><i class="fa-solid fa-comment mt-1 mx-3"></i><p class="m-0" >Comment</p></span></button>
-                                              
-                                              
-                                            </div>
-                                          </div>
-                                          <!-- comment expand -->
-                                          <div id="collapsePost1"  class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                            <hr />
-                                            <div class="accordion-body">
-                                              <!-- comment 1 -->
-                                              <div class="comment-1 d-flex align-items-center p-2">
-                                                <!-- avatar -->
-                                                <img src="../img/profile pics/profile5.jpg" alt="avatar" class="rounded-circle me-2"  style="width: 40px;height: 40px;object-fit: cover;"/>
-                                                <!-- comment text -->
-                                                <div class="p-3 rounded comment__input w-100">
-                                                  <!-- comment menu of author -->
-                                                  <div class="d-flex justify-content-end">
-                                                    <!-- icon -->
-                                                    <i class="fas fa-ellipsis-h text-blue pointer" id="post1CommentMenuButton" data-bs-toggle="dropdown"aria-expanded="false"></i>
-                                                    <!-- menu -->
-                                                    <ul
-                                                      class="dropdown-menu border-0 shadow"
-                                                      aria-labelledby="post1CommentMenuButton"
-                                                    >
-                                                     
-                                                      <li class="d-flex align-items-center">
-                                                        <a class=" dropdown-item d-flex justify-content-around align-items-center fs-7 "  href="#" >
-                                                          Delete Comment
-                                                        </a
-                                                        >
-                                                      </li>
-                                                    </ul>
-                                                  </div>
-                                                  <p class="fw-bold m-0">Paul Walker</p>
-                                                  <p class="m-0 fs-7 bg-gray p-2 rounded">
-                                                    Lorem ipsum dolor sit amet, consectetur
-                                                    adipiscing elit.
-                                                  </p>
-                                                </div>
-                                              </div>
-                                              <!-- comment 2 -->
-                                              <div class="comment-1 d-flex align-items-center p-2">
-                                                <!-- avatar -->
-                                                <img src="../img/profile pics/profile6.jpg" alt="avatar" class="rounded-circle me-2"  style="width: 40px;height: 40px;object-fit: cover;"/>
-                                                <!-- comment text -->
-                                                <div class="p-3 rounded comment__input w-100">
-                                                  <!-- comment menu of author -->
-                                                  <div class="d-flex justify-content-end">
-                                                    <!-- icon -->
-                                                    <i class="fas fa-ellipsis-h text-blue pointer" id="post1CommentMenuButton" data-bs-toggle="dropdown"aria-expanded="false"></i>
-                                                    <!-- menu -->
-                                                    <ul class="dropdown-menu border-0 shadow" aria-labelledby="post1CommentMenuButton" >
-                                                     
-                                                      <li class="d-flex align-items-center">
-                                                        <a class=" dropdown-item d-flex justify-content-around align-items-center fs-7 "  href="#" >
-                                                          Delete Comment
-                                                        </a
-                                                        >
-                                                      </li>
-                                                    </ul>
-                                                  </div>
-                                                  <p class="fw-bold m-0">Peter Parker</p>
-                                                  <p class="m-0 fs-7 bg-gray p-2 rounded">
-                                                    Lorem ipsum dolor sit amet, consectetur
-                                                    adipiscing elit.
-                                                  </p>
-                                                </div>
-                                               
-                                              </div>
-                                              <!-- create comment -->
-                                              <form class="d-flex my-1">
-                                                <!-- avatar -->
-                                                <div class="input-comment d-flex  align-items-center p-3" style="width: 100%;">
-                                                <div>
-                                                  <img src="../img/profile pics/profile.jpg "alt=" avatar "class="rounded-circle me-2" style=" width: 38px;height: 38px;object-fit: cover;"/>
-                                                </div>
-                                                <!-- input -->
-                                                
-                                                  <input type="text" class="form-control border-0 rounded-pill bg-gray" placeholder="Write a comment" />
-                                                </div>
-                                            
-                                              </form>
-                                              <!-- end -->
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <!-- end -->
-                                    </div>
-                                  </div>
-                                </div>
+                               
 
-                                <!-- post 2 -->
-                                <div class="bg-white p-4 rounded shadow mt-3 mx-2 my-4">
-                                  <!-- author -->
-                                  <div class="d-flex justify-content-between">
-                                    <!-- avatar -->
-                                    <div class="d-flex">
-                                      <img src="../img/profile pics/profile3.jpg" alt="avatar" class="rounded-circle me-2"  style="width: 38px; height: 38px; object-fit: cover"/>
-                                      <div>
-                                        <p class="m-0 fw-bold">Fank Ocean</p>
-                                        <span class="text-muted fs-7">July 16 at 2:25 pm</span>
-                                      </div>
-                                    </div>
-                                 
-                                  </div>
-                                  <!-- post content -->
-                                  <div class="mt-3">
-                                    <!-- content -->
-                                    <div>
-                                      <p>
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                        Quae fuga incidunt consequatur tenetur doloremque officia
-                                        corrupti provident tempore vitae labore?
-                                      </p>
-                                      <div class="text-center d-flex gap-2"> 
-                                        <img src="../img/Vegetables/cabbage-3.jpg" id="myImg" alt="post image"class="img-fluid rounded " style="object-fit: none; object-position: center;   width: 50%;max-height: 230px;" />
-                                        <img src="../img/Vegetables/onions-3.jpg" id="myImg" alt="post image"class="img-fluid rounded " style="object-fit: none; object-position: center;   width: 50%;max-height: 230px;" />
-                                      </div>
-                                 
-                                    </div>
-                                    
-                                      <!-- The Modal -->
-                                        <div id="myModal" class="modal myModal px-5">
-                                          <span class="close">×</span>
-                                          <img class="modal-content " id="img01" />
-                                          <!-- <div id="caption"></div> -->
-                                      </div>
-                    
-                                    <!-- likes & comments -->
-                                    <div class="post__comment mt-3 position-relative">
+<?php
+
+// posts
+$conn = new mysqli('localhost','root','','farmbook_db');
+
+if($conn->connect_error){
+  die('Connection failed : ' . $conn->connect_error);
+ }else{
+ $query = "SELECT CONCAT(accounts.firstName, ' ', accounts.lastName) AS `Account Owner`,accounts.id as `account_id`,
+ postings.id as `post_id`, caption, CONCAT(posting_medias.media) AS `Medias`,dateTime AS `Date and Time`
+ FROM postings INNER JOIN accounts ON postings.acc_id = accounts.id LEFT JOIN posting_medias 
+  ON postings.id = posting_medias.posting_id GROUP BY postings.id;";
+
+$result = mysqli_query($conn,$query);
+
+while($rows = mysqli_fetch_assoc($result))
+    {
+
+      $post_id = $rows['post_id'];
+      
+    ?>
+  
+              <!-- p 1 -->
+              <div class="bg-white p-4 rounded shadow mt-3" id= <?php echo $post_id?>>
+                <!-- author -->
+                <div class="d-flex justify-content-between">
+                  <!-- avatar -->
+                  <div class="d-flex">
+                    <img src="../img/profile pics/profile2.png" alt="avatar" class="rounded-circle me-2"  style="width: 38px; height: 38px; object-fit: cover"/>
+                    <div>
+                      <p class="m-0 fw-bold"><?php echo $rows['Account Owner']?></p>
+                      <span class="text-muted fs-7"><?php echo $rows['Date and Time']?></span>
+                    </div>
+                  </div>
+               
+                </div>
+                <!-- post content -->
+                <div class="mt-3">
+                  <!-- content -->
+                  <div>
+                    <p>
+                    <?php echo $rows['caption']?>
+                    </p>
+                    <div class="row">
+                      <div style = "display: flex; flex-wrap: wrap;">
+
+<?PHP
+if($rows['Medias'] != NULL){  //posts' media/s
+
+  $conn2 = new mysqli('localhost','root','','farmbook_db');
+
+  if($conn2->connect_error){
+    die('Connection failed : ' . $conn->connect_error);
+   }else{
+   $query2 = "SELECT id,media,posting_id FROM posting_medias WHERE posting_id = '$post_id';";
+  
+  $result2 = mysqli_query($conn2,$query2);
+  
+  while($rows2 = mysqli_fetch_assoc($result2)){
+
+   
+      
+
+?>
+                  
                      
-                                      <hr>
-                                      <!-- comments start-->
-                                      <div class="accordion" id="accordionExample">
-                                        <div class="accordion-item border-0">
-                                        
-                                          <!-- <hr /> -->
-                                          <!-- comment & like bar -->
-                                          <div class="d-flex justify-content-around">
-                                            <div class=" dropdown-item rounded d-flex justify-content-center align-items-center pointer p-1 ">
-                                              <button type="button" class="like-btn "> <span class="d-flex justify-content-center "><i class="fas fa-thumbs-up mt-1 mx-3"></i><p class="m-0" >Like</p></span></button>
-                                              
-                                              
-                                            </div>
-                                            <div class=" dropdown-item rounded d-flex justify-content-center align-items-center pointer p-1 ">
-                                            <button type="button" class="like-btn " data-bs-toggle="collapse"  data-bs-target="#collapsePost2" aria-expanded="false"   aria-controls="collapsePost2"> <span class="d-flex justify-content-center "><i class="fa-solid fa-comment mt-1 mx-3"></i><p class="m-0" >Comment</p></span></button>
-                                              
-                                              
-                                            </div>
-                                          </div>
-                                          <!-- comment expand -->
-                                          <div id="collapsePost2"  class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                            <hr />
-                                            <div class="accordion-body">
-                                              <!-- comment 1 -->
-                                              <div class="comment-1 d-flex align-items-center p-2">
-                                                <!-- avatar -->
-                                                <img src="../img/profile pics/profile5.jpg" alt="avatar" class="rounded-circle me-2"  style="width: 40px;height: 40px;object-fit: cover;"/>
-                                                <!-- comment text -->
-                                                <div class="p-3 rounded comment__input w-100">
-                                                  <!-- comment menu of author -->
-                                                  <div class="d-flex justify-content-end">
-                                                    <!-- icon -->
-                                                    <i class="fas fa-ellipsis-h text-blue pointer" id="post1CommentMenuButton" data-bs-toggle="dropdown"aria-expanded="false"></i>
-                                                    <!-- menu -->
-                                                    <ul
-                                                      class="dropdown-menu border-0 shadow"
-                                                      aria-labelledby="post1CommentMenuButton"
-                                                    >
-                                                     
-                                                      <li class="d-flex align-items-center">
-                                                        <a class=" dropdown-item d-flex justify-content-around align-items-center fs-7 "  href="#" >
-                                                          Delete Comment
-                                                        </a
-                                                        >
-                                                      </li>
-                                                    </ul>
-                                                  </div>
-                                                  <p class="fw-bold m-0">Paul Walker</p>
-                                                  <p class="m-0 fs-7 bg-gray p-2 rounded">
-                                                    Lorem ipsum dolor sit amet, consectetur
-                                                    adipiscing elit.
-                                                  </p>
-                                                </div>
-                                              </div>
-                                              <!-- comment 2 -->
-                                              <div class="comment-1 d-flex align-items-center p-2">
-                                                <!-- avatar -->
-                                                <img src="../img/profile pics/profile6.jpg" alt="avatar" class="rounded-circle me-2"  style="width: 40px;height: 40px;object-fit: cover;"/>
-                                                <!-- comment text -->
-                                                <div class="p-3 rounded comment__input w-100">
-                                                  <!-- comment menu of author -->
-                                                  <div class="d-flex justify-content-end">
-                                                    <!-- icon -->
-                                                    <i class="fas fa-ellipsis-h text-blue pointer" id="post1CommentMenuButton" data-bs-toggle="dropdown"aria-expanded="false"></i>
-                                                    <!-- menu -->
-                                                    <ul class="dropdown-menu border-0 shadow" aria-labelledby="post1CommentMenuButton" >
-                                                     
-                                                      <li class="d-flex align-items-center">
-                                                        <a class=" dropdown-item d-flex justify-content-around align-items-center fs-7 "  href="#" >
-                                                          Delete Comment
-                                                        </a
-                                                        >
-                                                      </li>
-                                                    </ul>
-                                                  </div>
-                                                  <p class="fw-bold m-0">Peter Parker</p>
-                                                  <p class="m-0 fs-7 bg-gray p-2 rounded">
-                                                    Lorem ipsum dolor sit amet, consectetur
-                                                    adipiscing elit.
-                                                  </p>
-                                                </div>
-                                               
-                                              </div>
-                                              <!-- create comment -->
-                                              <form class="d-flex my-1">
-                                                <!-- avatar -->
-                                                <div class="input-comment d-flex  align-items-center p-3" style="width: 100%;">
-                                                <div>
-                                                  <img src="../img/profile pics/profile.jpg "alt=" avatar "class="rounded-circle me-2" style=" width: 38px;height: 38px;object-fit: cover;"/>
-                                                </div>
-                                                <!-- input -->
-                                                
-                                                  <input type="text" class="form-control border-0 rounded-pill bg-gray" placeholder="Write a comment" />
-                                                </div>
-                                            
-                                              </form>
-                                              <!-- end -->
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <!-- end -->
-                                    </div>
-                                  </div>
-                                </div>
+            
 
-                                 <!-- post 3 -->
-                                <div class="bg-white p-4 rounded shadow mt-3">
-                                  <!-- author -->
-                                  <div class="d-flex justify-content-between">
-                                    <!-- avatar -->
-                                    <div class="d-flex">
-                                      <img src="../img/profile pics/profile3.jpg" alt="avatar" class="rounded-circle me-2"  style="width: 38px; height: 38px; object-fit: cover"/>
-                                      <div>
-                                        <p class="m-0 fw-bold">Fank Ocean</p>
-                                        <span class="text-muted fs-7">July 16 at 2:25 pm</span>
-                                      </div>
-                                    </div>
-                                 
-                                  </div>
-                                  <!-- post content -->
-                                  <div class="mt-3">
-                                    <!-- content -->
-                                    <div >
-                                      <p>
-                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                        Quae fuga incidunt consequatur tenetur doloremque officia
-                                        corrupti provident tempore vitae labore?
-                                      </p>
+<div style="display: flex; flex-direction: column; ">
+<img <?php echo "src=data:image/jpeg;base64,".base64_encode($rows2['media']);?> id="<?php echo $rows2['id']?>" alt="post image"
+class="img-fluid rounded myImg" style = "aspect-ratio: 50/49; height: 200px;"
+onclick = "img_view(this.id)"/>
+</div>
+
+<?php
+ }
+    }
+  }
+  
+              ?>          
+                      </div>
+                    </div>
+               
+                  </div>
+                  
+                    <!-- The Modal -->
+                    <div class="modal-container">
+
+                      <div id="modal_img_display" class="modal myModal px-5">
+                        <span class="close">×</span>
+                        <img class="modal-content " id="modal_img" />
+                        <!-- <div id="caption"></div> -->
+                    </div>
+                    </div>
+       
+                   <script>
+                    // Get the modal
+                    var modal = document.getElementById("myModal");
+                    // // Get the image and insert it inside the modal - use its "alt" text as a caption
+              
+                    function img_view(id) {
+                       var post_img = document.getElementById(id);
+                       console.log(id)
+                       var modal = document.getElementById("modal_img_display");
+                       var modalImg = document.getElementById("modal_img");
+                      //  var captionText = document.getElementById("caption");
+                       modal.style.display = "block";
+                       modalImg.src = post_img.src;
+                      //  captionText.innerHTML = this.alt;
+                      var span = document.getElementsByClassName("close")[0];
+                    // When the user clicks on <span> (x), close the modal
+                    span.onclick = function() {
+                       modal.style.display = "none";
+                    };
                     
-                                    
-                                      <div class="text-center img-post d-flex gap-2 y-2 justify-content-center"> 
-                                        <img src="../img/Vegetables/cabbage-3.jpg" id="myImg" alt="post image"class="img-fluid rounded " style="object-fit: none; object-position: center;   width: 40%;max-height: 150px;" />
-                                        <img src="../img/Vegetables/onions-3.jpg" id="myImg" alt="post image"class="img-fluid rounded " style="object-fit: none; object-position: center;   width: 40%;max-height: 150px;" />
-                                        </div>
-                                        <div class="text-center img-post d-flex gap-2 y-2 mt-2 justify-content-center"> 
-                                        <img src="../img/Vegetables/cabbage-3.jpg" id="myImg" alt="post image"class="img-fluid rounded " style="object-fit: none; object-position: center;   width: 40%;max-height: 150px;" />
-                                        <img src="../img/Vegetables/onions-3.jpg" id="myImg" alt="post image"class="img-fluid rounded " style="object-fit: none; object-position: center;   width: 40%;max-height: 150px;" />
-                                      </div>
-                                 
-                                    </div>
-                                    
-                    
-                    
-                                    <!-- likes & comments -->
-                                    <div class="post__comment mt-3 position-relative">
-                                   
-                                     
-                                      <hr>
-                                      <!-- comments start-->
-                                      <div class="accordion" id="accordionExample">
-                                        <div class="accordion-item border-0">
-                                        
-                                          <!-- <hr /> -->
-                                          <!-- comment & like bar -->
-                                          <div class="d-flex justify-content-around">
-                                            <div class=" dropdown-item rounded d-flex justify-content-center align-items-center pointer p-1 ">
-                                              <button type="button" class="like-btn "> <span class="d-flex justify-content-center "><i class="fas fa-thumbs-up mt-1 mx-3"></i><p class="m-0" >Like</p></span></button>
-                                              
-                                              
-                                            </div>
-                                            <div class=" dropdown-item rounded d-flex justify-content-center align-items-center pointer p-1 ">
-                                            <button type="button" class="like-btn " data-bs-toggle="collapse"  data-bs-target="#collapsePost3" aria-expanded="false"   aria-controls="collapsePost3"> <span class="d-flex justify-content-center "><i class="fa-solid fa-comment mt-1 mx-3"></i><p class="m-0" >Comment</p></span></button>
-                                              
-                                              
-                                            </div>
-                                          </div>
-                                          <!-- comment expand -->
-                                          <div id="collapsePost3"  class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                            <hr />
-                                            <div class="accordion-body">
-                                              <!-- comment 1 -->
-                                              <div class="comment-1 d-flex align-items-center p-2">
-                                                <!-- avatar -->
-                                                <img src="../img/profile pics/profile5.jpg" alt="avatar" class="rounded-circle me-2"  style="width: 40px;height: 40px;object-fit: cover;"/>
-                                                <!-- comment text -->
-                                                <div class="p-3 rounded comment__input w-100">
-                                                  <!-- comment menu of author -->
-                                                  <div class="d-flex justify-content-end">
-                                                    <!-- icon -->
-                                                    <i class="fas fa-ellipsis-h text-blue pointer" id="post1CommentMenuButton" data-bs-toggle="dropdown"aria-expanded="false"></i>
-                                                    <!-- menu -->
-                                                    <ul
-                                                      class="dropdown-menu border-0 shadow"
-                                                      aria-labelledby="post1CommentMenuButton"
-                                                    >
-                                                     
-                                                      <li class="d-flex align-items-center">
-                                                        <a class=" dropdown-item d-flex justify-content-around align-items-center fs-7 "  href="#" >
-                                                          Delete Comment
-                                                        </a
-                                                        >
-                                                      </li>
-                                                    </ul>
-                                                  </div>
-                                                  <p class="fw-bold m-0">Paul Walker</p>
-                                                  <p class="m-0 fs-7 bg-gray p-2 rounded">
-                                                    Lorem ipsum dolor sit amet, consectetur
-                                                    adipiscing elit.
-                                                  </p>
-                                                </div>
-                                              </div>
-                                              <!-- comment 2 -->
-                                              <div class="comment-1 d-flex align-items-center p-2">
-                                                <!-- avatar -->
-                                                <img src="../img/profile pics/profile6.jpg" alt="avatar" class="rounded-circle me-2"  style="width: 40px;height: 40px;object-fit: cover;"/>
-                                                <!-- comment text -->
-                                                <div class="p-3 rounded comment__input w-100">
-                                                  <!-- comment menu of author -->
-                                                  <div class="d-flex justify-content-end">
-                                                    <!-- icon -->
-                                                    <i class="fas fa-ellipsis-h text-blue pointer" id="post1CommentMenuButton" data-bs-toggle="dropdown"aria-expanded="false"></i>
-                                                    <!-- menu -->
-                                                    <ul class="dropdown-menu border-0 shadow" aria-labelledby="post1CommentMenuButton" >
-                                                     
-                                                      <li class="d-flex align-items-center">
-                                                        <a class=" dropdown-item d-flex justify-content-around align-items-center fs-7 "  href="#" >
-                                                          Delete Comment
-                                                        </a
-                                                        >
-                                                      </li>
-                                                    </ul>
-                                                  </div>
-                                                  <p class="fw-bold m-0">Peter Parker</p>
-                                                  <p class="m-0 fs-7 bg-gray p-2 rounded">
-                                                    Lorem ipsum dolor sit amet, consectetur
-                                                    adipiscing elit.
-                                                  </p>
-                                                </div>
-                                               
-                                              </div>
-                                              <!-- create comment -->
-                                              <form class="d-flex my-1">
-                                                <!-- avatar -->
-                                                <div class="input-comment d-flex  align-items-center p-3" style="width: 100%;">
-                                                <div>
-                                                  <img src="../img/profile pics/profile.jpg "alt=" avatar "class="rounded-circle me-2" style=" width: 38px;height: 38px;object-fit: cover;"/>
-                                                </div>
-                                                <!-- input -->
-                                                
-                                                  <input type="text" class="form-control border-0 rounded-pill bg-gray" placeholder="Write a comment" />
-                                                </div>
-                                            
-                                              </form>
-                                              <!-- end -->
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <!-- end -->
-                                    </div>
-                                  </div>
-                                </div>
+                    };
+                 </script>
+  
+                  <!-- likes & comments -->
+                  <div class="post__comment mt-3 position-relative">
+                 
+                    <style>
+                      
+                         
+                    </style>
+                    <hr>
+                    <!-- comments start-->
+                    <div class="accordion" id="accordionExample">
+                      <div class="accordion-item border-0">
+                      
+                        <!-- <hr /> -->
+                        <!-- comment & like bar -->
+                        <div class="d-flex justify-content-around">
+                          <div class=" dropdown-item rounded d-flex justify-content-center align-items-center pointer p-1 ">
+                          <?php
+                            
+                 
+
+                              $conn3 = new mysqli('localhost','root','','farmbook_db');
+                              try{
+                              if($conn3->connect_error){
+                                die('Connection failed : ' . $conn3->connect_error);
+                               }else{
                                 
+                               $query3 = "SELECT `id`,`acc_id`,`posting_id`,`data`,`dateModified` 
+                               FROM `posting_interactions` WHERE (`acc_id` = '".$_SESSION['acc_id']."' AND
+                                `posting_id` = '$post_id') and `data` = 'LIKE';";
+                              
+                              $result3 = mysqli_query($conn3,$query3);
+                              
+                              if($rows3 = mysqli_fetch_assoc($result3)){
+                              
+                            
+                                  echo "<button type='button' class='like-btn' id = 'like_btn_".$post_id."' 
+                                  value = 'true'
+                                  onclick = 'toggle_like(this.id,this.value,`".$_SESSION['acc_id']."`)'>";
+      
+                                  echo '<span class="d-flex justify-content-center ">
+                                  <i class = "fas fa-thumbs-up mt-1 mx-3" style="color: blue;"></i>
+                                  <p class = "m-0" style="color: blue;">Liked</p></span>
+                                </button>';
+                            
+        
+                          }else{
+                            
+                            echo "<button type='button' class='like-btn' id = 'like_btn_".$post_id."' 
+                            value = 'false'
+                            onclick = 'toggle_like(this.id,this.value,`".$_SESSION['acc_id']."`)'>";
+
+                            echo '<span class="d-flex justify-content-center ">
+                            <i class="fas fa-thumbs-up mt-1 mx-3" style="color: black;"></i>
+                            <p class="m-0" style="color: black;">Like</p></span>
+                          </button>';
+                          // }
+
+                          }
+                        }
+                      }
+                      catch(Exception $e){
+                        echo $e;
+                    
+                    }
+                            ?>
+                        
+                          </div>
+
+
+                          <div class=" dropdown-item rounded d-flex justify-content-center align-items-center pointer p-1 ">
+                          <button type="button" class="comment-btn " data-bs-toggle="collapse"  
+                          data-bs-target="<?php echo '#comment_section_'.$post_id ?>" aria-expanded="false" 
+                            aria-controls="comment_section_"> 
+                            <span class="d-flex justify-content-center ">
+                              <i class="fa-solid fa-comment mt-1 mx-3"></i>
+                              <p class="m-0" >Comment</p>
+                            </span></button>
+                            
+                            
+                          </div>
+                        </div>
+                        <!-- comment expand -->
+                        <div id="<?php echo'comment_section_'.$post_id ?>"  
+                        class="accordion-collapse collapse" aria-labelledby="headingTwo" 
+                        data-bs-parent="#accordionExample">
+                          <hr />
+                          <div class="accordion-body">
+                            <!-- comment 1 -->
+
+                            <?php
+                            
+                            //comment
+
+                              $conn4 = new mysqli('localhost','root','','farmbook_db');
+                              try{
+                              if($conn4->connect_error){
+                                die('Connection failed : ' . $conn4->connect_error);
+                               }else{
+                                
+                               $query4 = "SELECT p.id,
+                               pp.profilePic, CONCAT(a.firstName, ' ', a.lastName) AS `Account Owner`, caption,
+                               GROUP_CONCAT(pm.media) AS `Medias`, p.dateTime AS `Date and Time`,
+                               COUNT(CASE WHEN pi.data = `LIKE` THEN 1 END) AS `Likes`,
+                               COUNT(CASE WHEN pi.data != `LIKE` THEN 1 END) AS `Comments`
+                               FROM postings p
+                               INNER JOIN accounts a ON p.acc_id = a.id
+                               LEFT JOIN posting_medias pm ON p.id = pm.posting_id
+                               LEFT JOIN posting_interactions pi ON p.id = pi.posting_id
+                               LEFT JOIN profile_pictures pp ON a.id = pp.acc_id
+                               WHERE a.id = '".$_SESSION['logged_in']."'";
+                              
+                              $result4 = mysqli_query($conn4,$query4);
+                              
+                              while($rows4 = mysqli_fetch_assoc($result4)){
+                              
+                              ?>
+                              <!-- comment real -->
+                            <div class="comment d-flex align-items-center p-2" id = "comment_<?php echo $rows4['comment_id']?>">
+                              <!-- avatar -->
+                              <img <?php echo 'src=data:image/jpeg;base64,'.base64_encode($rows4['profile_pic'])?>
+                               alt="avatar" class="rounded-circle me-2" 
+                               style="width: 40px;height: 40px;object-fit: cover;"/>
+                              <!-- comment text -->
+                              <div class="p-3 rounded comment__input w-100">
+                                <!-- comment menu of author -->
+                                <div class="d-flex justify-content-end">
+                                  <!-- icon -->
+                                  <i class="fas fa-ellipsis-h text-blue pointer" id="post1CommentMenuButton" 
+                                  data-bs-toggle="dropdown"aria-expanded="false"></i>
+                                  <!-- menu -->
+                                  <ul
+                                    class="dropdown-menu border-0 shadow"
+                                    aria-labelledby="post1CommentMenuButton"
+                                  >
+                                   
+                                    <!-- <li class="d-flex align-items-center">
+                                      <a class=" dropdown-item d-flex justify-content-around align-items-center fs-7 "  href="#" >
+                                        Delete Comment
+                                      </a>
+                                    </li> -->
+                                  </ul>
+                                </div>
+                                <p class="fw-bold m-0"><?php echo $rows4['fullname']?></p>
+                                <p class="m-0 fs-7 bg-gray p-2 rounded">
+                                  <?php echo $rows4['comment']?>
+                                </p>
                               </div>
+                            </div>
+                            <?php
+                            
+                              }
+                               }
+                              }catch(Exception $e){
+                                echo $e;
+                              }
+    
+                            ?>
+                         
+                           
+                            <!-- create comment -->
+                            <!-- <form class="d-flex my-1"> -->
+                              <!-- avatar -->
+                           
+                          
+                     
+                          </div> <!-- accordion end-->
+
+                          <div class="input-comment d-flex  align-items-center p-3" style="width: 100%;" id ="write_comment">
+                              <div id = "profile_icon">
+                                <img <?php echo $profile?> alt=" avatar "class="rounded-circle me-2" 
+                                style=" width: 38px;height: 38px;object-fit: cover;"/>
+                              </div>
+                              <!-- input -->
+                              
+                                <input type="text" class="form-control border-0 rounded-pill bg-gray comment-write"
+                                 placeholder="Write a comment" 
+                                 id = "write_comment_<?php echo $post_id?>"
+                                 
+                                 />
+
+
+                                 <!-- use this instead of the enter button to send a comment -->
+                                <button type="submit" onclick = "submit_comment('<?php echo $post_id?>','<?php echo $_SESSION['acc_id']?>')">send</button>
+                              </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end -->
+                  </div>
+                </div>
+              </div>
+  
+<?php
+
+    
+
+
+    }
+  }
+?>
+<!-- ========== FEED POST ========= -->
+                              </div>
+
+                            <!-- ======  POST ===== -->
                              
                             </div>
 
-                            <div class="tab-pane fade" id="photos" role="tabpanel" aria-labelledby="photos-tab">
-                              <!-- <div class="mt-4 bg-light px-2  rounded">
-                                <h1>PHOTOS</h1>
-                              </div> -->
-                              <div class="gallery-container mt-4 mb-4 rounded" >
-                               
-                               
-                                <div class="gallery-item col-4 me-1"data-index="1">
-                                  <img src="../img/fruits/fruit-banana.jpg" alt="">
-                                </div>
-                                <div class="gallery-item col-4 me-1"data-index="1">
-                                  <img src="../img/fruits/apple-1.jpeg" alt="">
-                                </div>
-                                <div class="gallery-item col-4 me-1"data-index="1">
-                                  <img src="../img/fruits/dragonfruit-1.jpeg" alt="">
-                                </div>
-                                <div class="gallery-item col-4 me-1"data-index="1">
-                                  <img src="../img/fruits/fruit-banana.jpg" alt="">
-                                </div>
-                                <div class="gallery-item col-4 me-1"data-index="1">
-                                  <img src="../img/fruits/apple-1.jpeg" alt="">
-                                </div>
-                                <div class="gallery-item col-4 me-1"data-index="1">
-                                  <img src="../img/fruits/dragonfruit-1.jpeg" alt="">
-                                </div>
-                                <div class="gallery-item col-4 me-1"data-index="1">
-                                  <img src="../img/fruits/fruit-banana.jpg" alt="">
-                                </div>
-                                <div class="gallery-item col-4 me-1"data-index="1">
-                                  <img src="../img/fruits/apple-1.jpeg" alt="">
-                                </div>
-                                <div class="gallery-item col-4 me-1"data-index="1">
-                                  <img src="../img/fruits/dragonfruit-1.jpeg" alt="">
-                                </div>
-                                <div class="gallery-item col-4 me-1"data-index="1">
-                                  <img src="../img/fruits/dragonfruit-1.jpeg" alt="">
-                                </div>
-                                <div class="gallery-item col-4 me-1"data-index="1">
-                                  <img src="../img/fruits/dragonfruit-1.jpeg" alt="">
-                                </div>
-                                <div class="gallery-item col-4 me-1"data-index="1">
-                                  <img src="../img/fruits/dragonfruit-1.jpeg" alt="">
-                                </div>
-                                
-                                
-                              
-                              </div>
-                            </div>
+                            
                               
                             <div class="tab-pane fade" id="products" role="tabpanel" aria-labelledby="products-tab">
                              <div class="mt-4 mb-4" style="height: 530px; overflow-y: auto;">
@@ -1317,142 +1173,111 @@
                                   <div class="modal-content">
                                       <div class="modal-header">
                                       <h5 class="modal-title" id="exampleModalLabel">ADD PRODUCT</h5>
+                                      <h5>Account owner Name</h5>
                                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                       </div>
                                       <div class="modal-body" style="text-align: left;">
-                                          <form>
+                                      <form enctype="multipart/form-data" method="post" action="../php_func/add_product.php">
                                               <div class="row">
-                                                <div class="col-md-6 mb-3">
+                                                <div class="col-md-6">
                                                   <label for="Product Name" class="form-label">Product name</label>
-                                                  <input type="text" class="form-control" id="product-name" required>
+                                                  <input type="text" class="form-control" id="product-name" name = "product_name"required>
                                                 </div>
-                                                <div class="col-md-6 mb-3">
+                                                <div class="col-md-6">
+                                                    <select name="category" id="" class="btn btn-md bg-success text-white my-4">
+                                                    <option value="">Category</option>
+                                                    <option value="vegetables">Vegetable</option>
+                                                    <option value="fruits">Fruits</option>
+                                                    <option value="crops">Crops</option>
+                                                    </select>
+                                                </div>
+                                                <div class="row">
+                                                  <div class="col-md-6">
                                                   <label for="Product price" class="form-label">Price</label>
-                                                  <input type="number" class="form-control" id="product-price" required>
+                                                  <input type="number" class="form-control" id="product-price" name = "product_price"required>
+                                                  </div>
                                                 </div>
-                                              </div>
+                                                <!-- <div class="row"> -->
+                                                  <div class="col-md-6">
+                                                  <label for="Transaction Type" class="form-label">Transaction Type</label>
+                                                  <select name="transaction" id="" class="btn btn-md bg-success text-white my-1">
+                                                    <option value="">Transaction Type</option>
+                                                    <option value="pickup">For pickup only</option>
+                                                    <option value="delivery">For delivery only</option>
+                                                    <option value="both">Available for both delivery and pickup</option>
+                                                    </select>
+                                                  </div>
+                                                <!-- </div> -->
                                             
                                               <div class="mb-3">
                                                 <label for="Description" class="form-label">Description</label>
-                                                <input type="text" class="form-control" id="description" required>
+                                                <input type="text" class="form-control" id="description" name = "description" required>
                                                 <small class="form-text text-muted"></small>
                                               </div>
                                             
                                               <div class="mb-3">
                                                 <label for="product-img" class="form-label">Image</label>
-                                                <input type="file" class="form-control" id="product-img" required>
+                                                <input type="file" class="form-control" id="product-img" name = "product_img"required>
                                               </div>
-                                            </form>
+                                            
                                       </div>
                                       <div class="modal-footer">
                                       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                      <button type="button" class="btn btn-success">Add Product</button>
+                                      <button type="submit" class="btn btn-success">Add Product</button>
                                       </div>
+                                      </form>
                                   </div>
                                   </div>
                               </div>
                                </div>
+                  </div>
+                               
                               <div class="row mt-5 mx-1">
+
+                              <?php
+    $conn = new mysqli('localhost','root','','farmbook_db');
+
+
+    if($conn->connect_error){
+      die('Connection failed : ' . $conn->connect_error);
+      }else{
+    
+    $query = "SELECT `id`, `accOwner_id`, `productName`, `category`, `product_img`, `description`, `transactionType`, `price` FROM `products` 
+    WHERE accOwner_id = '".$_SESSION['acc_id']."'";
+    
+    $result = mysqli_query($conn,$query);
+    
+    while($rows = mysqli_fetch_assoc($result))
+        {
+    
+   
+    ?>
+      
                                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                               
                                   <div class="products-single fix px-4 py-4">
-                                    <a href="../pages_php/product.php">
+                                    <a href="../pages_php/product.php?product_id=<?php echo $rows['id']?>">
                                       <div class="box-img-hover text-center">
                                           <!-- <div class="type-lb">
                                               <p class="sale">Sale</p>
                                           </div> -->
-                                          <img src="../img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img rounded" alt="Image">
+                                          <img <?php echo 'src=data:image/jpeg;base64,'.base64_encode($rows['product_img']) ?> class="img-fluid prod-img rounded" alt="Image">
                                           
                                       </div>
                                       <div class="why-text">
-                                          <h4>Lorem ipsum dolor sit amet</h4>
-                                          <h5> $9.79</h5>
+                                          <h5><?php echo $rows['productName']?></h5>
+                                          <h4>₱<?php echo $rows['price']?>.00</h4>
                                       </div>
                                     </a>
                                    
                                   </div>
+                                  </div>
+                                  <?php
+        }
+      }
+                                  ?>
                                   
-                                </div>
-                                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
                               
-                                  <div class="products-single fix px-4 py-4">
-                                    <a href="/pages_php/product.php">
-                                      <div class="box-img-hover text-center">
-                                          <!-- <div class="type-lb">
-                                              <p class="sale">Sale</p>
-                                          </div> -->
-                                          <img src="../img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img rounded " alt="Image">
-                                          
-                                      </div>
-                                      <div class="why-text">
-                                          <h4>Lorem ipsum dolor sit amet</h4>
-                                          <h5> $9.79</h5>
-                                      </div>
-                                    </a>
-                                   
-                                  </div>
-                                  
-                                </div>
-                                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                              
-                                  <div class="products-single fix px-4 py-4">
-                                    <a href="/pages_php/product.php">
-                                      <div class="box-img-hover text-center">
-                                          <!-- <div class="type-lb">
-                                              <p class="sale">Sale</p>
-                                          </div> -->
-                                          <img src="../img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img rounded" alt="Image">
-                                          
-                                      </div>
-                                      <div class="why-text">
-                                          <h4>Lorem ipsum dolor sit amet</h4>
-                                          <h5> $9.79</h5>
-                                      </div>
-                                    </a>
-                                   
-                                  </div>
-                                  
-                                </div>
-                                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                              
-                                  <div class="products-single fix px-4 py-4">
-                                    <a href="/pages_php/product.php">
-                                      <div class="box-img-hover text-center">
-                                          <!-- <div class="type-lb">
-                                              <p class="sale">Sale</p>
-                                          </div> -->
-                                          <img src="../img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img rounded" alt="Image">
-                                          
-                                      </div>
-                                      <div class="why-text">
-                                          <h4>Lorem ipsum dolor sit amet</h4>
-                                          <h5> $9.79</h5>
-                                      </div>
-                                    </a>
-                                   
-                                  </div>
-                                  
-                                </div>
-                                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4 mb-3 ">
-                              
-                                  <div class="products-single fix px-4 py-4">
-                                    <a href="/pages_php/product.php">
-                                      <div class="box-img-hover text-center">
-                                          <!-- <div class="type-lb">
-                                              <p class="sale">Sale</p>
-                                          </div> -->
-                                          <img src="../img/Vegetables/broccoli-3.jpg" class="img-fluid prod-img rounded" alt="Image">
-                                          
-                                      </div>
-                                      <div class="why-text">
-                                          <h4>Lorem ipsum dolor sit amet</h4>
-                                          <h5> $9.79</h5>
-                                      </div>
-                                    </a>
-                                   
-                                  </div>
-                                  
-                                </div>
                                 
                                 
                               
@@ -1474,6 +1299,12 @@
 </body>
 
 <style>
+
+div.products-single {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
  * {
     box-sizing: border-box;
     }

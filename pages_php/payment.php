@@ -63,23 +63,9 @@ echo $qnt;
 
 </style>
 <body style="background-color: #E4E4E4;">
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top px-2" >
-        <h1 style="color: #FFDE59;font-family: 'Archivo Black';margin-left: 10px;">FarmBook</h1>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon" style="color: aqua;"></span>
-        </button>
-        
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="color: #FFDE59 ; ">
-               <!--======================= di nagana pag nasa index=================== -->
-                  <li class="nav-item" ><a class="nav-link" href="" style=" color: #FFDE59;"   id="link_home"><i class="fa fa-fw fa-home fa-2x"></i>Home</a></li>
-                  <li class="nav-item" ><a class="nav-link" href="" style=" color: #FFDE59;" id="link_about"><i class="fa fa-fw fa-circle-info fa-2x"></i>About Us</a></li>
-                  <li class="nav-item" ><a class="nav-link" href="" style=" color: #FFDE59;" id="link_e-learning"><i class="fa fa-fw fa-book fa-2x"></i>E-Learning</a></li>
-                </ul>
-        
-              </div>
-        
-        </nav>      
+<?php 
+$page_title = "payment";
+include "../components/nav_bar.php"?>  
 
       <?php 
  
@@ -179,40 +165,41 @@ echo $qnt;
                 
               <div class="container bg-light mt-4 rounded">
                 <div class="container py-4">
+                <?php 
+ 
+
+ //    echo $product_id;
+ $conn = new mysqli('localhost','root','','farmbook_db');
+
+ if($conn->connect_error){
+ die('Connection failed : ' . $conn->connect_error);
+ }else{
+
+ $query1 = "SELECT t1.id as `product_id`, t2.id as `seller_id`,
+ t1.productName,t1.product_img,t1.price, t1.description,
+ CONCAT(t2.firstname,' ', t2.lastname) as 'fullname', t2.address
+ FROM products as t1
+ INNER JOIN accounts as t2
+ ON t2.id = t1.accOwner_id WHERE t1.id = '$product_id'";
+
+ $result1 = mysqli_query($conn,$query1);
+
+ while($rows1 = mysqli_fetch_assoc($result1))
+{
+
+?> 
                     <div class="row">
                         <div class="col-md-5 py-2">
                            <!-- <div class="product-name text-center">
                             <h5>Product</h5>
                            </div> -->
                             <div class="product-img text-center d-block">
-                                <img src="/img/fruits/fruit-apple.jpg" alt="">
+                                <img <?php echo 'src=data:image/jpeg;base64,'.base64_encode( $rows1['product_img']) ?> alt="">
                                
                             </div>
                         </div>
 
-                        <?php 
- 
-
-    //    echo $product_id;
-    $conn = new mysqli('localhost','root','','farmbook_db');
-
-    if($conn->connect_error){
-    die('Connection failed : ' . $conn->connect_error);
-    }else{
-
-    $query1 = "SELECT t1.id as `product_id`, t2.id as `seller_id`,
-    t1.productName,t1.product_img,t1.price, t1.description,
-    CONCAT(t2.firstname,' ', t2.lastname) as 'fullname', t2.address
-    FROM products as t1
-    INNER JOIN accounts as t2
-    ON t2.id = t1.accOwner_id WHERE t1.id = '$product_id'";
-
-    $result1 = mysqli_query($conn,$query1);
-
-    while($rows1 = mysqli_fetch_assoc($result1))
- {
-   
-?> 
+          
                         <div class="col-md-7">
                          
                             <div class="product-name">
@@ -234,7 +221,7 @@ echo $qnt;
                         <hr>
                         <div class="total-price d-flex justify-content-between">
                             <h3>Total Price:</h3>
-                            <h3>₱<span id = "total"><?php echo $rows1['price'] * $qnt?></span>.00 </h3>
+                            <h3>₱<span id = "total"><?php $total = floatval($rows1['price']) * intval($qnt); echo $total;?></span>.00 </h3>
                         </div>
                     </div>
                 </div>
@@ -244,20 +231,35 @@ echo $qnt;
                 <div class="payment d-flex justify-content-between">
                     <h4>Payment method:</h4>
                     
-                    <div>
-                    <select class="form-select w-100 "  aria-label="Default select example" style="float: right;">
-                        <option selected>Select Payment method</option>
-                        <option value="1">Cash on delivery</option>
-                        <option value="2">Cash on pick-up</option>
-                    </select>
+                        <div>
+                        <select class="form-select w-100 "  aria-label="Default select example" style="float: right;">
+                            <option selected>Select Payment method</option>
+                            <option value="1">Cash on delivery</option>
+                            <option value="2">Cash on pick-up</option>
+                        </select>
+                        
+                        
+                    </div>
+                    </div>
+                    <style>
+                        .payment-btn{
+                            background-color: #57744B;
+                        }
+                        .payment-btn:hover{
+                            background-color: rgba(87,116,75,0.5);
+                        }
+                        .payment-btn:active{
+                            background-color: rgba(87,116,75,0.6);
+                        }
+                    </style>
+                    <div class="payment-total mt-5" style="text-align: end;">
+                        <h4>Shipping fee: <span>₱50.00</span></h4>
+                        <h4>Total payment: ₱<span><?php echo $total + 50;?></span>.00</h4>
+                        <div class="paymentBtn mt-4" >
+                            <button type="submit" class="btn payment-btn text-white" data-bs-toggle="modal"data-bs-target="#paymentModal">Place order</button>
+                        </div>
+                    </div>
                     
-                    
-                </div>
-                </div>
-                <div class="payment-total mt-5" style="text-align: end;">
-                    <h4>Shipping fee: <span>₱50.00</span></h4>
-                    <h4>Total payment: <span>₱2050.00</span></h4>
-                </div>
                 
             
               </div>
@@ -266,110 +268,33 @@ echo $qnt;
  }
 }
 ?>
-       <!-- footer start--> 
-<footer class="bg-light text-dark pt-5 pb-4" style="margin-top: 5%;">
-    <div class="container text-center text-md-left">
-        <div class="row text-center text-md-left">
-                <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold text-info" style="text-decoration: none">FarmBook</h5>
-                    <hr class="mb-4" style="height: 2px; color: black">
-                    <p>lorem ipsum dolor sit amet, consetetur adipisicing elit, sed do eiusmod tempor 
-                        incididunt labore at dolore magna aliqua.
-                    </p>
-                </div>
+ <div class="modal fade" id="paymentModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="createModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content" >
+                      <!-- head -->
+                      <div class="modal-header align-items-center">
+                        <h5 class="text-dark text-center w-100 m-0"id="exampleModalLabel">
+                          
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"aria-label="Close"></button>
+                      </div>
+                      <!-- body -->
+                      <div class="modal-body my-1 px-3" >
+                        <!-- <div class="my-1 p-1"> -->
+                          <div class="d-flex flex-column text-center h2">
+                            <!-- name -->
+                            Your Order has been placed!
+                          </div>
+                        </div>
+                     </div>
+                    </div>
+                    </div>
                 
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold text-info">About</h5>
-                    <hr class="mb-4" style="height: 2px; color: black;">
-                    <p>
-                        <a href="#" class="text-dark" style="text-decoration: none;">Our Story</a>
-                    </p>
-                    <p>
-                        <a href="#" class="text-dark" style="text-decoration: none;">Contacts</a>
-                    </p>
-                    <p>
-                        <a href="#" class="text-dark" style="text-decoration: none;">Farmers Join!</a>
-                    </p>
-                    <p>
-                        <a href="#" class="text-dark" style="text-decoration: none;">How to Sell Farm Products Online?</a>
-                    </p>
-                </div>
-  
-                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold text-info">Resources</h5>
-                    <hr class="mb-4" style="height: 2px; color: black;">
-                    <p>
-                        <a href="#" class="text-dark" style="text-decoration: none;">Farming Tutorials</a>
-                    </p>
-                    <p>
-                        <a href="#" class="text-dark" style="text-decoration: none;">Food Types</a>
-                    </p>
-                    <p>
-                        <a href="#" class="text-dark" style="text-decoration: none;">Farmbook Feed</a>
-                    </p>
-                    <p>
-                        <a href="#" class="text-dark" style="text-decoration: none;">E-Learning</a>
-                    </p>
-                    <p>
-                      <a href="#" class="text-dark" style="text-decoration: none;">Farming Techniques</a>
-                  </p>
-                  <p>
-                    <a href="#" class="text-dark" style="text-decoration: none;">Tips in Farming</a>
-                </p>
-                </div>
-  
-                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-                    <h5 class="text-uppercase mb-4 font-weight-bold text-info">Contacts</h5>
-                    <hr class="mb-4" style="height: 2px; color: black">
-                    <p>
-                       <li class="fas fa-home mr-3"></li> Nasugbu Nas 4231, PH
-                    </p>
-                    <p>
-                        <li class="fas fa-envelope mr-3"></li> farmbook@gmail.com
-                     </p>
-                     <p>
-                        <li class="fas fa-phone mr-3"></li> +9353081922
-                     </p>
-                     <p>
-                        <li class="fas fa-print mr-3"></li> +9353081922
-                     </p>
-                </div>
-  
-                <hr class="mb-4">
-                <div class="row d-flex justify-content-center">
-                    <div>
-                        <p>
-                            Copyright 2020 All Rights Reserved By :
-                            <a href="#" style="text-decoration: none;">
-                                <strong class="text-info">The Providers</strong>
-                            </a>
-                        </p>
-                    </div>
-                </div>
-                <div class="row d-flex justify-content-center">
-                    <div class="text-center">
-                        <ul class="list-unstyled list-inline">
-                            <li class="list-inline-item">
-                                <a href="#" class="text-dark"><i class="fab fa-facebook"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#" class="text-dark"><i class="fab fa-twitter"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#" class="text-dark"><i class="fab fa-google-plus"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#" class="text-dark"><i class="fab fa-linkedin-in"></i></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#" class="text-dark"><i class="fab fa-youtube"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-        </div>
-    </div>
-  </footer>                       
+                
+       <!-- footer start--> 
+       <?php
+  require '../components/footer.php'
+?>                  
   <!-- footer end -->
               
     </body>

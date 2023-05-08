@@ -1,10 +1,10 @@
 <?php
 session_start();
-echo "Session Array:";
-print_r($_SESSION);
-echo "\n";
-echo "Sess_ID ";
-echo SESSION_ID();
+// echo "Session Array:";
+// print_r($_SESSION);
+// echo "\n";
+// echo "Sess_ID ";
+// echo SESSION_ID();
 
 // remove all session variables
 

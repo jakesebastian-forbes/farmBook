@@ -65,9 +65,9 @@
                     <div class="col-lg-6">
                         <h6 class="section-title text-start text-about text-uppercase" style="font-size: 15px; color: #57744B; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">About Us</h6>
                         <h1 class="farm-header mb-4">Welcome to <span class="text-farmbook text-uppercase" style="color: green;">FarmBook</span></h1>
-                        <p class="mb-4" style="text-align: justify;">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et
-                             lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet. Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos.
-                              Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                        <p class="mb-4" style="text-align: justify;">Introducing FarmBook, the ultimate marketing solution for modern farmers. 
+                        With FarmBook, you can take your agricultural business to new heights by leveraging 
+                        cutting-edge marketing strategies tailored specifically for the farming industry.</p>
                         <button class="btn btn-success c" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
                         style="height: 20%; width: 22%;">
                             Read More
@@ -82,9 +82,14 @@
                                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, labore reiciendis. Assumenda eos quod animi! Soluta nesciunt inventore dolores excepturi provident, culpa beatae tempora, explicabo corporis quibusdam corrupti. Autem, quaerat. Assumenda quo aliquam vel, nostrum explicabo ipsum dolor, ipsa perferendis porro
-                                    doloribus obcaecati placeat natus iste odio est non earum? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam, labore reiciendis. Assumenda eos quod animi! Soluta nesciunt inventore dolores excepturi provident, culpa beatae tempora, explicabo corporis quibusdam corrupti. Autem, quaerat. Assumenda quo aliquam vel, nostrum explicabo ipsum dolor, ipsa perferendis 
-                                    porro doloribus obcaecati placeat natus iste odio est non earum?
+                                FarmBook offers a comprehensive suite of marketing tools designed to help you maximize your reach, 
+                                engage with your target audience, and drive sales. From social media management to email campaigns, 
+                                FarmBook provides the necessary resources to promote your farm products and services effectively.
+                                <br>
+                                Harness the power of social media with FarmBook's intuitive social media management platform. 
+                                Seamlessly schedule and publish engaging content across various social media channels, such as Facebook, 
+                                Instagram, and Twitter. Connect with your audience, build brand awareness, and establish a strong 
+                                online presence to attract potential customers.
                                 </div>
                               </div>
                             </div>

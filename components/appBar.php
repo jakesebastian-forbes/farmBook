@@ -6,7 +6,7 @@ if($conn->connect_error){
   die('Connection failed : ' . $conn->connect_error);
  }else{
 
-$query = 'SELECT t1.id, t1.firstName, t1.lastName,t2.profilePic,t2.dateTime, t2.status 
+$query = 'SELECT t1.id, t1.firstName, t1.lastName,t2.profilePic as `profile`,t2.dateTime, t2.status 
 FROM `accounts` as t1
 INNER JOIN `profile_pictures` as t2
 ON t1.id = t2.acc_id
@@ -19,13 +19,14 @@ $profile;
 
 while($rows = mysqli_fetch_assoc($result))
     {
-      if($rows['t2.profilePic'] == NULL){
-        $profile = "src = ../img/avatar_placeholder.png";
+      if($rows['profile'] == NULL){
+        $profile = 'src = ../img/avatar_placeholder.png';
       }else{
-       $profile = 'src=data:image/jpeg;base64,'.base64_encode($rows['t2.profilePic']) ;
+       $profile = 'src=data:img/jpeg;base64,'.base64_encode($rows['profile']) ;
       }
 
       ?>
+
 
 <?php
         }

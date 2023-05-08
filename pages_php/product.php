@@ -208,7 +208,7 @@ while($rows = mysqli_fetch_assoc($result))
 ?> 
         <div class="row  bg-light  rounded mx-1   " style="margin-top: 100px; ">
           <div class="col-lg-6  text-center py-5 ">
-        
+                <p id = "product_id" invisible hidden><?php echo $rows['product_id'];?></p>
              <img <?php echo 'src=data:image/jpeg;base64,'.base64_encode($rows['product_img'])?> alt="post image" id="myImg"  class="img-fluid rounded ">
              
             <div id="myModal" class="modal myModal px-5" >
@@ -244,7 +244,7 @@ while($rows = mysqli_fetch_assoc($result))
                     <h1 > <?php echo $rows['productName'];?></h1>
                 </div>
                 <div class="product-price mt-4  " >
-                    <h2>₱ <span id = "product_price"><?php echo $rows['price']?></span>.00 per kilo</h2>
+                    <h2>₱<span id = "product_price"><?php echo $rows['price']?></span>.00 per kilo</h2>
                     
                
                 </div>
@@ -262,21 +262,22 @@ while($rows = mysqli_fetch_assoc($result))
                 <div class="kilo mt-5 d-flex">
                     <h5 class="mt-1 me-3">KILO</h5>
                 <div class="input-group kilo-input  " style="width:140px;">
-                  <button class="btn btn-outline-secondary minus-btn" type="button">-</button>
-                  <input type="number" class="form-control quantity-input text-center  " value="1">
-                  <button class="btn btn-outline-secondary add-btn" type="button">+</button>
+                  <button class="btn btn-outline-secondary minus-btn" type="button" onclick = 'qnt_minus()'>-</button>
+                  <input type="number" class="form-control quantity-input text-center" 
+                  value="1" id = "multiplier">
+                  <button class="btn btn-outline-secondary add-btn" type="button" onclick = 'qnt_add()'>+</button>
                     
                 </div>
                 </div>
 
-                <h2>TOTAL : <span id = "total_cost"></span></h2>
+                <h2>TOTAL : ₱<span id = "total_cost"><?php echo $rows['price']?></span>.00</h2>
 
                 <?php
     }
 }
                 ?>
 
-                  <script>
+                  <!-- <script>
                   // Get the minus and add buttons
                       var minusBtn = document.querySelector(".minus-btn");
                       var addBtn = document.querySelector(".add-btn");
@@ -297,19 +298,55 @@ while($rows = mysqli_fetch_assoc($result))
                         quantityInput.value++;
                       });
 
-                  </script>
+                  </script> -->
 
                   <div class="mask-icon justify-content-start mt-4 d-flex gap-2">
                                                         
-                    <button class="btn add-to-cart-btn text-white" style="background-color: #57744B;"><i class="fa-solid fa-bookmark"></i> </button>
-                    <button class="btn add-to-cart-btn text-white" style="background-color: #57744B;"><i class="fa-solid fa-cart-shopping"></i> Buy Now</button>
-                  </div>
+                    <a class="btn add-to-cart-btn text-white" style="background-color: #57744B;"><i class="fa-solid fa-bookmark"></i> </a>
+                    <a class="btn add-to-cart-btn text-white" style="background-color: #57744B;"
+                    id = "buy_now"
+                    href = "payment.php?product_id=<?php echo $product_id?>&kilo=1"><i class="fa-solid fa-cart-shopping"></i> Buy Now</a>
+                  </div> 
             
               </div>
         </div>
     </div>
+                      
     <?php
   require '../components/footer.php'
 ?>
+<script src="../dependencies/jquery-3.6.4.js"></script>
+
+<script>
+        // var product_price =  parseFloat($("#product_price").innerHTML);
+
+    function qnt_minus(){
+       var product_price = parseFloat($("#product_price")[0].innerHTML)
+       if( parseInt($("#multiplier")[0].value) > 1){
+            $("#multiplier")[0].value--;
+        }
+       var qnt = parseInt($("#multiplier")[0].value)
+       var total = product_price * qnt;
+       console.log(product_price,qnt,total);
+       $("#total_cost")[0].innerHTML = total;
+       $("#buy_now")[0].href = "payment.php?product_id=<?php echo $product_id?>&kilo=" + qnt;
+       
+    }
+
+    function qnt_add(){
+        var product_price =  parseFloat($("#product_price")[0].innerHTML)
+        $("#multiplier")[0].value++;
+        var qnt = parseInt($("#multiplier")[0].value)
+       
+        var total = product_price * qnt;
+        console.log(product_price,qnt,total);
+        $("#total_cost")[0].innerHTML = total;
+        $("#buy_now")[0].href = "payment.php?product_id=<?php echo $product_id?>&kilo=" + qnt;
+
+    }
+
+
+
+</script>
 </body>
 </html>

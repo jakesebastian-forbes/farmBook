@@ -1476,7 +1476,7 @@ overflow-y: scroll;
             show: false
           },
           xaxis: {
-            categories: ["Laptop", "Phone", "Monitor", "Headphones", "Camera"],
+            categories: ["Rice", "Onion", "Watermelon", "Corn", "Carrot"],
           },
           yaxis: {
             title: {

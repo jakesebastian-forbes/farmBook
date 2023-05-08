@@ -3,7 +3,7 @@
 
 
 
-$password = 'trafalgar';
+$password = 'cyborgf';
 
 $hashed_pass = password_hash($password, PASSWORD_DEFAULT);
 // echo strlen($hashed_pass);
